@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
-// import Home from "./Home";
-// import ContactUs from "./ContactUs";
+import Home from "./Home";
+import ContactUs from "./ContactUs";
 // import AboutUs from "./AboutUs"
 
 
@@ -35,9 +35,8 @@ const NavBar = () => {
         </div>
         </nav>
       <Routes>
-        {/* <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<ContactUs/>} />
-        <Route path="/about-us" element={<AboutUs/>} /> */}
       </Routes>
     </>
     )
