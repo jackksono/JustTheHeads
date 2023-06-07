@@ -30,7 +30,7 @@ const NavBar = () => {
         </div>
 
         <div>
-            <span className="flex justify-center text-white text-5xl">JUST THE HEADS</span>
+            <span className="flex justify-center text-red-700 text-5xl">JUST THE HEADS!</span>
         </div>
     
         <div className="flex justify-between w-full h-full px-20 pb-20">
