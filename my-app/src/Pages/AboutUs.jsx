@@ -3,7 +3,7 @@ import React from "react";
 const AboutUs = () => {
 
     return (
-        <div className="pt-20">Why Just The Heads?</div>
+        <div className="pt-24">Why Just The Heads?</div>
     )
 }
 
