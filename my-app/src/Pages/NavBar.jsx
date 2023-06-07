@@ -14,24 +14,29 @@ const NavBar = () => {
 
     return (
         <>
-        <nav  className="fixed w-screen bg-orange-300 h-[80px] z-10 drop-shadow-xl">
-        <div className="fixed w-screen bg-orange-300">
-            
-              <button className="bg-primary-500 text-black hover:text-white">
+        <nav  className="fixed w-screen bg-orange-300 h-[120px] z-10 drop-shadow-xl">
+
+        <div className="flex justify-between px-20">
+              <span className="bg-primary-500 text-black">
                 Questions? Holler At Us @ xxx-xxx-xxx
-              </button>
+              </span>
+              
             
             <Link to="/">
-              <button className="text-right bg-primary-500 text-secondary-500 hover:text-secondary-700">
-                Cart
-              </button>
+                <button className="text-right bg-primary-500 text-black hover:text-white">
+                    Cart
+                </button>
             </Link>
         </div>
-        <div className="flex justify-between w-full h-full px-20">
-            
+
+        <div>
+            <span className="flex justify-center text-white text-5xl">JUST THE HEADS</span>
+        </div>
+    
+        <div className="flex justify-between w-full h-full px-20 pb-20">
           <div className="flex items-center gap-10">
             <Link to="/">
-              <button className="bg-primary-500 text-black hover:text-white">
+              <button className="bg-primary-500 text-red-600 hover:text-white">
                 Home
               </button>
             </Link>
@@ -40,17 +45,17 @@ const NavBar = () => {
           <div className="flex items-center gap-10">
 
             <Link to="/all-products">
-              <button className="bg-primary-500 text-black hover:text-white">
+              <button className="bg-primary-500 text-red-600 hover:text-white">
                 All Products
               </button>
             </Link>
 
             <Link to="/why-just-the-head">
-              <button className="bg-primary-500 text-black hover:text-white">Why Just The Head?</button>
+              <button className="bg-primary-500 text-red-600 hover:text-white">Why Just The Head?</button>
             </Link>
 
             <Link to="/contact-us">
-              <button className="bg-primary-500 text-black hover:text-white">Contact Us</button>
+              <button className="bg-primary-500 text-red-600 hover:text-white">Contact Us</button>
             </Link>
           </div>
         </div>
