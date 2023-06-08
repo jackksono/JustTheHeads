@@ -7,12 +7,12 @@ const Home = () => {
     const [ selectedPage, setSelectedPage ] = useState()
     const navigate = useNavigate()
     return (
-        <div className="fixed w-screen h-screen bg-secondary-500 drop-shadow-xl">
+        <div className="fixed overflow-auto w-screen h-screen bg-secondary-500 drop-shadow-xl">
             <img
               alt="logo"
               src={Logo}
               onClick={() => navigate('/')}
-              className="cursor-pointer"
+              className="cursor-pointer justify-center"
             />
             <Link
               to="/"

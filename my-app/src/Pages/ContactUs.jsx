@@ -2,7 +2,8 @@ import React, {useState} from "react";
 import emailjs from "@emailjs/browser"
 
 const ContactUs = (props) => {
-    const [ data, setData ] = useState({name:"", email:"", phone:"", message:""})
+    const [ data, setData ] = useState({name:"", email:"", phone:""})
+    const [ message, setMessage ] = useState('')
     const [ result, showResult ] = useState(false)
 
 
@@ -10,6 +11,11 @@ const ContactUs = (props) => {
         return (
             <p>Your message has been successfully sent!</p>
         )
+    }
+
+
+    const messageChange = (e) => {
+        setMessage(e.target.value)
     }
 
     const handleChange = (e) => {
@@ -30,43 +36,48 @@ const ContactUs = (props) => {
         });
         e.target.reset();
         setData("")
+        setMessage("")
         showResult(true)
     };
 
     return (props.trigger) ? (
-        <div className='fixed scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 inset-x-0 mx-auto h-screen w-1/2 bg-red-500 bg-opacity-95 rounded-xl'>
-        {/* <div className="h-full w-full pl-10 text-3xl"> */}
+        <div className='fixed overflow-auto inset-x-0 mx-auto h-screen w-1/2 bg-red-500 bg-opacity-80 rounded-xl'>
+       
         <form className="" method="post" onSubmit={sendMail}>
-                <div className='flex justify-end pr-3 pt-3 text-lg'>    
+                <div className='flex justify-end pr-3 text-lg'>    
                     <button  onClick={() => props.setTrigger(false)}>X</button>
                 </div>
-            <h1 className="flex text-black pl-10 text-7xl">Contact <span className="text-orange-300">Here</span></h1>
+            <h1 className="flex justify-center text-black pl-10 text-4xl ">How's The <span className="text-orange-300">Head?</span></h1>
             
                 
-                <div className="text-lg text-black">Name:
-                    <input className="m-3 w-6/12 p-5 flex border-solid border-2 border-black text-lg" 
+                <div className="text-lg text-black pl-6">
+                    <span className="pl-3">Name:</span>
+                    <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
                     type='text' name='name' id="" onChange={handleChange} value={data.name} placeholder="Enter name"/>
                 </div>
 
-                <div className="text-lg text-black">Email:
-                    <input className="m-3 w-6/12 p-5 flex border-solid border-2 border-black text-lg" 
+                <div className="text-lg text-black pl-6">
+                <span className="pl-3">Email:</span>
+                    <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
                     type='email' name='email' id="" onChange={handleChange} value={data.email} placeholder="example@gmail.com"/>
                 </div>
 
-                <div className="text-lg text-black">Phone#:
-                    <input className="m-3 w-6/12 p-5 flex border-solid border-2 border-black text-lg" 
+                <div className="text-lg text-black pl-6">
+                    <span className="pl-3">Phone#:</span>
+                    <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
                     type='phone' name='phone' id="" onChange={handleChange} value={data.phone} placeholder="+1 (xxx)-xxx-xxxx"/>
                 </div>
 
-                <div className="text-lg text-black">Message:
-                    <textarea className="border-solid border-2 border-black m-3 w-6/12 p-5 flex border-solid text-lg" 
-                    name='message' id='' cols='30' rows='10' onChange={handleChange} value={data.message} placeholder="Enter message here..."/>
+                <div className="text-lg text-black pl-6">
+                    <span className="pl-3">Message:</span>
+                    <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex border-solid text-lg" 
+                    name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
                 </div>
-                <button className=" flex content-center text-lg bg-cyan-500 text-black" type='submit'>Send</button>
-            
-            <h2 className= "pt-5 text-lg text-black">{result ? <Result/> : null}</h2>  
+                <h2 className= "pt-5 text-lg text-black text-center justify-center">{result ? <Result/> : null}</h2>  
+                <button className=" pl-5 flex text-lg bg-cyan-500 text-white rounded-xl " type='submit'>Send</button>
+                
          </form>  
-    {/* </div> */}
+   
     </div>
     ): ""
 }
