@@ -17,14 +17,14 @@ const NavBar = () => {
 
     return (
         <>
-        <nav  className="fixed w-screen bg-orange-300 h-[90px] z-10 drop-shadow-xl">
+        <nav  className="fixed w-screen bg-orange-300 h-[140px] z-10 drop-shadow-xl">
 
-        <div className="flex justify-between px-20 pt-1">
+        <div className="flex justify-between px-20 mt-1">
               <span className="bg-primary-500 text-black">
                 Questions? Holler At Us @ xxx-xxx-xxx
               </span>
 
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-5 mt-1">
                 <Link to="/login">
                     <button className="flex justify-end bg-primary-500 text-black hover:text-white">
                         <i>
@@ -57,7 +57,7 @@ const NavBar = () => {
         </div>
 
         <div>
-            <span className="flex justify-center text-red-700 text-5xl">JUST THE HEADS!</span>
+            <span className="flex justify-center text-red-700 text-7xl">JUST THE HEADS!</span>
         </div>
     
         <div className="flex justify-between w-full h-full px-20 pb-20">

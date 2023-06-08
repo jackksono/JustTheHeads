@@ -44,7 +44,7 @@ const ContactUs = (props) => {
         <div className='fixed overflow-auto inset-x-0 mx-auto h-screen w-1/2 bg-red-500 bg-opacity-80 rounded-xl'>
        
         <form className="" method="post" onSubmit={sendMail}>
-                <div className='flex justify-end pr-3 text-lg'>    
+                <div className='flex pr-5 justify-end text-2xl text-black'>    
                     <button  onClick={() => props.setTrigger(false)}>X</button>
                 </div>
             <h1 className="flex justify-center text-black pl-10 text-4xl ">How's The <span className="text-orange-300">Head?</span></h1>
@@ -74,7 +74,9 @@ const ContactUs = (props) => {
                     name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
                 </div>
                 <h2 className= "pt-5 text-lg text-black text-center justify-center">{result ? <Result/> : null}</h2>  
-                <button className=" pl-5 flex text-lg bg-cyan-500 text-white rounded-xl " type='submit'>Send</button>
+                <div className="justify-center items-center text-center">
+                <button className="w-1/4 bg-cyan-500 text-white rounded-xl hover:text-cyan-500 hover:bg-white" type='submit'>Send</button>
+                </div>
                 
          </form>  
    
