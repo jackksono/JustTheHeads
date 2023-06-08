@@ -60,7 +60,7 @@ const NavBar = () => {
             <span className="flex justify-center text-red-700 text-7xl">JUST THE HEADS!</span>
         </div>
     
-        <div className="flex justify-between w-full h-full px-20 pb-20">
+        <div className="flex justify-between w-full h-full px-20 pb-24">
           <div className="flex items-center gap-10">
             <Link to="/">
               <button className="bg-primary-500 text-red-600 hover:text-white">
