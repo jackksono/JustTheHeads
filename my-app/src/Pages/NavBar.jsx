@@ -7,7 +7,7 @@ import AllProducts from "./AllProducts";
 import CheckOut from "./CheckOut";
 import Logo from "../Images/Logo.png"
 import Cart from "../Images/Cart.png"
-import Logo1 from "../Images/Logo1.jpg"
+import Logo1 from "../Images/Logo1.png"
 
 
 const NavBar = () => {
@@ -18,7 +18,7 @@ const NavBar = () => {
 
     return (
         <>
-        <nav  className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-xl">
+        <nav  className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-xl"> 
 
         <div className="flex justify-between px-20 mt-1">
               <span className="bg-primary-500 text-black">
@@ -56,11 +56,11 @@ const NavBar = () => {
                 </Link>
             </div>
         </div>
-        <div className="relative">
+        <div className="">
           <img 
           src={Logo1}
           alt="logo"
-          className="h-[225px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></img>
+          className="h-[200px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
         </div>
 
         {/* <div>

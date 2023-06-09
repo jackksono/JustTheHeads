@@ -58,7 +58,7 @@ const Home = () => {
     return (
         
         <div className="fixed overflow-auto w-screen h-screen bg-secondary-500 drop-shadow-xl">
-            <div className="pt-44 text-center text-black text-sm">No more Shrimp Chips, get a-Head of the competition!</div>
+            <div className="pt-48 text-center text-black text-sm">No more Shrimp Chips, get a-Head of the competition!</div>
             {/* <img
               alt="logo"
               src={Logo}
