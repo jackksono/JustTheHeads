@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
-import Logo from '../Images/Logo.png'
-import Bag1 from '../Images/Bag1.jpg'
-import Bag2 from '../Images/Bag2.jpg'
-import Bag3 from '../Images/Bag3.jpg'
+import Logo from '../Images/SiteImages/Logo.png'
+import Bag1 from '../Images/SiteImages/Bag1.jpg'
+import Bag2 from '../Images/SiteImages/Bag2.jpg'
+import Bag3 from '../Images/SiteImages/Bag3.jpg'
 import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 import {RxDotFilled} from 'react-icons/rx'
 
