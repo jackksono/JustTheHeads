@@ -1,5 +1,5 @@
 import Lays from '../src/Images/ProductImages/1.png'
-import SweetJalapeno from '../src/Images/ProductImages/1.png'
+import SweetJalapeno from '../src/Images/ProductImages/2.png'
 
 
 const PRODUCTS = [

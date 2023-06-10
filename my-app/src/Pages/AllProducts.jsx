@@ -8,7 +8,7 @@ const AllProducts = () => {
             <div className="relative text-black text-center text-4xl">
                 <h1>All Products</h1>
             </div>
-            <div className="text-black">
+            <div className="grid grid-cols-2 w-full h-auto place-items-center">
                 {" "}
                 {PRODUCTS.map((product) => (
                 <Product data={product}/>
