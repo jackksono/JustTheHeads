@@ -1,10 +1,14 @@
 import NavBar from './Pages/NavBar'
 import './App.css';
+import { ShopContextProvider } from './Context/ShopContext';
 
 function App() {
   return (
     <div className="App">
-     <NavBar/>
+      <ShopContextProvider>
+        <NavBar/>
+      </ShopContextProvider>
+     
     </div>
   );
 }
