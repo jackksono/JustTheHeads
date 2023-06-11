@@ -5,9 +5,8 @@ import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs"
 import AllProducts from "./AllProducts";
 import CheckOut from "./Cart/CheckOut";
-import Logo from "../Images/SiteImages/Logo.png"
-import Cart from "../Images/SiteImages/Cart.png"
 import Logo1 from "../Images/SiteImages/Logo1.png"
+
 
 
 const NavBar = () => {
