@@ -20,13 +20,13 @@ const CartItem =(props) => {
                     <b>{productName}</b>
                 </p>
                 <p>${price}</p>
-                <div className='counterHandler text-center font-bold m-5'>
+                <div className='text-center font-bold m-5'>
                     <button className='cursor-pointer' onClick={() => removeFromCart(id)}> - </button>
                     <input className='text-center ' value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className='cursor-pointer' onClick={() => addToCart(id)}> + </button>
-                    {/* <div className='pt-5'>
+                    <div className='pt-5'>
                         <Button variant='danger' className='text-center text-sm cursor-pointer text-white rounded-2xl bg-red-500 p-2' onClick={() => deleteFromCart(id)}>Remove From Cart</Button>
-                    </div> */}
+                    </div>
                     
                 </div>
             </div>

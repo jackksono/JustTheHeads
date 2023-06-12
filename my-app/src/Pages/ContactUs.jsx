@@ -57,7 +57,7 @@ const ContactUs = (props) => {
                 </div>
 
                 <div className="text-lg text-black pl-6">
-                <span className="pl-3">Email:</span>
+                    <span className="pl-3">Email:</span>
                     <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
                     type='email' name='email' id="" onChange={handleChange} value={data.email} placeholder="example@gmail.com"/>
                 </div>
@@ -73,7 +73,8 @@ const ContactUs = (props) => {
                     <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex border-solid text-lg" 
                     name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
                 </div>
-                <h2 className= "pt-5 text-lg text-black text-center justify-center">{result ? <Result/> : null}</h2>  
+
+                <h2 className= "pt-5 text-lg text-black text-center justify-center">{result ? <Result/> : null}</h2>  {/*Hidden message has been sent*/}
                 <div className="justify-center items-center text-center">
                 <button className="w-1/4 bg-cyan-500 text-white rounded-xl hover:text-cyan-500 hover:bg-white" type='submit'>Send</button>
                 </div>

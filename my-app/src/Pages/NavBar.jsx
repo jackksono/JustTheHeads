@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, Route, Routes} from "react-router-dom";
 import { Navbar } from 'react-bootstrap'
 
 import Home from "./Home";
@@ -16,9 +16,8 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 
 const NavBarComponent = () => {
 
-    const [ selectedPage, setSelectedPage ] = useState()
     const [ buttonPopUp, setButtonPopUp ] = useState(false)
-    const navigate = useNavigate();
+  
 
     return (
         <>
@@ -26,9 +25,7 @@ const NavBarComponent = () => {
           <Navbar.Collapse className="justify-content-end">
 
             <div className="flex justify-between px-20 mt-1">
-                  <span className="bg-primary-500 text-black">
-                    Questions? Holler At Us @ xxx-xxx-xxx
-                  </span>
+                  <span className="bg-primary-500 text-black">Questions? Holler At Us @ xxx-xxx-xxx</span>
 
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
@@ -59,6 +56,7 @@ const NavBarComponent = () => {
                             </i>
                         </button>
                     </Link>
+                    <h1 className="flex text-sm pr-10">0</h1>
                 </div>
             </div>
             <div className="">
