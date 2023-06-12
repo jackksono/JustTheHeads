@@ -4,23 +4,25 @@ import { ShopContext } from '../../Context/ShopContext';
 
 const CartItem =(props) => {
     const { id, productName, price, productImage } = props.data
-    const { cartItems } = useContext(ShopContext)
+    const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext)
 
 
     return (
-        <div className='w-[700px] h-[250px] flex items-center shadow-[0_0px_3px_15px_rgba(0,0,0,0.3)] rounded-[25px] m-[30px] '> 
+        <div className='cartItem w-[700px] h-[250px] flex items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px]'> 
         <img 
             src={productImage} 
             alt='productImage'
             className='w-[200px]'>
         </img>
-            <div>
-                <b className='text-bold w-full text-{30px}'>{productName}</b>
+            <div className='description text-black text-center items-center w-full'>
+                <p>
+                    <b>{productName}</b>
+                </p>
                 <p>${price}</p>
-                <div className=''>
-                    <button> - </button>
-                    <input value={cartItems[id]}></input>
-                    <button> + </button>
+                <div className='counterHandler text-center font-bold m-5'>
+                    <button className='cursor-pointer' onClick={() => removeFromCart(id)}> - </button>
+                    <input className='text-center ' value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input>
+                    <button className='cursor-pointer' onClick={() => addToCart(id)}> + </button>
                 </div>
             </div>
         </div>
