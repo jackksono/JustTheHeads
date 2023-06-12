@@ -1,5 +1,5 @@
 import React, {useState, createContext } from "react";
-import PRODUCTS from "../Products";
+import PRODUCTS from "../ProductsStore";
 
 export const ShopContext = createContext(null);
 
@@ -40,13 +40,18 @@ export const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
+    const deleteFromCart = (itemId) => {
+        setCartItems((prev) => ({...prev, [itemId]:0}))
+    }
+
     const contextValue = {
         cartItems,
         setCartItems,
         addToCart,
         removeFromCart,
         updateCartItemCount,
-        getTotal
+        getTotal,
+        deleteFromCart
     }
 
     console.log(cartItems)

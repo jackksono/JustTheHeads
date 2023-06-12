@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import { ShopContext } from '../../Context/ShopContext';
+import { Button } from 'react-bootstrap'
 
 
 const CartItem =(props) => {
     const { id, productName, price, productImage } = props.data
-    const { cartItems, addToCart, removeFromCart, updateCartItemCount } = useContext(ShopContext)
+    const { cartItems, addToCart, removeFromCart, updateCartItemCount, deleteFromCart } = useContext(ShopContext)
 
 
     return (
@@ -23,6 +24,10 @@ const CartItem =(props) => {
                     <button className='cursor-pointer' onClick={() => removeFromCart(id)}> - </button>
                     <input className='text-center ' value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className='cursor-pointer' onClick={() => addToCart(id)}> + </button>
+                    {/* <div className='pt-5'>
+                        <Button variant='danger' className='text-center text-sm cursor-pointer text-white rounded-2xl bg-red-500 p-2' onClick={() => deleteFromCart(id)}>Remove From Cart</Button>
+                    </div> */}
+                    
                 </div>
             </div>
         </div>

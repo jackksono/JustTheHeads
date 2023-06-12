@@ -1,6 +1,7 @@
 import React from "react";
-import PRODUCTS from '../Products'
+import PRODUCTS from '../ProductsStore'
 import Product from "./Product";
+import { Row, Col } from 'react-bootstrap'
 
 const AllProducts = () => {
     return (
@@ -9,7 +10,6 @@ const AllProducts = () => {
                 <h1>All Products</h1>
             </div>
             <div className="grid grid-cols-3 w-full h-auto place-items-center">
-                {" "}
                 {PRODUCTS.map((product) => (
                 <Product data={product}/>
             ))}
