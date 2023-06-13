@@ -18,7 +18,9 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 const NavBarComponent = () => {
 
     const [ buttonPopUp, setButtonPopUp ] = useState(false)
-    const { cartItems } = useContext(ShopContext)
+    const { getCartTotal, cartItems } = useContext(ShopContext);
+
+  
   
 
     return (
@@ -58,11 +60,13 @@ const NavBarComponent = () => {
                             </i>
                         </button>
                     </Link>
-                    {/* {cartItems > 0 ?
-                    <div>0</div> 
-                    :
-                    <h1 className="flex text-sm pr-10">{cartItems[id]}</h1>
-                    } */}
+                     {getCartTotal() > 0 ?
+                    <div>
+                      <h1>{getCartTotal()}</h1>
+                    </div> 
+                    : 
+                    <></>
+                    }
                 </div>
             </div>
 
@@ -103,7 +107,7 @@ const NavBarComponent = () => {
             </div>
           </Navbar.Collapse>
         </Navbar> 
-        
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts/>} />

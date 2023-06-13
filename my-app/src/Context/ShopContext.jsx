@@ -40,6 +40,17 @@ export const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
+    const getCartTotal = () => {
+        let totalAmount = 0;
+        for (const item in cartItems) {
+            if (cartItems[item] > 0) {
+                totalAmount += cartItems[item]
+            }
+        }
+        return totalAmount;
+    }
+
+
     const deleteFromCart = (itemId) => {
         setCartItems((prev) => ({...prev, [itemId]:0}))
     }
@@ -51,7 +62,8 @@ export const ShopContextProvider = (props) => {
         removeFromCart,
         updateCartItemCount,
         getTotal,
-        deleteFromCart
+        deleteFromCart,
+        getCartTotal
     }
 
     console.log(cartItems)
