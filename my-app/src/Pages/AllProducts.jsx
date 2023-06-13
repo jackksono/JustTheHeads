@@ -7,7 +7,7 @@ const AllProducts = () => {
     return (
         <div className="pt-44">
             <div className="relative text-black text-center text-4xl">
-                <h1>All Products</h1>
+                <h1 className="text center">All Products</h1>
             </div>
             <div className="grid grid-cols-3 w-full h-auto place-items-center">
                 {PRODUCTS.map((product) => (

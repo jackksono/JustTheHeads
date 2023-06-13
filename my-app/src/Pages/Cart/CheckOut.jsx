@@ -11,16 +11,14 @@ const CheckOut = () => {
     const navigate = useNavigate()
 
     const { cartItems, getTotal } = useContext(ShopContext)
+
     return (
-       
-           
-        
         <div className="cart flex flex-col justify-center items-center  pt-48 text-lg">
             {getTotal() > 0 ?
             <div>
                 <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
             </div>
-            : <></>}
+            : <></>} {/*Turnary to show Cart Items if cart has an item; otherwise will be blank*/}
             <div>
 
                 {PRODUCTS.map((product) => {
@@ -35,7 +33,7 @@ const CheckOut = () => {
                 <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Checkout </button>
             </div>
-            : <h1 className="text-black">Your Cart is Empty</h1>}
+            : <h1 className="text-black">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
         </div>
     )
 }

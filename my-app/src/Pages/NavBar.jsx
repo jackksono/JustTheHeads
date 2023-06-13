@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import { Navbar } from 'react-bootstrap'
 
@@ -9,6 +9,7 @@ import AllProducts from "./AllProducts";
 import CheckOut from "./Cart/CheckOut";
 import Cancel from "./Cart/Cancel";
 import Success from "./Cart/Success";
+import { ShopContext } from "../Context/ShopContext";
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
@@ -17,6 +18,7 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 const NavBarComponent = () => {
 
     const [ buttonPopUp, setButtonPopUp ] = useState(false)
+    const { cartItems } = useContext(ShopContext)
   
 
     return (
@@ -56,19 +58,20 @@ const NavBarComponent = () => {
                             </i>
                         </button>
                     </Link>
-                    <h1 className="flex text-sm pr-10">0</h1>
+                    {/* {cartItems > 0 ?
+                    <div>0</div> 
+                    :
+                    <h1 className="flex text-sm pr-10">{cartItems[id]}</h1>
+                    } */}
                 </div>
             </div>
+
             <div className="">
               <img 
               src={Logo1}
               alt="logo"
               className="h-[200px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
             </div>
-
-            {/* <div>
-                <span className="flex justify-center text-red-700 text-7xl">JUST THE HEADS!</span>
-            </div> */}
         
             <div className="flex justify-between w-full h-full px-20 mt-10">
               <div className="flex items-center gap-10">
@@ -95,15 +98,12 @@ const NavBarComponent = () => {
                     <button className="bg-primary-500 text-red-600 hover:text-white"
                     onClick={()=> setButtonPopUp(true)}>Contact Us</button>
                     <ContactUs trigger={buttonPopUp} setTrigger={setButtonPopUp}></ContactUs>
-                
                 </span>
-                    
-                  
-                
               </div>
             </div>
           </Navbar.Collapse>
         </Navbar> 
+        
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts/>} />
