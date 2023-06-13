@@ -30,7 +30,7 @@ const NavBarComponent = () => {
 
             <div className="flex justify-between px-20 mt-1">
                   <span className="bg-primary-500 text-black">Questions? Holler At Us @ xxx-xxx-xxx</span>
-
+                  
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
                         <button className="flex justify-end bg-primary-500 text-black hover:text-white">
@@ -61,12 +61,12 @@ const NavBarComponent = () => {
                         </button>
                     </Link>
                      {getCartTotal() > 0 ?
-                    <div>
-                      <h1>{getCartTotal()}</h1>
+                    <div className="w-[20px] h-[30px]">
+                      <h1 className="relative justify-center text-center text-white rounded-full bg-red-500 text-[10px]">{getCartTotal()}</h1>
                     </div> 
                     : 
                     <></>
-                    }
+                    } 
                 </div>
             </div>
 
