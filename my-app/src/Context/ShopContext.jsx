@@ -73,7 +73,7 @@ export const ShopContextProvider = (props) => {
                 cartItems.map(
                     product => 
                     product.id === id//condition
-                    ? {...product, quantity: product.quantity + 1} //statement is true
+                    ? {...product, quantity: product.quantity + 1, } //statement is true
                     : product //statement is false
                 )
             )
@@ -83,7 +83,6 @@ export const ShopContextProvider = (props) => {
 
 
     const updateCartItemCount = (newAmount, id) => {
-        const quantity = getProductQuantity(id)
             setCartItems(
                 cartItems.map(
                     product => 

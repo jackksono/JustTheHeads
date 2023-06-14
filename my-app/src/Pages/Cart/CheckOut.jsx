@@ -38,17 +38,24 @@ const CheckOut = () => {
                 <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
             </div>
             : <></>} {/*Turnary to show Cart Items if cart has an item; otherwise will be blank*/}
-            <div>
 
+            <div>
+            {cart.items.map((product) => {
+                    return <CartItem data={product}></CartItem>
+                })}
+            </div>
+
+            {/* <div>
                 {PRODUCTS.map((product) => {
-                    if (cart.items.length > 0) {
+                    if (cart.items[product.quantity] !== 0) {
                         return <CartItem data={product}></CartItem>
                     }})}
-            </div>
+            </div> */}
+
             {cart.getTotal() > 0 ?
 
             <div className="">
-                <p className="text-black"> Subtotal: ${cart.deleteOneFromCart()}</p>
+                <p className="text-black"> Subtotal: ${cart.getTotal()}</p>
                 <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button 
                     className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"
