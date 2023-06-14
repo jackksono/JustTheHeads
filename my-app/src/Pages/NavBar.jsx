@@ -10,6 +10,7 @@ import CheckOut from "./Cart/CheckOut";
 import Cancel from "./Cart/Cancel";
 import Success from "./Cart/Success";
 import { ShopContext } from "../Context/ShopContext";
+import { Modal } from "react-bootstrap";
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
@@ -20,12 +21,14 @@ const NavBarComponent = () => {
     const [ buttonPopUp, setButtonPopUp ] = useState(false)
     const { getCartTotal, cartItems } = useContext(ShopContext);
 
-  
+    // const [ show, setShow ] = useState(false)
+    // const handleClose = () => setShow(false)
+    // const handleShow = () => setShow(true)
   
 
     return (
         <>
-        <Navbar className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-xl">
+        <Navbar className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-2xl">
           <Navbar.Collapse className="justify-content-end">
 
             <div className="flex justify-between px-20 mt-1">
@@ -67,6 +70,7 @@ const NavBarComponent = () => {
                             <></>} 
                         </button>
                     </Link>
+              
                 </div>
             </div>
 
@@ -89,7 +93,8 @@ const NavBarComponent = () => {
               <div className="flex items-center gap-10">
 
                 <Link to="/all-products">
-                  <button className="bg-primary-500 text-red-600 hover:text-white">
+                  <button className="bg-primary-500 text-red-600 hover:text-white"
+                  data-collapse-toggle="navbar-dropdown">
                     All Products
                   </button>
                 </Link>

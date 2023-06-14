@@ -8,9 +8,27 @@ import CartItem from "./Cart-Item";
 
 const CheckOut = () => {
 
+    const { cartItems, getTotal } = useContext(ShopContext)
+   
+
+    const checkoutRequest = async () => {
+        await fetch('http://localhost:3000/cart-checkout', {
+            method: "POST",
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify({items: cartItems})
+        }).then((response) => {
+            return response.json();
+        }).then((response) => {
+            if(response.url) {
+                window.location.assign(response.url)
+            }
+        })
+    }
     const navigate = useNavigate()
 
-    const { cartItems, getTotal } = useContext(ShopContext)
+
 
     return (
         <div className="cart flex flex-col justify-center items-center  pt-48 text-lg">
@@ -31,7 +49,10 @@ const CheckOut = () => {
             <div className="">
                 <p className="text-black"> Subtotal: ${getTotal()}</p>
                 <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
-                <button className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Checkout </button>
+                <button 
+                    className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"
+                    onClick={checkoutRequest}
+                > Checkout </button>
             </div>
             : <h1 className="text-black">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
         </div>

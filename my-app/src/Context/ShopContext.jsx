@@ -4,29 +4,99 @@ import PRODUCTS from "../ProductsStore";
 export const ShopContext = createContext(null);
 
 
-const getDefaultCart = () => {
-    let cart = {};
-    for (let i = 1; i < PRODUCTS.length + 1; i++) {
-        cart[i] = 0
-    }
-    return cart
-}
 
 
 export const ShopContextProvider = (props) => {
 
-    const [ cartItems, setCartItems ] = useState(getDefaultCart());
+    const [ cartItems, setCartItems ] = useState([]);
 
-    const addToCart = (itemId) => {
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] + 1 }))
+    const getProductQuantity = () => {
+        const quantity = cartItems.find(product => product === product.id)?.quantity;
+
+        if (quantity === undefined) {
+            return 0
+        }
+        return quantity
     }
 
-    const removeFromCart = (itemId) => {
-        setCartItems((prev) => ({...prev, [itemId]: prev[itemId] - 1 }))
+    
+    const deleteFromCart = (itemID) => {
+        setCartItems(
+            cartItems => 
+            cartItems.filter(currentProduct => {
+                return currentProduct.id !== itemID
+            })
+        )
     }
 
-    const updateCartItemCount = (newAmount, itemId) => {
-        setCartItems((prev) => ({ ...prev, [itemId]:newAmount}))
+    const deleteOneFromCart = (itemID) => {
+        const quantity = getProductQuantity(itemID);
+
+        if (quantity === 0) {
+            setCartItems(
+                [
+                    ...cartItems,
+                    {
+                        id: itemID, 
+                        quantity: 1
+                    }
+                ]
+            )
+        } else {
+            setCartItems(
+                cartItems.map(
+                    product => 
+                    product.id === itemID //condition
+                    ? {...product, quantity: product.quantity - 1} //statement is true
+                    : product //statement is false
+                )
+            )
+        }
+    }
+
+
+    const addToCart = (itemID) => {
+        const quantity = getProductQuantity(itemID);
+
+        if (quantity === 0) {
+            setCartItems(
+                [
+                    ...cartItems,
+                    {
+                        id: itemID, 
+                        quantity: 1
+                    }
+                ]
+            )
+        } else {
+            setCartItems(
+                cartItems.map(
+                    product => 
+                    product.id === itemID //condition
+                    ? {...product, quantity: product.quantity + 1} //statement is true
+                    : product //statement is false
+                )
+            )
+        }
+    }
+
+
+
+    const updateCartItemCount = (newAmount, itemID) => {
+        const quantity = getProductQuantity(itemID)
+
+        if (quantity === 1) {
+            deleteFromCart(itemID);
+        } else {
+            setCartItems(
+                cartItems.map(
+                    product => 
+                    product.id === itemID //condition
+                    ? {...product, quantity: product.quantity - 1} //statement is true
+                    : product //statement is false
+                )
+            )
+        }
     }
 
     const getTotal = () => {
@@ -50,20 +120,16 @@ export const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
-
-    const deleteFromCart = (itemId) => {
-        setCartItems((prev) => ({...prev, [itemId]:0}))
-    }
-
     const contextValue = {
         cartItems,
         setCartItems,
         addToCart,
-        removeFromCart,
+        deleteOneFromCart,
         updateCartItemCount,
         getTotal,
         deleteFromCart,
-        getCartTotal
+        getCartTotal,
+        getProductQuantity
     }
 
     console.log(cartItems)

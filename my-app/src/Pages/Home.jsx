@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import Logo from '../Images/SiteImages/Logo.png'
+import { useNavigate } from "react-router-dom"
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
+import BG from '../Images/StockImages/BG.jpg'
 import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 import {RxDotFilled} from 'react-icons/rx'
 
@@ -52,14 +52,13 @@ const Home = () => {
 
     return (
         
-        <div className="fixed overflow-auto w-screen h-screen bg-secondary-500 drop-shadow-xl">
-            <div className="pt-48 text-center text-black text-sm">No more Shrimp Chips, get a-Head of the competition!</div>
-            {/* <img
-              alt="logo"
-              src={Logo}
-              onClick={() => navigate('/')}
-              className="cursor-pointer justify-center items-center "
-            /> */}
+        <div className="fixed overflow-auto w-screen h-screen bg-gray bg-drop-shadow-xl">
+            <img
+                src={BG} 
+                alt="bg"
+                className="w-screen  bg-cover bg-center h-96">
+            </img>
+            <div className="pt-4 text-center text-black text-sm">No more Shrimp Chips, get a-Head of the competition!</div>
             <div className="max-w-[1440px] h-[500px] w-full m-auto pt-10 pb-16 px-4 relative group">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
                 className="w-full h-full rounded-2xl bg-center bg-cover transition transition-opacity ease-in opacity-95">

@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap"
 
 const CartItem =(props) => {
     const { id, productName, price, productImage } = props.data
-    const { cartItems, addToCart, removeFromCart, updateCartItemCount, deleteFromCart } = useContext(ShopContext)
+    const { cartItems, addToCart, deleteOneFromCart, updateCartItemCount, deleteFromCart } = useContext(ShopContext)
 
 
     return (
@@ -21,7 +21,7 @@ const CartItem =(props) => {
                 </p>
                 <p>${price}</p>
                 <div className="text-center font-bold m-5">
-                    <button className="cursor-pointer" onClick={() => removeFromCart(id)}> - </button>
+                    <button className="cursor-pointer" onClick={() => deleteOneFromCart(id)}> - </button>
                     <input className="text-center " value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className="cursor-pointer" onClick={() => addToCart(id)}> + </button>
                     <div className="pt-5">
