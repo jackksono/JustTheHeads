@@ -5,7 +5,8 @@ import { Button } from "react-bootstrap"
 
 const CartItem =(props) => {
     const { id, productName, price, productImage } = props.data
-    const { cartItems, addToCart, deleteOneFromCart, updateCartItemCount, deleteFromCart } = useContext(ShopContext)
+    const cart = useContext(ShopContext)
+    const productQuantity = cart.getProductQuantity(id)
 
 
     return (
@@ -21,13 +22,13 @@ const CartItem =(props) => {
                 </p>
                 <p>${price}</p>
                 <div className="text-center font-bold m-5">
-                    <button className="cursor-pointer" onClick={() => deleteOneFromCart(id)}> - </button>
-                    <input className="text-center " value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input>
-                    <button className="cursor-pointer" onClick={() => addToCart(id)}> + </button>
+                    <button className="cursor-pointer" onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                    {/* <input className="text-center " value={cartItems[id]} onChange={(e) => updateCartItemCount(Number(e.target.value), id)}></input> */}
+                    <button className="cursor-pointer" onClick={() => cart.addToCart(id)}> + </button>
                     <div className="pt-5">
                         <Button variant="danger" 
                             className="text-center text-sm cursor-pointer text-white rounded-2xl bg-red-500 p-2 hover:text-black hover:bg-white" 
-                            onClick={() => deleteFromCart(id)}>
+                            onClick={() => cart.deleteFromCart(id)}>
                             Remove From Cart
                         </Button>
                     </div>

@@ -1,7 +1,15 @@
 import React, {useState, createContext } from "react";
-import PRODUCTS from "../ProductsStore";
+import { getProductData } from "../ProductsStore";
 
-export const ShopContext = createContext(null);
+export const ShopContext = createContext({
+    items: [],
+    getProductQuantity: () => {},
+    addOneToCart: () => {},
+    deleteFromCart: () => {},
+    deleteOneFromCart: () => {},
+    getTotal: () => {},
+    getCartTotal: () => {}
+});
 
 
 
@@ -10,8 +18,8 @@ export const ShopContextProvider = (props) => {
 
     const [ cartItems, setCartItems ] = useState([]);
 
-    const getProductQuantity = () => {
-        const quantity = cartItems.find(product => product === product.id)?.quantity;
+    const getProductQuantity = (id) => {
+        const quantity = cartItems.find(product => product.id === id)?.quantity;
 
         if (quantity === undefined) {
             return 0
@@ -20,33 +28,25 @@ export const ShopContextProvider = (props) => {
     }
 
     
-    const deleteFromCart = (itemID) => {
+    const deleteFromCart = (id) => {
         setCartItems(
             cartItems => 
             cartItems.filter(currentProduct => {
-                return currentProduct.id !== itemID
+                return currentProduct.id !== id
             })
         )
     }
 
-    const deleteOneFromCart = (itemID) => {
-        const quantity = getProductQuantity(itemID);
+    const deleteOneFromCart = (id) => {
+        const quantity = getProductQuantity(id);
 
-        if (quantity === 0) {
-            setCartItems(
-                [
-                    ...cartItems,
-                    {
-                        id: itemID, 
-                        quantity: 1
-                    }
-                ]
-            )
+        if (quantity === 1) {
+            deleteFromCart(id)
         } else {
             setCartItems(
                 cartItems.map(
                     product => 
-                    product.id === itemID //condition
+                    product.id === id //condition
                     ? {...product, quantity: product.quantity - 1} //statement is true
                     : product //statement is false
                 )
@@ -55,15 +55,15 @@ export const ShopContextProvider = (props) => {
     }
 
 
-    const addToCart = (itemID) => {
-        const quantity = getProductQuantity(itemID);
+    const addOneToCart = (id) => {
+        const quantity = getProductQuantity(id);
 
         if (quantity === 0) {
             setCartItems(
                 [
                     ...cartItems,
                     {
-                        id: itemID, 
+                        id: id, 
                         quantity: 1
                     }
                 ]
@@ -72,7 +72,7 @@ export const ShopContextProvider = (props) => {
             setCartItems(
                 cartItems.map(
                     product => 
-                    product.id === itemID //condition
+                    product.id === id//condition
                     ? {...product, quantity: product.quantity + 1} //statement is true
                     : product //statement is false
                 )
@@ -82,53 +82,37 @@ export const ShopContextProvider = (props) => {
 
 
 
-    const updateCartItemCount = (newAmount, itemID) => {
-        const quantity = getProductQuantity(itemID)
-
-        if (quantity === 1) {
-            deleteFromCart(itemID);
-        } else {
+    const updateCartItemCount = (newAmount, id) => {
+        const quantity = getProductQuantity(id)
             setCartItems(
                 cartItems.map(
                     product => 
-                    product.id === itemID //condition
-                    ? {...product, quantity: product.quantity - 1} //statement is true
+                    product.id === id //condition
+                    ? {...product, quantity: newAmount} //statement is true
                     : product //statement is false
                 )
             )
-        }
     }
 
     const getTotal = () => {
         let totalAmount = 0;
-        for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                let itemInfo = PRODUCTS.find((product) => product.id === Number(item));
-                totalAmount += cartItems[item] * itemInfo.price
-            }
-        }
-        return totalAmount;
+        cartItems.map((item) => {
+            const productData = getProductData(item.id);
+            totalAmount += (productData.price * item.quantity)
+            console.log(totalAmount)
+        })
+        return totalAmount
     }
-
-    const getCartTotal = () => {
-        let totalAmount = 0;
-        for (const item in cartItems) {
-            if (cartItems[item] > 0) {
-                totalAmount += cartItems[item]
-            }
-        }
-        return totalAmount;
-    }
+    
 
     const contextValue = {
-        cartItems,
+        items: cartItems,
         setCartItems,
-        addToCart,
+        addOneToCart,
         deleteOneFromCart,
         updateCartItemCount,
         getTotal,
         deleteFromCart,
-        getCartTotal,
         getProductQuantity
     }
 

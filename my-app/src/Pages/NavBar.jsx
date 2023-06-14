@@ -19,11 +19,13 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 const NavBarComponent = () => {
 
     const [ buttonPopUp, setButtonPopUp ] = useState(false)
-    const { getCartTotal, cartItems } = useContext(ShopContext);
+    const cart = useContext(ShopContext);
 
     // const [ show, setShow ] = useState(false)
     // const handleClose = () => setShow(false)
     // const handleShow = () => setShow(true)
+
+    const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
   
 
     return (
@@ -62,9 +64,9 @@ const NavBarComponent = () => {
                                 </svg>
                               
                             </i>
-                            {getCartTotal() > 0 ?
+                            {productCount > 0 ?
                             <div className="relative w-[20px] h-[30px]">
-                              <h1 className="relative justify-center text-center text-white rounded-full bg-red-500 text-[10px]">{getCartTotal()}</h1>
+                              <h1 className="relative justify-center text-center text-white rounded-full bg-red-500 text-[10px]">{productCount}</h1>
                             </div> 
                             : 
                             <></>} 

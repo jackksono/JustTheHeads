@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import PRODUCTS from "../../ProductsStore";
+import {PRODUCTS} from "../../ProductsStore";
 import { ShopContext } from "../../Context/ShopContext";
 import CartItem from "./Cart-Item";
 
@@ -8,7 +8,8 @@ import CartItem from "./Cart-Item";
 
 const CheckOut = () => {
 
-    const { cartItems, getTotal } = useContext(ShopContext)
+    const cart = useContext(ShopContext)
+    
    
 
     const checkoutRequest = async () => {
@@ -17,7 +18,7 @@ const CheckOut = () => {
             headers: {
                 'Content-Type' : 'application/json'
             },
-            body: JSON.stringify({items: cartItems})
+            body: JSON.stringify({items: cart.items})
         }).then((response) => {
             return response.json();
         }).then((response) => {
@@ -32,7 +33,7 @@ const CheckOut = () => {
 
     return (
         <div className="cart flex flex-col justify-center items-center  pt-48 text-lg">
-            {getTotal() > 0 ?
+            {cart.getTotal() > 0 ?
             <div>
                 <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
             </div>
@@ -40,14 +41,14 @@ const CheckOut = () => {
             <div>
 
                 {PRODUCTS.map((product) => {
-                    if (cartItems[product.id] !== 0) {
+                    if (cart.items.length > 0) {
                         return <CartItem data={product}></CartItem>
                     }})}
             </div>
-            {getTotal() > 0 ?
+            {cart.getTotal() > 0 ?
 
             <div className="">
-                <p className="text-black"> Subtotal: ${getTotal()}</p>
+                <p className="text-black"> Subtotal: ${cart.deleteOneFromCart()}</p>
                 <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button 
                     className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"
