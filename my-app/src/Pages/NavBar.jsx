@@ -5,10 +5,11 @@ import { Navbar } from 'react-bootstrap'
 import Home from "./Home";
 import ContactUs from "./ContactUs";
 import AboutUs from "./AboutUs"
-import AllProducts from "./AllProducts";
+import AllProducts from "../Products/AllProducts";
 import CheckOut from "./Cart/CheckOut";
 import Cancel from "./Cart/Cancel";
 import Success from "./Cart/Success";
+import IndividualProduct from "../Products/IndividualProduct";
 import { ShopContext } from "../Context/ShopContext";
 import { Modal } from "react-bootstrap";
 
@@ -123,6 +124,7 @@ const NavBarComponent = () => {
         <Route path="/checkout" element={<CheckOut/>} />
         <Route path="/success" element={<Success/>} />
         <Route path="/cancel" element={<Cancel/>} />
+        <Route path="/products/:webId" element={<IndividualProduct/>} />
       </Routes>
     </>
     )

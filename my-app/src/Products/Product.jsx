@@ -1,8 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
+import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
+import { Link } from "react-router-dom";
 
 const Product = (props) => {
-    const { id, productName, price, productImage } = props.data
+    const navigate = useNavigate()
+
+    const { id, productName, price, productImage, webId } = props.data
     const cart = useContext(ShopContext)
 
     const productQuantity = cart.getProductQuantity(id)
@@ -10,11 +14,20 @@ const Product = (props) => {
     return (
         <>
         <div className="flex flex-col justify-center items-center w-[300px] h-[350px] m-[100px] rounded-b-2xl">
+            <div>
             <img 
                 src={productImage} 
                 alt="productImage"
-                className="flex w-[300px] h-[350px]">
+                className="flex w-[300px] h-[350px] cursor-pointer"
+                onClick={() => navigate(`/products/${webId}`)}>
+                
             </img>
+            <Link 
+            to={`./products/${webId}`}
+            className="text-sm"
+            >More Info...</Link>
+            
+            </div>
             <div className="m-[20px] text-center text-2xl">
                 <p className="text-black font-bold">
                     <b className="font-bold">{productName}</b>

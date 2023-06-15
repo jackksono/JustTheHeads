@@ -25,11 +25,6 @@ const CheckOut = () => {
         });
     }
 
-
-   
-
-
-
     return (
         <div className="flex flex-col justify-center items-center  pt-48 text-lg">
             {cart.getTotal() > 0 ?

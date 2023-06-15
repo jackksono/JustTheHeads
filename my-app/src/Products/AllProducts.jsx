@@ -1,6 +1,7 @@
 import React from "react";
 import {PRODUCTS} from '../ProductsStore'
 import Product from "./Product";
+import IndividualProduct from "./IndividualProduct";
 
 
 const AllProducts = () => {
