@@ -22,8 +22,8 @@ const Product = (props) => {
                 onClick={() => navigate(`/products/${webId}`)}>
                 
             </img>
-            <Link 
-            to={`./products/${webId}`}
+            <Link
+            to={`/products/${webId}`}
             className="text-sm"
             >More Info...</Link>
             
