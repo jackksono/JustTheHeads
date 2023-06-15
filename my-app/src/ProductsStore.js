@@ -7,25 +7,25 @@ import BBQ from "../src/Images/ProductImages/4.png"
 
 const PRODUCTS = [
     {
-        id: "price_1NIhohFWsvLoj5JW5hkOdWfA",
+        id: "price_1NJ3xQFWsvLoj5JW4dTvpdpp",
         productName: "Lays",
         price: 40,
         productImage: Lays
     },
     {
-        id: "price_1NIhowFWsvLoj5JWrO6lU7EA",
+        id: "price_1NJ3xdFWsvLoj5JWbx09EPhW",
         productName: "Sweet Jalapeno",
         price: 20,
         productImage: SweetJalapeno
     },
     {
-        id: "price_1NIhpBFWsvLoj5JW7rxwigXe",
+        id: "price_1NJ3xsFWsvLoj5JWNkFx6rSm",
         productName: "Forno",
         price: 50,
         productImage: Forno
     },
     {
-        id: "price_1NIhpOFWsvLoj5JWSfE29oqG",
+        id: "price_1NJ3y3FWsvLoj5JWJWq4W5p8",
         productName: "BBQ",
         price: 10,
         productImage: BBQ

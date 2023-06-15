@@ -3,7 +3,7 @@ import React from "react";
 
 const Cancel = () => {
     return (
-        <div>We're sorry to see you go</div>
+        <div className="pt-52 text-2xl text-center">We're sorry to see you go</div>
     )
 }
 

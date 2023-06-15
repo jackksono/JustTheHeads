@@ -12,21 +12,38 @@ const CheckOut = () => {
     
    
 
-    const checkoutRequest = async () => {
-        await fetch('http://localhost:3000/cart-checkout', {
+    // const checkoutRequest = async () => {
+    //     await fetch('http://localhost:4000/cart-checkout', {
+    //         method: "POST",
+    //         headers: {
+    //             'Content-Type' : 'application/json'
+    //         },
+    //         body: JSON.stringify({items: cart.items})
+    //     }).then((response) => {
+    //         return response.json();
+    //     }).then((response) => {
+    //         if(response.url) {
+    //             window.location.assign(response.url)
+    //         }
+    //     })
+    // }
+    const checkout = async () => {
+        await fetch('http://localhost:4000/cart-checkout', {
             method: "POST",
             headers: {
-                'Content-Type' : 'application/json'
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({items: cart.items})
         }).then((response) => {
             return response.json();
         }).then((response) => {
             if(response.url) {
-                window.location.assign(response.url)
+                window.location.assign(response.url); // Forwarding user to Stripe
             }
-        })
+        });
     }
+
+
     const navigate = useNavigate()
 
 
@@ -59,7 +76,7 @@ const CheckOut = () => {
                 <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button 
                     className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"
-                    onClick={checkoutRequest}
+                    onClick={checkout}
                 > Checkout </button>
             </div>
             : <h1 className="text-black">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
