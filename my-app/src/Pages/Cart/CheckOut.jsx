@@ -1,32 +1,14 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import {PRODUCTS} from "../../ProductsStore";
 import { ShopContext } from "../../Context/ShopContext";
 import CartItem from "./Cart-Item";
 
 
 
 const CheckOut = () => {
-
+    const navigate = useNavigate()
     const cart = useContext(ShopContext)
     
-   
-
-    // const checkoutRequest = async () => {
-    //     await fetch('http://localhost:4000/cart-checkout', {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type' : 'application/json'
-    //         },
-    //         body: JSON.stringify({items: cart.items})
-    //     }).then((response) => {
-    //         return response.json();
-    //     }).then((response) => {
-    //         if(response.url) {
-    //             window.location.assign(response.url)
-    //         }
-    //     })
-    // }
     const checkout = async () => {
         await fetch('http://localhost:4000/cart-checkout', {
             method: "POST",
@@ -44,12 +26,12 @@ const CheckOut = () => {
     }
 
 
-    const navigate = useNavigate()
+   
 
 
 
     return (
-        <div className="cart flex flex-col justify-center items-center  pt-48 text-lg">
+        <div className="flex flex-col justify-center items-center  pt-48 text-lg">
             {cart.getTotal() > 0 ?
             <div>
                 <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
@@ -61,13 +43,6 @@ const CheckOut = () => {
                     return <CartItem data={product}></CartItem>
                 })}
             </div>
-
-            {/* <div>
-                {PRODUCTS.map((product) => {
-                    if (cart.items[product.quantity] !== 0) {
-                        return <CartItem data={product}></CartItem>
-                    }})}
-            </div> */}
 
             {cart.getTotal() > 0 ?
 
