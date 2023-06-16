@@ -11,7 +11,7 @@ import Cancel from "./Cart/Cancel";
 import Success from "./Cart/Success";
 import IndividualProduct from "../Products/IndividualProduct";
 import { ShopContext } from "../Context/ShopContext";
-import { Modal } from "react-bootstrap";
+import Headroom from 'react-headroom'
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
@@ -31,6 +31,7 @@ const NavBarComponent = () => {
 
     return (
         <>
+        <Headroom>
         <Navbar className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-2xl">
           <Navbar.Collapse className="justify-content-end">
 
@@ -114,7 +115,8 @@ const NavBarComponent = () => {
               </div>
             </div>
           </Navbar.Collapse>
-        </Navbar> 
+        </Navbar>
+        </Headroom> 
 
       <Routes>
         <Route path="/" element={<Home />} />
