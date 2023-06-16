@@ -36,8 +36,8 @@ const Product = (props) => {
                 
                 {productQuantity> 0 ? 
                 <>
-                    <h1 className='counterHandler text-center text-sm text-black font-bold m-5'>In Cart: {productQuantity}</h1>
-                    <div className="text-sm">
+                    <h1 className='text-center text-sm text-black font-bold m-5'>In Cart: {productQuantity}</h1>
+                    <div className="text-sm justify-center items-center">
                         <button className='cursor-pointer' onClick={() => cart.deleteOneFromCart(id)}> - </button>
                         <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                         <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
