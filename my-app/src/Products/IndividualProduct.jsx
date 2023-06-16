@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { PRODUCTS } from '../ProductsStore'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
+
 
 const IndividualProduct = (props) => {
     const { webId }  = useParams()
@@ -10,7 +11,7 @@ const IndividualProduct = (props) => {
     const { productImage, productName, id, description } = product
     const productQuantity = cart.getProductQuantity(id)
 
-    
+    const navigate = useNavigate()
 
     
     
@@ -18,6 +19,10 @@ const IndividualProduct = (props) => {
 
   return (
     <div className='pt-48'>
+        <button className='flex pl-8'
+            onClick={() =>navigate('/all-products')}
+        >Back
+        </button>
         <h1 className='text-4xl text-black text-center'>{productName}</h1>
         <div className='flex p-8'>
             <img 

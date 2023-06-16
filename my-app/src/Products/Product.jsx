@@ -36,12 +36,17 @@ const Product = (props) => {
                 
                 {productQuantity> 0 ? 
                 <>
-                    <h1 className='text-center text-sm text-black font-bold m-5'>In Cart: {productQuantity}</h1>
+                    <h1 className='counterHandler text-center text-sm text-black font-bold m-5'>In Cart: {productQuantity}</h1>
                     <div className="text-sm justify-center items-center">
                         <button className='cursor-pointer' onClick={() => cart.deleteOneFromCart(id)}> - </button>
                         <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                         <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
                     </div>
+                    <button
+                    onClick={() => navigate('/checkout')}
+                    className="text-black text-sm text-black border-2 border-black rounded-2xl bg-red-300 w-[200px]">
+                        Checkout
+                    </button>
                 </>
                 :
                 <button className="bg-transparent text-sm text-center items-center justify-center border-2 border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "

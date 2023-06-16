@@ -40,7 +40,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto h-screen w-1/2 bg-red-500 bg-opacity-75 rounded-xl">
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl">
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex pr-5 justify-end text-2xl text-black'>    
@@ -51,25 +51,25 @@ const ContactUs = (props) => {
                 
             <div className="text-lg text-black pl-6">
                 <span className="pl-3">Name:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
                 type='text' name='name' id="" onChange={handleChange} value={data.name} placeholder="Enter name"/>
             </div>
 
             <div className="text-lg text-black pl-6">
                 <span className="pl-3">Email:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
                 type='email' name='email' id="" onChange={handleChange} value={data.email} placeholder="example@gmail.com"/>
             </div>
 
             <div className="text-lg text-black pl-6">
                 <span className="pl-3">Phone#:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
                 type='phone' name='phone' id="" onChange={handleChange} value={data.phone} placeholder="+1 (xxx)-xxx-xxxx"/>
             </div>
 
             <div className="text-lg text-black pl-6">
                 <span className="pl-3">Message:</span>
-                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex border-solid text-lg" 
+                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex border-solid text-lg rounded-xl" 
                 name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
             </div>
             
