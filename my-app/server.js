@@ -1,6 +1,7 @@
 const express = require('express');
 var cors = require('cors');
-const stripe = require('stripe')('sk_test_51NIFnYFWsvLoj5JWtXiz2nwW3Za0aaQKB68jqXWVz1tMy2t8hrAVavI0Jc2XJ3xg5v8AhqQjAVGp1NyBYIVvQIR0008E9iWxYD') //private key in second parameter
+require("dotenv").config() //requires install package of dotenv 
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY) 
 
 
 const app = express();
