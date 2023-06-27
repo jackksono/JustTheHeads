@@ -10,6 +10,9 @@ import CheckOut from "./Cart/CheckOut";
 import Cancel from "./Cart/Cancel";
 import Success from "./Cart/Success";
 import IndividualProduct from "../Products/IndividualProduct";
+import SearchBar from "./SearchBar";
+
+import { PRODUCTS } from '../ProductsStore'
 import { ShopContext } from "../Context/ShopContext";
 
 
@@ -19,7 +22,8 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 
 const NavBarComponent = () => {
 
-    const [ buttonPopUp, setButtonPopUp ] = useState(false)
+    const [ contactUsButtonPopUp, contactUsSetButtonPopUp ] = useState(false)
+    const [ searchBarButtonPopUp, searchBarSetButtonPopUp ] = useState(false)
     const cart = useContext(ShopContext);
 
     // const [ show, setShow ] = useState(false)
@@ -49,15 +53,18 @@ const NavBarComponent = () => {
                             </i>
                         </button>
                     </Link>    
-                    <Link to="/">
-                        <button className="flex justify-end bg-primary-500 text-black hover:text-white">
+                    <span>
+                        <button 
+                          className="flex justify-end bg-primary-500 text-black hover:text-white"
+                          onClick={() => searchBarSetButtonPopUp(true)}>
                             <i>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                 </svg>
                             </i>
                         </button>
-                    </Link>
+                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp} data={PRODUCTS}></SearchBar>
+                    </span>
                     <Link to="/checkout">
                         <button className="flex text-right bg-primary-500 text-black hover:text-white">
                             <i>
@@ -109,8 +116,8 @@ const NavBarComponent = () => {
 
                 <span className="flex">
                     <button className="bg-primary-500 text-red-600 hover:text-white"
-                    onClick={()=> setButtonPopUp(true)}>Contact Us</button>
-                    <ContactUs trigger={buttonPopUp} setTrigger={setButtonPopUp}></ContactUs>
+                    onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
+                    <ContactUs trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                 </span>
               </div>
             </div>
@@ -120,12 +127,13 @@ const NavBarComponent = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts/>} />
-        <Route path="/contact-us" element={<ContactUs/>} />
+        {/* <Route path="/contact-us" element={<ContactUs/>} /> */}
         <Route path="/why-just-the-head" element={<AboutUs/>} />
         <Route path="/checkout" element={<CheckOut/>} />
         <Route path="/success" element={<Success/>} />
         <Route path="/cancel" element={<Cancel/>} />
         <Route path="/products/:webId" element={<IndividualProduct/>} />
+        {/* <Route path="/search" element={<SearchBar/>} /> */}
       </Routes>
     </>
     )
