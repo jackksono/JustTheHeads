@@ -8,7 +8,7 @@ const SearchBar = (props) => {
     const navigate = useNavigate()
  
   return (props.trigger) ? (
-    <div className='fixed overflow-auto inset-x-0 mx-auto w-screen h-screen bg-gray-500 bg-opacity-75 rounded-xl'>
+    <div className='fixed overflow-auto inset-x-0 w-screen h-screen bg-gray-500 bg-opacity-75 rounded-xl'>
             <div className='flex pr-12 justify-end text-2xl text-black'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>
@@ -16,18 +16,19 @@ const SearchBar = (props) => {
             <input type='text' placeholder='Enter a product name...'
             className='bg-white border-0 p-8 h-[30px] w-[300px] justify-center'>
             </input>
-            <div className='searchIcon h-[64px] w-[50px] text-5xl bg-white place-items-center'>
+            <div className='h-[64px] w-[50px] text-5xl bg-white place-items-center'>
                 <SearchIcon />
             </div>
         </div>
-        <div className='mt-[5px] w-[300px] h-[50px] justify-center align-center content-center bg-white overflow-hidden overflow-y-auto shadow-md'>
-            { PRODUCTS.map((value, key) => {
-                return <div className='ml-[10px] hover:bg-gray-100'> 
-                    <button onClick={() => navigate(`/products/${value.webId}`)}>
-                        <p>{value.productName}</p>
-                    </button>         
-                </div>
-            })}
+        <div className='flex justify-center'>
+            <div className='mt-[5px] w-[300px] h-[150px] bg-white overflow-hidden overflow-y-auto shadow-md'>
+                { PRODUCTS.map((value, key) => {
+                    return( <div className='flex w-full h-[50px] content-center hover:bg-gray-100 text-black cursor-pointer'
+                    onClick={() => navigate(`/products/${value.webId}`)}> 
+                            <p className='ml-[10px]'>{value.productName}</p>       
+                    </div>)
+                })}
+            </div>
         </div>
     </div>
   ):""

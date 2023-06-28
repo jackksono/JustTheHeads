@@ -18,7 +18,7 @@ const IndividualProduct = (props) => {
     
 
   return (
-    <div className='pt-48 overflow-y-auto'>
+    <div className='pt-48 overflow-auto'>
         <button className='flex pl-8'
             onClick={() =>navigate('/all-products')}
         >Back
