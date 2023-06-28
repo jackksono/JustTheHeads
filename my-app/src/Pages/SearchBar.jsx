@@ -20,7 +20,7 @@ const SearchBar = (props) => {
                 <SearchIcon />
             </div>
         </div>
-        <div className='justify-center align-center content-center mt-[5px] w-[300px] h-[50px] bg-white overflow-hidden overflow-y-auto shadow-md'>
+        <div className='mt-[5px] w-[300px] h-[50px] justify-center align-center content-center bg-white overflow-hidden overflow-y-auto shadow-md'>
             { PRODUCTS.map((value, key) => {
                 return <div className='ml-[10px] hover:bg-gray-100'> 
                     <button onClick={() => navigate(`/products/${value.webId}`)}>
