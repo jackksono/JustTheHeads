@@ -63,7 +63,7 @@ const NavBarComponent = () => {
                                 </svg>
                             </i>
                         </button>
-                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp} data={PRODUCTS}></SearchBar>
+                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
                     </span>
                     <Link to="/checkout">
                         <button className="flex text-right bg-primary-500 text-black hover:text-white">
