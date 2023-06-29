@@ -1,6 +1,7 @@
 import React from "react";
 import {PRODUCTS} from '../ProductsStore'
 import Product from "./Product";
+import Footer from "../Pages/Footer";
 
 
 
@@ -15,6 +16,9 @@ const AllProducts = () => {
                 <Product data={product}/>
             ))}
             </div>
+            <footer>
+                <Footer/>
+            </footer>
         </div>
     )
 }
