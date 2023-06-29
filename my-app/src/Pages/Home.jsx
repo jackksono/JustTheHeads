@@ -5,6 +5,7 @@ import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
 
 import FeaturedProducts from "../Products/FeaturedProducts"
+import Footer from "./Footer"
 
 // import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -84,19 +85,15 @@ const Home = () => {
                 </div>
             </div>
             <div className="text-center text-4xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
-            
+            <div>
                 <FeaturedProducts></FeaturedProducts>
+            </div>
+            <div>
+                <Footer></Footer>
+            </div>
+                
             
             
-
-
-            <footer className="w-screen h-[300px] bg-lightning bg-stone-300 bg-texture bg-cover bg-center bg-blend-overlay">
-                <div className="flex text-black justify-center space-x-20 pt-4">
-                    <p>QUALITY </p>
-                    <p>SERVICE</p>
-                    <p>PRICE</p>
-                </div>
-            </footer>
         </div>
     )
 }

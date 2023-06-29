@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import { PRODUCTS } from '../ProductsStore';
+import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
 
 
