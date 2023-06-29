@@ -4,7 +4,9 @@ import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
 import BG from '../Images/StockImages/BG.jpg'
-import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
+// import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {RxDotFilled} from 'react-icons/rx'
 
 
@@ -65,11 +67,11 @@ const Home = () => {
                 </div>
                 {/* Left Arrow */}
                 <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer">
-                    <BsChevronCompactLeft onClick={prevSlide} size={30}/>
+                    <ArrowBackIosIcon onClick={prevSlide} size={30}/>
                 </div>
                 {/* Right Arrow */}
                 <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer">
-                    <BsChevronCompactRight onClick={nextSlide} size={30}/>
+                    <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                 </div>
                 
                 <div className="flex top-4 justify-center py-2">

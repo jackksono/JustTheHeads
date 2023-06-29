@@ -9,10 +9,6 @@ const SearchBar = (props) => {
     const navigate = useNavigate()
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
-    
-    const triggerFalse = (props) => {
-        props.setTrigger(false)
-    }
 
     const handleFilter = (e) => {
         const searchWord = e.target.value;

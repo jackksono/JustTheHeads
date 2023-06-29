@@ -98,7 +98,6 @@ export const ShopContextProvider = (props) => {
         cartItems.map((item) => {
             const productData = getProductData(item.id);
             totalAmount += (productData.price * item.quantity)
-            console.log(totalAmount)
         })
         return totalAmount
     }
