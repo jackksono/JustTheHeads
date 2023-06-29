@@ -2,6 +2,7 @@ import Lays from "../src/Images/ProductImages/1.png"
 import SweetJalapeno from "../src/Images/ProductImages/2.png"
 import Forno from "../src/Images/ProductImages/3.png"
 import BBQ from "../src/Images/ProductImages/4.png"
+import ComingSoon from "../src/Images/ProductImages/ComingSoon.jpg"
 
 
 
@@ -36,6 +37,30 @@ const PRODUCTS = [
         productName: "BBQ (6)",
         price: 10,
         productImage: BBQ,
+        description: "The tasty goodness of campfire smoke straight to the throat. Enjoy with NEW BBQ chips"
+    },
+    {
+        id: "price_1NJ3y3FWsvLoj5JWJWq4W5p7",
+        webId: "1NJ3y3FWsvLoj5JWJWq4W5p7",
+        productName: "Salted Egg Yolk (6)",
+        price: 20,
+        productImage: ComingSoon,
+        description: "Americas favorite Asian snack flavor: The Salted Egg Yolk"
+    },
+    {
+        id: "price_1NJ3y3FWsvLoj5JWJWq4W5p4",
+        webId: "1NJ3y3FWsvLoj5JWJWq4W5p4",
+        productName: "Crazy Cajun (6)",
+        price: 10,
+        productImage: ComingSoon,
+        description: "The tasty goodness of campfire smoke straight to the throat. Enjoy with NEW BBQ chips"
+    },
+    {
+        id: "price_1NJ3y3FWsvLoj5JWJWq4W5p3",
+        webId: "1NJ3y3FWsvLoj5JWJWq4W5p3",
+        productName: "Original (6)",
+        price: 10,
+        productImage: ComingSoon,
         description: "The tasty goodness of campfire smoke straight to the throat. Enjoy with NEW BBQ chips"
     }
 ]
