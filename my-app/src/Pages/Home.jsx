@@ -25,8 +25,7 @@ const Home = () => {
 
     
     const [ currentIndex, setCurrentIndex ] = useState(0)
-    const [ selectedPage, setSelectedPage ] = useState()
-    const navigate = useNavigate()
+    
 
     useEffect(() => { //Automatically switches slides
         setTimeout(
@@ -57,12 +56,12 @@ const Home = () => {
 
     return (
         
-        <div className="overflow-auto w-screen h-screen bg-gray bg-drop-shadow-4xl">
+        <div className="overflow-auto w-screen h-screen pt-20 bg-gray bg-drop-shadow-4xl">
             
             
-            <div className="w-screen h-[600px] w-full m-auto pt-4 pb-16 px-4 relative group">
+            <div className=" h-[600px] w-full m-auto pb-16 px-4 relative group">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
-                className="w-full h-full rounded-2xl bg-center bg-cover transition transition-opacity ease-in opacity-95">
+                className="w-full h-full rounded-2xl bg-center bg-cover ease-in opacity-95">
                 </div>
                 {/* Left Arrow */}
                 <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer">
@@ -84,16 +83,13 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-            <div className="text-center text-4xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
+            <div className="text-center p-8 text-5xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
             <div>
                 <FeaturedProducts></FeaturedProducts>
             </div>
             <div>
                 <Footer></Footer>
             </div>
-                
-            
-            
         </div>
     )
 }

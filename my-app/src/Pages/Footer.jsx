@@ -1,18 +1,30 @@
 import React from 'react'
-import {FaSnapchatGhost, FaInstagramSquare, FaTwitter, FaYoutube } from 'react-icons/fa'
+import {FaFacebookSquare, FaInstagramSquare, FaTwitter, FaYoutube } from 'react-icons/fa'
+
 
 const Footer = () => {
+
   return (
     <div>
         <footer className="inset-x-0 bottom-0 w-screen h-[300px] bg-lightning bg-stone-300 bg-texture bg-cover bg-center bg-blend-overlay">
             <div className="flex text-black justify-center space-x-20 pt-4">
-                <FaTwitter className="h-7 w-7"/>
-                <FaYoutube className="h-7 w-7"/>
+                <a href='https://twitter.com/'>
+                    <FaTwitter className="h-7 w-7 cursor-pointer hover:text-white"/>
+                </a>
+                <a href='https://www.youtube.com/'>
+                    <FaYoutube className="h-7 w-7 cursor-pointer hover:text-white"/>
+                </a>
+                
                 <p>QUALITY </p>
                 <p>SERVICE</p>
                 <p>PRICE</p>
-                <FaSnapchatGhost className="h-7 w-7"/>
-                <FaInstagramSquare className="h-7 w-7"/>
+                <a href='https://www.facebook.com/'>
+                    <FaFacebookSquare className="h-7 w-7 cursor-pointer hover:text-white"/>
+                </a>
+                <a href='https://www.instagram.com/'>
+                    <FaInstagramSquare className="h-7 w-7 cursor-pointer hover:text-white"/>
+                </a>
+                
                 
                 
             </div>
