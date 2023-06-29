@@ -4,7 +4,7 @@ import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
 
-import AllProducts from "../Products/AllProducts"
+import FeaturedProducts from "../Products/FeaturedProducts"
 
 // import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -85,7 +85,7 @@ const Home = () => {
             </div>
             <div className="text-center text-4xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
             
-                <AllProducts></AllProducts>
+                <FeaturedProducts></FeaturedProducts>
             
             
 
