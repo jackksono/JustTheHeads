@@ -17,6 +17,7 @@ import { ShopContext } from "../Context/ShopContext";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
+import RingVolumeIcon from '@mui/icons-material/RingVolume';
 
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
@@ -38,10 +39,11 @@ const NavBarComponent = () => {
 
     return (
         <>
-        <Navbar className="fixed w-screen bg-orange-300 h-[100px] z-10 drop-shadow-2xl">
+        <Navbar className="fixed w-screen bg-orange-200 h-[100px] z-10 drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay">
           <Navbar.Collapse className="justify-content-end">
             <div className="flex justify-between px-20 mt-1">
-                  <span className="bg-primary-500 text-black">Questions? Holler At Us @ xxx-xxx-xxx</span>
+                  <span className="bg-primary-500 text-black">
+                    <RingVolumeIcon/>Questions? Holler At Us @ xxx-xxx-xxxx</span>
                   
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
@@ -83,7 +85,7 @@ const NavBarComponent = () => {
             <div className="flex justify-between w-full h-full px-20 mt-10">
               <div className="flex items-center gap-10">
                 <Link to="/">
-                  <button className="bg-primary-500 text-red-600 hover:text-white">
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white">
                     Home
                   </button>
                 </Link>
@@ -92,18 +94,18 @@ const NavBarComponent = () => {
               <div className="flex items-center gap-10">
 
                 <Link to="/all-products">
-                  <button className="bg-primary-500 text-red-600 hover:text-white"
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white"
                   data-collapse-toggle="navbar-dropdown">
                     All Products
                   </button>
                 </Link>
 
                 <Link to="/why-just-the-head">
-                  <button className="bg-primary-500 text-red-600 hover:text-white">Why Just The Head?</button>
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white">Why Just The Head?</button>
                 </Link>
 
                 <span className="flex">
-                    <button className="bg-primary-500 text-red-600 hover:text-white"
+                    <button className="bg-primary-500 text-color-shrimp hover:text-white"
                     onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                     <ContactUs trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                 </span>

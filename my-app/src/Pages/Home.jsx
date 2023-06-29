@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom"
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
-import BG from '../Images/StockImages/BG.jpg'
+
+import AllProducts from "../Products/AllProducts"
+
 // import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -54,14 +56,10 @@ const Home = () => {
 
     return (
         
-        <div className="fixed overflow-auto w-screen h-screen bg-gray bg-drop-shadow-xl">
-            <img
-                src={BG} 
-                alt="bg"
-                className="w-screen  bg-cover bg-center h-96">
-            </img>
-            <div className="pt-4 text-center text-black text-sm">No more Shrimp Chips, get a-Head of the competition!</div>
-            <div className="max-w-[1440px] h-[500px] w-full m-auto pt-10 pb-16 px-4 relative group">
+        <div className="overflow-auto w-screen h-screen bg-gray bg-drop-shadow-4xl">
+            
+            
+            <div className="w-screen h-[600px] w-full m-auto pt-4 pb-16 px-4 relative group">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
                 className="w-full h-full rounded-2xl bg-center bg-cover transition transition-opacity ease-in opacity-95">
                 </div>
@@ -85,6 +83,20 @@ const Home = () => {
                     ))}
                 </div>
             </div>
+            <div className="text-center text-4xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
+            
+                <AllProducts></AllProducts>
+            
+            
+
+
+            <footer className="w-screen h-[300px] bg-lightning bg-stone-300 bg-texture bg-cover bg-center bg-blend-overlay">
+                <div className="flex text-black justify-center space-x-20 pt-4">
+                    <p>QUALITY </p>
+                    <p>SERVICE</p>
+                    <p>PRICE</p>
+                </div>
+            </footer>
         </div>
     )
 }

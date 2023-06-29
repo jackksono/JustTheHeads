@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 
 module.exports = {
@@ -7,10 +8,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      
+      colors: {
+        color: {
+          shrimp: "#DB4221"
+        }
+      },
+      fontFamily: {
+        sans: ["var(--font-sophia)", ...fontFamily.sans]
+      },
       backgroundImage: {
-        'hero-pattern': "url('/img/hero-pattern.svg')",
-        
+        'bubbles': "url('../src/Images//BlendImages/Stripes.jpg')",
+        'lightning': "url('../src/Images//BlendImages/Lightning.jpg')",
+        'shrimp': "url('../src/Images//BlendImages/BG.jpg')"
       }
     },
   },
