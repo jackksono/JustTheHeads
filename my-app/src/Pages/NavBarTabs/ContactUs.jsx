@@ -77,7 +77,7 @@ const ContactUs = (props) => {
 
             <div className="text-lg text-black pl-6">
                 <span className="pl-3">Message:</span>
-                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex border-solid text-lg rounded-xl" 
+                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex text-lg rounded-xl" 
                 name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
             </div>
             

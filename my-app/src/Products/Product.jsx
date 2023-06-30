@@ -30,7 +30,7 @@ const Product = (props) => {
             </div>
             <div className="m-[20px] text-center text-2xl">
                 <p className="text-black font-bold">
-                    <b className="font-bold">{productName}</b>
+                    <b className="font-bold font-serif ">{productName}</b>
                 </p>
                 <p className="relative mt-2 text-center text-lg">${price}</p>
                 
@@ -44,7 +44,7 @@ const Product = (props) => {
                     </div>
                     <button
                     onClick={() => navigate('/checkout')}
-                    className="text-black text-sm text-black border-2 border-black rounded-2xl bg-red-300 w-[200px]">
+                    className="text-black text-sm border-2 border-black rounded-2xl bg-red-300 w-[200px]">
                         Checkout
                     </button>
                 </>
