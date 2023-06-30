@@ -11,7 +11,9 @@ const ContactUs = (props) => {
     //     const close = () => props.setTrigger(false);
     //     close()
     //   });
-  
+    const click = e => {
+        document.addEventListener('click', console.log('click'));
+      };
 
     const Result = () => {
         return (
@@ -46,7 +48,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl" >
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl" onClick={click} >
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex pr-5 justify-end text-2xl text-black'>    

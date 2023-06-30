@@ -22,7 +22,7 @@ import RingVolumeIcon from '@mui/icons-material/RingVolume';
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
-import { useClickAway } from "@uidotdev/usehooks";
+
 
 
 const NavBarComponent = () => {
@@ -31,10 +31,7 @@ const NavBarComponent = () => {
     const [ searchBarButtonPopUp, searchBarSetButtonPopUp ] = useState(false)
     const cart = useContext(ShopContext);
 
-    const ref = useClickAway(() => {
-      contactUsButtonPopUp(false)
-    });
-
+   
     // const [ show, setShow ] = useState(false)
     // const handleClose = () => setShow(false)
     // const handleShow = () => setShow(true)
@@ -109,7 +106,7 @@ const NavBarComponent = () => {
                   <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit">Why Just The Head?</button>
                 </Link>
 
-                <span className="flex" ref={ref}>
+                <span className="flex" >
                     <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit"
                     onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                     <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
