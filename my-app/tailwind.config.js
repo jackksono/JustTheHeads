@@ -27,7 +27,7 @@ module.exports = {
         'bubbles': "url('../src/Images//BlendImages/Stripes.jpg')",
         'lightning': "url('../src/Images//BlendImages/Lightning.jpg')",
         'blackPaper': "url('../src/Images//BlendImages/BlackPaper.jpg')",
-        'smoke': "url('..src/Images//BlendImages/Smoke.jpg')"
+        'smoke': "url('../src/Images//BlendImages/Smoke1.png')",
       },
     },
   },
