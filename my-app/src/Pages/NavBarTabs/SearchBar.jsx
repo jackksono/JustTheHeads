@@ -30,7 +30,7 @@ const SearchBar = (props) => {
     }
  
   return (props.trigger) ? (
-    <div className='fixed overflow-auto inset-x-0 w-screen h-screen bg-gray-500 bg-opacity-75 rounded-xl'>
+    <div className='fixed overflow-auto inset-x-0 h-screen w-screen bg-gray-500 bg-opacity-75 rounded-xl'>
             <div className='flex pr-12 justify-end text-2xl text-black'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>

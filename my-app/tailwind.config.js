@@ -14,6 +14,12 @@ module.exports = {
         }
       },
       fontFamily: {
+        Caprasimo: ['Caprasimo'],
+        YsabeauSC:['Ysabeau SC'],
+        Kanit:['Kanit'],
+        BebasNeue:['Bebas Neue'],
+        Fruktur:['Fruktur'],
+        Ewert:['Ewert'],
         sans: ["var(--font-sophia)", ...fontFamily.sans]
       },
       backgroundImage: {

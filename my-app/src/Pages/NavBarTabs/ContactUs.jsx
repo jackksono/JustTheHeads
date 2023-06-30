@@ -1,11 +1,17 @@
 import React, {useState} from "react";
 import emailjs from "@emailjs/browser"
+import { useClickAway } from "@uidotdev/usehooks";
 
 const ContactUs = (props) => {
     const [ data, setData ] = useState({name:"", email:"", phone:""})
     const [ message, setMessage ] = useState()
     const [ result, showResult ] = useState(false)
 
+    // const ref = useClickAway(() => {
+    //     const close = () => props.setTrigger(false);
+    //     close()
+    //   });
+  
 
     const Result = () => {
         return (
@@ -40,7 +46,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl">
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl" >
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex pr-5 justify-end text-2xl text-black'>    

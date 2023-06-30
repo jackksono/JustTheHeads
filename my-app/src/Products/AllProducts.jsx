@@ -7,7 +7,7 @@ import Footer from "../Pages/Footer";
 
 const AllProducts = () => {
     return (
-        <div className="pt-44 overflow-auto">
+        <div className="pt-44">
             <div className="relative text-black text-center text-4xl">
                 <h1 className="text center">All Products</h1>
             </div>

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
 import Bag3 from '../Images/SiteImages/Bag3.jpg'
+import Welcome from '../Images/SiteImages/Welcome.jpg'
 
 import FeaturedProducts from "../Products/FeaturedProducts"
 import Footer from "./Footer"
@@ -56,7 +57,7 @@ const Home = () => {
 
     return (
         
-        <div className="overflow-auto w-screen h-screen pt-20 bg-gray bg-drop-shadow-4xl">
+        <div className="overflow-auto pt-20 bg-orange-200 bg-drop-shadow-4xl">
             
             
             <div className=" h-[600px] w-full m-auto pb-16 px-4 relative group">
@@ -72,6 +73,7 @@ const Home = () => {
                     <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                 </div>
                 
+                
                 <div className="flex top-4 justify-center py-2">
                     {slides.map((slide, slideIndex) => (
                         <div 
@@ -83,8 +85,15 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-            <div className="text-center p-8 text-5xl text-black">No more Shrimp Chips, get a-Head of the competition!</div>
-            <div>
+            <div className="text-center p-8 text-5xl text-black pb-20 font-Caprasimo ">No more Shrimp Chips, get a-Head of the competition!</div>
+            <div className="w-screen h-[450px] grid grid-cols-2 pt-20 bg-indigo-900 border-solid border-4">
+                    <p className="text-center text-white text-5xl ">Welcome to the Head Family!
+                        <p className="flex text-white text-lg p-6">We are the head family! 4 young lads coming together to make something great. Make our dream a reality. We are the head family! 4 young lads coming together to make something great. Make our dream a reality. We are the head family! 4 young lads coming together to make something great. Make our dream a reality. We are the head family! 4 young lads coming together to make something great. Make our dream a reality. We are the head family! 4 young lads coming together to make something great. Make our dream a reality. We are the head family! 4 young lads coming together to make something great. Make our dream a reality.</p>
+                    </p>
+                    <img src={Welcome} alt="bag" className="content-center items-center justify-center w-3/4 h-[300px]"></img>
+                    
+                </div>
+            <div className="">
                 <FeaturedProducts></FeaturedProducts>
             </div>
             <div>

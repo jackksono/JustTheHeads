@@ -24,7 +24,7 @@ const Product = (props) => {
             </img>
             <Link
             to={`/products/${webId}`}
-            className="text-sm"
+            className="text-sm italic"
             >More Info...</Link>
             
             </div>
