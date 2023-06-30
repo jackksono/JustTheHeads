@@ -25,7 +25,8 @@ module.exports = {
       backgroundImage: {
         'bubbles': "url('../src/Images//BlendImages/Stripes.jpg')",
         'lightning': "url('../src/Images//BlendImages/Lightning.jpg')",
-        'shrimp': "url('../src/Images//BlendImages/BG.jpg')"
+        'blackPaper': "url('../src/Images//BlendImages/BlackPaper.jpg')",
+        'smoke': "url('../src/Images//BlendImages/Smoke.png')"
       }
     },
   },
