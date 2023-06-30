@@ -3,7 +3,8 @@ const { fontFamily } = require("tailwindcss/defaultTheme")
 
 
 module.exports = {
-  content: [
+  content: 
+  [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
@@ -27,7 +28,7 @@ module.exports = {
         'lightning': "url('../src/Images//BlendImages/Lightning.jpg')",
         'blackPaper': "url('../src/Images//BlendImages/BlackPaper.jpg')",
         'smoke': "url('../src/Images//BlendImages/Smoke.png')"
-      }
+      },
     },
   },
   plugins: [

@@ -12,6 +12,7 @@ import Footer from "./Footer"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {RxDotFilled} from 'react-icons/rx'
+import  Navbar  from "./NavBar"
 
 
 const slides = [
@@ -58,9 +59,7 @@ const Home = () => {
     return (
         
         <div className="overflow-auto pt-20 bg-orange-200 bg-drop-shadow-4xl bg-smoke bg-texture bg-cover bg-center bg-blend-color-burn shadow-lg ">
-            
-            
-            <div className=" h-[600px] w-full m-auto pb-16 px-4 relative group">
+            <div className=" h-screen w-screen m-auto pb-16 px-4 relative group">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
                 className="w-full h-full rounded-2xl bg-center bg-cover ease-in opacity-95">
                 </div>
@@ -79,16 +78,16 @@ const Home = () => {
                         <div 
                             key={slideIndex} 
                             onClick={()=> goToSlide(slideIndex)} 
-                            className="text-2xl cursor-pointer">
+                            className="text-2xl cursor-pointer hover:text-white hover:scale-150 transition duration-150 ease-in-out">
                                 <RxDotFilled />
                         </div>
                     ))}
                 </div>
             </div>
-            <div className="text-center p-8 text-5xl text-black pb-20 font-Caprasimo ">
+            <div className="text-center p-8 text-5xl text-black font-Caprasimo delay-[300ms]">
                 <p>No more Shrimp Chips, get a-Head of the competition!</p>
             </div>
-            <div className="w-screen h-[450px] grid grid-cols-2 pt-20 bg-indigo-900 shadow-black px-4 shadow-md bg-blackPaper">
+            <div className="w-screen h-[450px] grid grid-cols-2 pt-20  shadow-black px-4 shadow-md bg-blackPaper">
                     <p className="text-center text-slate-300 text-5xl font-mono">Welcome to the Head Family!
                         <p className="flex text-slate-300 text-lg p-6">We are the head family! Just The Heads is a small company founded by three
                         best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 

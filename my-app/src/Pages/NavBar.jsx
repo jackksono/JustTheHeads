@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Link, Route, Routes} from "react-router-dom";
-import { Navbar } from 'react-bootstrap'
+import Headroom from 'react-headroom';
 
 import Home from "./Home";
 import ContactUs from "./NavBarTabs/ContactUs";
@@ -41,8 +41,8 @@ const NavBarComponent = () => {
 
     return (
         <>
-        <Navbar className="fixed w-screen bg-orange-200 h-[100px] z-10 drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay">
-          <Navbar.Collapse className="justify-content-end">
+        <nav className="fixed w-screen bg-orange-100 h-[100px] z-10 drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
+        
             <div className="flex justify-between px-20 mt-1">
                   <span className="bg-primary-500 text-black text-sm italic">
                     <RingVolumeIcon/>Questions? Holla At Us @ xxx-xxx-xxxx</span>
@@ -84,10 +84,10 @@ const NavBarComponent = () => {
               className="h-[200px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
             </div>
         
-            <div className="flex justify-between w-full h-full px-20 mt-10">
+            <div className="flex justify-between w-full h-full px-20">
               <div className="flex items-center gap-10">
                 <Link to="/">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200">
+                  <button className="bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit text-lg font-semibold duration-200">
                     Home
                   </button>
                 </Link>
@@ -96,26 +96,25 @@ const NavBarComponent = () => {
               <div className="flex items-center gap-10">
 
                 <Link to="/all-products">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200"
+                  <button className="bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit text-lg font-semibold duration-200"
                   data-collapse-toggle="navbar-dropdown">
                     All Products
                   </button>
                 </Link>
 
                 <Link to="/why-just-the-head">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200">Why Just The Head?</button>
+                  <button className="bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit text-lg font-semibold duration-200">Why Just The Head?</button>
                 </Link>
 
                 <span className="flex" >
-                    <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200"
+                    <button className="bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit text-lg font-semibold duration-200"
                     onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                     <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                 </span>
               </div>
             </div>
-          </Navbar.Collapse>
-        </Navbar>
-
+          
+        </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts/>} />
@@ -128,6 +127,7 @@ const NavBarComponent = () => {
         {/* <Route path="/search" element={<SearchBar/>} /> */}
       </Routes>
     </>
+    
     )
 }
 
