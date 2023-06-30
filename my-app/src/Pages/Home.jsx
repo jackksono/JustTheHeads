@@ -20,8 +20,8 @@ const slides = [
     {url:Bag2},
     {url:Bag3}
 ]
-const delay = 3000
 
+const delay = 5000
 
 const Home = () => {
 
@@ -64,11 +64,11 @@ const Home = () => {
                 className="w-full h-full rounded-2xl bg-center bg-cover ease-in opacity-95">
                 </div>
                 {/* Left Arrow */}
-                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer">
+                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowBackIosIcon onClick={prevSlide} size={30}/>
                 </div>
                 {/* Right Arrow */}
-                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer">
+                <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                 </div>
                 

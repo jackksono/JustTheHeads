@@ -26,7 +26,7 @@ const CheckOut = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center  pt-48 text-lg">
+        <div className="flex flex-col justify-center items-center pt-28 text-lg">
             {cart.getTotal() > 0 ?
             <div>
                 <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
@@ -49,7 +49,7 @@ const CheckOut = () => {
                     onClick={checkout}
                 > Checkout </button>
             </div>
-            : <h1 className="text-red-300">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
+            : <h1 className="text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
         </div>
     )
 }

@@ -48,42 +48,42 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 bg-red-500 bg-opacity-75 rounded-xl shadow-2xl" onClick={click} >
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 h-[700px] bg-red-900 bg-opacity-90 rounded-xl shadow-2xl duration-500" onClick={click} >
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex pr-5 justify-end text-2xl text-black'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>
-            <h1 className="flex justify-center text-black pl-10 text-4xl ">How's The <span className="text-orange-300">Head?</span></h1>
+            <h1 className="flex justify-center text-white pl-10 text-4xl">How's The <span className="text-orange-600 italic underline">Head?</span></h1>
             
                 
-            <div className="text-lg text-black pl-6">
+            <div className="text-lg text-white pl-6 italic">
                 <span className="pl-3">Name:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl shadow-lg" 
                 type='text' name='name' id="" onChange={handleChange} value={data.name} placeholder="Enter name"/>
             </div>
 
-            <div className="text-lg text-black pl-6">
+            <div className="text-lg text-white pl-6 italic">
                 <span className="pl-3">Email:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl shadow-lg" 
                 type='email' name='email' id="" onChange={handleChange} value={data.email} placeholder="example@gmail.com"/>
             </div>
 
-            <div className="text-lg text-black pl-6">
+            <div className="text-lg text-white pl-6 italic">
                 <span className="pl-3">Phone#:</span>
-                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl" 
+                <input className="m-3 justify-center w-11/12 p-1 flex border-solid border-2 border-black text-lg rounded-xl shadow-lg" 
                 type='phone' name='phone' id="" onChange={handleChange} value={data.phone} placeholder="+1 (xxx)-xxx-xxxx"/>
             </div>
 
-            <div className="text-lg text-black pl-6">
+            <div className="text-lg text-white pl-6 italic">
                 <span className="pl-3">Message:</span>
-                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex text-lg rounded-xl" 
-                name='message' id='' cols='30' rows='10' onChange={messageChange} value={message} placeholder="Enter message here..."/>
+                <textarea className="border-solid border-2 p-1 border-black m-3 justify-center w-11/12  flex text-lg rounded-xl shadow-lg" 
+                name='message' id='' cols='30' rows='7' onChange={messageChange} value={message} placeholder="Enter message here..."/>
             </div>
             
-            <h2 className= "pt-5 text-lg text-black text-center justify-center">{result ? <Result/> : null}</h2>  {/*Hidden message has been sent*/}
+            <h2 className= "pt-5 text-lg text-white text-center justify-center">{result ? <Result/> : null}</h2>  {/*Hidden message has been sent*/}
             <div className="justify-center items-center text-center">
-                <button className="w-1/4 bg-cyan-500 text-white rounded-xl hover:text-cyan-500 hover:bg-white" type='submit'>Send</button>
+                <button className="w-1/4 p-2 bg-cyan-500 text-white rounded-xl hover:text-cyan-500 hover:bg-white" type='submit'>Send</button>
             </div>    
          </form>  
     </div>
