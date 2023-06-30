@@ -49,20 +49,20 @@ const NavBarComponent = () => {
                   
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
-                        <button className="flex justify-end bg-primary-500 text-black hover:text-white">
+                        <button className="flex justify-end bg-primary-500 text-black hover:text-white hover:scale-125 transition duration-150 ease-in-out">
                             <PersonIcon/>
                         </button>
                     </Link>    
                     <span>
                         <button 
-                          className="flex justify-end bg-primary-500 text-black hover:text-white"
+                          className="flex justify-end bg-primary-500 text-black hover:text-white hover:scale-125 transition duration-150 ease-in-out"
                           onClick={() => searchBarSetButtonPopUp(true)}>
                             <SearchIcon/>
                         </button>
                         <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
                     </span>
                     <Link to="/checkout">
-                        <button className="flex text-right bg-primary-500 text-black hover:text-white">
+                        <button className="flex text-right bg-primary-500 text-black hover:text-white hover:scale-125 transition duration-150 ease-in-out">
                             <ShoppingCartIcon/>
                               {productCount > 0 ?
                               <div className="relative w-[20px] h-[30px]">
@@ -87,7 +87,7 @@ const NavBarComponent = () => {
             <div className="flex justify-between w-full h-full px-20 mt-10">
               <div className="flex items-center gap-10">
                 <Link to="/">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit">
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200">
                     Home
                   </button>
                 </Link>
@@ -96,18 +96,18 @@ const NavBarComponent = () => {
               <div className="flex items-center gap-10">
 
                 <Link to="/all-products">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit"
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200"
                   data-collapse-toggle="navbar-dropdown">
                     All Products
                   </button>
                 </Link>
 
                 <Link to="/why-just-the-head">
-                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit">Why Just The Head?</button>
+                  <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200">Why Just The Head?</button>
                 </Link>
 
                 <span className="flex" >
-                    <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit"
+                    <button className="bg-primary-500 text-color-shrimp hover:text-white font-Kanit text-lg font-semibold duration-200"
                     onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                     <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                 </span>
