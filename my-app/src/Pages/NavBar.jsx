@@ -40,8 +40,10 @@ const NavBarComponent = () => {
   
 
     return (
+      
         <>
-        <nav className="fixed w-screen bg-orange-100 h-[100px] z-10 drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
+        <Headroom>
+        <nav className="w-screen p-2 top-0 inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
         
             <div className="flex justify-between px-20 mt-1">
                   <span className="bg-primary-500 text-black text-sm italic">
@@ -76,13 +78,14 @@ const NavBarComponent = () => {
               
                 </div>
             </div>
-
+            
             <div className="">
               <img 
               src={Logo1}
               alt="logo"
               className="h-[200px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
             </div>
+            
         
             <div className="flex justify-between w-full h-full px-20">
               <div className="flex items-center gap-10">
@@ -113,8 +116,10 @@ const NavBarComponent = () => {
                 </span>
               </div>
             </div>
-          
+            
         </nav>
+        </Headroom>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/all-products" element={<AllProducts/>} />
@@ -126,6 +131,7 @@ const NavBarComponent = () => {
         <Route path="/products/:webId" element={<IndividualProduct/>} />
         {/* <Route path="/search" element={<SearchBar/>} /> */}
       </Routes>
+      
     </>
     
     )

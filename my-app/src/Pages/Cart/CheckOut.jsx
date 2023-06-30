@@ -49,7 +49,7 @@ const CheckOut = () => {
                     onClick={checkout}
                 > Checkout </button>
             </div>
-            : <h1 className="text-black">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
+            : <h1 className="text-red-300">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
         </div>
     )
 }

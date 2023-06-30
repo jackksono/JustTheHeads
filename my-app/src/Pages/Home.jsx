@@ -12,7 +12,7 @@ import Footer from "./Footer"
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {RxDotFilled} from 'react-icons/rx'
-import  Navbar  from "./NavBar"
+
 
 
 const slides = [
@@ -57,8 +57,8 @@ const Home = () => {
    
 
     return (
-        
-        <div className="overflow-auto pt-20 bg-orange-200 bg-drop-shadow-4xl bg-smoke bg-texture bg-cover bg-center bg-blend-color-burn shadow-lg ">
+        <div>
+        <div className="overflow-auto bg-orange-200 bg-drop-shadow-4xl bg-smoke bg-texture bg-cover bg-center bg-blend-color-burn shadow-lg ">
             <div className=" h-screen w-screen m-auto pb-16 px-4 relative group">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
                 className="w-full h-full rounded-2xl bg-center bg-cover ease-in opacity-95">
@@ -103,6 +103,7 @@ const Home = () => {
             <div>
                 <Footer></Footer>
             </div>
+        </div>
         </div>
     )
 }
