@@ -28,6 +28,8 @@ module.exports = {
         'lightning': "url('../src/Images//BlendImages/Lightning.jpg')",
         'blackPaper': "url('../src/Images//BlendImages/BlackPaper.jpg')",
         'smoke': "url('../src/Images//BlendImages/Smoke1.png')",
+        'layeredPeak1': "url('../src/Images//SVG/LayeredPeak1.svg')",
+        'layeredPeak1.2': "url('../src/Images//SVG/LayeredPeak1.2.svg')",
       },
     },
   },

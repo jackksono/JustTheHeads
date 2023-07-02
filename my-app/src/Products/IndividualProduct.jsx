@@ -42,8 +42,8 @@ const IndividualProduct = (props) => {
                     <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
                 </h2>
                 :
-                <h2 className="flex justify-center pt-20 text-sm text-center">
-                    <button className="flex justify-center text-center items-center bg-transparent text-sm border-2 border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
+                <h2 className="flex justify-center pt-16 text-sm text-center">
+                    <button className="flex justify-center text-center items-center bg-transparent text-sm border-2  border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
                         onClick={() => cart.addOneToCart(id)}
                         >
                         Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}

@@ -40,11 +40,11 @@ const NavBarComponent = () => {
     
     const onToggleMenu = () => {
       const navLinks = document.querySelector('.nav-links')
-      console.log(navLinks)
+      // console.log(navLinks)
       let tag = document.getElementById("menu")
-      console.log(tag.name)
+      // console.log(tag.name)
       tag.name = tag.name === "close" ? "menu" : "close"
-      console.log(navLinks.classList)
+      // console.log(navLinks.classList)
       navLinks.classList.toggle('hidden')
     }
   
@@ -128,7 +128,7 @@ const NavBarComponent = () => {
                       <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit">Why Just The Head?</button>
                     </Link>
 
-                    <span className="flex" >
+                    <span className="" >
                         <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
                         onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                         <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>

@@ -8,13 +8,11 @@ const ContactUs = (props) => {
     const [ result, showResult ] = useState(false)
     const [ validEmail, setValidEmail ] = useState(false)
 
-    // const ref = useClickAway(() => {
-    //     const close = () => props.setTrigger(false);
-    //     close()
-    //   });
-    const click = e => {
-        document.addEventListener('click', console.log('click'));
-      };
+    const ref = useClickAway(() => {
+        const close = () => props.setTrigger(false);
+        close()
+      });
+    
 
     const Result = () => {
         return (
@@ -52,7 +50,7 @@ const ContactUs = (props) => {
     }
 
     const sendMail = (e) => { //EmailJS documentation
-        console.log(e)
+       // console.log(e)
         e.preventDefault()
         if(!validEmail) {
             emailjs
@@ -72,7 +70,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 h-[720px] bg-orange-600 bg-opacity-90 rounded-xl shadow-2xl duration-500" onClick={click} >
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 h-[720px] bg-orange-600 bg-opacity-90 rounded-xl shadow-2xl duration-500" ref={ref} >
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex justify-end pr-5 text-2xl text-black'>    

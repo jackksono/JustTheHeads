@@ -13,8 +13,8 @@ const Product = (props) => {
 
     return (
         <>
-        <div className="flex flex-col justify-center items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl">
-            <div>
+        <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl">
+           
             <img 
                 src={productImage} 
                 alt="productImage"
@@ -24,12 +24,12 @@ const Product = (props) => {
             </img>
             <Link
             to={`/products/${webId}`}
-            className="lg:text-sm italic text-[6px]"
+            className="lg:text-sm italic text-[6px] pr-12 lg:pr-40"
             >More Info...</Link>
-            </div>
-            <div className="text-center  lg:m-2">
-                <p className="font-bold text-black">
-                    <b className="font-serif font-bold lg:text-xl text-[8px] ">{productName}</b>
+            
+           
+                <p className="font-bold text-black lg:pt-3 ">
+                    <b className="font-serif font-bold lg:text-xl text-[8px] p-0 ">{productName}</b>
                 </p>
                 <p className="relative lg:mt-2 lg:text-lg text-[6px] text-center">${price}</p>
                 
@@ -54,7 +54,7 @@ const Product = (props) => {
                     Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}
                 </button>
                 }
-            </div>
+            
         </div>
         </>
     )
