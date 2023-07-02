@@ -45,16 +45,16 @@ const NavBarComponent = () => {
         
         <Headroom>
           
-        <nav className="w-screen p-2 top-0 inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
+        <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
         
             <div className="flex lg:justify-between lg:px-20 lg:mt-1 sm:px-10">
-                  <span className="italic text-[10px] text-black md:text-sm sm:text-xs bg-primary-500">
+                  <span className="italic text-black lg:text-sm text-[10px] bg-primary-500">
                     <RingVolumeIcon/>Questions? Holla At Us @ xxx-xxx-xxxx</span>
                   
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
                         <button className="flex justify-end text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125">
-                            <PersonIcon/>
+                            <PersonIcon className="text-[5px]"/>
                         </button>
                     </Link>    
                     <span>

@@ -18,31 +18,31 @@ const IndividualProduct = (props) => {
     
 
   return (
-    <div className='pt-48 overflow-auto'>
-        <button className='flex pl-8'
+    <div className='pt-40 overflow-auto lg:pt-40'>
+        <button className='flex pl-4 text-xs lg:pl-8 lg:text-xl'
             onClick={() =>navigate('/all-products')}
         >Back
         </button>
-        <h1 className='text-4xl text-black text-center'>{productName}</h1>
-        <div className='flex p-8'>
+        <h1 className='text-center text-black lg:text-4xl'>{productName}</h1>
+        <div className='flex lg:p-8'>
             <img 
                 src={productImage}
                 alt='productImage'
-                className='h-[800px] w-[600px]'>
+                className='lg:h-[800px] lg:w-[600px] h-[200px] w-[150px]'>
             </img>
-            <div className='w-[700px] h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px] p-5'>
-                <p className='relative text-black '>Description:</p>
-                <h1 className="text-black items-center justify-center text-center p-5">{description}</h1>
+            <div className='lg:w-[700px] w-[250px] p-2 h-[100px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:p-5'>
+                <p className='relative text-[15px] text-black lg:text-2xl'>Description:</p>
+                <h1 className="items-center justify-center text-[10px] lg:text-lg text-center text-black lg:p-5">{description}</h1>
 
                 {productQuantity > 0 ?
                 
-                <h2 className="flex justify-center text-center text-sm pt-20">
+                <h2 className="flex justify-center pt-20 text-sm text-center">
                     <button className='cursor-pointer' onClick={() => cart.deleteOneFromCart(id)}> - </button>
                     <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
                 </h2>
                 :
-                <h2 className="flex justify-center text-center text-sm pt-20">
+                <h2 className="flex justify-center pt-20 text-sm text-center">
                     <button className="flex justify-center text-center items-center bg-transparent text-sm border-2 border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
                         onClick={() => cart.addOneToCart(id)}
                         >

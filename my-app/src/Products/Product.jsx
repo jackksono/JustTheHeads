@@ -13,7 +13,7 @@ const Product = (props) => {
 
     return (
         <>
-        <div className="flex flex-col justify-center items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] p-2 rounded-b-2xl">
+        <div className="flex flex-col justify-center items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl">
             <div>
             <img 
                 src={productImage} 
@@ -27,7 +27,7 @@ const Product = (props) => {
             className="lg:text-sm italic text-[6px]"
             >More Info...</Link>
             </div>
-            <div className="text-center lg:m-2">
+            <div className="text-center  lg:m-2">
                 <p className="font-bold text-black">
                     <b className="font-serif font-bold lg:text-xl text-[8px] ">{productName}</b>
                 </p>
@@ -35,15 +35,15 @@ const Product = (props) => {
                 
                 {productQuantity> 0 ? 
                 <>
-                    <h1 className='lg:m-2 lg:text-sm text-[10px]font-bold text-center text-black'>In Cart: {productQuantity}</h1>
+                    <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black'>In Cart: {productQuantity}</h1>
                     <div className="flex items-center justify-center lg:text-sm text-[xs]">
-                        <button className='cursor-pointer' onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                        <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                        <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
+                        <button className='cursor-pointer lg:text-lg text-[10px]' onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                        <input className='text-center lg:text-sm text-[6px] w-[50px] h-[10px] lg:w-[200px] lg:h-[25px] ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                        <button className='cursor-pointer lg:text-lg text-[10px]' onClick={() => cart.addOneToCart(id)}> + </button>
                     </div>
                     <button
                     onClick={() => navigate('/checkout')}
-                    className="text-sm text-black bg-red-300 border-2 border-black lg:w-full lg:mt-2 rounded-2xl">
+                    className="text-[6px] mt-0 text-black w-[50px] bg-red-300 border-2 border-black lg:text-sm lg:w-full lg:mt-2 rounded-2xl">
                         Checkout
                     </button>
                 </>
