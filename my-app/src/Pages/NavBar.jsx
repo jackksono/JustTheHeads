@@ -47,8 +47,8 @@ const NavBarComponent = () => {
           
         <nav className="w-screen p-2 top-0 inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
         
-            <div className="flex justify-between px-20 mt-1 sm:px-10">
-                  <span className="italic text-black md:text-sm sm:text-xs bg-primary-500">
+            <div className="flex lg:justify-between lg:px-20 lg:mt-1 sm:px-10">
+                  <span className="italic text-[10px] text-black md:text-sm sm:text-xs bg-primary-500">
                     <RingVolumeIcon/>Questions? Holla At Us @ xxx-xxx-xxxx</span>
                   
                   <div className="flex items-center gap-5 mt-1">
@@ -85,7 +85,7 @@ const NavBarComponent = () => {
               <img 
               src={Logo1}
               alt="logo"
-              className="h-[200px] w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
+              className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
             </div>
             
             <button data-collapse-toggle="navbar-default" className="inline-flex items-center justify-end p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
