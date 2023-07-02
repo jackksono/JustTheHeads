@@ -7,56 +7,48 @@ const AboutUs = () => {
             <div className="pt-48">
                 <div className="w-screen h-[200px]">
                     <h1 className="text-center text-black text-7xl font-YsabeauSC">Why Just The Heads?</h1>
-                    <div className="grid grid-cols-2">
-                        <p>You have chosen head</p>
+                    <div className="grid grid-cols-2 p-20 pt-10 text-center text-black">
+                        <p>You have chosen head. 
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis qui libero consequatur id. Accusantium nostrum consequatur soluta nemo neque? Nemo, mollitia et voluptates assumenda voluptatum ut molestias perferendis provident architecto?
+                        </p>
                         <img src="" alt="JustHeads"></img>
                     </div>
                 </div>
             
-                <div className="pt-20  text-orange-500">
-                    <h1 className="text-7xl text-center pt-10">Meet the Team!</h1>
+                <div className="pt-20 text-orange-500">
+                    <h1 className="pt-10 text-center text-7xl">Meet the Team!</h1>
                     </div>
-                        <div className="pl-5 pr-20 grid grid-cols-2 w-screen rounded-lg overflow-hidden shadow pt-5">
+                        <div className="grid w-screen grid-cols-2 pt-5 pl-5 pr-20 overflow-hidden rounded-lg shadow">
                             <h1 className="text-2xl italic text-black">Jack Sonoda
-                                <p className="flex text-sm not-italic pt-5">
-                                Hello - my name is Jack Sonoda. Previously, I was a scientist working in the research and development of new and upcoming 
-                                lateral flow diagnostic assays and made the change to learn and become the software engineer I am today. I have a lot of 
-                                experience in all aspects of the diagnostic field since my previous company was very small. Fun fact,  most of Covid-19 
-                                tests on the markets and the ones that were sent out by the government for free were created by me and a small team! I have 
-                                also had a huge contribution and involvement across many other projects involving the research and development of new and 
-                                upcoming diagnostic assays.
-
-                                <p1 className="flex not-italic text-sm p-6 text-black">
-                                Now, I am a full stack software engineer who likes to code applications and solve problems on a daily basis. 
-                                I am extremely passionate about TypeScript, React, Redux, Express, SQL, and noSQL databases when coding out large or 
-                                small scale applications.  I recently did a sponsored tech-talk by JEENY and Bractlet that was focused on the topic of 
-                                React Hooks and why I prefer them over class components. In my free time outside of coding, I enjoy many activities and hobbies such 
-                                as hiking, going to the beach, and competitive online games with friends. Most recently, I had the opportunity to work on an open source 
-                                project called Swell which is an electron desktop application used to test endpoints over multiple streaming technologies.
+                                <p className="flex pt-5 text-lg not-italic">
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quidem debitis modi iste voluptates amet, excepturi officia, harum laborum suscipit odio laboriosam rerum eum! Quas labore recusandae accusantium similique modi?
+                                </p>
+                                <p1 className="flex pt-5 text-lg not-italic">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, optio facilis accusantium perspiciatis harum ullam quaerat provident. Sapiente sequi nisi quidem dignissimos? Dignissimos eligendi illum deleniti! Optio esse accusamus id.
                                 </p1>
-                                </p>
                             </h1>
-                            <img className="rounded-full w-96 h-96 shadow-xl ml-auto"  alt="JacksIMG"></img> 
+                            <img className="ml-auto rounded-full shadow-xl w-96 h-96"  alt="JacksIMG"></img> 
                         </div>
-                        <div className="pl-20 pr-5 justify-end grid grid-cols-2 w-screen rounded-lg overflow-hidden shadow pt-5">
-                            <img className="rounded-full w-96 h-96 shadow-xl"  alt="JacobsIMG"></img>
+                        <div className="grid justify-end w-screen grid-cols-2 pt-5 pl-20 pr-5 overflow-hidden rounded-lg shadow">
+                            <img className="rounded-full shadow-xl w-96 h-96"  alt="JacobsIMG"></img>
                             <h1 className="text-2xl italic text-black">Jacob Zinger
-                                <p className="flex not-italic text-lg pt-5">
-                                Filler filler filler
+                                <p className="flex pt-5 text-lg not-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quasi animi repellat, beatae voluptatibus modi itaque veritatis consequatur accusantium dolore doloribus vitae libero dicta tempora. Temporibus modi quas quod sapiente!
                                 </p>
+                                <p1 className="flex pt-5 text-lg not-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae assumenda voluptatum id sed soluta nisi eveniet natus quia alias, doloremque vitae laboriosam unde odit earum iure deserunt similique consequuntur provident!</p1>
                             </h1>
                         </div>
-                        <div className="pl-5 pr-20 grid grid-cols-2 w-screen rounded-lg overflow-hidden shadow pt-5">
+                        <div className="grid w-screen grid-cols-2 pt-5 pl-5 pr-20 overflow-hidden rounded-lg shadow">
                             
                             <h1 className="text-xl italic text-black">Christian Digap
-                                <p className="flex not-italic text-lg pt-5 text-black">
-                                Filler
+                                <p className="flex pt-5 text-lg not-italic text-black">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam rerum nostrum illo temporibus atque necessitatibus eos rem quidem aut fugit sed, illum veniam deleniti reiciendis ab tenetur blanditiis eius provident.
                                 </p>
-                                <p1 className="flex not-italic text-lg pt-5 text-black">
-                                Filler
+                                <p1 className="flex pt-5 text-lg not-italic text-black">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae voluptatum natus incidunt ea porro enim quaerat, id ab ducimus provident, iste rem deserunt unde aperiam in nam doloremque at!
                                 </p1>
                             </h1>
-                            <img className="rounded-full w-96 h-96 shadow-xl ml-auto" alt="ChristiansIMG"></img>
+                            <img className="ml-auto rounded-full shadow-xl w-96 h-96" alt="ChristiansIMG"></img>
                         </div>
                 </div>
             <footer class="bottom-0 ">

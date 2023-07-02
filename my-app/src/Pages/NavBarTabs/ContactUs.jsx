@@ -24,7 +24,7 @@ const ContactUs = (props) => {
 
     const EmailResponse = () => {
         return (
-            <p>Please enter a valid email</p>
+            <p>**Please enter a valid email**</p>
         )
     }
 
@@ -90,7 +90,7 @@ const ContactUs = (props) => {
                 <span className="pl-3">Email:</span>
                 <input className="flex justify-center w-11/12 p-1 m-3 text-lg border-2 border-black border-solid shadow-lg focus:outline-none focus:border-rose-600 focus:border-4 rounded-xl" 
                 type='email' name='email' id="" onChange={twoCalls}  value={data.email} placeholder="example@gmail.com"/>
-                <h2 className= "text-xl font-semibold text-center text-red-900 ">{validEmail ? <EmailResponse/> : null }</h2>  {/*Hidden message has been sent*/}
+                <h2 className= "font-semibold text-center text-red-900 underline text-md ">{validEmail ? <EmailResponse/> : null }</h2>  {/*Hidden message has been sent*/}
             </div>
 
             <div className="pl-6 text-lg italic text-black">

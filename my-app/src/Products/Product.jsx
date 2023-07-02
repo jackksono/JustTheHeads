@@ -13,12 +13,12 @@ const Product = (props) => {
 
     return (
         <>
-        <div className="flex flex-col justify-center items-center w-[300px] h-[350px] m-[100px] rounded-b-2xl">
+        <div className="flex flex-col justify-center items-center md:w-[300px] md:h-[350px] md:m-[100px] sm:w-full sm:p-2 rounded-b-2xl">
             <div>
             <img 
                 src={productImage} 
                 alt="productImage"
-                className="flex w-[300px] h-[350px] cursor-pointer"
+                className="flex md:w-[300px] md:h-[350px] sm:h-[25px] sm:w-[15px] cursor-pointer"
                 onClick={() => navigate(`/products/${webId}`)}>
                 
             </img>
@@ -28,28 +28,28 @@ const Product = (props) => {
             >More Info...</Link>
             
             </div>
-            <div className="m-[20px] text-center text-2xl">
-                <p className="text-black font-bold">
-                    <b className="font-bold font-serif ">{productName}</b>
+            <div className="m-2 text-center">
+                <p className="font-bold text-black">
+                    <b className="font-serif font-bold ">{productName}</b>
                 </p>
-                <p className="relative mt-2 text-center text-lg">${price}</p>
+                <p className="relative mt-2 text-lg text-center">${price}</p>
                 
                 {productQuantity> 0 ? 
                 <>
-                    <h1 className='counterHandler text-center text-sm text-black font-bold m-5'>In Cart: {productQuantity}</h1>
-                    <div className="text-sm justify-center items-center">
+                    <h1 className='m-2 text-sm font-bold text-center text-black'>In Cart: {productQuantity}</h1>
+                    <div className="flex items-center justify-center text-sm">
                         <button className='cursor-pointer' onClick={() => cart.deleteOneFromCart(id)}> - </button>
                         <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                         <button className='cursor-pointer' onClick={() => cart.addOneToCart(id)}> + </button>
                     </div>
                     <button
                     onClick={() => navigate('/checkout')}
-                    className="text-black text-sm border-2 border-black rounded-2xl bg-red-300 w-[200px]">
+                    className="w-full mt-2 text-sm text-black bg-red-300 border-2 border-black rounded-2xl">
                         Checkout
                     </button>
                 </>
                 :
-                <button className="bg-transparent text-sm text-center items-center justify-center border-2 border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
+                <button className="bg-transparent text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer min-w-[100px] px-2 py-1 mt-2 "
                     onClick={() => cart.addOneToCart(id)}
                     >
                     Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}
