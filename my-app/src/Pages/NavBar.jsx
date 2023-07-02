@@ -24,7 +24,6 @@ import Logo1 from "../Images/SiteImages/Logo1.png"
 
 
 
-
 const NavBarComponent = () => {
 
     const [ contactUsButtonPopUp, contactUsSetButtonPopUp ] = useState(false)
@@ -37,6 +36,17 @@ const NavBarComponent = () => {
     // const handleShow = () => setShow(true)
 
     const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
+    
+    
+    const onToggleMenu = () => {
+      const navLinks = document.querySelector('.nav-links')
+      console.log(navLinks)
+      let tag = document.getElementById("menu")
+      console.log(tag.name)
+      tag.name = tag.name === "close" ? "menu" : "close"
+      console.log(navLinks.classList)
+      navLinks.classList.toggle('hidden')
+    }
   
 
     return (
@@ -87,25 +97,27 @@ const NavBarComponent = () => {
               alt="logo"
               className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
             </div>
+            <div className="pt-6 text-2xl text-black lg:hidden">
+              <button >
+                  <ion-icon name="close" id="menu" onClick={onToggleMenu} ></ion-icon>
+                </button>
+            </div>
             
-            <button data-collapse-toggle="navbar-default" className="inline-flex items-center justify-end p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-            </button>
-            <div class="hidden pt-8 w-full px-10 md:block md:w-auto " id="navbar-default">
-              <ul class="font-medium flex flex-col justify-between w-full h-full px-20 p-4 md:p-0 mt-4 pb-4   md:flex-row md:space-x-8 md:mt-0">
+            <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-12 lg:px-10 lg:block lg:w-auto ">
+              <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0">
                 
-                  <div className="flex items-center gap-10 ">
+                  <div className="flex items-center lg:bg-transparent lg:gap-10 ">
                     <Link to="/">
-                      <button className="text-lg font-semibold duration-200 bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit">
+                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit">
                         Home
                       </button>
                     </Link>
                   </div>
                 
-                  <div className="flex items-center gap-10">
+                  <div className="left-0 flex flex-col lg:flex-row lg:bg-transparent lg:items-center lg:flex-non lg:gap-10">
                   
                     <Link to="/all-products">
-                      <button className="md:text-lg md:font-semibold md:duration-200 md:bg-primary-500 md:text-color-shrimp md:hover:text-orange-900 font-Kanit"
+                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 md:bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
                       data-collapse-toggle="navbar-dropdown">
                         All Products
                       </button>
@@ -113,17 +125,18 @@ const NavBarComponent = () => {
                     
 
                     <Link to="/why-just-the-head">
-                      <button className="text-lg font-semibold duration-200 bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit">Why Just The Head?</button>
+                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit">Why Just The Head?</button>
                     </Link>
 
                     <span className="flex" >
-                        <button className="text-lg font-semibold duration-200 bg-primary-500 text-color-shrimp hover:text-orange-900 font-Kanit"
+                        <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
                         onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
                         <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                     </span>
                   </div>
               </ul>
             </div>
+            
             
         </nav>
         </Headroom>

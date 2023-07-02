@@ -52,6 +52,7 @@ const ContactUs = (props) => {
     }
 
     const sendMail = (e) => { //EmailJS documentation
+        console.log(e)
         e.preventDefault()
         if(!validEmail) {
             emailjs
