@@ -8,7 +8,7 @@ const ContactUs = (props) => {
     const [ result, showResult ] = useState(false)
     const [ validEmail, setValidEmail ] = useState(false)
 
-    const ref = useClickAway(() => {
+    const clickAway = useClickAway(() => {
         const close = () => props.setTrigger(false);
         close()
       });
@@ -70,7 +70,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 h-[720px] bg-orange-600 bg-opacity-90 rounded-xl shadow-2xl duration-500" ref={ref} >
+        <div className="fixed overflow-auto inset-x-0 mx-auto w-1/2 h-[720px] bg-orange-600 bg-opacity-90 rounded-xl shadow-2xl duration-500" ref={clickAway} >
        
         <form className="" method="post" onSubmit={sendMail}>
             <div className='flex justify-end pr-5 text-2xl text-black'>    

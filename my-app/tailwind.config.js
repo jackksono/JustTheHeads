@@ -29,7 +29,7 @@ module.exports = {
         'blackPaper': "url('../src/Images//BlendImages/BlackPaper.jpg')",
         'smoke': "url('../src/Images//BlendImages/Smoke1.png')",
         'layeredPeak1': "url('../src/Images//SVG/LayeredPeak1.svg')",
-        'layeredPeak1.2': "url('../src/Images//SVG/LayeredPeak1.2.svg')",
+        'blob1': "url('../src/Images//SVG/Blob1.svg')",
       },
     },
   },

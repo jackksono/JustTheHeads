@@ -13,15 +13,17 @@ const Product = (props) => {
 
     return (
         <>
-        <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl">
-           
+        <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl  ">
+        
             <img 
                 src={productImage} 
                 alt="productImage"
-                className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[75px] cursor-pointer"
+                className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[75px] cursor-pointer relative "
                 onClick={() => navigate(`/products/${webId}`)}>
-                
             </img>
+           
+            
+                
             <Link
             to={`/products/${webId}`}
             className="lg:text-sm italic text-[6px] pr-12 lg:pr-40"
