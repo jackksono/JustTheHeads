@@ -3,12 +3,18 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
+import { useClickAway } from "@uidotdev/usehooks";
 
 
 const SearchBar = (props) => {
     const navigate = useNavigate()
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
+
+    const ref = useClickAway(() => {
+        const close = () => props.setTrigger(false);
+        close()
+      });
 
     const handleFilter = (e) => {
         const searchWord = e.target.value;
@@ -30,13 +36,13 @@ const SearchBar = (props) => {
     }
  
   return (props.trigger) ? (
-    <div className='fixed overflow-auto inset-x-0 h-screen w-screen bg-gray-500 bg-opacity-75 rounded-xl'>
-            <div className='flex pr-12 justify-end text-2xl text-black'>    
+    <div className='fixed mt-20 lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-500 bg-opacity-75 h-[400px] lg:h-screen rounded-xl' ref={ref}>
+            <div className='flex justify-end pr-12 text-2xl text-black'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>
-        <div className='flex mt-[200px] justify-center text-[18px]'>
+        <div className='flex lg:mt-[200px] mt-10 justify-center text-[18px]'>
             <input type='text' placeholder='Enter a product name...'
-            className='bg-white border-0 p-8 h-[30px] w-[300px] justify-center'
+            className='bg-white border-0 mb-20 lg:mb-0 p-8 h-[15px] lg:h-[30px] lg:w-[300px] w-[150px] justify-center'
             onChange={handleFilter}
             value={wordEntered}>
             </input>

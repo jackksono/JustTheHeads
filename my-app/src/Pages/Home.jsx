@@ -84,24 +84,22 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-            <div className="text-center p-8 text-5xl text-black font-Caprasimo delay-[300ms]">
+            <div className="text-center p-8 lg:text-5xl text-3xl text-black font-Caprasimo delay-[300ms]">
                 <p>No more Shrimp Chips, get a-Head of the competition!</p>
             </div>
-            <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[200px] grid grid-cols-2 lg:pt-20 pt-4  shadow-black px-4 shadow-md bg-layeredPeak1 bg-cover bg-no-repeat bg-center">
+            <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[200px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-cover bg-no-repeat bg-center">
                 
-                    <p className="pr-2 font-mono text-center text-black lg:text-5xl lg:pt-40 text-md">Welcome to the Head Family!
+                    <p className="pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-0 text-md">Welcome to the Head Family!
                     
-                        <p className="flex pt-2 text-[7px] lg:pt-24 lg:text-lg lg:p-6 text-black">We are the head family! Just The Heads is a small company founded by three
+                        <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black">We are the head family! Just The Heads is a small company founded by three
                         best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
                         and turning them into a sustainable, yet delicious snack! With millions of pounds of shrimp shells and heads going to waste
                         each year, support Just The Heads one head and one bag at a time in finding a solution to eliminate food waste globally. </p>
                     </p>
-                    <img src={Welcome} alt="bag" className="content-center items-center justify-center lg:w-3/4 lg:h-[300px] w-[300px] h-[150px] shadow-lg rounded-lg shadow-black"></img> 
+                    <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img> 
                         
             </div>
-            <div className="h-[300px] w-screen bg-layeredPeak1.2  ">
-                {/* <img className="  h-[300px] w-[375px] items-end justify-end place-content-end" src={Welcome} alt='test'></img> */}
-            </div>
+           
             
             <div >
                 <FeaturedProducts></FeaturedProducts>
