@@ -6,40 +6,53 @@ import { Link } from "react-router-dom";
 const Product = (props) => {
     const navigate = useNavigate()
 
-    const { id, productName, price, productImage, webId } = props.data
+    const { id, productName, price, productImage, webId} = props.data
     const cart = useContext(ShopContext)
-
+    const { index, setIndex} = props;
     const productQuantity = cart.getProductQuantity(id)
-    let index = 0;
+    const blobArray = ['blob1', 'blob2', 'blob3', 'blob4'];
     
-    const blobToggle = () => {
+    const blobToggle = (e) => {
         console.log('mouse entered')
-        console.log(index)
+        // console.log(e.target.parentElement.querySelector('.blob-toggle').classList.toggle(`bg-${blobArray[index]}`)
         
-        const blobArray = ['blob1', 'blob2', 'blob3', 'blob4'];
-        if(index >= blobArray.length) index=0
-        const blob = document.querySelector('.blob-toggle');
+        console.log(index)
+        if(index >= blobArray.length) {setIndex(0)}
+        const element = e.target.parentElement.querySelector('.blob-toggle');
+        element.classList.add(`bg-${blobArray[index]}`)
+        console.log(element.classList)
+        // const blob = document.querySelectorAll('.blob-toggle');
+        // blob.forEach((element) => {
+        //     element.classList.toggle(`bg-${blobArray[index]}`);
+        // })
         // blob.classList.toggle(`bg-blob1`);
-        blob.classList.toggle(`bg-${blobArray[index]}`);
-        index++
+        setIndex(index + 1)
+        console.log(index);
+        
     }
 
-    const blobToggleOff = () => {
-        const blob = document.querySelector('.blob-toggle');
-        blob.classList.toggle('bg-none')
+    const blobToggleOff = (e) => {
+        const element = e.target.parentElement.querySelector('.blob-toggle');
+        element.classList.remove(`bg-${blobArray[index - 1]}`)
+        console.log(`bg-${blobArray[index]}`)
+        // const blob = document.querySelectorAll('.blob-toggle');
+        console.log('mouse left')
+        // blob.forEach((element) => {
+        //     element.classList.toggle('bg-none');
+        // })
     }
 
     return (
         <>
         <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl  ">
-        <div className="blob-toggle absolute z-{-1} transition-all duration-1000 bg-center mb-32 opacity-30  lg:h-[600px] lg:w-[600px]"></div>
+        <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30  lg:h-[600px] lg:w-[600px]"></div>
             <img 
                 src={productImage} 
                 alt="productImage"
                 className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[75px] cursor-pointer relative "
                 onClick={() => navigate(`/products/${webId}`)}
-                onMouseEnter={blobToggle}
-                onMouseLeave={blobToggleOff}>
+                onMouseLeave={e => blobToggleOff(e)}
+                onMouseOver={e => blobToggle(e)}>
             </img>
            
             
