@@ -30,6 +30,10 @@ module.exports = {
         'smoke': "url('../src/Images//BlendImages/Smoke1.png')",
         'layeredPeak1': "url('../src/Images//SVG/LayeredPeak1.svg')",
         'blob1': "url('../src/Images//SVG/Blob1.svg')",
+        'blob2': "url('../src/Images//SVG/Blob2.svg')",
+        'blob3': "url('../src/Images//SVG/Blob3.svg')",
+        'blob4': "url('../src/Images//SVG/Blob4.svg')",
+        'allProducts' : "url('../src/Images//BlendImages/BubblesBlend.jpg')"
       },
     },
   },
