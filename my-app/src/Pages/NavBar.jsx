@@ -39,6 +39,11 @@ const NavBarComponent = () => {
 
     const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
+    const clickAway = useClickAway(() => {
+      const navLinks = document.querySelector('.nav-links')
+      navLinks.classList.toggle('hidden')
+    })
+
     const twoFunctions = () => {
       toggleOff()
       const set = () => {contactUsSetButtonPopUp(true)}
@@ -72,27 +77,27 @@ const NavBarComponent = () => {
           
         <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
         
-            <div className="flex lg:justify-between lg:px-20 lg:mt-1 sm:px-10">
-                  <span className="italic text-black lg:text-sm text-[10px] bg-primary-500">
-                    <RingVolumeIcon />Questions? Holla At Us @ xxx-xxx-xxxx</span>
+            <div className="flex px-5 lg:justify-between lg:px-20 lg:mt-1">
+                  <span className="italic text-black lg:text-sm text-[12px] bg-primary-500">
+                    <RingVolumeIcon sx={{fontSize: 20}}/>Questions? Holla At Us @ xxx-xxx-xxxx</span>
                   
-                  <div className="flex items-center gap-5 mt-1">
+                  <div className="flex gap-5 pl-12 mt-1 lg:pl-0 lg:items-center">
                     <Link to="/login">
                         <button className="flex justify-end text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125">
-                            <PersonIcon sx={{fontSize: 10}}/>
+                            <PersonIcon sx={{fontSize: 20}}/>
                         </button>
                     </Link>    
                     <span>
                         <button 
                           className="flex justify-end text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125"
                           onClick={() => searchBarSetButtonPopUp(true)}>
-                            <SearchIcon/>
+                            <SearchIcon sx={{fontSize: 20}}/>
                         </button>
                         <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
                     </span>
                     <Link to="/checkout">
                         <button className="flex text-right text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125">
-                            <ShoppingCartIcon/>
+                            <ShoppingCartIcon sx={{fontSize: 20}}/>
                               {productCount > 0 ?
                               <div className="relative w-[20px] h-[30px]">
                                 <h1 className="relative justify-center text-center text-white rounded-full bg-red-500 text-[10px]">{productCount}</h1>
@@ -119,7 +124,8 @@ const NavBarComponent = () => {
             </div>
             
             <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-12 lg:px-10 lg:block lg:w-auto ">
-              <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0">
+              <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0"
+              ref={clickAway}>
                 
                   <div className="flex items-center lg:bg-transparent lg:gap-10 ">
                     <Link to="/">

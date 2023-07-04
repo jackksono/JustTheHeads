@@ -44,7 +44,7 @@ const Product = (props) => {
         if(index === 0) blobRemoveIndex = blobArray.length - 1; //element.classList.remove(`bg-blob4`)
         else blobRemoveIndex = index - 1; //else element.classList.remove(`bg-${blobArray[index -1 ]}`)
         element.classList.remove(`bg-${blobArray[blobRemoveIndex]}`)
-        console.log(`bg-${blobArray[index -1 ]}`)
+        console.log('blob removed:',`bg-${blobArray[index -1 ]}`)
         // const blob = document.querySelectorAll('.blob-toggle');
         console.log('mouse left')
         // blob.forEach((element) => {
@@ -62,7 +62,7 @@ const Product = (props) => {
                 className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[75px] cursor-pointer relative "
                 onClick={() => navigate(`/products/${webId}`)}
                 onMouseLeave={e => blobToggleOff(e)}
-                onMouseEnter={e => blobToggle(e)}>
+                onMouseOver={e => blobToggle(e)}>
             </img>
            
             

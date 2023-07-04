@@ -58,7 +58,7 @@ const Home = () => {
 
     return (
         <div>
-        <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
+        <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
             <div className="justify-center">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
                 className="w-[375px] h-[300px] justify-center lg:w-screen md:h-[600px] bg-no-repeat bg-cover bg-center rounded-2xl opacity-95">
