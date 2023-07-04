@@ -10,9 +10,13 @@ app.use(cors());
 app.use(express.static('public'));
 app.use(express.json());
 
+
 app.post("/cart-checkout", async (req, res) => {
 
-
+    // const coupon = await stripe.coupons.create({
+    //     percent_off: 20,
+    //     duration: 'once',
+    //   });
 console.log("This is the request body:", req.body)
 
 
@@ -26,9 +30,14 @@ console.log("This is the request body:", req.body)
         }
     )
 });
+
+
     const session = await stripe.checkout.sessions.create({
         line_items: lineItems,
         mode: 'payment',
+        discounts: [{
+            coupon: '{{coupon}}',
+          }],
         success_url: 'http://localhost:3000/success',
         cancel_url: 'http://localhost:3000/cancel',
     });

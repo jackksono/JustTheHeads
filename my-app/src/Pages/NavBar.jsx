@@ -19,6 +19,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import RingVolumeIcon from '@mui/icons-material/RingVolume';
 
+import { useClickAway } from "@uidotdev/usehooks";
+
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
@@ -36,6 +38,12 @@ const NavBarComponent = () => {
     // const handleShow = () => setShow(true)
 
     const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
+
+    const twoFunctions = () => {
+      toggleOff()
+      const set = () => {contactUsSetButtonPopUp(true)}
+      set()
+    }
     
     
     const onToggleMenu = () => {
@@ -45,6 +53,13 @@ const NavBarComponent = () => {
       // console.log(tag.name)
       tag.name = tag.name === "close" ? "menu" : "close"
       // console.log(navLinks.classList)
+      navLinks.classList.toggle('hidden')
+    }
+
+    const toggleOff = () => {
+      const navLinks = document.querySelector('.nav-links')
+      let tag = document.getElementById("menu")
+      tag.name = tag.name === "menu" ? "close" : "menu"
       navLinks.classList.toggle('hidden')
     }
   
@@ -59,12 +74,12 @@ const NavBarComponent = () => {
         
             <div className="flex lg:justify-between lg:px-20 lg:mt-1 sm:px-10">
                   <span className="italic text-black lg:text-sm text-[10px] bg-primary-500">
-                    <RingVolumeIcon/>Questions? Holla At Us @ xxx-xxx-xxxx</span>
+                    <RingVolumeIcon />Questions? Holla At Us @ xxx-xxx-xxxx</span>
                   
                   <div className="flex items-center gap-5 mt-1">
                     <Link to="/login">
                         <button className="flex justify-end text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125">
-                            <PersonIcon className="text-[5px]"/>
+                            <PersonIcon sx={{fontSize: 10}}/>
                         </button>
                     </Link>    
                     <span>
@@ -108,7 +123,8 @@ const NavBarComponent = () => {
                 
                   <div className="flex items-center lg:bg-transparent lg:gap-10 ">
                     <Link to="/">
-                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit">
+                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                      onClick={toggleOff}>
                         Home
                       </button>
                     </Link>
@@ -118,19 +134,21 @@ const NavBarComponent = () => {
                   
                     <Link to="/all-products">
                       <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 md:bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
-                      data-collapse-toggle="navbar-dropdown">
+                      data-collapse-toggle="navbar-dropdown"
+                      onClick={toggleOff}>
                         All Products
                       </button>
                     </Link>
                     
 
                     <Link to="/why-just-the-head">
-                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit">Why Just The Head?</button>
+                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                      onClick={toggleOff}>Why Just The Head?</button>
                     </Link>
 
                     <span className="" >
                         <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
-                        onClick={()=> contactUsSetButtonPopUp(true)}>Contact Us</button>
+                        onClick={twoFunctions }>Contact Us</button>
                         <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
                     </span>
                   </div>

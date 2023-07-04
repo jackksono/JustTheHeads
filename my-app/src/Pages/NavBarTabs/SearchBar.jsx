@@ -11,7 +11,7 @@ const SearchBar = (props) => {
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
 
-    const ref = useClickAway(() => {
+    const clickAway= useClickAway(() => {
         const close = () => props.setTrigger(false);
         close()
       });
@@ -36,13 +36,13 @@ const SearchBar = (props) => {
     }
  
   return (props.trigger) ? (
-    <div className='fixed mt-20 lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-500 bg-opacity-75 h-[400px] lg:h-screen rounded-xl' ref={ref}>
+    <div className='fixed mt-20 lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-500 bg-opacity-75 h-[400px] lg:h-screen rounded-xl' ref={clickAway}>
             <div className='flex justify-end pr-12 text-2xl text-black'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>
         <div className='flex lg:mt-[200px] mt-10 justify-center text-[18px]'>
             <input type='text' placeholder='Enter a product name...'
-            className='bg-white border-0 mb-20 lg:mb-0 p-8 h-[15px] lg:h-[30px] lg:w-[300px] w-[150px] justify-center'
+            className='bg-white text-[8px] lg:text-lg border-0 mb-20 lg:mb-0 p-8 h-[15px] lg:h-[30px] lg:w-[300px] w-[150px] justify-center'
             onChange={handleFilter}
             value={wordEntered}>
             </input>
@@ -53,7 +53,7 @@ const SearchBar = (props) => {
         </div>
         {filteredData.length !== 0 && (
         <div className='flex justify-center pr-[50px]'>
-            <div className='mt-[5px] w-[300px] h-[150px] bg-white overflow-hidden overflow-y-auto shadow-md'>
+            <div className='lg:mt-[5px] lg:w-[300px] lg:h-[150px] bg-white overflow-hidden overflow-y-auto shadow-md'>
                 { filteredData.slice(0,3).map((value, key) => {
                     return( <div className='flex w-full h-[50px] content-center hover:bg-gray-100 text-black cursor-pointer'
                     onClick={() => {
