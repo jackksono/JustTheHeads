@@ -8,7 +8,7 @@ const AllProducts = () => {
     const [ index, setIndex ] = useState(0)
     return (
         <div className="pt-16 bg-orange-200 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
-            <div className="relative text-4xl text-center text-black md:text-7xl font-YsabeauSC">
+            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch">
                 <h1 className="text center">All Products</h1>
             </div>
             <div className="">

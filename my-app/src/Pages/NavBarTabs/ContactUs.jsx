@@ -44,9 +44,7 @@ const ContactUs = (props) => {
     const handleChange = (e) => {
         const name = e.target.name
         const value = e.target.value
-        setData({...data, [name]:value})
-        
-        
+        setData({...data, [name]:value}) 
     }
 
     const sendMail = (e) => { //EmailJS documentation

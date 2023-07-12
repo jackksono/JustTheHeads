@@ -41,15 +41,12 @@ const NavBarComponent = () => {
 
     const clickAway = useClickAway(() => {
       const navLinks = document.querySelector('.nav-links')
+      let tag = document.getElementById("menu")
+      tag.name = tag.name === "close" ? "menu" : "close"
       navLinks.classList.toggle('hidden')
+      console.log(navLinks.classList)
     })
 
-    const twoFunctions = () => {
-      toggleOff()
-      const set = () => {contactUsSetButtonPopUp(true)}
-      set()
-    }
-    
     
     const onToggleMenu = () => {
       const navLinks = document.querySelector('.nav-links')
@@ -75,7 +72,8 @@ const NavBarComponent = () => {
         
         <Headroom>
           
-        <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end">
+        <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end"
+        ref={clickAway}>
         
             <div className="flex px-5 lg:justify-between lg:px-20 lg:mt-1">
                   <span className="italic text-black lg:text-sm text-[12px] bg-primary-500">
@@ -123,13 +121,13 @@ const NavBarComponent = () => {
                 </button>
             </div>
             
-            <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-12 lg:px-10 lg:block lg:w-auto ">
+            <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-12 lg:px-10 lg:block lg:w-auto">
               <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0"
-              ref={clickAway}>
+              >
                 
                   <div className="flex items-center lg:bg-transparent lg:gap-10 ">
                     <Link to="/">
-                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
                       onClick={toggleOff}>
                         Home
                       </button>
@@ -139,7 +137,7 @@ const NavBarComponent = () => {
                   <div className="left-0 flex flex-col lg:flex-row lg:bg-transparent lg:items-center lg:flex-non lg:gap-10">
                   
                     <Link to="/all-products">
-                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 md:bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 md:bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
                       data-collapse-toggle="navbar-dropdown"
                       onClick={toggleOff}>
                         All Products
@@ -148,20 +146,22 @@ const NavBarComponent = () => {
                     
 
                     <Link to="/why-just-the-head">
-                      <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
-                      onClick={toggleOff}>Why Just The Head?</button>
+                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                      onClick={(toggleOff)}>Why Just The Head?</button>
                     </Link>
 
                     <span className="" >
-                        <button className="text-[10px] lg:text-lg lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
-                        onClick={twoFunctions }>Contact Us</button>
-                        <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
+                        <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-white lg:text-color-shrimp hover:text-orange-900 font-Kanit"
+                        value="click"
+                        onClick={() => { 
+                                        contactUsSetButtonPopUp(true)
+                                        toggleOff()
+                                        }}>Contact Us</button>
                     </span>
                   </div>
               </ul>
             </div>
-            
-            
+                  <ContactUs   trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
         </nav>
         </Headroom>
       

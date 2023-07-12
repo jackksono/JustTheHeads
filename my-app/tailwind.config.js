@@ -16,6 +16,7 @@ module.exports = {
       },
       fontFamily: {
         Caprasimo: ['Caprasimo'],
+        CabinSketch:['Cabin Sketch'],
         YsabeauSC:['Ysabeau SC'],
         Kanit:['Kanit'],
         BebasNeue:['Bebas Neue'],

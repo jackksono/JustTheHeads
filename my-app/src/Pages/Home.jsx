@@ -61,7 +61,7 @@ const Home = () => {
         <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
             <div className="justify-center">
                 <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
-                className="w-[375px] h-[300px] justify-center lg:w-screen md:h-[600px] bg-no-repeat bg-cover bg-center rounded-2xl opacity-95">
+                className="w-[375px] h-[300px] justify-center lg:w-screen lg:h-[700px] bg-no-repeat bg-cover bg-center rounded-2xl opacity-95">
                 </div>
                 {/* Left Arrow */}
                 <div className="group-hover:block absolute lg:top-[50%] top-[25%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
@@ -84,12 +84,12 @@ const Home = () => {
                     ))}
                 </div>
             </div>
-            <div className="text-center p-8 lg:text-5xl text-3xl text-black font-Caprasimo delay-[300ms]">
+            <div className="text-center p-4 lg:p-8 lg:text-6xl text-3xl text-black font-CabinSketch delay-[300ms]">
                 <p>No more Shrimp Chips, get a-Head of the competition!</p>
             </div>
             <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[200px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-cover bg-no-repeat bg-center">
                 
-                    <p className="pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-0 text-md">Welcome to the Head Family!
+                    <p className="pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md">Welcome to the Head Family!
                     
                         <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black">We are the head family! Just The Heads is a small company founded by three
                         best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
