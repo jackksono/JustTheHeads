@@ -21,8 +21,8 @@ const slides = [
     {url:Bag3}
 ]
 
-const delay = 5000
-const transitionDuration = 500;
+const delay = 3000
+
 
 const Home = () => {
 
