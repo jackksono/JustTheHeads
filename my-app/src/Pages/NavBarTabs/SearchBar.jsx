@@ -5,6 +5,8 @@ import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
 import { useClickAway } from "@uidotdev/usehooks";
 
+import { BsSearch } from 'react-icons/bs'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
 
 const SearchBar = (props) => {
     const navigate = useNavigate()
@@ -37,7 +39,7 @@ const SearchBar = (props) => {
  
   return (props.trigger) ? (
     <div className='fixed mt-20 lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-500 bg-opacity-75 h-[400px] lg:h-screen rounded-xl' ref={clickAway}>
-            <div className='flex justify-end pr-12 text-2xl text-black'>    
+            <div className='flex justify-end pr-12 text-black lg:text-4xl'>    
                 <button  onClick={() => props.setTrigger(false)}>X</button>
             </div>
         <div className='flex lg:mt-[200px] mt-10 justify-center text-[18px]'>
@@ -46,8 +48,8 @@ const SearchBar = (props) => {
             onChange={handleFilter}
             value={wordEntered}>
             </input>
-            <div className='h-[64px] w-[50px] text-5xl bg-white place-items-center'>
-                {filteredData.length === 0 ? <SearchIcon /> : <CloseIcon className='cursor-pointer' onClick={clearInput}/>}
+            <div className='h-[64px] w-[50px] text-5xl bg-white place-items-center items-center justify-center flex pr-3'>
+                {filteredData.length === 0 ? <BsSearch className='lg:text-3xl' /> : <AiOutlineCloseCircle className='cursor-pointer' onClick={clearInput}/>}
                 
             </div>
         </div>

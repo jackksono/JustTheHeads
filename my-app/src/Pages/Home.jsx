@@ -22,6 +22,7 @@ const slides = [
 ]
 
 const delay = 5000
+const transitionDuration = 500;
 
 const Home = () => {
 
@@ -60,15 +61,25 @@ const Home = () => {
         <div>
         <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
             <div className="justify-center">
-                <div style={{backgroundImage: `url(${slides[currentIndex].url})`}} 
-                className="w-[375px] h-[300px] justify-center lg:w-screen lg:h-[700px] bg-no-repeat bg-cover bg-center rounded-2xl opacity-95">
-                </div>
+                <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[700px] relative'>
+                    {slides.map((slide, slideIndex) => (
+                        <div
+                        key={slideIndex}
+                        className={`w-[375px] h-[300px] lg:w-full lg:h-full bg-no-repeat bg-cover bg-center rounded-2xl absolute transition-opacity duration-1000 ${
+                            currentIndex === slideIndex ? 'opacity-100' : 'opacity-0'}`}
+                        style={{
+                            backgroundImage: `url(${slide.url})`,
+                            transform: `translateX(${-100 * (currentIndex - slideIndex)}%)`,
+                        }}
+                ></div>
+            ))}
+          </div>
                 {/* Left Arrow */}
-                <div className="group-hover:block absolute lg:top-[50%] top-[25%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                <div className="group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowBackIosIcon onClick={prevSlide} size={30}/>
                 </div>
                 {/* Right Arrow */}
-                <div className="group-hover:block absolute lg:top-[50%] top-[25%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                <div className="group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                 </div>
                 
