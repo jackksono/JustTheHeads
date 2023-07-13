@@ -25,9 +25,6 @@ const Footer = () => {
                 <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">
                     <FaInstagramSquare className="w-3 h-3 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
-                
-                
-                
             </div>
             
                 <p className='flex justify-center text-[10px] lg:text-xs text-black pt-10 lg:pt-28'>Copyright @2023 Just The Heads. All Rights Reserved.</p>
