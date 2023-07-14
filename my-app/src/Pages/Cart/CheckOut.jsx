@@ -41,7 +41,7 @@ const CheckOut = () => {
 
             {cart.getTotal() > 0 ?
 
-            <div className="w-[500px] flex flex-row justify-center items-center h-auto">
+            <div className="w-[500px] flex  justify-center items-center h-auto">
                 <p className="flex justify-center text-black "> Subtotal: ${cart.getTotal()}</p>
                 <button onClick={() => navigate('/all-products')} className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-black text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button 

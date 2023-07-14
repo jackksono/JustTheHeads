@@ -5,18 +5,18 @@ import { useNavigate } from "react-router-dom";
 const Cancel = () => {
     const navigate = useNavigate()
     return (
-        <div className="flex flex-col justify-center items-center  pt-48 text-lg">
-            <div className="justify-center items-center text-center w-[700px] h-[150px] shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px]">
-                <div className="pt-4 relative text-2xl text-center">We're sorry to see you go...</div>
-                <div className="pt-4">
+        <div className="flex flex-col items-center justify-center pt-48 text-lg">
+            <div className="justify-center items-center text-center w-[700px] h-[150px] rounded-[25px] m-[30px]">
+                <div className="relative pt-4 text-2xl text-center lg:text-5xl">We're sorry to see you go...</div>
+                <div className="flex flex-row justify-center w-auto pt-4">
                     <button 
                         onClick={() => navigate('/')} 
-                        className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> 
+                        className="lg:w-[200px] lg:h-[50px] w-[100px] h-[50px] text-sm lg:text-lg bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> 
                         Home 
                     </button>
                     <button 
                         onClick={() => navigate('/all-products')} 
-                        className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> 
+                        className="lg:w-[200px] lg:h-[50px] w-[100px] h-[50px] lg:text-lg bg-black text-sm text-white rounded-[8px] m-[10px] cursor-pointer"> 
                         Continue Shopping 
                     </button>
                 </div>

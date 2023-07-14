@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        'spin-slow': `spin 5s linear`
+      },
       colors: {
         color: {
           shrimp: "#DB4221"
