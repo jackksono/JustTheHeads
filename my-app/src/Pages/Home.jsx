@@ -75,11 +75,11 @@ const Home = () => {
             ))}
           </div>
                 {/* Left Arrow */}
-                <div className="group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                <div className="invisible lg:visible group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowBackIosIcon onClick={prevSlide} size={30}/>
                 </div>
                 {/* Right Arrow */}
-                <div className="group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                <div className="invisible lg:visible group-hover:block absolute lg:top-[35%] top-[25%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
                     <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                 </div>
                 
