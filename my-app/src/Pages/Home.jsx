@@ -89,7 +89,7 @@ const Home = () => {
                         <div 
                             key={slideIndex} 
                             onClick={()=> goToSlide(slideIndex)} 
-                            className="text-2xl transition duration-150 ease-in-out cursor-pointer hover:text-white hover:scale-150">
+                            className="text-sm transition duration-150 ease-in-out cursor-pointer lg:text-2xl hover:text-white hover:scale-150">
                                 <RxDotFilled />
                         </div>
                     ))}
