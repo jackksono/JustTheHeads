@@ -26,10 +26,10 @@ const CheckOut = () => {
     }
 
     return (
-        <div className="flex flex-col justify-center items-center pt-28 text-lg">
+        <div className="flex flex-col items-center justify-center text-lg pt-28">
             {cart.getTotal() > 0 ?
             <div>
-                <h1 className="text-center text-black text-3xl">Your Cart Items</h1>
+                <h1 className="text-3xl text-center text-black">Your Cart Items</h1>
             </div>
             : <></>} {/*Turnary to show Cart Items if cart has an item; otherwise will be blank*/}
 
@@ -41,11 +41,11 @@ const CheckOut = () => {
 
             {cart.getTotal() > 0 ?
 
-            <div className="">
-                <p className="text-black"> Subtotal: ${cart.getTotal()}</p>
-                <button onClick={() => navigate('/all-products')} className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"> Continue Shopping </button>
+            <div className="w-[500px] flex flex-row justify-center items-center h-auto">
+                <p className="flex justify-center text-black "> Subtotal: ${cart.getTotal()}</p>
+                <button onClick={() => navigate('/all-products')} className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-black text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> Continue Shopping </button>
                 <button 
-                    className="w-[200px] h-[50px] bg-black text-white rounded-[8px] m-[10px] cursor-pointer"
+                    className="lg:w-[200px] h-[50px] bg-black text-white rounded-[8px] lg:m-[10px] w-[120px] cursor-pointer"
                     onClick={checkout}
                 > Checkout </button>
             </div>

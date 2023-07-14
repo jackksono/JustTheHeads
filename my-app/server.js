@@ -35,9 +35,9 @@ console.log("This is the request body:", req.body)
     const session = await stripe.checkout.sessions.create({
         line_items: lineItems,
         mode: 'payment',
-        discounts: [{
-            coupon: '{{coupon}}',
-          }],
+        // discounts: [{
+        //     coupon: '{{coupon}}',
+        //   }],
         success_url: 'http://localhost:3000/success',
         cancel_url: 'http://localhost:3000/cancel',
     });

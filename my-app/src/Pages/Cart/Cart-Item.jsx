@@ -12,24 +12,24 @@ const CartItem =(props) => {
 
 
     return (
-        <div className="flex w-[700px] h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px]"> 
+        <div className="flex lg:w-[700px] w-[350px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px]"> 
             <img 
                 src={productData.productImage} 
                 alt="productImage"
-                className="w-[200px]">
+                className="w-[100px] h-auto lg:w-[200px]">
             </img>
-            <div className="text-black text-center items-center w-full">
+            <div className="items-center w-full text-center text-black">
                 <p>
                     <b>{productData.productName}</b>
                 </p>
                 <p>${productData.price}</p>
-                <div className="text-center font-bold m-5">
-                    <button className="cursor-pointer" onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                    <input className='text-center ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                <div className="m-5 font-bold text-center">
+                    <button className="text-sm cursor-pointer" onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                    <input className='text-center w-[100px] ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className="cursor-pointer" onClick={() => cart.addOneToCart(id)}> + </button>
                     <div className="pt-5">
                         <Button variant="danger" 
-                            className="text-center text-sm cursor-pointer text-white rounded-2xl bg-red-500 p-2 hover:text-black hover:bg-white" 
+                            className="p-2 text-sm text-center text-white bg-red-500 cursor-pointer rounded-2xl hover:text-black hover:bg-white" 
                             onClick={() => cart.deleteFromCart(id)}>
                             Remove From Cart
                         </Button>
