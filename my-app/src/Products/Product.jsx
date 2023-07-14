@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { Link } from "react-router-dom";
@@ -14,6 +14,17 @@ const Product = (props) => {
     
     
     const blobArray = ['blob1', 'blob2', 'blob3', 'blob4'];
+
+    useEffect(() => {
+        const storedIndex = localStorage.getItem("blobIndex");
+        if (storedIndex) {
+          setIndex(Number(storedIndex));
+        }
+      }, [setIndex]);
+    
+      useEffect(() => {
+        localStorage.setItem("blobIndex", String(index));
+      }, [index]);
    
     const blobToggle = (e) => {
         
@@ -22,9 +33,12 @@ const Product = (props) => {
         // console.log(index)
      
         const element = e.target.parentElement.querySelector('.blob-toggle');
+        element.classList.remove('bg-blob2')
+        element.classList.remove('bg-blob3')
         console.log('index: ', index, blobArray[index]);
         element.classList.add(`bg-${blobArray[index]}`)
         element.classList.add(`animate-spin`)
+        console.log(element.className)
         // console.log(element.classList)
         const updatedIndex = index >= blobArray.length - 1 ? 0 : index + 1;
         console.log('updatedIndex: ', updatedIndex);
@@ -39,7 +53,7 @@ const Product = (props) => {
     const blobToggleOff = (e) => {
        
         const element = e.target.parentElement.querySelector('.blob-toggle');
-       
+        // console.log(element)
         let blobRemoveIndex;
         if(index === 0) blobRemoveIndex = blobArray.length - 1; //element.classList.remove(`bg-blob4`)
         else blobRemoveIndex = index - 1; //else element.classList.remove(`bg-${blobArray[index -1 ]}`)
@@ -56,11 +70,11 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl  ">
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000 bg-none "></div>
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000"></div>
                     <img 
                         src={productImage} 
                         alt="productImage"
-                        className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[75px] cursor-pointer relative "
+                        className="flex lg:w-[300px] lg:h-[400px] h-[100px] w-[80px] cursor-pointer relative "
                         onClick={() => navigate(`/products/${webId}`)}
                         onMouseLeave={e => blobToggleOff(e)}
                         onMouseOver={e => blobToggle(e)}>
@@ -68,21 +82,21 @@ const Product = (props) => {
                 
                     <Link
                     to={`/products/${webId}`}
-                    className="lg:text-sm italic text-[6px] pr-12 lg:pr-40 z-0"
+                    className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0"
                     >More Info...</Link>
                     
                 
                         <p className="font-bold text-black lg:pt-3 ">
-                            <b className=" font-CabinSketch font-bold lg:text-xl text-[8px] p-0 z-0 ">{productName}</b>
+                            <b className=" font-CabinSketch font-bold lg:text-3xl text-[15px] p-0 z-0 ">{productName}</b>
                         </p>
-                        <p className="relative lg:mt-2 lg:text-lg text-[6px] text-center z-0">${price}</p>
+                        <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0">${price}</p>
                         
                         {productQuantity> 0 ? 
                         <>
                             <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black'>In Cart: {productQuantity}</h1>
                             <div className="flex items-center justify-center lg:text-sm text-[xs]">
                                 <button className='cursor-pointer lg:text-lg text-[10px] z-10' onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                                <input className='text-center lg:text-sm text-[6px] w-[50px] h-[10px] lg:w-[200px] lg:h-[25px] z-10 ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                                <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[200px] lg:h-[25px] z-10 ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                                 <button className='cursor-pointer lg:text-lg text-[10px] z-10' onClick={() => cart.addOneToCart(id)}> + </button>
                             </div>
                             <button
@@ -92,7 +106,7 @@ const Product = (props) => {
                             </button>
                         </>
                         :
-                        <button className=" z-10 bg-transparent text-[6px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] w-[50px] lg:px-2 lg:py-1 lg:mt-2 "
+                        <button className=" z-10 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
                             onClick={() => cart.addOneToCart(id)}
                             >
                             Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}

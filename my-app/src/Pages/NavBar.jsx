@@ -110,7 +110,7 @@ const NavBarComponent = () => {
             alt="logo"
             className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
           </div>
-          <div className="pt-6 text-2xl text-black lg:hidden">
+          <div className="pt-3 text-2xl text-black lg:hidden">
             <button >
                 <ion-icon name="close" id="menu" onClick={onToggleMenu} ></ion-icon>
               </button>

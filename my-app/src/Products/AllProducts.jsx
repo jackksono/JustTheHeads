@@ -12,7 +12,7 @@ const AllProducts = () => {
                 <h1 className="text center">All Products</h1>
             </div>
             <div className="">
-            <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 lg:gap-6 lg:mt-12 ">
+            <div className="grid justify-center grid-cols-2 gap-1 mt-8 lg:gap-10 lg:grid-cols-3 place-items-center lg:mt-12 ">
                 {PRODUCTS.map((product) => (
                 <Product data={product} index={index} setIndex={setIndex}/>
             ))}
