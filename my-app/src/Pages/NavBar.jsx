@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
+import Pulse from 'react-reveal/Pulse'
 
 import Home from "./Home";
 import ContactUs from "./NavBarTabs/ContactUs";
@@ -103,13 +104,17 @@ const NavBarComponent = () => {
             
               </div>
           </div>
-          
+          <Pulse>
           <div className="">
+            
             <img 
             src={Logo1}
             alt="logo"
-            className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10"></img>
+            className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-10">
+            </img>
+            
           </div>
+          </Pulse>
           <div className="pt-3 text-2xl text-black lg:hidden">
             <button >
                 <ion-icon name="close" id="menu" onClick={onToggleMenu} ></ion-icon>

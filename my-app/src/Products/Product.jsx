@@ -1,4 +1,5 @@
 import React, { useContext, useEffect} from "react";
+import Fade from 'react-reveal/Fade'
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { Link } from "react-router-dom";
@@ -10,8 +11,6 @@ const Product = (props) => {
     const cart = useContext(ShopContext)
     const { index, setIndex } = props;
     const productQuantity = cart.getProductQuantity(id)
-
-    
     
     const blobArray = ['blob1', 'blob2', 'blob3', 'blob4'];
 
@@ -69,8 +68,9 @@ const Product = (props) => {
 
     return (
         <>
-            <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl  ">
+            <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
                 <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000 "></div>
+                <Fade bottom>
                     <img 
                         src={productImage} 
                         alt="productImage"
@@ -79,7 +79,7 @@ const Product = (props) => {
                         onMouseLeave={e => blobToggleOff(e)}
                         onMouseOver={e => blobToggle(e)}>
                     </img>
-                
+                </Fade>
                     <Link
                     to={`/products/${webId}`}
                     className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0"

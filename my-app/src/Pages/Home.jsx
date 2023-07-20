@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react"
+import Slide from 'react-reveal/Slide'
+import Zoom from 'react-reveal/Zoom'
+
 
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
@@ -28,8 +31,8 @@ const Home = () => {
 
     
     const [ currentIndex, setCurrentIndex ] = useState(0)
-    
 
+   
     useEffect(() => { //Automatically switches slides
         setTimeout(
             () =>
@@ -61,7 +64,7 @@ const Home = () => {
         <div>
             <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
-                    <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[700px] relative'>
+                    <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[1000px] relative'>
                         {slides.map((slide, slideIndex) => (
                             <div
                             key={slideIndex}
@@ -94,23 +97,26 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div className="p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch">
-                    <p>No more Shrimp Chips, get a-Head of the competition!</p>
-                </div>
+                <Zoom bottom>
+                    <div className="p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch" >
+                        <p>No more Shrimp Chips, get a-Head of the competition!</p>
+                    </div>
+                </Zoom>
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-cover bg-no-repeat bg-center">
-                    
+                            <Slide right>
                         <p className="pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md">Welcome to the Head Family!
                         
-                            <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black">We are the head family! Just The Heads is a small company founded by three
+                            <p data-aos='fade-up'className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black" >We are the head family! Just The Heads is a small company founded by three
                             best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
                             and turning them into a sustainable, yet delicious snack! With millions of pounds of shrimp shells and heads going to waste
                             each year, support Just The Heads one head and one bag at a time in finding a solution to eliminate food waste globally. </p>
                         </p>
-                        <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img> 
-                            
+                        <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img>
+                        </Slide>
                 </div>
+                
                 <div >
-                    <FeaturedProducts></FeaturedProducts>
+                    <FeaturedProducts data-aos="fade-right" ></FeaturedProducts>
                 </div>
                 <div>
                     <Footer></Footer>

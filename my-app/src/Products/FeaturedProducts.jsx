@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Zoom from 'react-reveal/Zoom'
 import { featuredProducts } from '../FeaturedProductStore'
 import Product from './Product'
 import { Link } from 'react-router-dom'
@@ -9,7 +10,9 @@ const FeaturedProducts = () => {
   return (
     <div className="overflow-auto bg-orange-200 lg:pt-16 bg-allProducts bg-blend-overlay">
             <div className="relative text-4xl text-center text-black lg:text-8xl">
+              <Zoom bottom>
                 <h1 className="text center font-CabinSketch">Featured Products!</h1>
+              </Zoom>
             </div>
             <div className='flex items-end justify-end py-4 pr-8 text-right'>
               <Link
