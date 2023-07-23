@@ -8,7 +8,7 @@ const FeaturedProducts = () => {
   const [ index, setIndex ] = useState(0)
 
   return (
-    <div className="overflow-auto bg-orange-200 lg:pt-16 bg-allProducts bg-blend-overlay">
+    <div className="overflow-auto bg-orange-300 lg:pt-16 bg-allProducts bg-blend-overlay">
             <div className="relative text-4xl text-center text-black lg:text-8xl">
               <Zoom bottom>
                 <h1 className="text center font-CabinSketch">Featured Products!</h1>

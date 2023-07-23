@@ -66,7 +66,7 @@ const NavBarComponent = () => {
       
       <Headroom>
         
-      <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-100 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end"
+      <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-200 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end"
       ref={clickAway}>
       
           <div className="flex px-5 lg:justify-between lg:px-20 lg:mt-1">
