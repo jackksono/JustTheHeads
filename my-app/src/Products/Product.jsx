@@ -27,20 +27,20 @@ const Product = (props) => {
    
     const blobToggle = (e) => {
         
-        console.log('mouse entered')
+        // console.log('mouse entered')
         // console.log(e.target.parentElement.querySelector('.blob-toggle').classList.toggle(`bg-${blobArray[index]}`)
         // console.log(index)
      
         const element = e.target.parentElement.querySelector('.blob-toggle');
         element.classList.remove('bg-blob2')
         element.classList.remove('bg-blob3')
-        console.log('index: ', index, blobArray[index]);
+        // console.log('index: ', index, blobArray[index]);
         element.classList.add(`bg-${blobArray[index]}`)
         element.classList.add(`animate-spin`)
-        console.log(element.className)
+        // console.log(element.className)
         // console.log(element.classList)
         const updatedIndex = index >= blobArray.length - 1 ? 0 : index + 1;
-        console.log('updatedIndex: ', updatedIndex);
+        // console.log('updatedIndex: ', updatedIndex);
         setIndex(updatedIndex);
         // const blob = document.querySelector('.blob-toggle');
         // blob.forEach((element) => {
@@ -58,9 +58,9 @@ const Product = (props) => {
         else blobRemoveIndex = index - 1; //else element.classList.remove(`bg-${blobArray[index -1 ]}`)
         element.classList.remove(`bg-${blobArray[blobRemoveIndex]}`)
         element.classList.remove(`animate-spin`)
-        console.log('blob removed:',`bg-${blobArray[index -1 ]}`)
+        // console.log('blob removed:',`bg-${blobArray[index -1 ]}`)
         // const blob = document.querySelectorAll('.blob-toggle');
-        console.log('mouse left')
+        // console.log('mouse left')
         // blob.forEach((element) => {
         //     element.classList.toggle('bg-none');
         // })

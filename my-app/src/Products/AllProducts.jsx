@@ -12,6 +12,7 @@ const AllProducts = () => {
             <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch">
                 <Zoom bottom>
                     <h1 className="text center">All Products</h1>
+                    <p>NO CARBS, NO FILLERS, ONLY HEAD</p>
                 </Zoom>
             </div>
             <div className="">

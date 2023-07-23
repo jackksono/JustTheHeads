@@ -100,6 +100,7 @@ const Home = () => {
                 <Zoom bottom>
                     <div className="p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch" >
                         <p>No more Shrimp Chips, get a-Head of the competition!</p>
+                        
                     </div>
                 </Zoom>
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-cover bg-no-repeat bg-center">
