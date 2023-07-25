@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 
 import { useInView } from 'react-intersection-observer';
 import Fade from 'react-reveal/Fade'
+import Slide from 'react-reveal/Slide'
 
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
@@ -16,7 +17,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {RxDotFilled} from 'react-icons/rx'
 
-
+import Logo1 from '../Images/SiteImages/Logo1.png'
 
 const slides = [
     {url:Bag1},
@@ -68,6 +69,7 @@ const Home = () => {
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
     const { ref: zoom2Ref, inView: zoom2InView } = useInView(zoomOptions2);
+    const { ref: zoom3Ref, inView: zoom3InView } = useInView(zoomOptions2);
 
     return (
         <div>
@@ -109,12 +111,19 @@ const Home = () => {
                 
                 <div ref={zoom1Ref}>
                     <Fade bottom when={zoom1InView}>
-                        <div className='p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch'>
+                        <div className='relative p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch'>
                             <p>No more Shrimp Chips, get a-Head of the competition!</p>
                         </div>
                     </Fade>
                 </div>
                 
+                {/* <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 mt-80 ml-80"
+                ref={zoom3Ref}>
+                    <Fade right when={zoom3InView} delay={0} duration={10000}>
+                        <img src={Logo1} alt="TestLogo"></img>
+                    </Fade>
+                </div> */}
+
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>
                         <Fade right when={zoom2InView} duration={2000}>
