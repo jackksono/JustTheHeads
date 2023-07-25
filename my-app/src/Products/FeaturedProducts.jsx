@@ -4,15 +4,26 @@ import { featuredProducts } from '../FeaturedProductStore'
 import Product from './Product'
 import { Link } from 'react-router-dom'
 
+import { useInView } from 'react-intersection-observer'
+import Flip from 'react-reveal/Flip'
+
 const FeaturedProducts = () => {
   const [ index, setIndex ] = useState(0)
 
+  const zoomOptions = {
+    threshold: 0.3, // Adjust this threshold value to your desired visibility trigger point
+    triggerOnce: false, // Set to true so that the animation only happens once
+  };
+  const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
+
   return (
     <div className="overflow-auto bg-orange-300 lg:pt-16 bg-allProducts bg-blend-overlay">
-            <div className="relative text-4xl text-center text-black lg:text-8xl">
-             
-                <h1 className="text center font-CabinSketch">Featured Products!</h1>
-              
+            <div 
+              className="relative text-4xl text-center text-black lg:text-8xl"
+              ref={zoom1Ref}>
+                <Flip top when={zoom1InView} delay={500}>
+                  <h1 className="text center font-CabinSketch">Featured Products!</h1>
+                </Flip>
             </div>
             <div className='flex items-end justify-end py-4 pr-8 text-right'>
               <Link

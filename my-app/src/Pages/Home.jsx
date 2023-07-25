@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 
-import 'animate.css';
 import { useInView } from 'react-intersection-observer';
+import Fade from 'react-reveal/Fade'
 
 import Bag1 from '../Images/SiteImages/Bag1.jpg'
 import Bag2 from '../Images/SiteImages/Bag2.jpg'
@@ -57,40 +57,18 @@ const Home = () => {
         setCurrentIndex(slideIndex);
     }
 
-    //animation for bottom to top div no more shrimp chips get ahead of the competition
-  const [pAnimate, setpAnimate] = useState(false);
-  const [animationComplete, setAnimationComplete] = useState(false);
-  const { ref:pRef, inView: pTagisVisible } = useInView();
-  useEffect(() => {
-    if (pTagisVisible && !pAnimate) {
-      setpAnimate(true);
-    } else if (!pTagisVisible && pAnimate) {
-      setAnimationComplete(false);
-      setpAnimate(false);
-    }
-  }, [pTagisVisible, pAnimate]);
+  
+    const zoomOptions = {
+        threshold: 0.5, // Adjust this threshold value to your desired visibility trigger point
+        triggerOnce: false, // Set to true so that the animation only happens once
+    };
+    const zoomOptions2 = {
+        threshold: 0.4, // Adjust this threshold value to your desired visibility trigger point
+        triggerOnce: false, // Set to true so that the animation only happens once
+    };
+    const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
+    const { ref: zoom2Ref, inView: zoom2InView } = useInView(zoomOptions2);
 
-  const onAnimationEnd = () => {
-    setAnimationComplete(true);
-  };
-
-  //animation for slide right to left
-  const [slideAnimate, setSlideAnimate] = useState(false);
-  const [slideAnimationComplete, setSlideAnimationComplete] = useState(false);
-  const { ref: slideRef, inView: slideTagisVisible } = useInView();
-  useEffect(() => {
-    if (slideTagisVisible && !slideAnimate) {
-      setSlideAnimate(true);
-    } else if (!slideTagisVisible && slideAnimate) {
-      setSlideAnimationComplete(false);
-      setSlideAnimate(false);
-    }
-  }, [slideTagisVisible, slideAnimate]);
-  const slideAnimationEnd = () => {
-    setSlideAnimationComplete(true);
-  };
-
-   
     return (
         <div>
             <div className="overflow-auto bg-orange-200 bg-center bg-cover shadow-lg lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
@@ -128,31 +106,28 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-               
-                    <div  className={`p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch ${
-                            pAnimate ? 'animate__animated animate__fadeInUp' : ''
-                            } ${animationComplete ? 'animate__animated animate__fadeInUp ' : ''}`}
-                            onAnimationEnd={onAnimationEnd}
-                            ref={pRef}>
-                        <p>No more Shrimp Chips, get a-Head of the competition!</p>
-                    </div>
                 
-                <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center">
-                        <p 
-                        className={`pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md ${
-                            slideAnimate ? 'animate__animated animate__fadeInRight animate__slow' : ''
-                            } ${slideAnimationComplete ? 'animate__animated animate__fadeInRight animate__slow' : ''}`}
-                            ref={slideRef} 
-                            onAnimationEnd={slideAnimationEnd}
-                            >Welcome to the Head Family!
-                        
-                            <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black" >We are the head family! Just The Heads is a small company founded by three
-                            best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
-                            and turning them into a sustainable, yet delicious snack! With millions of pounds of shrimp shells and heads going to waste
-                            each year, support Just The Heads one head and one bag at a time in finding a solution to eliminate food waste globally. </p>
-                        </p>
-                        <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img>
-                        
+                <div ref={zoom1Ref}>
+                    <Fade bottom when={zoom1InView}>
+                        <div className='p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch'>
+                            <p>No more Shrimp Chips, get a-Head of the competition!</p>
+                        </div>
+                    </Fade>
+                </div>
+                
+                <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
+                ref={zoom2Ref}>
+                        <Fade right when={zoom2InView} duration={2000}>
+                            <p className='pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md'
+                                >Welcome to the Head Family!
+                            
+                                <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black" >We are the head family! Just The Heads is a small company founded by three
+                                best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
+                                and turning them into a sustainable, yet delicious snack! With millions of pounds of shrimp shells and heads going to waste
+                                each year, support Just The Heads one head and one bag at a time in finding a solution to eliminate food waste globally. </p>
+                            </p>
+                            <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img>
+                        </Fade>
                 </div>
                 
                 <div >

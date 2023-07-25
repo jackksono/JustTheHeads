@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { Link } from "react-router-dom";
 
+import { useInView } from 'react-intersection-observer';
+import Zoom from 'react-reveal/Zoom'
+
 const Product = (props) => {
     const navigate = useNavigate()
 
@@ -66,20 +69,29 @@ const Product = (props) => {
         // })
     }
 
+    const zoomOptions = {
+        threshold: 0.3, // Adjust this threshold value to your desired visibility trigger point
+        triggerOnce: false, // Set to true so that the animation only happens once
+    };
+    const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
+    
+
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000"></div>
-                
-                    <img 
-                        src={productImage} 
-                        alt="productImage"
-                        className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[80px] cursor-pointer relative "
-                        onClick={() => navigate(`/products/${webId}`)}
-                        onMouseLeave={e => blobToggleOff(e)}
-                        onMouseOver={e => blobToggle(e)}>
-                    </img>
-                
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000"
+                ref={zoom1Ref}></div>
+                    <Zoom top when={zoom1InView} duration={2000}>
+                        <img 
+                            src={productImage} 
+                            alt="productImage"
+                            className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[80px] cursor-pointer relative "
+                            onClick={() => navigate(`/products/${webId}`)}
+                            onMouseLeave={e => blobToggleOff(e)}
+                            onMouseOver={e => blobToggle(e)}>
+                        </img>
+                    </Zoom>
+
                     <Link
                     to={`/products/${webId}`}
                     className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0"
