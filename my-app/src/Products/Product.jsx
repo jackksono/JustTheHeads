@@ -1,5 +1,5 @@
 import React, { useContext, useEffect} from "react";
-import Fade from 'react-reveal/Fade'
+
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
 import { Link } from "react-router-dom";
@@ -70,7 +70,7 @@ const Product = (props) => {
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
                 <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000"></div>
-                <Fade bottom>
+                
                     <img 
                         src={productImage} 
                         alt="productImage"
@@ -79,7 +79,7 @@ const Product = (props) => {
                         onMouseLeave={e => blobToggleOff(e)}
                         onMouseOver={e => blobToggle(e)}>
                     </img>
-                </Fade>
+                
                     <Link
                     to={`/products/${webId}`}
                     className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0"
@@ -106,7 +106,7 @@ const Product = (props) => {
                             </button>
                         </>
                         :
-                        <button className="blob-toggle z-10 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
+                        <button className="z-10 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
                             onClick={() => cart.addOneToCart(id)}
                             onMouseLeave={e => blobToggleOff(e)}
                             onMouseOver={e => blobToggle(e)}

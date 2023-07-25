@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
-import Pulse from 'react-reveal/Pulse'
+
 
 import Home from "./Home";
 import ContactUs from "./NavBarTabs/ContactUs";
@@ -104,7 +104,7 @@ const NavBarComponent = () => {
             
               </div>
           </div>
-          <Pulse>
+         
           <div className="">
             
             <img 
@@ -114,7 +114,7 @@ const NavBarComponent = () => {
             </img>
             
           </div>
-          </Pulse>
+          
           <div className="pt-3 text-2xl text-black lg:hidden">
             <button >
                 <ion-icon name="close" id="menu" onClick={onToggleMenu} ></ion-icon>
