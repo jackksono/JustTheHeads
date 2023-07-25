@@ -56,16 +56,15 @@ const Home = () => {
     const goToSlide = (slideIndex) => {
         setCurrentIndex(slideIndex);
     }
-   
+
+    //animation for bottom to top div no more shrimp chips get ahead of the competition
   const [pAnimate, setpAnimate] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
   const { ref:pRef, inView: pTagisVisible } = useInView();
   useEffect(() => {
     if (pTagisVisible && !pAnimate) {
-      // If the element is visible and animation is not in progress, start the animation
       setpAnimate(true);
     } else if (!pTagisVisible && pAnimate) {
-      // If the element is not visible and animation is in progress, reset the animation
       setAnimationComplete(false);
       setpAnimate(false);
     }
@@ -75,16 +74,14 @@ const Home = () => {
     setAnimationComplete(true);
   };
 
-  
+  //animation for slide right to left
   const [slideAnimate, setSlideAnimate] = useState(false);
   const [slideAnimationComplete, setSlideAnimationComplete] = useState(false);
   const { ref: slideRef, inView: slideTagisVisible } = useInView();
   useEffect(() => {
     if (slideTagisVisible && !slideAnimate) {
-      // If the element is visible and animation is not in progress, start the animation
       setSlideAnimate(true);
     } else if (!slideTagisVisible && slideAnimate) {
-      // If the element is not visible and animation is in progress, reset the animation
       setSlideAnimationComplete(false);
       setSlideAnimate(false);
     }
@@ -134,7 +131,7 @@ const Home = () => {
                
                     <div  className={`p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch ${
                             pAnimate ? 'animate__animated animate__fadeInUp' : ''
-                            } ${animationComplete ? 'animate__animated animate__fadeInUp' : ''}`}
+                            } ${animationComplete ? 'animate__animated animate__fadeInUp ' : ''}`}
                             onAnimationEnd={onAnimationEnd}
                             ref={pRef}>
                         <p>No more Shrimp Chips, get a-Head of the competition!</p>
@@ -143,8 +140,8 @@ const Home = () => {
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center">
                         <p 
                         className={`pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md ${
-                            slideAnimate ? 'animate__animated animate__fadeInRight' : ''
-                            } ${slideAnimationComplete ? 'animate__animated animate__fadeInRight' : ''}`}
+                            slideAnimate ? 'animate__animated animate__fadeInRight animate__slow' : ''
+                            } ${slideAnimationComplete ? 'animate__animated animate__fadeInRight animate__slow' : ''}`}
                             ref={slideRef} 
                             onAnimationEnd={slideAnimationEnd}
                             >Welcome to the Head Family!
