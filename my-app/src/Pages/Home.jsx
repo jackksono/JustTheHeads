@@ -70,6 +70,7 @@ const Home = () => {
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
     const { ref: zoom2Ref, inView: zoom2InView } = useInView(zoomOptions2);
     const { ref: zoom3Ref, inView: zoom3InView } = useInView(zoomOptions2);
+    const { ref: zoom4Ref, inView: zoom4InView } = useInView(zoomOptions2);
 
     return (
         <div>
@@ -118,18 +119,18 @@ const Home = () => {
                 </div>
                 
                 <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 mt-80 ml-80"
-                ref={zoom3Ref}>
-                    <Fade right when={zoom3InView} delay={0} duration={8000}>
+                ref={zoom4Ref}>
+                    <Fade right when={zoom4InView} delay={0} duration={8000}>
                         <img src={Logo1} alt="TestLogo"></img>
                     </Fade>
                 </div>
 
-                {/* <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform -rotate-180 mt-60 mr-80"
+                <div className="w-[150px] h-[150px] absolute top-3/4 right-1/2 transform rotate-12  mt-80 mr-80"
                 ref={zoom3Ref}>
                     <Fade left when={zoom3InView} delay={0} duration={8000}>
                         <img src={Logo1} alt="TestLogo"></img>
                     </Fade>
-                </div> */}
+                </div>
 
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>
