@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Footer from "../Footer";
 
 import Bounce from 'react-reveal/Bounce'
