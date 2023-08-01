@@ -120,7 +120,7 @@ const Home = () => {
                 
                 <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 mt-80 ml-80"
                 ref={zoom4Ref}>
-                    <Fade right when={zoom4InView} delay={0} duration={8000}>
+                    <Fade right when={zoom4InView} delay={0} duration={6000}>
                         <img src={Logo1} alt="TestLogo"></img>
                     </Fade>
                 </div>
@@ -147,7 +147,7 @@ const Home = () => {
                         </Fade>
                 </div>
                 
-                <div >
+                <div>
                     <FeaturedProducts></FeaturedProducts>
                 </div>
                 <div>

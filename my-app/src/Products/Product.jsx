@@ -70,8 +70,8 @@ const Product = (props) => {
     }
 
     const zoomOptions = {
-        threshold: 0.3, // Adjust this threshold value to your desired visibility trigger point
-        triggerOnce: false, // Set to true so that the animation only happens once
+        threshold: 0.3, 
+        triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
     

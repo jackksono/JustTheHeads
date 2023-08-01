@@ -62,9 +62,8 @@ const ContactUs = (props) => {
         setData("")
         setMessage("")
         showResult(true)
-    }
-    else (setValidEmail(true))
-        
+        }
+        else (setValidEmail(true))  
     };
 
     return (props.trigger) ? (
