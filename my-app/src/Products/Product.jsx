@@ -81,7 +81,7 @@ const Product = (props) => {
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
                 <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[550px] lg:w-[550px] duration-1000"
                 ref={zoom1Ref}></div>
-                    <Zoom top when={zoom1InView} duration={2000}>
+                    <Zoom top when={zoom1InView} duration={1000}>
                         <img 
                             src={productImage} 
                             alt="productImage"
