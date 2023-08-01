@@ -79,7 +79,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[600px] lg:w-[600px] duration-1000"
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[550px] lg:w-[550px] duration-1000"
                 ref={zoom1Ref}></div>
                     <Zoom top when={zoom1InView} duration={2000}>
                         <img 
@@ -118,7 +118,7 @@ const Product = (props) => {
                             </button>
                         </>
                         :
-                        <button className="z-10 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
+                        <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
                             onClick={() => cart.addOneToCart(id)}
                             onMouseLeave={e => blobToggleOff(e)}
                             onMouseOver={e => blobToggle(e)}

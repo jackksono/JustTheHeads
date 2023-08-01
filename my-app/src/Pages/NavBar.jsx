@@ -1,17 +1,18 @@
 import React, { useState, useContext } from "react";
+import { lazy, Suspense } from 'react'
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
 
 
-import Home from "./Home";
-import ContactUs from "./NavBarTabs/ContactUs";
-import AboutUs from "./NavBarTabs/AboutUs"
-import AllProducts from "../Products/AllProducts";
-import CheckOut from "./Cart/CheckOut";
-import Cancel from "./Cart/Cancel";
-import Success from "./Cart/Success";
-import IndividualProduct from "../Products/IndividualProduct";
-import SearchBar from "./NavBarTabs/SearchBar";
+// import Home from "./Home";
+// import ContactUs from "./NavBarTabs/ContactUs";
+// import AboutUs from "./NavBarTabs/AboutUs"
+// import AllProducts from "../Products/AllProducts";
+// import CheckOut from "./Cart/CheckOut";
+// import Cancel from "./Cart/Cancel";
+// import Success from "./Cart/Success";
+// import IndividualProduct from "../Products/IndividualProduct";
+// import SearchBar from "./NavBarTabs/SearchBar";
 
 import { ShopContext } from "../Context/ShopContext";
 
@@ -22,6 +23,15 @@ import { useClickAway } from "@uidotdev/usehooks";
 
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
+const Home = lazy(() => import("./Home"));
+const ContactUs = lazy(() => import("./NavBarTabs/ContactUs"));
+const AboutUs = lazy(() => import("./NavBarTabs/AboutUs"));
+const AllProducts = lazy(() => import("../Products/AllProducts"));
+const CheckOut = lazy(() => import("./Cart/CheckOut"));
+const Cancel = lazy(() => import("./Cart/Cancel"));
+const Success = lazy(() => import("./Cart/Success"));
+const IndividualProduct = lazy(() => import("../Products/IndividualProduct"));
+const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
 
 
 const NavBarComponent = () => {
@@ -164,17 +174,19 @@ const NavBarComponent = () => {
       </nav>
       </Headroom>
     
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/all-products" element={<AllProducts/>} />
-      {/* <Route path="/contact-us" element={<ContactUs/>} /> */}
-      <Route path="/why-just-the-head" element={<AboutUs/>} />
-      <Route path="/checkout" element={<CheckOut/>} />
-      <Route path="/success" element={<Success/>} />
-      <Route path="/cancel" element={<Cancel/>} />
-      <Route path="/products/:webId" element={<IndividualProduct/>} />
-      {/* <Route path="/search" element={<SearchBar/>} /> */}
-    </Routes>
+      <Suspense fallback={<div>Loading...</div>}> 
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/all-products" element={<AllProducts/>} />
+            {/* <Route path="/contact-us" element={<ContactUs/>} /> */}
+            <Route path="/why-just-the-head" element={<AboutUs/>} />
+            <Route path="/checkout" element={<CheckOut/>} />
+            <Route path="/success" element={<Success/>} />
+            <Route path="/cancel" element={<Cancel/>} />
+            <Route path="/products/:webId" element={<IndividualProduct/>} />
+            {/* <Route path="/search" element={<SearchBar/>} /> */}
+        </Routes>
+    </Suspense>
     
   </>
   
