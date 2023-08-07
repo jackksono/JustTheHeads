@@ -17,7 +17,7 @@ const AllProducts = () => {
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
     return (
-        <div className="pt-16 bg-orange-300 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
+        <div className="pt-16 bg-orange-200 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
             <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
                     <h1 className="">All Products</h1>

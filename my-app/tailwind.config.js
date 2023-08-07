@@ -10,7 +10,13 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'spin-slow': `spin 5s linear`
+        blob: "blob 0.5s ease-in-out",
+      },
+      keyframes: {
+        blob: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
       },
       colors: {
         color: {

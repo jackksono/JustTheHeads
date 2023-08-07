@@ -39,7 +39,7 @@ const Product = (props) => {
         element.classList.remove('bg-blob3')
         // console.log('index: ', index, blobArray[index]);
         element.classList.add(`bg-${blobArray[index]}`)
-        element.classList.add(`animate-spin`)
+        element.classList.add(`animate-blob`)
         // console.log(element.className)
         // console.log(element.classList)
         const updatedIndex = index >= blobArray.length - 1 ? 0 : index + 1;
@@ -60,7 +60,7 @@ const Product = (props) => {
         if(index === 0) blobRemoveIndex = blobArray.length - 1; //element.classList.remove(`bg-blob4`)
         else blobRemoveIndex = index - 1; //else element.classList.remove(`bg-${blobArray[index -1 ]}`)
         element.classList.remove(`bg-${blobArray[blobRemoveIndex]}`)
-        element.classList.remove(`animate-spin`)
+        element.classList.remove(`animate-blob`)
         // console.log('blob removed:',`bg-${blobArray[index -1 ]}`)
         // const blob = document.querySelectorAll('.blob-toggle');
         // console.log('mouse left')
@@ -70,7 +70,7 @@ const Product = (props) => {
     }
 
     const zoomOptions = {
-        threshold: 0.3, 
+        threshold: 0.15, 
         triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
@@ -80,9 +80,11 @@ const Product = (props) => {
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
                 <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[550px] lg:w-[550px] duration-1000"
-                ref={zoom1Ref}></div>
+                ></div>
+                
                     <Zoom top when={zoom1InView} duration={1000}>
                         <img 
+                            ref={zoom1Ref}
                             src={productImage} 
                             alt="productImage"
                             className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[80px] cursor-pointer relative "
@@ -91,6 +93,7 @@ const Product = (props) => {
                             onMouseOver={e => blobToggle(e)}>
                         </img>
                     </Zoom>
+                    
 
                     <Link
                     to={`/products/${webId}`}
