@@ -79,7 +79,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 opacity-30 lg:h-[550px] lg:w-[550px] duration-1000"
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[550px] lg:w-[550px] duration-1000"
                 ></div>
                 
                     <Zoom top when={zoom1InView} duration={1000}>
@@ -101,8 +101,8 @@ const Product = (props) => {
                     >More Info...</Link>
                     
                 
-                        <p className="font-bold text-black lg:pt-3 ">
-                            <b className=" font-CabinSketch font-bold lg:text-3xl text-[15px] p-0 z-0 ">{productName}</b>
+                        <p className="z-0 font-bold text-black lg:pt-3">
+                            <b className=" font-CabinSketch font-bold lg:text-3xl text-[15px] p-0">{productName}</b>
                         </p>
                         <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0">${price}</p>
                         
