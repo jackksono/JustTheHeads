@@ -23,12 +23,12 @@ const CartItem =(props) => {
                 </p>
                 <p>${productData.price}</p>
                 <div className="m-5 font-bold text-center">
-                    <button className="text-sm cursor-pointer" onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                    <input className='text-center w-[100px] ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                    <button className="cursor-pointer" onClick={() => cart.addOneToCart(id)}> + </button>
+                    <button className="pr-2 text-sm duration-100 cursor-pointer lg:text-lg hover:text-white" onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                    <input className='text-center w-[100px] rounded-md ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                    <button className="pl-2 text-sm duration-100 cursor-pointer lg:text-lg hover:text-white" onClick={() => cart.addOneToCart(id)}> + </button>
                     <div className="pt-5">
                         <button  
-                            className="p-2 text-sm text-center text-white bg-red-500 cursor-pointer rounded-2xl hover:text-black hover:bg-white" 
+                            className="p-2 text-sm text-center text-white duration-100 bg-red-500 cursor-pointer rounded-2xl hover:text-black hover:bg-white" 
                             onClick={() => cart.deleteFromCart(id)}>
                             Remove From Cart
                         </button>

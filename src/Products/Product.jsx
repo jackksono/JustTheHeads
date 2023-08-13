@@ -70,8 +70,6 @@ const Product = (props) => {
         // blob.forEach((element) => {
         //     element.classList.toggle('bg-none');
         // })
-        const price = e.target.parentElement.querySelector('.price')
-        price.classList.remove('text-black')
     }
 
     const zoomOptions = {
@@ -102,7 +100,7 @@ const Product = (props) => {
 
                     <Link
                     to={`/products/${webId}`}
-                    className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0 hover:text-white"
+                    className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0 hover:text-white duration-100"
                     >More Info...</Link>
                     
                 
@@ -115,18 +113,18 @@ const Product = (props) => {
                         <>
                             <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black z-10'>In Cart: {productQuantity}</h1>
                             <div className="flex items-center justify-center lg:text-sm text-[xs]">
-                                <button className='cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white' onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                                <button className='cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white duration-100' onClick={() => cart.deleteOneFromCart(id)}> - </button>
                                 <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-black ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                                <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white' onClick={() => cart.addOneToCart(id)}> + </button>
+                                <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white duration-100' onClick={() => cart.addOneToCart(id)}> + </button>
                             </div>
                             <button
                             onClick={() => navigate('/checkout')}
-                            className="text-[6px] mt-0 text-black w-[50px] lg:w-auto bg-red-300 hover:bg-red-600 border-2 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
+                            className="text-[6px] mt-0 text-black w-[50px] lg:w-auto bg-red-300 hover:bg-red-600 border-2 duration-100 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
                                 Checkout
                             </button>
                         </>
                         :
-                        <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 "
+                        <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100 dur "
                             onClick={() => cart.addOneToCart(id)}
                             onMouseLeave={e => blobToggleOff(e)}
                             onMouseOver={e => blobToggle(e)}

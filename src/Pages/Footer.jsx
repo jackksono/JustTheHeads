@@ -9,10 +9,10 @@ const Footer = () => {
         <footer className="inset-x-0 bottom-0 w-screen h-[75px] lg:h-[200px] bg-lightning bg-stone-300 bg-texture bg-cover bg-center bg-blend-overlay">
             <div className="flex flex-wrap items-center justify-center pt-1 space-x-2 lg:pt-4 lg:space-y-4 lg:space-x-6">
                 <a href='https://twitter.com/' className='lg:pt-4 ' target="_blank" rel="noopener noreferrer">
-                    <FaTwitter className="w-3 h-3 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
+                    <FaTwitter className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
                 <a href='https://www.youtube.com/' target="_blank" rel="noopener noreferrer">
-                    <FaYoutube className="w-3 h-3 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
+                    <FaYoutube className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
                 
                 <p className='lg:text-sm text-[10px] text-black'>QUALITY </p>
@@ -20,10 +20,10 @@ const Footer = () => {
                 <p className='text-black text-[10px] lg:text-sm'>PRICE</p>
                 
                 <a href='https://www.facebook.com/' target="_blank" rel="noopener noreferrer">
-                    <FaFacebookSquare className="w-3 h-3 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
+                    <FaFacebookSquare className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
                 <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">
-                    <FaInstagramSquare className="w-3 h-3 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
+                    <FaInstagramSquare className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
             </div>
             

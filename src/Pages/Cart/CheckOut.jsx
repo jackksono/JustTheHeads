@@ -41,13 +41,18 @@ const CheckOut = () => {
 
             {cart.getTotal() > 0 ?
 
-            <div className="w-[500px] flex  justify-center items-center h-auto">
-                <p className="flex justify-center text-black "> Subtotal: ${cart.getTotal()}</p>
-                <button onClick={() => navigate('/all-products')} className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-black text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> Continue Shopping </button>
+            <div className="flex items-center justify-center w-auto h-auto">
+                <p className="flex justify-center text-black lg:text-2xl "> Subtotal: ${cart.getTotal()}</p>
                 <button 
-                    className="lg:w-[200px] h-[50px] bg-black text-white rounded-[8px] lg:m-[10px] w-[120px] cursor-pointer"
-                    onClick={checkout}
-                > Checkout </button>
+                    onClick={() => navigate('/all-products')} 
+                    className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-orange-500 duration-100 text-black hover:bg-black hover:text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> 
+                    Continue Shopping 
+                </button>
+                <button 
+                    className="lg:w-[200px] h-[50px] bg-orange-500 text-black hover:bg-black hover:text-white duration-100 rounded-[8px] lg:m-[10px] w-[120px] cursor-pointer"
+                    onClick={checkout}>
+                    Checkout 
+                </button>
             </div>
             : <h1 className="text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
         </div>
