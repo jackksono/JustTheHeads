@@ -17,7 +17,7 @@ const FeaturedProducts = () => {
   const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
   return (
-    <div className="overflow-auto bg-orange-300 lg:pt-16 bg-allProducts bg-blend-overlay">
+    <div className="overflow-auto overflow-x-hidden bg-orange-300 lg:pt-16 bg-allProducts bg-blend-overlay lg:py-5">
             <div 
               className="relative text-4xl text-center text-black lg:text-8xl"
               ref={zoom1Ref}>
@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
             <div className='flex items-end justify-end py-4 pr-8 text-right'>
               <Link
               to={`/all-products`}
-              className="lg:text-lg italic text-black text-[12px] lg:pr-20 justify-end"
+              className="lg:text-lg italic text-black text-[12px] lg:pr-20 justify-end hover:text-white"
               >See All Products...</Link>
             </div>
             <div className="grid grid-cols-2 lg:pt-16 lg:w-full lg:h-auto lg:grid-cols-4 place-items-center">

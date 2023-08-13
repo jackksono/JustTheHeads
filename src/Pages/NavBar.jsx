@@ -3,17 +3,6 @@ import { lazy, Suspense } from 'react'
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
 
-
-// import Home from "./Home";
-// import ContactUs from "./NavBarTabs/ContactUs";
-// import AboutUs from "./NavBarTabs/AboutUs"
-// import AllProducts from "../Products/AllProducts";
-// import CheckOut from "./Cart/CheckOut";
-// import Cancel from "./Cart/Cancel";
-// import Success from "./Cart/Success";
-// import IndividualProduct from "../Products/IndividualProduct";
-// import SearchBar from "./NavBarTabs/SearchBar";
-
 import { ShopContext } from "../Context/ShopContext";
 
 import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'react-icons/bs'

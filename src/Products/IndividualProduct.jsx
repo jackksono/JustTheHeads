@@ -13,9 +13,6 @@ const IndividualProduct = (props) => {
 
     const navigate = useNavigate()
 
-    
-    
-    
 
   return (
     <div className='pt-40 overflow-auto lg:pt-40'>

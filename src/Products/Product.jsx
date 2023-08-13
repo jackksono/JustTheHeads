@@ -40,6 +40,7 @@ const Product = (props) => {
         // console.log('index: ', index, blobArray[index]);
         element.classList.add(`bg-${blobArray[index]}`)
         element.classList.add(`animate-blob`)
+        
         // console.log(element.className)
         // console.log(element.classList)
         const updatedIndex = index >= blobArray.length - 1 ? 0 : index + 1;
@@ -51,6 +52,8 @@ const Product = (props) => {
         // })
         // blob.classList.toggle(`bg-blob1`);
         // console.log(index); 
+
+        
     }
     const blobToggleOff = (e) => {
        
@@ -67,6 +70,8 @@ const Product = (props) => {
         // blob.forEach((element) => {
         //     element.classList.toggle('bg-none');
         // })
+        const price = e.target.parentElement.querySelector('.price')
+        price.classList.remove('text-black')
     }
 
     const zoomOptions = {
@@ -97,26 +102,26 @@ const Product = (props) => {
 
                     <Link
                     to={`/products/${webId}`}
-                    className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0"
+                    className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0 hover:text-white"
                     >More Info...</Link>
                     
                 
                         <p className="z-0 font-bold text-black lg:pt-3">
                             <b className=" font-CabinSketch font-bold lg:text-3xl text-[15px] p-0">{productName}</b>
                         </p>
-                        <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0">${price}</p>
+                        <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0 text-black">${price}</p>
                         
                         {productQuantity> 0 ? 
                         <>
-                            <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black'>In Cart: {productQuantity}</h1>
+                            <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black z-10'>In Cart: {productQuantity}</h1>
                             <div className="flex items-center justify-center lg:text-sm text-[xs]">
-                                <button className='cursor-pointer lg:text-lg text-[10px] z-10' onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                                <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[200px] lg:h-[25px] z-10 ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                                <button className='cursor-pointer lg:text-lg text-[10px] z-10' onClick={() => cart.addOneToCart(id)}> + </button>
+                                <button className='cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white' onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                                <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-black ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                                <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white' onClick={() => cart.addOneToCart(id)}> + </button>
                             </div>
                             <button
                             onClick={() => navigate('/checkout')}
-                            className="text-[6px] mt-0 text-black w-[50px] bg-red-300 border-2 border-black lg:text-sm lg:w-full lg:mt-2 rounded-2xl z-10">
+                            className="text-[6px] mt-0 text-black w-[50px] lg:w-auto bg-red-300 hover:bg-red-600 border-2 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
                                 Checkout
                             </button>
                         </>
