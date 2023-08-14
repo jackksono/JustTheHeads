@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import CartItem from "./Cart-Item";
 
-
-
 const CheckOut = () => {
     const navigate = useNavigate()
     const cart = useContext(ShopContext)
@@ -20,10 +18,15 @@ const CheckOut = () => {
             return response.json();
         }).then((response) => {
             if(response.url) {
-                window.location.assign(response.url); // Forwarding user to Stripe
+                window.location.assign(response.url);
             }
         });
     }
+
+    // const generateStripeCheckoutUrl = () => {
+    //     const dynamicStripeUrl = "YOUR_DYNAMIC_STRIPE_URL";
+    //     navigate(`/custom-stripe-checkout?url=${encodeURIComponent(dynamicStripeUrl)}`);
+    //   };
 
     return (
         <div className="flex flex-col items-center justify-center text-lg pt-28">
