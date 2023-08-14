@@ -15,21 +15,21 @@ const IndividualProduct = (props) => {
 
 
   return (
-    <div className='pt-40 overflow-auto lg:pt-40'>
+    <div className='pt-40 overflow-auto bg-orange-200 lg:pt-40'>
         <button className='flex pl-4 text-xs lg:pl-8 lg:text-xl'
             onClick={() =>navigate('/all-products')}
         >Back
         </button>
-        <h1 className='text-center text-black lg:text-4xl'>{productName}</h1>
+        <h1 className='text-center text-black lg:text-4xl font-Kanit'>{productName}</h1>
         <div className='flex lg:p-8'>
             <img 
                 src={productImage}
                 alt='productImage'
                 className='lg:h-[800px] lg:w-[600px] h-[200px] w-[150px]'>
             </img>
-            <div className='lg:w-[700px] w-[250px] p-2 h-[100px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:p-5'>
-                <p className='relative text-[15px] text-black lg:text-2xl'>Description:</p>
-                <h1 className="items-center justify-center text-[10px] lg:text-lg text-center text-black lg:p-5">{description}</h1>
+            <div className='lg:w-[700px] w-[250px] p-2 h-[100px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:p-5 bg-orange-400'>
+                <p className='relative text-[15px] text-black lg:text-2xl font-Kanit'>Description:</p>
+                <h1 className="items-center justify-center text-[10px] lg:text-lg text-center text-black lg:p-5 font-Kanit">{description}</h1>
 
                 {productQuantity > 0 ?
                 

@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       animation: {
         blob: "blob 0.5s ease-in-out",
+        'bounce': '3s infinite',
       },
       keyframes: {
         blob: {
