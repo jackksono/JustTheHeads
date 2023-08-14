@@ -58,7 +58,7 @@ const AllProducts = () => {
 
     return (
         <div className="pt-16 overflow-x-hidden bg-orange-200 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
-            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
+            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch">
                 <Bounce top when={zoom1InView}>
                     <h1 className="">All Products</h1>
                 </Bounce>  

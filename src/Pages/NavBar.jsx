@@ -16,11 +16,13 @@ const Home = lazy(() => import("./Home"));
 const ContactUs = lazy(() => import("./NavBarTabs/ContactUs"));
 const AboutUs = lazy(() => import("./NavBarTabs/AboutUs"));
 const AllProducts = lazy(() => import("../Products/AllProducts"));
-const CheckOut = lazy(() => import("./Cart/CheckOut"));
+const Cart = lazy(() => import("./Cart/Cart"));
 const Cancel = lazy(() => import("./Cart/Cancel"));
 const Success = lazy(() => import("./Cart/Success"));
+const Checkout = lazy(() => import("./Cart/Checkout"))
 const IndividualProduct = lazy(() => import("../Products/IndividualProduct"));
 const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
+
 
 
 const NavBarComponent = () => {
@@ -88,7 +90,7 @@ const NavBarComponent = () => {
                       </button>
                       <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
                   </span>
-                  <Link to="/checkout">
+                  <Link to="/cart">
                       <button className="flex text-right text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 focus:text-white">
                           <BsFillCartFill className="text-lg lg:w-[27.5px] lg:h-[27.5px]"/>
                             {productCount > 0 ?
@@ -169,7 +171,8 @@ const NavBarComponent = () => {
             <Route path="/all-products" element={<AllProducts/>} />
             {/* <Route path="/contact-us" element={<ContactUs/>} /> */}
             <Route path="/why-just-the-head" element={<AboutUs/>} />
-            <Route path="/checkout" element={<CheckOut/>} />
+            <Route path="/cart" element={<Cart/>} />
+            <Route path="/checkout" element={<Checkout/>} />
             <Route path="/success" element={<Success/>} />
             <Route path="/cancel" element={<Cancel/>} />
             <Route path="/products/:webId" element={<IndividualProduct/>} />
