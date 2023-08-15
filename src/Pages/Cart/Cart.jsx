@@ -29,7 +29,7 @@ const CheckOut = () => {
     //   };
 
     return (
-        <div className="flex flex-col items-center justify-center text-lg pt-28">
+        <div className="flex flex-col items-center justify-center text-lg bg-orange-200 pt-28">
             {cart.getTotal() > 0 ?
             <div>
                 <h1 className="text-3xl text-center text-black">Your Cart Items</h1>
