@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react'
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
 
+
 import { ShopContext } from "../Context/ShopContext";
 
 import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'react-icons/bs'
@@ -29,6 +30,7 @@ const NavBarComponent = () => {
 
   const [ contactUsButtonPopUp, contactUsSetButtonPopUp ] = useState(false)
   const [ searchBarButtonPopUp, searchBarSetButtonPopUp ] = useState(false)
+
   const cart = useContext(ShopContext);
 
 
@@ -60,22 +62,24 @@ const NavBarComponent = () => {
     navLinks.classList.toggle('hidden')
   }
   
-
+  
   return (
     
       <>
       
       <Headroom>
         
-      <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-200 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end z-10"
+      <nav className="w-screen p-2 top-0 lg:static fixed inset-x-0 bg-orange-200 h-[100px] drop-shadow-2xl bg-bubbles bg-texture bg-cover bg-center bg-blend-overlay justify-content-end z-10 dark:bg-black"
       ref={clickAway}>
-      
+         
           <div className="flex px-5 lg:justify-between lg:px-20 lg:mt-1">
+          
                 <span className="italic text-black lg:text-sm text-[12px] bg-primary-500">
                   <BsTelephoneFill className="absolute h-[15px] w-[15px] lg:h-[25px] lg:w-[25px]"/>
                   <p className="mx-5 lg:mx-8 lg:text-lg">Questions? Holla At Us @ xxx-xxx-xxxx</p>
                 </span>
-                
+             
+
                 <div className="flex gap-5 pl-12 pr-5 mt-1 lg:gap-8 lg:pl-0 lg:items-center">
                   <Link to="/login">
                       <button className="flex justify-end text-black transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 focus:text-white">
@@ -102,6 +106,7 @@ const NavBarComponent = () => {
                           
                       </button>
                   </Link>
+                  
             
               </div>
           </div>
