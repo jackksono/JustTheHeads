@@ -10,9 +10,7 @@ function App() {
      
     
       <ShopContextProvider>
-        
         <NavBarComponent/>
-        
       </ShopContextProvider>
     
      

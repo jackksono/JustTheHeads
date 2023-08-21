@@ -21,9 +21,9 @@ const FeaturedProducts = () => {
             <div 
               className="relative text-4xl text-center text-black lg:text-8xl"
               ref={zoom1Ref}>
-                <Flip top when={zoom1InView} delay={500}>
-                  <h1 className="text center font-CabinSketch">Featured Products!</h1>
-                </Flip>
+              <Flip top when={zoom1InView} delay={500}>
+                <h1 className="text center font-CabinSketch">Featured Products!</h1>
+              </Flip>
             </div>
             <div className='flex items-end justify-end py-4 pr-8 text-right'>
               <Link

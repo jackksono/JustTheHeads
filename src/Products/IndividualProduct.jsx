@@ -48,9 +48,7 @@ const IndividualProduct = (props) => {
                 </h2>
                 }
             </div>
-            
         </div>
-        
     </div>
   )
 }

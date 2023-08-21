@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 import {PRODUCTS} from '../ProductsStore'
 import Product from "./Product";
 import Footer from "../Pages/Footer";
@@ -58,7 +57,7 @@ const AllProducts = () => {
 
     return (
         <div className="pt-16 overflow-x-hidden bg-orange-200 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
-            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch">
+            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
                     <h1 className="">All Products</h1>
                 </Bounce>  
@@ -84,17 +83,24 @@ const AllProducts = () => {
                     <button 
                         className="flex w-full px-2 py-1 hover:bg-gray-500 "
                         onClick={() =>{
-                            handleCategorySelection('Chips');
-                            toggleCategoryMenu()}}>
-                            Chips
+                        handleCategorySelection('Chips');
+                        toggleCategoryMenu()}}>
+                        Chips
                     </button>
                     <button 
                         className="flex w-full px-2 py-1 hover:bg-gray-500 "
                         onClick={() =>{
-                            handleCategorySelection('Merchandise');
-                            toggleCategoryMenu()}}>
-                            Merchandise</button>
-                    <button></button>
+                        handleCategorySelection('Merchandise');
+                        toggleCategoryMenu()}}>
+                        Merchandise
+                    </button>
+                    <button
+                        className="flex w-full px-2 py-1 hover:bg-gray-500 "
+                        onClick={() =>{
+                        handleCategorySelection('Merchandise');
+                        toggleCategoryMenu()}}>
+                        Seasonings
+                    </button>
                 </div>
             </div>
             
@@ -109,12 +115,11 @@ const AllProducts = () => {
                         : PRODUCTS.map((product) => (
                             <Product data={product} key={product.webId} index={index} setIndex={setIndex} />
                         ))}
+                 </div>
+                <footer className="bottom-0 ">
+                    <Footer/>
+                </footer>
             </div>
-            
-            <footer className="bottom-0 ">
-                <Footer/>
-            </footer>
-        </div>
         </div>
     )
 }
