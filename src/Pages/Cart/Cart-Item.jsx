@@ -12,7 +12,7 @@ const CartItem =(props) => {
 
 
     return (
-        <div className="flex lg:w-[700px] w-[350px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px]"> 
+        <div className="flex lg:w-[700px] w-[350px] lg:h-[250px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] m-[30px] bg-orange-200"> 
             <img 
                 src={productData.productImage} 
                 alt="productImage"

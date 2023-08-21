@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { lazy, Suspense } from 'react'
+import React, { useState, useContext, lazy, Suspense } from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
 

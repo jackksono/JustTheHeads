@@ -66,7 +66,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[550px] lg:w-[550px] duration-1000"></div>
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[500px] lg:w-[500px] duration-1000"></div>
                     <Zoom top when={zoom1InView} duration={1000}>
                         <img 
                             ref={zoom1Ref}
@@ -99,7 +99,7 @@ const Product = (props) => {
                             <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white duration-100' onClick={() => cart.addOneToCart(id)}> + </button>
                         </div>
                         <button
-                            onClick={() => navigate('/checkout')}
+                            onClick={() => navigate('/cart')}
                             className="text-[6px] mt-0 text-black w-[50px] lg:w-auto bg-red-300 hover:bg-red-600 border-2 duration-100 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
                             Checkout
                         </button>

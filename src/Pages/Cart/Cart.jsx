@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShopContext } from "../../Context/ShopContext";
 import CartItem from "./Cart-Item";
+import Footer from "../Footer";
 
 const CheckOut = () => {
     const navigate = useNavigate()
@@ -29,7 +30,7 @@ const CheckOut = () => {
     //   };
 
     return (
-        <div className="flex flex-col items-center justify-center text-lg bg-orange-200 pt-28">
+        <div className="flex flex-col items-center justify-center text-lg bg-orange-200 pt-28 bg-allProducts bg-blend-overlay">
             {cart.getTotal() > 0 ?
             <div>
                 <h1 className="text-3xl text-center text-black">Your Cart Items</h1>
@@ -58,7 +59,11 @@ const CheckOut = () => {
                 </button>
             </div>
             : <h1 className="text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
+            <div>
+                <Footer/>
+            </div>
         </div>
+        
     )
 }
 
