@@ -97,9 +97,6 @@ const NavBarComponent = () => {
                               <></>}                         
                         </button>
                     </Link>
-                    <>
-                      <button id="dark-mode-button">Toggle Dark Mode</button>
-                    </>
                 </div>
             </div>
           

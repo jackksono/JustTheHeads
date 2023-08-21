@@ -32,6 +32,9 @@ const Product = (props) => {
     const blobToggle = (e) => {
 
         const element = e.target.parentElement.querySelector('.blob-toggle');
+        console.log(element)
+        element.classList.remove('bg-blob1');
+        element.classList.remove('bg-blob4');
         element.classList.remove('bg-blob2');
         element.classList.remove('bg-blob3');
        
@@ -63,9 +66,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[550px] lg:w-[550px] duration-1000"
-                ></div>
-                
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[550px] lg:w-[550px] duration-1000"></div>
                     <Zoom top when={zoom1InView} duration={1000}>
                         <img 
                             ref={zoom1Ref}
