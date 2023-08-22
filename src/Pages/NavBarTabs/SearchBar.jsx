@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 
 import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
-import { useClickAway } from "@uidotdev/usehooks";
 
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
@@ -11,11 +10,6 @@ const SearchBar = (props) => {
     const navigate = useNavigate()
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
-
-    const clickAway= useClickAway(() => {
-        const close = () => props.setTrigger(false);
-        close()
-      });
 
     const handleFilter = (e) => {
         const searchWord = e.target.value;
