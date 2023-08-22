@@ -37,13 +37,14 @@ const SearchBar = (props) => {
     }
  
   return (props.trigger) ? (
-    <div className='fixed lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-700 bg-opacity-75 lg:top-0 h-[300px] lg:h-screen rounded-xl'>
+    <div className='fixed lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-700 bg-opacity-75 lg:top-0 h-[300px] lg:h-screen rounded-xl' >
         <div className='flex justify-end text-black duration-100 cursor-pointer lg:pr-16 lg:pt-16 lg:text-5xl hover:text-white'>    
             <button onClick={() => props.setTrigger(false)}>X</button>
         </div>
        
-        <div className='flex lg:mt-[160px] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' ref={clickAway}>
+        <div className='flex lg:mt-[160px] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' >
             <input 
+            
                 type='text' 
                 placeholder='Enter a product name...'
                 className='bg-white text-[8px] lg:text-lg border-0 mb-0 lg:mb-0 p-4 lg:p-8 h-[20px] lg:h-[30px] lg:w-[500px] w-[150px] justify-center'
@@ -56,7 +57,7 @@ const SearchBar = (props) => {
             </div>
         </div>
         {filteredData.length !== 0 && (
-        <div className='flex justify-center lg:pt-5'>
+        <div className='flex justify-center lg:pt-5' >
             <div className='lg:mt-[5px] lg:w-[300px] w-[150px] lg:h-[150px] bg-white overflow-hidden overflow-y-auto shadow-md'>
                 { filteredData.slice(0,3).map((value, key) => {
                     return( 
