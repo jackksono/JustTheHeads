@@ -10,26 +10,27 @@ const PRODUCTS = [
     {
         id: "price_1NJ3xQFWsvLoj5JW4dTvpdpp",
         webId: "1NJ3xQFWsvLoj5JW4dTvpdpp",
-        productName: "Lays (6)",
+        productName: "The Original Head",
         price: 40,
         category: 'Chips',
         productImage: Lays,
-        description: "Classic is boring, But it is classy",
-        ingredients:"Salt, Pepper"
+        description: "You hear the soft whoosh as waves are tossing themselves at the shore. Seagulls squawking overhead, the wind shifts and you get that wonderful ocean smell, salty, yet refreshing. Both distinct, yet oddly subtle, this mirrors our original Just The Heads Flavor! With an initial, salty crunch, followed by the sweet taste of freshly caught shrimp, this snack will give you the best of both worlds, and have you reaching for more.",
+        ingredients:"Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Less than 2% of Monosodium Glutamate and Sodium Nitrite, Sugar, Natural Flavors"
     },
     {
         id: "price_1NJ3xdFWsvLoj5JWbx09EPhW",
         webId: "1NJ3xdFWsvLoj5JWbx09EPhW",
-        productName: "Sweet Jalapeno (6)",
+        productName: "Spicy Spice",
         price: 20,
         category: 'Chips',
         productImage: SweetJalapeno,
-        description: "This Sweet Jalapeno be so sooo sweet. Mhm mhm goodness"
+        description: "This Sweet Jalapeno be so sooo sweet. Mhm mhm goodness",
+        ingredients: "",
     },
     {
         id: "price_1NJ3xsFWsvLoj5JWNkFx6rSm",
         webId: "1NJ3xsFWsvLoj5JWNkFx6rSm",
-        productName: "Forno (6)",
+        productName: "Soy Garlic",
         price: 50,
         category: 'Chips',
         productImage: Forno,
@@ -38,7 +39,7 @@ const PRODUCTS = [
     {
         id: "price_1NJ3y3FWsvLoj5JWJWq4W5p8",
         webId: "1NJ3y3FWsvLoj5JWJWq4W5p8",
-        productName: "BBQ (6)",
+        productName: "Crazy Cajun",
         price: 10,
         category: 'Chips',
         productImage: BBQ,
@@ -49,7 +50,7 @@ const PRODUCTS = [
         webId: "1NJ3y3FWsvLoj5JWJWq4W5p7",
         productName: "Salted Egg Yolk (6)",
         price: 20,
-        category: 'Merchandise',
+        category: 'Chips',
         productImage: ComingSoon,
         description: "Americas favorite Asian snack flavor: The Salted Egg Yolk"
     },
