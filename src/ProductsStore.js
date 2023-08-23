@@ -14,7 +14,8 @@ const PRODUCTS = [
         price: 40,
         category: 'Chips',
         productImage: Lays,
-        description: "Classic is boring, But it is classy"
+        description: "Classic is boring, But it is classy",
+        ingredients:"Salt, Pepper"
     },
     {
         id: "price_1NJ3xdFWsvLoj5JWbx09EPhW",
