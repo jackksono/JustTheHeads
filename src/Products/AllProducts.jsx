@@ -66,7 +66,7 @@ const AllProducts = () => {
                 </Bounce>
             </div>
 
-            <div className="relative py-10 lg:pl-28 w-max" ref={clickAway}>
+            <div className="relative py-10 lg:pl-28 w-max">
                 <div className="relative focus:text-black">
                     <input 
                         className="w-full px-2 pr-10 bg-white rounded-sm font-Kanit " 

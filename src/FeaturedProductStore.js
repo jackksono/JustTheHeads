@@ -1,8 +1,4 @@
-import Lays from "../src/Images/ProductImages/1.png"
-import SweetJalapeno from "../src/Images/ProductImages/2.png"
-import Forno from "../src/Images/ProductImages/3.png"
-import BBQ from "../src/Images/ProductImages/4.png"
-
+import ComingSoon from '../src/Images/ProductImages/ComingSoon.jpg'
 
 
 const featuredProducts = [
@@ -11,7 +7,7 @@ const featuredProducts = [
         webId: "1NJ3xQFWsvLoj5JW4dTvpdpp",
         productName: "Lays (6)",
         price: 40,
-        productImage: Lays,
+        productImage: ComingSoon,
         description: "Classic is boring, But it is classy"
     },
     {
@@ -19,7 +15,7 @@ const featuredProducts = [
         webId: "1NJ3xdFWsvLoj5JWbx09EPhW",
         productName: "Sweet Jalapeno (6)",
         price: 20,
-        productImage: SweetJalapeno,
+        productImage: ComingSoon,
         description: "This Sweet Jalapeno be so sooo sweet. Mhm mhm goodness"
     },
     {
@@ -27,7 +23,7 @@ const featuredProducts = [
         webId: "1NJ3xsFWsvLoj5JWNkFx6rSm",
         productName: "Forno (6)",
         price: 50,
-        productImage: Forno,
+        productImage: ComingSoon,
         description: "What is a Forno? Not sure if I've ever tried or even heard of this in my life"
     },
     {
@@ -35,7 +31,7 @@ const featuredProducts = [
         webId: "1NJ3y3FWsvLoj5JWJWq4W5p8",
         productName: "BBQ (6)",
         price: 10,
-        productImage: BBQ,
+        productImage: ComingSoon,
         description: "The tasty goodness of campfire smoke straight to the throat. Enjoy with NEW BBQ chips"
     }
 ]
