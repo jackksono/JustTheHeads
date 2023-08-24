@@ -23,7 +23,7 @@ const IndividualProduct = (props) => {
                 onClick={() =>navigate('/all-products')}
             >Back
             </button>
-            <h1 className='font-extrabold text-center text-black lg:text-5xl font-Kanit'>{productName}</h1>
+            <h1 className='font-extrabold text-center text-black lg:text-5xl font-CabinSketch'>{productName}</h1>
             <div className='flex lg:px-28 lg:py-10'>
                 <img 
                     src={productImage}
@@ -31,8 +31,8 @@ const IndividualProduct = (props) => {
                     className='lg:h-[450px] lg:w-[337.5px] h-[200px] w-[150px]'>
                 </img>
                 <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[300px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:p-5 bg-orange-400'>
-                    <p className='relative text-[15px] text-black lg:text-2xl font-Kanit'>Description:</p>
-                    <h1 className="items-center justify-center text-[10px] lg:text-lg text-black lg:p-5 font-Kanit text-left">{description}</h1>
+                    <p className='relative text-[15px] text-black lg:text-2xl font-CabinSketch'>Description:</p>
+                    <h1 className="items-center justify-center text-[10px] lg:text-lg text-black lg:p-5 font-CabinSketch text-left">{description}</h1>
 
                     {productQuantity > 0 ?
                     
@@ -44,7 +44,7 @@ const IndividualProduct = (props) => {
                     </h2>
                     :
                     <h2 className="flex justify-center text-sm text-center ">
-                        <button className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2  border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
+                        <button className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2 font-CabinSketch  border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
                             onClick={() => cart.addOneToCart(id)}
                             >
                             Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}
@@ -53,29 +53,29 @@ const IndividualProduct = (props) => {
                     }
                 </div>
             </div>
-            <div className='absolute transform -translate-x-1/2 lg:bottom-52 left-1/2'>
+            <div className='absolute transform -translate-x-1/2 lg:pr-72 lg:bottom-52 left-1/2'>
                 <div className='flex items-center space-y-2'>
-                    <h1 className='flex p-5 text-black'>Share on:</h1>
+                    <h1 className='flex p-5 text-black font-CabinSketch'>Share Product:</h1>
                     <div className='mt-2 space-x-5'>
-                        <FacebookShareButton url={shareUrl}>
-                            <FacebookIcon size={40} round={true} />
+                        <FacebookShareButton url={shareUrl} quote='Check out these Just The Heads Products!' hashtag='JustTheHeads'>
+                            <FacebookIcon size={40} round={true} className='hover:opacity-80' />
                         </FacebookShareButton>
                         <TwitterShareButton url={shareUrl}>
-                            <TwitterIcon size={40} round={true}/>
+                            <TwitterIcon size={40} round={true} className='hover:opacity-80'/>
                         </TwitterShareButton>
                         <WhatsappShareButton url={shareUrl}>
-                            <WhatsappIcon size={40} round={true}/>
+                            <WhatsappIcon size={40} round={true} className='hover:opacity-80'/>
                         </WhatsappShareButton>
                         <FacebookMessengerShareButton shareUrl={shareUrl}>
-                            <FacebookMessengerIcon size={40} round={true}/>
+                            <FacebookMessengerIcon size={40} round={true} className='hover:opacity-80'/>
                         </FacebookMessengerShareButton>
                     </div>
                 </div>
             </div>
             <div className='flex justify-center px-5 py-2'>
                 <div className='w-3/4 h-[100px] bg-orange-400 border rounded-lg border-black shadow-[0px_3px_15px_rgba(0,0,0,0.2)]'>
-                    <h1 className='px-2 text-lg font-bold text-black font-Kanit'>Ingredients:</h1>
-                    <p className='p-2 text-black font-Kanit'>{ingredients}</p>
+                    <h1 className='px-2 text-lg font-bold text-black font-CabinSketch'>Ingredients:</h1>
+                    <p className='p-2 text-black font-CabinSketch'>{ingredients}</p>
                 </div>
             </div>
         </div>
