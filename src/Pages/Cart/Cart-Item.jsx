@@ -16,7 +16,8 @@ const CartItem =(props) => {
             <img 
                 src={productData.productImage} 
                 alt="productImage"
-                className="w-[100px] h-auto lg:w-[200px]">
+                className="w-[100px] h-auto lg:w-[200px]"
+                loading="lazy">
             </img>
             <div className="items-center w-full text-center text-black">
                 <p>

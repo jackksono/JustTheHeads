@@ -121,14 +121,14 @@ const Home = () => {
                 <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 lg:mt-96 ml-80"
                 ref={zoom4Ref}>
                     <Fade right when={zoom4InView} delay={0} duration={6000}>
-                        <img src={Logo1} alt="TestLogo"></img>
+                        <img src={Logo1} alt="TestLogo" loading="lazy"></img>
                     </Fade>
                 </div>
 
                 <div className="w-[150px] h-[150px] absolute top-3/4 right-1/2 transform rotate-12  lg:mt-96 mr-80"
                 ref={zoom3Ref}>
                     <Fade left when={zoom3InView} delay={0} duration={8000}>
-                        <img src={Logo1} alt="TestLogo"></img>
+                        <img src={Logo1} alt="TestLogo" loading="lazy"></img>
                     </Fade>
                 </div>
 
@@ -140,10 +140,10 @@ const Home = () => {
                             
                                 <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black font-mono " >We are the head family! Just The Heads is a small company founded by three
                                 best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
-                                and turning them into a sustainable, yet delicious snack! With millions of pounds of shrimp shells and heads going to waste
-                                each year, support Just The Heads one head and one bag at a time in finding a solution to eliminate food waste globally. </p>
+                                and turning them into a sustainable, yet delicious snack! With 1.3 billion pounds of fish and shrimp going to waste
+                                each year, we wanted to help solve the issue of eliminating food waste. Support Just The Heads one bag and one head at a time in finding a solution to eliminating food waste globally. </p>
                             </p>
-                            <img src={Welcome} alt="bag" className=" mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black"></img>
+                            <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>
                 </div>
                 

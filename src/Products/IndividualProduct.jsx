@@ -6,6 +6,7 @@ import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, Fac
     WhatsappShareButton, WhatsappIcon, RedditShareButton, RedditIcon } from 'react-share'
 
 import noGMO from '../Images/SiteImages/NoGMO.png'
+import ketoFriendly from '../Images/SiteImages/KetoFriendly.png'
 
 const IndividualProduct = (props) => {
     const { webId }  = useParams()
@@ -31,7 +32,8 @@ const IndividualProduct = (props) => {
                     <img 
                         src={productImage}
                         alt='productImage'
-                        className='lg:h-[450px] lg:w-[337.5px] h-[200px] w-[150px]'>
+                        className='lg:h-[450px] lg:w-[337.5px] h-[200px] w-[150px]'
+                        loading='lazy'>
                     </img>
                     <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[300px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:ml-20 lg:p-5 bg-orange-400'>
                         <p className='relative text-[15px] text-black lg:text-2xl font-CabinSketch'>Description:</p>
@@ -82,19 +84,19 @@ const IndividualProduct = (props) => {
 
                 <div className='flex flex-col lg:absolute lg:top-32 lg:right-48'>
                     <div className='flex flex-col items-center justify-center space-y-2 text-center'>
-                        <img src={noGMO} alt='NoGMO' className='w-32 h-32'></img>
+                        <img src={noGMO} alt='NoGMO' className='w-36 h-36' loading='lazy'></img>
                         <p className='text-sm text-black'>Made with</p>
                         <p className='text-sm text-black'>Real Ingredients</p>
                     </div>
                     
                     <div className='flex flex-col items-center justify-center space-y-2 text-center'>
-                        <img src={noGMO} alt='NoGMO' className='w-32 h-32'></img>
-                        <p className='text-sm text-black'>Made with</p>
-                        <p className='text-sm text-black'>Real Ingredients</p>
+                        <img src={ketoFriendly} alt='NoGMO' className='lg:w-28 lg:h-28' loading='lazy'></img>
+                        <p className='text-sm text-black'>Low Carbs</p>
+                        <p className='text-sm text-black'>No Fillers</p>
                     </div>
 
                     <div className='flex flex-col items-center justify-center space-y-2 text-center'>
-                        <img src={noGMO} alt='NoGMO' className='w-32 h-32'></img>
+                        <img src={noGMO} alt='NoGMO' className='w-32 h-32' loading='lazy'></img>
                         <p className='text-sm text-black'>Made with</p>
                         <p className='text-sm text-black'>Real Ingredients</p>
                     </div>

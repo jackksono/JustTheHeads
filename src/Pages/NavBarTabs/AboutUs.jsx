@@ -40,7 +40,7 @@ const AboutUs = () => {
                         </Roll>
                         <Roll right when={zoom4InView}>
                             <div className="flex justify-center place-items-center">
-                                <img src={ShrimpBanner} alt="JustHeads" className="lg:w-[500px] lg:h-96 shadow-lg"></img>
+                                <img src={ShrimpBanner} alt="JustHeads" className="lg:w-[500px] lg:h-96 shadow-lg" loading="lazy"></img>
                             </div>
                         </Roll>
                     </div>
@@ -63,13 +63,21 @@ const AboutUs = () => {
                                 </p1>
                             </h1>
                             <div className="flex flex-col items-center justify-center">
-                                <img className="ml-auto rounded-full shadow-xl lg:w-auto lg:mb-10 lg:h-96 lg:mr-40" src={JackS} alt="JacksIMG"></img> 
+                                <img 
+                                    className="ml-auto rounded-full shadow-xl lg:w-auto lg:mb-10 lg:h-96 lg:mr-40" 
+                                    src={JackS} alt="JacksIMG"
+                                    loading="lazy">
+                                </img> 
                             </div>
                         </Slide>
                     </div>
                     <div className="grid justify-end w-screen grid-cols-2 pt-5 pl-20 pr-5 overflow-hidden rounded-lg shadow-md" ref={zoom2Ref}>
                         <Slide right when={zoom2InView}>
-                            <img className="rounded-full shadow-xl w-96 h-96"  alt="JacobsIMG"></img>
+                            <img 
+                                className="rounded-full shadow-xl w-96 h-96"  
+                                alt="JacobsIMG"
+                                loading="lazy">
+                            </img>
                             <h1 className="text-2xl italic text-black">Jacob Zinger
                                 <p className="text-lg italic text-gray-500 ">Co-Founder</p>
                                 <p className="flex pt-5 text-lg not-italic">
@@ -91,7 +99,11 @@ const AboutUs = () => {
                                 </p1>
                             </h1>
                             <div className="flex flex-col items-center justify-center ">
-                                <img className="ml-auto rounded-full shadow-xl lg:mb-10 lg:w-auto lg:h-auto lg:mr-40" src={ChristianD} alt="ChristiansIMG"></img>
+                                <img 
+                                    className="ml-auto rounded-full shadow-xl lg:mb-10 lg:w-auto lg:h-auto lg:mr-40" 
+                                    src={ChristianD} alt="ChristiansIMG"
+                                    loading="lazy">
+                                </img>
                             </div>
                         </Slide>
                     </div>

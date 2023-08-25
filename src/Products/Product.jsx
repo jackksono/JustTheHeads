@@ -75,7 +75,8 @@ const Product = (props) => {
                             className="flex lg:w-[300px] lg:h-[350px] h-[100px] w-[80px] cursor-pointer relative "
                             onClick={() => navigate(`/products/${webId}`)}
                             onMouseLeave={e => blobToggleOff(e)}
-                            onMouseOver={e => blobToggle(e)}>
+                            onMouseOver={e => blobToggle(e)}
+                            loading="lazy">
                         </img>
                     </Zoom>
                     
