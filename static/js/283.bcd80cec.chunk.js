@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_app=self.webpackChunkmy_app||[]).push([[283],{6283:function(e,r,t){t.r(r);var s=t(2791),a=t(7689),c=t(184);r.default=function(){var e=(0,s.useRef)(null),r=(0,a.TH)(),t=new URLSearchParams(r.search).get("url");return(0,s.useEffect)((function(){t&&(e.current.src=t)}),[t]),(0,c.jsx)("div",{className:"flex items-center justify-center h-screen",children:(0,c.jsx)("iframe",{ref:e,title:"Custom Stripe Checkout",width:"100%",height:"800",frameBorder:"0",allowtransparency:"true"})})}}}]);
+//# sourceMappingURL=283.bcd80cec.chunk.js.map
