@@ -5,7 +5,6 @@ import Product from "./Product";
 import Footer from "../Pages/Footer";
 
 import { useInView } from 'react-intersection-observer';
-import { useClickAway } from "@uidotdev/usehooks";
 
 import Bounce from 'react-reveal/Bounce'
 import { IoIosArrowDropdown } from 'react-icons/io'
@@ -16,10 +15,6 @@ const AllProducts = () => {
     const [ wordEntered, setWordEntered ] = useState('')
     
     const [selectedCategory, setSelectedCategory] = useState(null); // Track the selected category
-
-    const clickAway = useClickAway(() => {
-        toggleCategoryMenu()
-      });
 
     const handleCategorySelection = (category) => {
         setSelectedCategory(category); // Update the selected category
@@ -50,7 +45,7 @@ const AllProducts = () => {
     }
 
     const zoomOptions = {
-        threshold: 0.75, 
+        threshold: 0.1, 
         triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);

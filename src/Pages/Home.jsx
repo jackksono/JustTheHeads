@@ -32,17 +32,17 @@ const Home = () => {
 
     const [ currentIndex, setCurrentIndex ] = useState(0)
    
-    useEffect(() => { //Automatically switches slides
-        setTimeout(
-            () =>
-              setCurrentIndex((prevIndex) =>
-              prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-              ),
-            delay
-          );
-      
-          return () => {};
-        }, [currentIndex]);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) =>
+                prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+            );
+        }, delay);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, [currentIndex]);
 
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
@@ -76,7 +76,7 @@ const Home = () => {
         <div>
             <div className="overflow-auto overflow-x-hidden bg-orange-200 bg-center bg-cover shadow-lg dark lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
-                    <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[1000px] relative'>
+                    <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[650px] relative'>
                         {slides.map((slide, slideIndex) => (
                             <div
                             key={slideIndex}

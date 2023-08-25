@@ -13,13 +13,6 @@ app.use(express.json());
 
 app.post("/cart-checkout", async (req, res) => {
 
-    // const coupon = await stripe.coupons.create({
-    //     percent_off: 20,
-    //     duration: 'once',
-    //   });
-console.log("This is the request body:", req.body)
-
-
     const itemsCheckout = req.body.items;
     let lineItems = [];
     itemsCheckout.forEach((item) => {

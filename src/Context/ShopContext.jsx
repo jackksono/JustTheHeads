@@ -41,7 +41,7 @@ export const ShopContextProvider = (props) => {
         const quantity = getProductQuantity(id);
 
         if (quantity === 1) {
-            deleteFromCart(id)
+            return
         } else {
             setCartItems(
                 cartItems.map(

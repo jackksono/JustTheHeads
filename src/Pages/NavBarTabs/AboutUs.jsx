@@ -12,13 +12,14 @@ import ChristianD from '../../Images/ProfileImages/ChristianD2.jpg'
 
 const AboutUs = () => {
     const zoomOptions = {
-        threshold: 0.35, 
+        threshold: 0.13, 
         triggerOnce: false, 
     };
     const zoomOptions2 = {
-        threshold: 0.9, 
+        threshold: 0.2, 
         triggerOnce: false, 
     };
+    
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
     const { ref: zoom2Ref, inView: zoom2InView } = useInView(zoomOptions);
     const { ref: zoom3Ref, inView: zoom3InView } = useInView(zoomOptions);

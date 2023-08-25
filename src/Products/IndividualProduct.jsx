@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { PRODUCTS } from '../ProductsStore'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
 import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, FacebookMessengerShareButton, FacebookMessengerIcon, 
     WhatsappShareButton, WhatsappIcon, RedditShareButton, RedditIcon } from 'react-share'
 
 import noGMO from '../Images/SiteImages/NoGMO.png'
 import ketoFriendly from '../Images/SiteImages/KetoFriendly.png'
+import bakedNotFried from '../Images/SiteImages/BakedNotFried.png'
 
 const IndividualProduct = (props) => {
     const { webId }  = useParams()
@@ -35,40 +36,47 @@ const IndividualProduct = (props) => {
                         className='lg:h-[450px] lg:w-[337.5px] h-[200px] w-[150px]'
                         loading='lazy'>
                     </img>
-                    <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[300px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:ml-20 lg:p-5 bg-orange-400'>
+                    <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[350px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:ml-20 lg:p-5 bg-orange-400'>
                         <p className='relative text-[15px] text-black lg:text-2xl font-CabinSketch'>Description:</p>
                         <h1 className="items-center justify-center text-[10px] lg:text-lg text-black lg:p-5 font-CabinSketch text-left">{description}</h1>
                         
                         {productQuantity > 0 ?
                         <div className="flex flex-col items-center justify-center">
-                        <h2 className="flex items-center justify-center text-sm text-center">
-                        <p className="flex justify-center pr-5 text-black font-CabinSketch ">Quantity:</p>
-                        <div className="flex">
-                            <button
-                            className="cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white duration-100"
-                            onClick={() => cart.deleteOneFromCart(id)}
-                            >
-                            -
-                            </button>
-                            <input
-                            className="text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-black"
-                            value={productQuantity}
-                            onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}
-                            ></input>
-                            <button
-                            className="cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white duration-100"
-                            onClick={() => cart.addOneToCart(id)}
-                            >
-                            +
-                            </button>
+                        <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black z-10'>In Cart: {productQuantity}</h1>
+                        <div className="flex items-center justify-center text-sm text-center">
+                            <p className="flex justify-center pr-5 text-black font-CabinSketch ">Quantity:</p>
+                            <div className="flex">
+                                <button
+                                className="cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white duration-100"
+                                onClick={() => cart.deleteOneFromCart(id)}
+                                >
+                                -
+                                </button>
+                                <input
+                                className="text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-black"
+                                value={productQuantity}
+                                onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}
+                                ></input>
+                                <button
+                                className="cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white duration-100"
+                                onClick={() => cart.addOneToCart(id)}
+                                >
+                                +
+                                </button>
+                            </div>
                         </div>
-                        <button
-                            className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2 font-CabinSketch border-black border-solid min-w-[100px] lg:mx-10 px-[10px] py-[5px] rounded-lg text-black hover:bg-red-600 hover:text-black cursor-pointer"
-                            onClick={() => cart.deleteFromCart(id)}
-                        >
-                            Remove from Cart
-                        </button>
-                        </h2>
+                        <div className='flex flex-row items-center justify-center py-5 space-x-5 text-center'> 
+                                <Link to='/cart'>
+                                    <button className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2 font-CabinSketch border-black border-solid min-w-[100px]  px-[10px] py-[5px] rounded-lg text-black hover:bg-red-600 hover:text-black cursor-pointer">
+                                        Checkout
+                                    </button>
+                                </Link>
+                                <Link to='/all-products'>
+                                    <button className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2 font-CabinSketch border-black border-solid min-w-[100px]  px-[10px] py-[5px] rounded-lg text-black hover:bg-red-600 hover:text-black cursor-pointer">
+                                        Continue Shopping
+                                    </button>
+                                </Link>
+                            </div>
                     </div>
                         :
                         <h2 className="flex justify-center text-sm text-center ">
@@ -82,27 +90,27 @@ const IndividualProduct = (props) => {
                     </div>
                 </div>
 
-                <div className='flex flex-col lg:absolute lg:top-32 lg:right-48'>
-                    <div className='flex flex-col items-center justify-center space-y-2 text-center'>
-                        <img src={noGMO} alt='NoGMO' className='w-36 h-36' loading='lazy'></img>
-                        <p className='text-sm text-black'>Made with</p>
-                        <p className='text-sm text-black'>Real Ingredients</p>
+                <div className='flex flex-col space-y-2 lg:absolute lg:top-24 lg:right-24'>
+                    <div className='flex flex-col items-center justify-center text-center'>
+                        <img src={noGMO} alt='NoGMO' className='scale-110 w-36 h-36' loading='lazy'></img>
+                        <p className='text-sm text-black font-CabinSketch'>Made with</p>
+                        <p className='text-sm text-black font-CabinSketch'>Real Ingredients</p>
                     </div>
                     
-                    <div className='flex flex-col items-center justify-center space-y-2 text-center'>
+                    <div className='flex flex-col items-center justify-center text-center'>
                         <img src={ketoFriendly} alt='NoGMO' className='lg:w-28 lg:h-28' loading='lazy'></img>
-                        <p className='text-sm text-black'>Low Carbs</p>
-                        <p className='text-sm text-black'>No Fillers</p>
+                        <p className='pt-3 text-sm text-black font-CabinSketch'>Low Carbs</p>
+                        <p className='text-sm text-black font-CabinSketch'>No Fillers</p>
                     </div>
 
-                    <div className='flex flex-col items-center justify-center space-y-2 text-center'>
-                        <img src={noGMO} alt='NoGMO' className='w-32 h-32' loading='lazy'></img>
-                        <p className='text-sm text-black'>Made with</p>
-                        <p className='text-sm text-black'>Real Ingredients</p>
+                    <div className='flex flex-col items-center justify-center text-center'>
+                        <img src={bakedNotFried} alt='NoGMO' className='w-28 h-28 grayscale' loading='lazy'></img>
+                        <p className='pt-3 text-sm text-black font-CabinSketch'>Never</p>
+                        <p className='text-sm text-black font-CabinSketch'>Deep Fried!</p>
                     </div>
                 </div>
 
-                <div className='absolute transform -translate-x-1/2 lg:pr-72 lg:bottom-48 left-1/2'>
+                <div className='absolute transform -translate-x-1/2 lg:pr-36 lg:bottom-32 left-1/2'>
                     <div className='flex items-center space-y-2'>
                         <h1 className='flex p-5 text-black font-CabinSketch'>Share Product:</h1>
                         <div className='mt-2 space-x-5'>
