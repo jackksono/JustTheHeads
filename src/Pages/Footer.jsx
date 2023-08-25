@@ -19,10 +19,10 @@ const Footer = () => {
                 <p className='text-black text-[10px] lg:text-sm'>SERVICE</p>
                 <p className='text-black text-[10px] lg:text-sm'>PRICE</p>
                 
-                <a href='https://www.facebook.com/' target="_blank" rel="noopener noreferrer">
+                <a href='https://www.facebook.com/profile.php?id=61550237744732' target="_blank" rel="noopener noreferrer">
                     <FaFacebookSquare className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
-                <a href='https://www.instagram.com/' target="_blank" rel="noopener noreferrer">
+                <a href='https://www.instagram.com/justtheheadz/' target="_blank" rel="noopener noreferrer">
                     <FaInstagramSquare className="w-3 h-3 duration-100 cursor-pointer lg:h-7 lg:w-7 hover:text-white"/>
                 </a>
             </div>

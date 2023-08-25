@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 
 import ShrimpBanner from '../../Images/SiteImages/ShrimpBanner.jpg'
 import JackS from '../../Images/ProfileImages/JackS.jpg'
+import ChristianD from '../../Images/ProfileImages/ChristianD2.jpg'
 
 const AboutUs = () => {
     const zoomOptions = {
@@ -53,6 +54,7 @@ const AboutUs = () => {
                     <div className="grid w-screen grid-cols-2 pt-20 pl-5 pr-20 overflow-hidden rounded-lg shadow-md" ref={zoom1Ref}>
                         <Slide left when={zoom1InView}>
                             <h1 className="text-4xl italic text-black">Jack Sonoda
+                                <p className="text-lg italic text-gray-500 ">Founder</p>
                                 <p className="flex pt-5 text-lg not-italic">
                                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis quidem debitis modi iste voluptates amet, excepturi officia, harum laborum suscipit odio laboriosam rerum eum! Quas labore recusandae accusantium similique modi?
                                 </p>
@@ -61,7 +63,7 @@ const AboutUs = () => {
                                 </p1>
                             </h1>
                             <div className="flex flex-col items-center justify-center">
-                                <img className="ml-auto rounded-full shadow-xl lg:w-96 lg:h-96 lg:mr-40" src={JackS} alt="JacksIMG"></img> 
+                                <img className="ml-auto rounded-full shadow-xl lg:w-auto lg:mb-10 lg:h-96 lg:mr-40" src={JackS} alt="JacksIMG"></img> 
                             </div>
                         </Slide>
                     </div>
@@ -69,6 +71,7 @@ const AboutUs = () => {
                         <Slide right when={zoom2InView}>
                             <img className="rounded-full shadow-xl w-96 h-96"  alt="JacobsIMG"></img>
                             <h1 className="text-2xl italic text-black">Jacob Zinger
+                                <p className="text-lg italic text-gray-500 ">Co-Founder</p>
                                 <p className="flex pt-5 text-lg not-italic">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque quasi animi repellat, beatae voluptatibus modi itaque veritatis consequatur accusantium dolore doloribus vitae libero dicta tempora. Temporibus modi quas quod sapiente!
                                 </p>
@@ -79,6 +82,7 @@ const AboutUs = () => {
                     <div className="grid w-screen grid-cols-2 pt-5 pl-5 pr-20 overflow-hidden rounded-lg shadow-md" ref={zoom3Ref}>
                         <Slide left when={zoom3InView}>
                             <h1 className="text-xl italic text-black">Christian Digap
+                                <p className="text-lg italic text-gray-500 ">Co-Founder</p>
                                 <p className="flex pt-5 text-lg not-italic text-black">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam rerum nostrum illo temporibus atque necessitatibus eos rem quidem aut fugit sed, illum veniam deleniti reiciendis ab tenetur blanditiis eius provident.
                                 </p>
@@ -86,8 +90,8 @@ const AboutUs = () => {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti molestiae voluptatum natus incidunt ea porro enim quaerat, id ab ducimus provident, iste rem deserunt unde aperiam in nam doloremque at!
                                 </p1>
                             </h1>
-                            <div className="flex flex-col items-center justify-center">
-                                <img className="ml-auto rounded-full shadow-xl w-96 h-96" alt="ChristiansIMG"></img>
+                            <div className="flex flex-col items-center justify-center ">
+                                <img className="ml-auto rounded-full shadow-xl lg:mb-10 lg:w-auto lg:h-auto lg:mr-40" src={ChristianD} alt="ChristiansIMG"></img>
                             </div>
                         </Slide>
                     </div>
