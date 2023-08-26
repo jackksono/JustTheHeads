@@ -31,8 +31,8 @@ app.post("/cart-checkout", async (req, res) => {
         // discounts: [{
         //     coupon: '{{coupon}}',
         //   }],
-        success_url: 'http://localhost:3000/success',
-        cancel_url: 'http://localhost:3000/cancel',
+        success_url: 'https://jackksono.github.io/success',
+        cancel_url: 'https://jackksono.github.io/cancel',
     });
     res.send(JSON.stringify({
         url: session.url
