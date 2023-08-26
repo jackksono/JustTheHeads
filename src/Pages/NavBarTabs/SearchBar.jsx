@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,9 @@ const SearchBar = (props) => {
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
     const [focusedIndex, setFocusedIndex] = useState(-1);
+    
 
+    //Filter through input data for result
     const handleFilter = (e) => {
         const searchWord = e.target.value;
         setWordEntered(searchWord)
@@ -31,6 +33,7 @@ const SearchBar = (props) => {
         setFilteredData([])
         setWordEntered('')
     }
+    //Function for arrows on keyboard
     const handleKeyDown = (e) => {
         if (e.key === 'ArrowDown') {
             e.preventDefault();
@@ -52,10 +55,7 @@ const SearchBar = (props) => {
         await navigate(`/products/${value.webId}`);
         props.setTrigger(false);
     };
-
-    const closeSearchBar = () => {
-        props.setTrigger(false)
-    }
+    
     // Prevent click from bubbling to outer div
     const handleInputClick = (e) => {
         e.stopPropagation(); 
@@ -63,7 +63,7 @@ const SearchBar = (props) => {
  
   return (props.trigger) ? (
     <div className='fixed lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-700 bg-opacity-75 lg:top-0 h-[300px] lg:h-screen rounded-xl' 
-        onClick={closeSearchBar}>
+        onClick={() => props.setTrigger(false)}>
         <div className='flex justify-end text-black duration-100 lg:pr-16 lg:pt-16 lg:text-5xl ' >    
             <button 
             className='cursor-pointer hover:text-white'
@@ -77,7 +77,8 @@ const SearchBar = (props) => {
                 placeholder='Enter a product name...'
                 className='bg-white text-[8px] lg:text-lg border-0 mb-0 lg:mb-0 p-4 lg:p-8 h-[20px] lg:h-[30px] lg:w-[500px] w-[150px] justify-center'
                 onChange={handleFilter}
-                value={wordEntered}>
+                value={wordEntered}
+                autoFocus>
             </input>
             <div className='lg:h-[64px] h-[32px] w-[40px] lg:w-[50px] lg:text-5xl bg-white place-items-center items-center justify-center flex pr-3'>
                 {filteredData.length === 0 ? <BsSearch className='text-md lg:text-3xl' /> : <AiOutlineCloseCircle className='cursor-pointer' onClick={clearInput}/>}
