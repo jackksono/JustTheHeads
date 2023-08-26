@@ -13,11 +13,6 @@ const SearchBar = (props) => {
     const [ wordEntered, setWordEntered ] = useState('')
 
     const clickAwayRef = useRef(null);
-
-    const clickAway= useClickAway(() => {
-        const close = () => props.setTrigger(false);
-        close()
-      });
       
     const handleSearchItemClick = async (value) => {
         await navigate(`/products/${value.webId}`);
