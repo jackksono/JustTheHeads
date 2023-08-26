@@ -9,7 +9,7 @@ const CheckOut = () => {
     const cart = useContext(ShopContext)
     
     const checkout = async () => {
-        await fetch('https://jackksono.github.io//cart-checkout', {
+        await fetch('https://jackksono.github.io/cart-checkout', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
