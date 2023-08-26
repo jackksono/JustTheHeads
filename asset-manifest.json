@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/JustTheHeads/static/css/main.7355c1c7.css",
-    "main.js": "/JustTheHeads/static/js/main.888a6d70.js",
+    "main.js": "/JustTheHeads/static/js/main.bd1d34a9.js",
     "static/js/28.2769212f.chunk.js": "/JustTheHeads/static/js/28.2769212f.chunk.js",
     "static/js/387.9a088ef5.chunk.js": "/JustTheHeads/static/js/387.9a088ef5.chunk.js",
     "static/js/582.68e3700f.chunk.js": "/JustTheHeads/static/js/582.68e3700f.chunk.js",
     "static/js/780.714dfa73.chunk.js": "/JustTheHeads/static/js/780.714dfa73.chunk.js",
-    "static/js/324.4fcbe7dc.chunk.js": "/JustTheHeads/static/js/324.4fcbe7dc.chunk.js",
+    "static/js/324.82dd4e17.chunk.js": "/JustTheHeads/static/js/324.82dd4e17.chunk.js",
     "static/js/112.fd675754.chunk.js": "/JustTheHeads/static/js/112.fd675754.chunk.js",
     "static/js/850.bfc6707d.chunk.js": "/JustTheHeads/static/js/850.bfc6707d.chunk.js",
     "static/js/283.bcd80cec.chunk.js": "/JustTheHeads/static/js/283.bcd80cec.chunk.js",
@@ -40,12 +40,12 @@
     "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.393d28b20f34004c5a9d.svg",
     "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.19e5fd8df07a0897101b.svg",
     "main.7355c1c7.css.map": "/JustTheHeads/static/css/main.7355c1c7.css.map",
-    "main.888a6d70.js.map": "/JustTheHeads/static/js/main.888a6d70.js.map",
+    "main.bd1d34a9.js.map": "/JustTheHeads/static/js/main.bd1d34a9.js.map",
     "28.2769212f.chunk.js.map": "/JustTheHeads/static/js/28.2769212f.chunk.js.map",
     "387.9a088ef5.chunk.js.map": "/JustTheHeads/static/js/387.9a088ef5.chunk.js.map",
     "582.68e3700f.chunk.js.map": "/JustTheHeads/static/js/582.68e3700f.chunk.js.map",
     "780.714dfa73.chunk.js.map": "/JustTheHeads/static/js/780.714dfa73.chunk.js.map",
-    "324.4fcbe7dc.chunk.js.map": "/JustTheHeads/static/js/324.4fcbe7dc.chunk.js.map",
+    "324.82dd4e17.chunk.js.map": "/JustTheHeads/static/js/324.82dd4e17.chunk.js.map",
     "112.fd675754.chunk.js.map": "/JustTheHeads/static/js/112.fd675754.chunk.js.map",
     "850.bfc6707d.chunk.js.map": "/JustTheHeads/static/js/850.bfc6707d.chunk.js.map",
     "283.bcd80cec.chunk.js.map": "/JustTheHeads/static/js/283.bcd80cec.chunk.js.map",
@@ -59,6 +59,6 @@
   },
   "entrypoints": [
     "static/css/main.7355c1c7.css",
-    "static/js/main.888a6d70.js"
+    "static/js/main.bd1d34a9.js"
   ]
 }
