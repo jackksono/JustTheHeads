@@ -42,7 +42,7 @@ const IndividualProduct = (props) => {
                         
                         {productQuantity > 0 ?
                         <div className="flex flex-col items-center justify-center">
-                        <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black z-10'>In Cart: {productQuantity}</h1>
+                        <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black'>In Cart: {productQuantity}</h1>
                         <div className="flex items-center justify-center text-sm text-center">
                             <p className="flex justify-center pr-5 text-black font-CabinSketch ">Quantity:</p>
                             <div className="flex">
@@ -80,7 +80,7 @@ const IndividualProduct = (props) => {
                     </div>
                         :
                         <h2 className="flex justify-center text-sm text-center ">
-                            <button className="flex justify-center text-center items-center z-10 bg-transparent text-sm border-2 font-CabinSketch  border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
+                            <button className="flex justify-center text-center items-center bg-transparent text-sm border-2 font-CabinSketch  border-black border-solid min-w-[100px] px-[10px] py-[5px] rounded-lg text-black hover:bg-black hover:text-white cursor-pointer "
                                 onClick={() => cart.addOneToCart(id)}
                                 >
                                 Add To Cart {productQuantity> 0 && <> ({productQuantity}) </>}

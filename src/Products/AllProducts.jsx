@@ -44,8 +44,9 @@ const AllProducts = () => {
         category.classList.toggle('hidden')
     }
 
+    //Animation options
     const zoomOptions = {
-        threshold: 0.1, 
+        threshold: 0.15, 
         triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);

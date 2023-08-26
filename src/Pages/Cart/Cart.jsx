@@ -31,14 +31,14 @@ const CheckOut = () => {
 
     return (
         <>
-        <div className="flex flex-col items-center justify-center h-screen text-lg bg-orange-200 bg-allProducts bg-blend-overlay">
+        <div className="flex flex-col items-center justify-center min-h-screen text-lg bg-orange-200 bg-allProducts bg-blend-overlay">
             {cart.getTotal() > 0 ?
-            <div>
+            <div className="pt-28">
                 <h1 className="text-3xl text-center text-black">Your Cart Items</h1>
             </div>
             : <></>} {/*Turnary to show Cart Items if cart has an item; otherwise will be blank*/}
 
-            <div>
+            <div className="h-max">
             {cart.items.map((product) => {
                     return <CartItem data={product}></CartItem>
                 })}
@@ -59,7 +59,7 @@ const CheckOut = () => {
                     Checkout 
                 </button>
             </div>
-            : <h1 className="text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
+            : <h1 className="items-center text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
             
         </div>
         <footer className="bottom-0">
