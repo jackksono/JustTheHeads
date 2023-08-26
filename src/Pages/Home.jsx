@@ -139,9 +139,9 @@ const Home = () => {
                                 >Welcome to the Head Family!
                             
                                 <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black font-mono " >We are the head family! Just The Heads is a small company founded by three
-                                best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted, 
+                                best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted 
                                 and turning them into a sustainable, yet delicious snack! With 1.3 billion pounds of fish and shrimp going to waste
-                                each year, we wanted to help solve the issue of eliminating food waste. Support Just The Heads one bag and one head at a time in finding a solution to eliminating food waste globally. </p>
+                                each year, we wanted to help solve the issue of food waste. Support Just The Heads one bag and one head at a time in finding a solution to lower food waste globally. </p>
                             </p>
                             <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>

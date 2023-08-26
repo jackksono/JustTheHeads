@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 
 import { PRODUCTS } from '../../ProductsStore';
 import { useNavigate } from 'react-router-dom';
+import { useClickAway } from "@uidotdev/usehooks";
 
 import { BsSearch } from 'react-icons/bs'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
@@ -10,6 +11,22 @@ const SearchBar = (props) => {
     const navigate = useNavigate()
     const [ filteredData, setFilteredData ] = useState([])
     const [ wordEntered, setWordEntered ] = useState('')
+
+    const clickAwayRef = useRef(null);
+
+    const clickAway= useClickAway(() => {
+        const close = () => props.setTrigger(false);
+        close()
+      });
+      
+    const handleSearchItemClick = async (value) => {
+        await navigate(`/products/${value.webId}`);
+        props.setTrigger(false);
+    };
+
+    useClickAway(clickAwayRef, () => {
+        props.setTrigger(false);
+    });
 
     const handleFilter = (e) => {
         const searchWord = e.target.value;
@@ -32,13 +49,12 @@ const SearchBar = (props) => {
  
   return (props.trigger) ? (
     <div className='fixed lg:mt-0 inset-x-0 w-screen overflow-auto bg-gray-700 bg-opacity-75 lg:top-0 h-[300px] lg:h-screen rounded-xl' >
-        <div className='flex justify-end text-black duration-100 cursor-pointer lg:pr-16 lg:pt-16 lg:text-5xl hover:text-white'>    
+        <div className='flex justify-end text-black duration-100 cursor-pointer lg:pr-16 lg:pt-16 lg:text-5xl hover:text-white' >    
             <button onClick={() => props.setTrigger(false)}>X</button>
         </div>
        
-        <div className='flex lg:mt-[160px] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' >
+        <div className='flex lg:mt-[160px] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' ref={clickAwayRef}>
             <input 
-            
                 type='text' 
                 placeholder='Enter a product name...'
                 className='bg-white text-[8px] lg:text-lg border-0 mb-0 lg:mb-0 p-4 lg:p-8 h-[20px] lg:h-[30px] lg:w-[500px] w-[150px] justify-center'
@@ -58,9 +74,8 @@ const SearchBar = (props) => {
                     <div 
                         key={key}
                         className='flex w-full h-[35px] p-2 content-center hover:bg-gray-100 text-black cursor-pointer'
-                        onClick={() => {
-                        navigate(`/products/${value.webId}`)
-                        props.setTrigger(false) }}>
+                        onClick={ () => handleSearchItemClick(value)
+                         }>
                             <p className='ml-[10px] text-xs lg:text-xl'>{value.productName}</p>       
                     </div>)
                 })}

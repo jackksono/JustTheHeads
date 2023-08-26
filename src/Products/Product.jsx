@@ -107,7 +107,9 @@ const Product = (props) => {
                     </>
                     :
                     <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100 dur "
-                        onClick={() => cart.addOneToCart(id)}
+                        onClick={(e) => {
+                            cart.addOneToCart(id);
+                            blobToggle(e)}}
                         onMouseLeave={e => blobToggleOff(e)}
                         onMouseOver={e => blobToggle(e)}
                         >

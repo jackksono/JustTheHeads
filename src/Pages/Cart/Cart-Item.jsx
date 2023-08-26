@@ -25,7 +25,7 @@ const CartItem =(props) => {
                 </p>
                 <p>${productData.price}</p>
                 <div className="m-5 font-bold text-center">
-                    <button className="pr-2 text-sm duration-100 cursor-pointer lg:text-lg hover:text-white" onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                    <button className="pr-2 text-sm duration-100 cursor-pointer lg:text-lg hover:text-white" onClick={() => cart.deleteOneFromCartforCartPage(id)}> - </button>
                     <input className='text-center w-[100px] rounded-md ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
                     <button className="pl-2 text-sm duration-100 cursor-pointer lg:text-lg hover:text-white" onClick={() => cart.addOneToCart(id)}> + </button>
                     <div className="pt-5">

@@ -36,7 +36,7 @@ const IndividualProduct = (props) => {
                         className='lg:h-[450px] lg:w-[337.5px] h-[200px] w-[150px]'
                         loading='lazy'>
                     </img>
-                    <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[350px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px] lg:m-[30px] lg:ml-20 lg:p-5 bg-orange-400'>
+                    <div className='lg:w-[700px] justify-center w-[250px] p-2 h-[100px] lg:h-[400px] items-center shadow-[0px_3px_15px_rgba(0,0,0,0.2)] rounded-[25px]  lg:ml-20 lg:p-5 bg-orange-400'>
                         <p className='relative text-[15px] text-black lg:text-2xl font-CabinSketch'>Description:</p>
                         <h1 className="items-center justify-center text-[10px] lg:text-lg text-black lg:p-5 font-CabinSketch text-left">{description}</h1>
                         
