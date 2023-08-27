@@ -4,9 +4,9 @@ import { useInView } from 'react-intersection-observer';
 import Fade from 'react-reveal/Fade'
 
 
-import Bag1 from '../Images/SiteImages/Bag1.jpg'
-import Bag2 from '../Images/SiteImages/Bag2.jpg'
-import Bag3 from '../Images/SiteImages/Bag3.jpg'
+import SlideImageOne from '../Images/SiteImages/SlideImageOne.jpg'
+import SlideImageTwo from '../Images/SiteImages/SlideImageTwo.jpg'
+
 import Welcome from '../Images/SiteImages/Welcome.jpg'
 
 import FeaturedProducts from "../Products/FeaturedProducts"
@@ -20,9 +20,9 @@ import {RxDotFilled} from 'react-icons/rx'
 import Logo1 from '../Images/SiteImages/Logo1.png'
 
 const slides = [
-    {url:Bag1},
-    {url:Bag2},
-    {url:Bag3}
+    {url:SlideImageOne},
+    {url:SlideImageTwo},
+   
 ]
 
 const delay = 5000
@@ -76,11 +76,11 @@ const Home = () => {
         <div>
             <div className="overflow-auto overflow-x-hidden bg-orange-200 bg-center bg-cover shadow-lg dark lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
-                    <div className='w-[375px] h-[300px] justify-center lg:w-screen lg:h-[650px] relative'>
+                    <div className='w-[375px] h-[75vh] justify-center lg:w-screen lg:h-[65vh] relative'>
                         {slides.map((slide, slideIndex) => (
                             <div
                             key={slideIndex}
-                            className={`w-[375px] h-[300px] lg:w-full lg:h-full bg-no-repeat bg-cover bg-center rounded-2xl absolute transition-opacity duration-1000 ${
+                            className={`w-[375px] h-[75vh] lg:w-full lg:h-[65vh] bg-no-repeat bg-cover bg-center absolute transition-opacity duration-1000 ${
                                 currentIndex === slideIndex ? 'opacity-100' : 'opacity-0'}`}
                             style={{
                                 backgroundImage: `url(${slide.url})`,
@@ -118,14 +118,14 @@ const Home = () => {
                     </Fade>
                 </div>
                 
-                <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 lg:mt-96 ml-80"
+                {/* <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 lg:mt-96 ml-80"
                 ref={zoom4Ref}>
                     <Fade right when={zoom4InView} delay={0} duration={6000}>
                         <img src={Logo1} alt="TestLogo" loading="lazy"></img>
                     </Fade>
-                </div>
+                </div> */}
 
-                <div className="w-[150px] h-[150px] absolute top-3/4 right-1/2 transform rotate-12  lg:mt-96 mr-80"
+                <div className="w-[150px] h-[150px] absolute top-11/12 right-1/2 transform rotate-12 mr-72"
                 ref={zoom3Ref}>
                     <Fade left when={zoom3InView} delay={0} duration={8000}>
                         <img src={Logo1} alt="TestLogo" loading="lazy"></img>

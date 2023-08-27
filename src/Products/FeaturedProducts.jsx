@@ -17,7 +17,7 @@ const FeaturedProducts = () => {
   const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
   return (
-    <div className="overflow-auto overflow-x-hidden bg-orange-300 lg:pt-16 bg-allProducts bg-blend-overlay lg:py-5">
+    <div className="overflow-auto overflow-x-hidden bg-orange-200 lg:pt-16 bg-allProducts bg-blend-overlay lg:py-5">
             <div 
               className="relative text-4xl text-center text-black lg:text-8xl"
               ref={zoom1Ref}>
