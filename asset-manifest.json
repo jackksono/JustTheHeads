@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/JustTheHeads/static/css/main.094846ed.css",
-    "main.js": "/JustTheHeads/static/js/main.744e42e3.js",
-    "static/js/891.864c5c93.chunk.js": "/JustTheHeads/static/js/891.864c5c93.chunk.js",
+    "main.css": "/JustTheHeads/static/css/main.8f1fc53b.css",
+    "main.js": "/JustTheHeads/static/js/main.56b2a77e.js",
+    "static/js/891.ff75bf64.chunk.js": "/JustTheHeads/static/js/891.ff75bf64.chunk.js",
     "static/js/387.9f8a78fa.chunk.js": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js",
-    "static/js/582.0112ed04.chunk.js": "/JustTheHeads/static/js/582.0112ed04.chunk.js",
-    "static/js/780.19e56d42.chunk.js": "/JustTheHeads/static/js/780.19e56d42.chunk.js",
-    "static/js/324.bd8dbe4c.chunk.js": "/JustTheHeads/static/js/324.bd8dbe4c.chunk.js",
+    "static/js/582.da776bbd.chunk.js": "/JustTheHeads/static/js/582.da776bbd.chunk.js",
+    "static/js/780.454af7c2.chunk.js": "/JustTheHeads/static/js/780.454af7c2.chunk.js",
+    "static/js/324.db112eed.chunk.js": "/JustTheHeads/static/js/324.db112eed.chunk.js",
     "static/js/112.fd675754.chunk.js": "/JustTheHeads/static/js/112.fd675754.chunk.js",
     "static/js/850.bfc6707d.chunk.js": "/JustTheHeads/static/js/850.bfc6707d.chunk.js",
     "static/js/283.bcd80cec.chunk.js": "/JustTheHeads/static/js/283.bcd80cec.chunk.js",
@@ -32,18 +32,18 @@
     "static/media/ChristianD2.jpg": "/JustTheHeads/static/media/ChristianD2.09a4a5a864f5c94bdc09.jpg",
     "static/media/NoGMO.png": "/JustTheHeads/static/media/NoGMO.1abfba04a237e33d23fd.png",
     "index.html": "/JustTheHeads/index.html",
-    "static/media/LayeredPeak1.svg": "/JustTheHeads/static/media/LayeredPeak1.c2fbb2cccc4b54621d1b.svg",
+    "static/media/LayeredPeak1.svg": "/JustTheHeads/static/media/LayeredPeak1.3e7d372d9a6f85f8c1ea.svg",
     "static/media/Blob4.svg": "/JustTheHeads/static/media/Blob4.847da5b49696a8a07d18.svg",
     "static/media/Blob2.svg": "/JustTheHeads/static/media/Blob2.44844d732cd89fdfa0d0.svg",
     "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.0c6e8037410894f24c99.svg",
     "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.6271be147f70a2bc7a52.svg",
-    "main.094846ed.css.map": "/JustTheHeads/static/css/main.094846ed.css.map",
-    "main.744e42e3.js.map": "/JustTheHeads/static/js/main.744e42e3.js.map",
-    "891.864c5c93.chunk.js.map": "/JustTheHeads/static/js/891.864c5c93.chunk.js.map",
+    "main.8f1fc53b.css.map": "/JustTheHeads/static/css/main.8f1fc53b.css.map",
+    "main.56b2a77e.js.map": "/JustTheHeads/static/js/main.56b2a77e.js.map",
+    "891.ff75bf64.chunk.js.map": "/JustTheHeads/static/js/891.ff75bf64.chunk.js.map",
     "387.9f8a78fa.chunk.js.map": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js.map",
-    "582.0112ed04.chunk.js.map": "/JustTheHeads/static/js/582.0112ed04.chunk.js.map",
-    "780.19e56d42.chunk.js.map": "/JustTheHeads/static/js/780.19e56d42.chunk.js.map",
-    "324.bd8dbe4c.chunk.js.map": "/JustTheHeads/static/js/324.bd8dbe4c.chunk.js.map",
+    "582.da776bbd.chunk.js.map": "/JustTheHeads/static/js/582.da776bbd.chunk.js.map",
+    "780.454af7c2.chunk.js.map": "/JustTheHeads/static/js/780.454af7c2.chunk.js.map",
+    "324.db112eed.chunk.js.map": "/JustTheHeads/static/js/324.db112eed.chunk.js.map",
     "112.fd675754.chunk.js.map": "/JustTheHeads/static/js/112.fd675754.chunk.js.map",
     "850.bfc6707d.chunk.js.map": "/JustTheHeads/static/js/850.bfc6707d.chunk.js.map",
     "283.bcd80cec.chunk.js.map": "/JustTheHeads/static/js/283.bcd80cec.chunk.js.map",
@@ -56,7 +56,7 @@
     "713.79e46ba1.chunk.js.map": "/JustTheHeads/static/js/713.79e46ba1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.094846ed.css",
-    "static/js/main.744e42e3.js"
+    "static/css/main.8f1fc53b.css",
+    "static/js/main.56b2a77e.js"
   ]
 }
