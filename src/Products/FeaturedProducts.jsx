@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
             <div className='flex items-end justify-end py-2 pr-8 text-right'>
               <Link
               to={`/all-products`}
-              className="lg:text-lg italic text-colors-text text-[12px] pt-2 lg:pr-20 justify-end hover:text-white hover:underline hover:underline-offset-4 hover:decoration-color-secondary"
+              className="lg:text-lg italic text-colors-text text-[12px] py-2 lg:pr-20 justify-end hover:text-white hover:decoration-2 hover:underline hover:underline-offset-4 hover:decoration-color-secondary"
               >See All Products...</Link>
             </div>
             <div className="grid grid-cols-2 pt-5 lg:w-full lg:h-auto lg:grid-cols-4 place-items-center">

@@ -106,7 +106,7 @@ const Product = (props) => {
                         </button>
                     </>
                     :
-                    <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100"
+                    <button className=" z-0 text-[10px] font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100"
                         onClick={(e) => {
                             cart.addOneToCart(id);
                             blobToggle(e)}}
