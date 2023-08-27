@@ -139,14 +139,15 @@ const Home = () => {
                                 >ABOUT OUR HEAD! 
                             
                             <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
-                                Shhhhh! Don't tell anyone and I'll tell you guys a secret. This is just between us... but all the goodness 
-                                and richess and best flavor of shrimp is all in the head! Surprise!
+                                Shhhhh! Don't tell anyone and I'll tell you all a secret. This is just between us... but all the goodness 
+                                and richness and best flavor of shrimp is all in the head! Surprise!
                             </p>
                             <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
-                                That's right! Our delicious shrimp head snack uses 100% real shrimp heads while wasting none of the flavor and keeping
-                                everything all natural. Indeed this is really 98% more shrimp that leading shrimp snack brands. There is ZERO added carbs
-                                meaning no wheat flour, no corn starch, and absolutely no rice flour at all (I know right, it's a crime)! Our snack is also
-                                air fried and NEVER deep fried! In the end, we are left with an adventurous, yet healthy and delicious snack that everyone can enjoy!
+                                That's right! Our delicious shrimp head snack uses 100% real shrimp heads and keeps everything natural while 
+                                preserving every bit of the flavor. This is  98% more shrimp than leading shrimp snack brands. There is ZERO 
+                                added carbs meaning no wheat flour, no corn starch, and no rice flour at all (I know right, it's a crime)! Our 
+                                snack is air fried and NEVER deep fried! In the end, we are left with an adventurous, yet healthy and delicious 
+                                snack that everyone can enjoy!
                             </p>
                             </p>
                             <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>

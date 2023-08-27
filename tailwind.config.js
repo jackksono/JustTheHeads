@@ -41,7 +41,7 @@ module.exports = {
           'darkOrange' : "#FF8C00",
           'text': '#210402',
           'background': '#ff9f35',
-          'primary': '#62eaf4',
+          'primary': '#0600ab',
           'secondary': '#ffaea8',
           'accent': '#000000',
         }
