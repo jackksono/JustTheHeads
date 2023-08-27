@@ -74,13 +74,13 @@ const Home = () => {
 
     return (
         <div>
-            <div className="overflow-auto overflow-x-hidden bg-orange-200 bg-center bg-cover shadow-lg dark lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
+            <div className="overflow-x-hidden bg-orange-200 bg-center bg-cover shadow-lg dark lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
-                    <div className='w-[375px] h-[75vh] justify-center lg:w-screen lg:h-[65vh] relative'>
+                    <div className='w-[375px] h-[67vh] justify-center lg:w-screen shadow-2xl relative'>
                         {slides.map((slide, slideIndex) => (
                             <div
                             key={slideIndex}
-                            className={`w-[375px] h-[75vh] lg:w-full lg:h-[65vh] bg-no-repeat bg-cover bg-center absolute transition-opacity duration-1000 ${
+                            className={`w-[375px] h-[67vh] lg:w-full bg-no-repeat bg-cover bg-top drop-shadow-2xl absolute transition-opacity duration-1000 ${
                                 currentIndex === slideIndex ? 'opacity-100' : 'opacity-0'}`}
                             style={{
                                 backgroundImage: `url(${slide.url})`,
@@ -98,7 +98,7 @@ const Home = () => {
                         <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                     </div>
                     
-                    <div className="flex justify-center py-2 top-4">
+                    <div className="flex justify-center">
                         {slides.map((slide, slideIndex) => (
                             <div 
                                 key={slideIndex} 
@@ -112,8 +112,8 @@ const Home = () => {
                 
                 <div ref={zoom1Ref}>
                     <Fade bottom when={zoom1InView}>
-                        <div className='relative p-4 text-3xl text-center text-black lg:p-8 lg:text-6xl font-CabinSketch'>
-                            <p>No more Shrimp Chips, get a-Head of the competition!</p>
+                        <div className='relative p-4 text-3xl text-center text-black lg:p-8 lg:pt-2 lg:text-6xl font-CabinSketch'>
+                            <p className="">No more Shrimp Chips, get a-Head of the competition!</p>
                         </div>
                     </Fade>
                 </div>

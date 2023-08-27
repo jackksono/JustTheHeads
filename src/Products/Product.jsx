@@ -40,7 +40,7 @@ const Product = (props) => {
        
         element.classList.add(`bg-${blobArray[index]}`);
         element.classList.add(`animate-blob`);
-    
+       
         const updatedIndex = index >= blobArray.length - 1 ? 0 : index + 1;
         
         setIndex(updatedIndex);
@@ -57,7 +57,7 @@ const Product = (props) => {
     }
 
     const zoomOptions = {
-        threshold: 0.15, 
+        threshold: 0.125, 
         triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
@@ -66,7 +66,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] lg:w-[300px] lg:h-[350px] lg:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[500px] lg:w-[500px] duration-1000"></div>
+                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[500px] lg:w-[500px] duration-1000 opacity-90 "></div>
                     <Zoom top when={zoom1InView} duration={1000}>
                         <img 
                             ref={zoom1Ref}

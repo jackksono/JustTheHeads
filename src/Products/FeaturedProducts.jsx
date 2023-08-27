@@ -17,12 +17,12 @@ const FeaturedProducts = () => {
   const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
   return (
-    <div className="overflow-auto overflow-x-hidden bg-orange-200 lg:pt-16 bg-allProducts bg-blend-overlay lg:py-5">
+    <div className="overflow-auto overflow-x-hidden bg-color-darkOrange lg:pt-16 bg-allProducts bg-blend-lighten lg:py-5">
             <div 
               className="relative text-4xl text-center text-black lg:text-8xl"
               ref={zoom1Ref}>
               <Flip top when={zoom1InView} delay={500}>
-                <h1 className="text center font-CabinSketch">Featured Products!</h1>
+                <h1 className="underline text center font-CabinSketch underline-offset-[20%] decoration-color-babyBlue">Featured Products!</h1>
               </Flip>
             </div>
             <div className='flex items-end justify-end py-4 pr-8 text-right'>

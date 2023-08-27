@@ -26,7 +26,8 @@ module.exports = {
       colors: {
         color: {
           'shrimp': "#DB4221",
-          'babyBlue': "#00D2FF"
+          'babyBlue': "#00D2FF",
+          'darkOrange' : "#FF5300"
         }
       },
       fontFamily: {
@@ -50,7 +51,8 @@ module.exports = {
         'blob3': "url('../src/Images//SVG/Blob3.svg')",
         'blob4': "url('../src/Images//SVG/Blob4.svg')",
         'allProducts' : "url('../src/Images//BlendImages/BubblesBlend.jpg')",
-        'navBarBackground' : "url('../src/Images//BlendImages/NavBarBackground.png')"
+        'navBarBackground' : "url('../src/Images//BlendImages/NavBarBackground.png')",
+        'backgroundIsland':"url('../src/Images//BlendImages/BackgroundIsland.png')",
       },
     },
   },
