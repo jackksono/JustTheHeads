@@ -27,7 +27,7 @@ const AboutUs = () => {
 
     return (
         <>
-            <div className="bg-orange-200 lg:pt-36 bg-allProducts bg-blend-overlay">
+            <div className="bg-color-background lg:pt-36 bg-allProducts bg-blend-lighten">
                 <div className="w-screen h-[400px]" ref={zoom4Ref}>
                     <Bounce top when={zoom4InView}>
                         <h1 className="italic text-center text-black text-7xl font-YsabeauSC">Why Just The Heads?</h1>
@@ -35,8 +35,10 @@ const AboutUs = () => {
                    
                     <div className="grid grid-cols-2 text-center text-black lg:p-20 lg:pt-20 ">
                         <Roll left when={zoom4InView}>
-                            <p className="border border-black border-solid lg:h-[400px] rounded-2xl shadow-lg">You have chosen head. 
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis qui libero consequatur id. Accusantium nostrum consequatur soluta nemo neque? Nemo, mollitia et voluptates assumenda voluptatum ut molestias perferendis provident architecto?
+                            <p className="border border-black border-solid lg:h-[400px] rounded-2xl shadow-lg m-4 text-xl font-YsabeauSC leading-8 ">We are the head family! Just The Heads is a small company founded by three
+                                best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted 
+                                and turning them into a sustainable, yet delicious snack! With 1.3 billion pounds of fish and shrimp going to waste
+                                each year, we wanted to help solve the issue of food waste. Support Just The Heads one bag and one head at a time in finding a solution to lower food waste globally.
                             </p>
                         </Roll>
                         <Roll right when={zoom4InView}>
@@ -47,8 +49,8 @@ const AboutUs = () => {
                     </div>
                 </div>
             
-                <div className="pt-40 text-orange-500">
-                    <h1 className="pt-10 text-center text-7xl">Meet the Team!</h1>
+                <div className='flex justify-center w-3/4 py-5 mx-auto text-center bg-black mt-52 left-1/8'>
+                    <h1 className='flex items-center justify-center font-extrabold text-orange-300 xl:text-4xl font-YsabeauSC '>MEET THE TEAM</h1>
                 </div>
 
                 <div className="lg:space-y-8 ">

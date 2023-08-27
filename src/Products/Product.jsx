@@ -82,31 +82,31 @@ const Product = (props) => {
                     
                     <Link
                         to={`/products/${webId}`}
-                        className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0 hover:text-white duration-100"
+                        className="lg:text-lg italic text-[8px] pr-12 lg:pr-40 z-0 hover:text-white hover:underline hover:underline-offset-4 hover:decoration-color-secondary duration-100"
                         >More Info...
                     </Link>
                     
-                    <h1 className="z-0 font-bold text-black lg:pt-3">
+                    <h1 className="z-0 font-bold text-color-text lg:pt-3">
                         <p className=" font-CabinSketch font-bold lg:text-3xl text-[15px] p-0">{productName}</p>
                     </h1>
-                    <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0 text-black">${price}</p>
+                    <p className="relative lg:mt-2 lg:text-lg text-[12px] text-center z-0 text-color-text">${price}</p>
                     
                     {productQuantity> 0 ? 
                     <>
-                        <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-black z-10'>In Cart: {productQuantity}</h1>
+                        <h1 className='lg:m-2 lg:text-sm text-[10px] font-bold text-center text-color-text z-10'>In Cart: {productQuantity}</h1>
                         <div className="flex items-center justify-center lg:text-sm text-[xs]">
-                            <button className='cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-black hover:text-white duration-100' onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                            <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-black ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                            <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-black hover:text-white duration-100' onClick={() => cart.addOneToCart(id)}> + </button>
+                            <button className='cursor-pointer lg:text-xl text-[10px] pr-2 z-10 text-color-text hover:text-white duration-100' onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                            <input className='text-center lg:text-sm text-[12px] w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-color-text ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                            <button className='cursor-pointer lg:text-xl text-[10px] z-10 pl-2 text-color-text hover:text-white duration-100' onClick={() => cart.addOneToCart(id)}> + </button>
                         </div>
                         <button
                             onClick={() => navigate('/cart')}
-                            className="text-[6px] mt-0 text-black w-[50px] lg:w-auto bg-red-300 hover:bg-red-600 border-2 duration-100 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
+                            className="text-[6px] mt-0 text-color-text w-[50px] lg:w-auto bg-color-secondary hover:bg-red-400 border-2 duration-100 border-black lg:text-sm lg:my-2 lg:py-1 rounded-2xl z-10 lg:px-8">
                             Checkout
                         </button>
                     </>
                     :
-                    <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-black rounded-lg text-black hover:bg-black hover:text-white cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100 dur "
+                    <button className=" z-0 bg-transparent text-[10px] w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100"
                         onClick={(e) => {
                             cart.addOneToCart(id);
                             blobToggle(e)}}

@@ -74,7 +74,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className="overflow-x-hidden bg-orange-200 bg-center bg-cover shadow-lg dark lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
+            <div className="overflow-x-hidden bg-center bg-cover shadow-lg bg-color-background lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
                     <div className='w-[375px] h-[67vh] justify-center lg:w-screen shadow-2xl relative'>
                         {slides.map((slide, slideIndex) => (
@@ -90,11 +90,11 @@ const Home = () => {
                 ))}
             </div>
                     {/* Left Arrow */}
-                    <div className="invisible lg:visible group-hover:block absolute lg:top-[50%]  left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                    <div className="invisible lg:visible group-hover:block absolute lg:top-[50%]  left-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-color-text">
                         <ArrowBackIosIcon onClick={prevSlide} size={30}/>
                     </div>
                     {/* Right Arrow */}
-                    <div className="invisible lg:visible group-hover:block absolute lg:top-[50%]  right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-black">
+                    <div className="invisible lg:visible group-hover:block absolute lg:top-[50%]  right-5 text-2xl rounded full p-2 bg-black/20 text-white cursor-pointer hover:bg-white hover:text-color-text">
                         <ArrowForwardIosIcon onClick={nextSlide} size={30}/>
                     </div>
                     
@@ -112,7 +112,7 @@ const Home = () => {
                 
                 <div ref={zoom1Ref}>
                     <Fade bottom when={zoom1InView}>
-                        <div className='relative p-4 text-3xl text-center text-black lg:p-8 lg:pt-2 lg:text-6xl font-CabinSketch'>
+                        <div className='relative p-4 text-3xl font-medium text-center text-color-text lg:p-8 lg:pt-2 lg:text-6xl font-CabinSketch'>
                             <p className="">No more Shrimp Chips, get a-Head of the competition!</p>
                         </div>
                     </Fade>
@@ -135,13 +135,10 @@ const Home = () => {
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>
                         <Fade right when={zoom2InView} duration={2000}>
-                            <p className='pt-2 pr-2 font-mono text-center text-black lg:text-5xl lg:pt-10 text-md'
+                            <p className='pt-2 pr-2 font-extrabold text-center font-YsabeauSC text-color-text lg:text-5xl lg:pt-10 text-md'
                                 >Welcome to the Head Family!
                             
-                                <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-black font-mono " >We are the head family! Just The Heads is a small company founded by three
-                                best friends that was designed and developed to minimize food waste by using shrimp heads that would normally be wasted 
-                                and turning them into a sustainable, yet delicious snack! With 1.3 billion pounds of fish and shrimp going to waste
-                                each year, we wanted to help solve the issue of food waste. Support Just The Heads one bag and one head at a time in finding a solution to lower food waste globally. </p>
+                                <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-color-text font-mono " > </p>
                             </p>
                             <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>

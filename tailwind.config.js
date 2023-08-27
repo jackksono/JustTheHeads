@@ -27,7 +27,12 @@ module.exports = {
         color: {
           'shrimp': "#DB4221",
           'babyBlue': "#00D2FF",
-          'darkOrange' : "#FF5300"
+          'darkOrange' : "#FF8C00",
+          'text': '#210402',
+          'background': '#ff9f35',
+          'primary': '#62eaf4',
+          'secondary': '#ffaea8',
+          'accent': '#000000',
         }
       },
       fontFamily: {

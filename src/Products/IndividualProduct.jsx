@@ -22,7 +22,7 @@ const IndividualProduct = (props) => {
     console.log("shareUrl:", shareUrl);
 
   return (
-    <div className='relative pt-20 bg-orange-200 bg-allProducts bg-blend-overlay'>
+    <div className='relative pt-20 bg-color-background bg-allProducts bg-blend-overlay'>
         <div className=''>
             <button className='flex pl-4 text-xs text-black lg:pl-8 lg:text-xl hover:text-white'
                 onClick={() =>navigate('/all-products')}

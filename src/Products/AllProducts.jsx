@@ -52,10 +52,10 @@ const AllProducts = () => {
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
     return (
-        <div className="pt-16 overflow-x-hidden bg-orange-200 bg-center bg-cover lg:pt-32 bg-allProducts bg-blend-overlay">
-            <div className="relative text-4xl text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
+        <div className="pt-16 overflow-x-hidden bg-center bg-cover bg-color-background lg:pt-32 bg-allProducts bg-blend-lighten">
+            <div className="relative text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
-                    <h1 className="">All Products</h1>
+                    <h1 className="md:text-8xl ">All Products</h1>
                 </Bounce>  
                 <Bounce top when={zoom1InView} delay={500}>
                     <p className="pt-10">NO CARBS, NO FILLERS, ONLY HEAD</p>
@@ -63,35 +63,35 @@ const AllProducts = () => {
             </div>
 
             <div className="relative py-10 lg:pl-28 w-max">
-                <div className="relative focus:text-black">
+                <div className="relative">
                     <input 
-                        className="w-full px-2 pr-10 bg-white rounded-sm font-Kanit " 
+                        className="w-full px-2 pr-10 bg-white rounded-sm font-Kanit border-color-secondary focus:border-4 " 
                         placeholder="Search categories"
                         value={wordEntered}
                         onClick={toggleCategoryMenu}
                         >
                     </input>
-                    <div className="absolute text-xl transform -translate-y-1/2 cursor-pointer right-3 top-1/2 hover:text-black focus:text-black">
+                    <div className="absolute text-xl transform -translate-y-1/2 cursor-pointer right-3 top-1/2 hover:text-black focus:text-black ">
                         <IoIosArrowDropdown onClick={toggleCategoryMenu} ></IoIosArrowDropdown>
                     </div>
                 </div>
-                <div className="hidden w-full mt-2 bg-white border border-black rounded-sm categoryMenu font-Kanit" >
+                <div className="hidden w-full mt-2 bg-white border-2 rounded-sm categoryMenu font-Kanit" >
                     <button 
-                        className="flex w-full px-2 py-1 hover:bg-gray-500 "
+                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
                         onClick={() =>{
                         handleCategorySelection('Chips');
                         toggleCategoryMenu()}}>
                         Chips
                     </button>
                     <button 
-                        className="flex w-full px-2 py-1 hover:bg-gray-500 "
+                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
                         onClick={() =>{
                         handleCategorySelection('Merchandise');
                         toggleCategoryMenu()}}>
                         Merchandise
                     </button>
                     <button
-                        className="flex w-full px-2 py-1 hover:bg-gray-500 "
+                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
                         onClick={() =>{
                         handleCategorySelection('Merchandise');
                         toggleCategoryMenu()}}>
@@ -101,7 +101,7 @@ const AllProducts = () => {
             </div>
             
             <div className="">
-                <div className="grid justify-center grid-cols-2 gap-1 mt-8 lg:gap-10 lg:grid-cols-3 place-items-center lg:mt-12 ">
+                <div className="grid justify-center grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 place-items-center ">
                     {selectedCategory
                         ? filteredData.map((product) => (
                             product.category.toLowerCase() === selectedCategory.toLowerCase() && (
