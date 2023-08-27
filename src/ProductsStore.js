@@ -48,7 +48,8 @@ const PRODUCTS = [
         price: 20,
         category: 'Chips',
         productImage: ComingSoon,
-        description: "Americas favorite Asian snack flavor: The Salted Egg Yolk"
+        description: "Americas favorite Asian snack flavor: The Salted Egg Yolk",
+        ingredients: "Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Salted Duck Egg Yolk Seasoning, Less than 2% of Monosodium Glutamate, Brine (Sea salt, Less than 0.1% Sodium Nitrite), Sugar, Natural Flavors"
     },
     {
         id: "price_1NJ3y3FWsvLoj5JWJWq4W5p4",
@@ -57,7 +58,8 @@ const PRODUCTS = [
         price: 10,
         category: 'Merchandise',
         productImage: ComingSoon,
-        description: "A beautiful T-Shirt"
+        description: "A beautiful T-Shirt",
+        ingredients: "100% Cotton, Made in Small Batches <3"
     },
     {
         id: "price_1NJ3y3FWsvLoj5JWJWq4W5p3",
@@ -66,7 +68,8 @@ const PRODUCTS = [
         price: 10,
         category: 'Merchandise',
         productImage: ComingSoon,
-        description: "A beautiful hoodie!"
+        description: "A beautiful hoodie!",
+        ingredients: "100% Cotton, Made in Small Batches <3"
     }
 ]
 

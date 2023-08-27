@@ -112,33 +112,42 @@ const Home = () => {
                 
                 <div ref={zoom1Ref}>
                     <Fade bottom when={zoom1InView}>
-                        <div className='relative p-4 text-3xl font-medium text-center text-color-text lg:p-8 lg:pt-2 lg:text-6xl font-CabinSketch'>
+                        <div className='relative p-4 text-3xl font-bold text-center text-color-text lg:p-8 lg:pt-2 lg:text-6xl font-CabinSketch'>
                             <p className="">No more Shrimp Chips, get a-Head of the competition!</p>
                         </div>
                     </Fade>
                 </div>
                 
-                {/* <div className="w-[150px] h-[150px] absolute top-3/4 left-1/2 transform rotate-30 lg:mt-96 ml-80"
-                ref={zoom4Ref}>
-                    <Fade right when={zoom4InView} delay={0} duration={6000}>
-                        <img src={Logo1} alt="TestLogo" loading="lazy"></img>
-                    </Fade>
-                </div> */}
+                <div className="relative">
+  <div className="w-[100px] h-[100px] absolute top-11/12 left-[100px] animate-slideInLeft" ref={zoom4Ref}>
+    <Fade left when={zoom4InView} duration={5000}>
+      <img src={Logo1} alt="TestLogo" loading="lazy" />
+    </Fade>
+  </div>
+  
+  <div className="w-[100px] h-[100px] absolute top-11/12 right-[100px] animate-slideInRight" ref={zoom3Ref}>
+    <Fade right when={zoom3InView} duration={5000}>
+      <img src={Logo1} alt="TestLogo" loading="lazy" />
+    </Fade>
+  </div>
+</div>
 
-                <div className="w-[150px] h-[150px] absolute top-11/12 right-1/2 transform rotate-12 mr-72"
-                ref={zoom3Ref}>
-                    <Fade left when={zoom3InView} delay={0} duration={8000}>
-                        <img src={Logo1} alt="TestLogo" loading="lazy"></img>
-                    </Fade>
-                </div>
-
-                <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-20 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
+                <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-10 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>
                         <Fade right when={zoom2InView} duration={2000}>
-                            <p className='pt-2 pr-2 font-extrabold text-center font-YsabeauSC text-color-text lg:text-5xl lg:pt-10 text-md'
-                                >Welcome to the Head Family!
+                            <p className='pt-2 pr-2 font-extrabold text-center md:pt-10 font-YsabeauSC text-color-text lg:text-5xl text-md'
+                                >ABOUT OUR HEAD! 
                             
-                                <p className="flex pt-3 text-[7px] lg:pt-12 lg:text-lg lg:p-6 text-color-text font-mono " > </p>
+                            <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
+                                Shhhhh! Don't tell anyone and I'll tell you guys a secret. This is just between us... but all the goodness 
+                                and richess and best flavor of shrimp is all in the head! Surprise!
+                            </p>
+                            <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
+                                That's right! Our delicious shrimp head snack uses 100% real shrimp heads while wasting none of the flavor and keeping
+                                everything all natural. Indeed this is really 98% more shrimp that leading shrimp snack brands. There is ZERO added carbs
+                                meaning no wheat flour, no corn starch, and absolutely no rice flour at all (I know right, it's a crime)! Our snack is also
+                                air fried and NEVER deep fried! In the end, we are left with an adventurous, yet healthy and delicious snack that everyone can enjoy!
+                            </p>
                             </p>
                             <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>

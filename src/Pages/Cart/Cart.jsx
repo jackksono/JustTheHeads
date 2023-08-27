@@ -31,10 +31,10 @@ const CheckOut = () => {
 
     return (
         <>
-        <div className="flex flex-col items-center justify-center min-h-screen text-lg bg-orange-200 bg-allProducts bg-blend-overlay">
+        <div className="flex flex-col items-center justify-center min-h-screen text-lg bg-color-background bg-allProducts bg-blend-lighten">
             {cart.getTotal() > 0 ?
             <div className="pt-28">
-                <h1 className="text-3xl text-center text-black">Your Cart Items</h1>
+                <h1 className="text-3xl text-center text-color-text">Your Cart Items</h1>
             </div>
             : <></>} {/*Turnary to show Cart Items if cart has an item; otherwise will be blank*/}
 
@@ -47,19 +47,19 @@ const CheckOut = () => {
             {cart.getTotal() > 0 ?
 
             <div className="flex items-center justify-center w-auto h-auto">
-                <p className="flex justify-center text-black lg:text-2xl "> Subtotal: ${cart.getTotal()}</p>
+                <p className="flex justify-center text-color-text lg:text-2xl "> Subtotal: ${cart.getTotal()}</p>
                 <button 
                     onClick={() => navigate('/all-products')} 
-                    className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-orange-500 duration-100 text-black hover:bg-black hover:text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> 
+                    className="lg:w-[200px] w-[120px] h-[50px] flex justify-center place-content-start items-center bg-color-primary duration-100 text-color-text hover:bg-black hover:text-white rounded-[8px] m-2 lg:m-[10px] cursor-pointer"> 
                     Continue Shopping 
                 </button>
                 <button 
-                    className="lg:w-[200px] h-[50px] bg-orange-500 text-black hover:bg-black hover:text-white duration-100 rounded-[8px] lg:m-[10px] w-[120px] cursor-pointer"
+                    className="lg:w-[200px] h-[50px] bg-color-secondary text-color-text hover:bg-black hover:text-white duration-100 rounded-[8px] lg:m-[10px] w-[120px] cursor-pointer"
                     onClick={checkout}>
                     Checkout 
                 </button>
             </div>
-            : <h1 className="items-center text-gray-700">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
+            : <h1 className="items-center text-color-text">Your Cart is Empty</h1>} {/*Turnary to display items in cart; otherwise will display msg*/}
             
         </div>
         <footer className="bottom-0">

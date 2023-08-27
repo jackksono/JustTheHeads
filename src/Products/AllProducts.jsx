@@ -55,10 +55,10 @@ const AllProducts = () => {
         <div className="pt-16 overflow-x-hidden bg-center bg-cover bg-color-background lg:pt-32 bg-allProducts bg-blend-lighten">
             <div className="relative text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch " ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
-                    <h1 className="md:text-8xl underline underline-offset-[20%] decoration-color-primary">All Products</h1>
+                    <h1 className="md:text-8xl underline underline-offset-[20%] decoration-color-primary font-bold">All Products</h1>
                 </Bounce>  
                 <Bounce top when={zoom1InView} delay={500}>
-                    <p className="pt-10 no-underline">NO CARBS, NO FILLERS, ONLY HEAD</p>
+                    <p className="pt-10 no-underline md:text-6xl">NO CARBS, NO FILLERS, ONLY HEAD</p>
                 </Bounce>
             </div>
 

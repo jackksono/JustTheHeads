@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const { Opacity } = require('@mui/icons-material')
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
 
@@ -15,6 +16,8 @@ module.exports = {
       },
       animation: {
         blob: "blob 0.5s ease-in-out",
+        slideInLeft: "slideInLeft 5s ease-in-out forwards",
+        slideInRight: "slideInRight 5s ease-in-out forwards",
         'bounce': '3s infinite',
       },
       keyframes: {
@@ -22,6 +25,14 @@ module.exports = {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(0)' },
         },
+        slideInLeft: {
+          '0%': { transform: 'translateX(-200%)', opacity:0 },
+          '100%' : {transform: 'translateX(0%)', opacity:1}
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(200%)', opacity:0 },
+          '100%' : {transform: 'translateX(0%)', opacity:1}
+        }
       },
       colors: {
         color: {
