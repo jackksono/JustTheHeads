@@ -1,4 +1,4 @@
-import React, { useState, useContext, lazy, Suspense } from "react";
+import React, { useState, useContext, lazy, Suspense, useRef, useEffect } from "react";
 import { Link, Route, Routes} from "react-router-dom";
 import Headroom from 'react-headroom';
 
@@ -60,7 +60,13 @@ const NavBarComponent = () => {
     navLinks.classList.toggle('hidden')
   }
 
-  
+  const homeLinkRef = useRef(null); // Create a ref for the "Home" link
+
+  useEffect(() => {
+    homeLinkRef.current.focus(); // Set focus on the "Home" link
+    // You might need to add a className to apply the focus styles
+  }, []);
+
   return (
     
       <>
@@ -119,9 +125,11 @@ const NavBarComponent = () => {
             <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-10 lg:px-10 lg:block lg:w-auto">
               <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0">
                   <div className="flex items-center lg:bg-transparent lg:gap-10 ">
-                    <Link to="/">
-                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-color-text  hover:text-white font-Kanit focus:text-color-text focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
-                      onClick={toggleOff}>
+                    <Link to="/" >
+                      <button 
+                        ref={homeLinkRef} 
+                        className="text-[10px] lg:text-xl outline-none lg:font-semibold lg:duration-200 bg-primary-500 text-color-text  hover:text-white font-Kanit focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                        onClick={toggleOff}>
                         Home
                       </button>
                     </Link>
