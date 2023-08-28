@@ -9,7 +9,7 @@ import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'rea
 
 import { useClickAway } from "@uidotdev/usehooks";
 
-
+import Loading from '../Pages/Fallback/Loading.jsx'
 import Logo1 from "../Images/SiteImages/Logo1.png"
 
 const Home = lazy(() => import("./Home"));
@@ -22,7 +22,8 @@ const Success = lazy(() => import("./Cart/Success"));
 const Checkout = lazy(() => import("./Cart/Checkout"))
 const IndividualProduct = lazy(() => import("../Products/IndividualProduct"));
 const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
-const Loading = lazy(() => import('../Pages/Fallback/Loading'))
+
+
 
 
 
