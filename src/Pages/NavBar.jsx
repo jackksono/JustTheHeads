@@ -40,6 +40,9 @@ const NavBarComponent = () => {
   const clickAway = useClickAway(() => {
     const navLinks = document.querySelector('.nav-links')
     let tag = document.getElementById("menu")
+    if (tag.name === "menu") { 
+      return;
+    }
     tag.name = tag.name === "close" ? "menu" : "close"
     navLinks.classList.toggle('hidden')
     console.log(navLinks.classList)
@@ -60,11 +63,10 @@ const NavBarComponent = () => {
     navLinks.classList.toggle('hidden')
   }
 
-  const homeLinkRef = useRef(null); // Create a ref for the "Home" link
-
+  //Creates a focus on Home when initially visiting webpage
+  const homeLinkRef = useRef(null); 
   useEffect(() => {
-    homeLinkRef.current.focus(); // Set focus on the "Home" link
-    // You might need to add a className to apply the focus styles
+    homeLinkRef.current.focus(); 
   }, []);
 
   return (
@@ -74,7 +76,7 @@ const NavBarComponent = () => {
         <nav class="w-screen p-2 top-0 lg:static fixed inset-x-0  bg-color-background h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten  bg-texture bg-center bg-cover  justify-content-end z-10"
         ref={clickAway}>
             <div className="flex px-5 lg:justify-between lg:px-20 lg:mt-1">
-                  <span className="italic text-color-text lg:text-sm text-[12px] bg-primary-500">
+                  <span className="italic text-color-text  lg:text-sm text-[12px] bg-primary-500">
                     <BsTelephoneFill className="absolute h-[15px] w-[15px] lg:h-[25px] lg:w-[25px]"/>
                     <p className="mx-5 lg:mx-8 lg:text-lg ">Questions? Holla At Us @ xxx-xxx-xxxx</p>
                   </span>             
@@ -98,7 +100,7 @@ const NavBarComponent = () => {
                             <BsFillCartFill className="text-lg lg:w-[27.5px] lg:h-[27.5px]"/>
                               {productCount > 0 ?
                               <div className="relative w-[20px] h-[30px]">
-                                <h1 className="relative justify-center text-center text-color-text rounded-full bg-red-500 text-[10px]">{productCount}</h1>
+                                <h1 className="relative justify-center text-center  text-white rounded-full bg-red-500 text-[10px]">{productCount}</h1>
                               </div> 
                               : 
                               <></>}                         
@@ -122,13 +124,13 @@ const NavBarComponent = () => {
               </button>
             </div>
             
-            <div class="nav-links  bg-blackPaper w-[360px] lg:bg-none lg:bg-transparent duration-500 lg:static lg:h-0  lg:flex-row flex-col  lg:pt-10 lg:px-10 lg:block lg:w-auto">
+            <div class="nav-links  bg-blackPaper w-[360px] sm:bg-none sm:bg-transparent duration-500 sm:static lg:h-0 sm:flex-row flex-col  sm:pt-10 sm:px-10 sm:block sm:w-auto">
               <ul class="font-medium left-0 lg:flex lg:justify-between w-full lg:h-full lg:px-20 p-4 lg:p-0 mt-4 pb-4 gap-4 lg:flex-row lg:space-x-8 lg:mt-0">
                   <div className="flex items-center lg:bg-transparent lg:gap-10 ">
                     <Link to="/" >
                       <button 
                         ref={homeLinkRef} 
-                        className="text-[10px] lg:text-xl outline-none lg:font-semibold lg:duration-200 bg-primary-500 text-color-text  hover:text-white font-Kanit focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                        className="text-[10px] lg:text-xl outline-none lg:font-semibold lg:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
                         onClick={toggleOff}>
                         Home
                       </button>
@@ -138,7 +140,7 @@ const NavBarComponent = () => {
                   <div className="left-0 flex flex-col lg:flex-row lg:bg-transparent lg:items-center lg:flex-non lg:gap-10">
                   
                     <Link to="/all-products">
-                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 md:bg-primary-500 text-color-text  hover:text-white font-Kanit focus:text-color-text focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 md:bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:sm:text-color-textfocus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
                       data-collapse-toggle="navbar-dropdown"
                       onClick={toggleOff}>
                         All Products
@@ -147,12 +149,12 @@ const NavBarComponent = () => {
                     
 
                     <Link to="/why-just-the-head">
-                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-color-text  hover:text-white font-Kanit focus:text-color-text focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                      <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:sm:text-color-text text-white focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
                       onClick={(toggleOff)}>Why Just The Head?</button>
                     </Link>
 
                     <span className="" >
-                        <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 text-color-text  hover:text-white font-Kanit focus:text-color-text focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                        <button className="text-[10px] lg:text-xl lg:font-semibold lg:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:sm:text-color-text text-white focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
                           value="click"
                           onClick={() => { 
                             contactUsSetButtonPopUp(true)
