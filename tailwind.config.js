@@ -40,8 +40,8 @@ module.exports = {
           'babyBlue': "#00D2FF",
           'darkOrange' : "#FF8C00",
           'text': '#210402',
-          'background': '#ff9f35',
-          'primary': '#0033DE',
+          'background': '#ffffff',
+          'primary': '#62eaf4',
           'secondary': '#ffaea8',
           'accent': '#000000',
         }
