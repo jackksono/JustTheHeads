@@ -22,6 +22,7 @@ const Success = lazy(() => import("./Cart/Success"));
 const Checkout = lazy(() => import("./Cart/Checkout"))
 const IndividualProduct = lazy(() => import("../Products/IndividualProduct"));
 const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
+const Loading = lazy(() => import('../Pages/Fallback/Loading'))
 
 
 
@@ -157,10 +158,7 @@ const NavBarComponent = () => {
         </nav>
       </Headroom>
     
-      <Suspense fallback={
-      <div className="items-center justify-center w-screen h-screen">
-        <p>Loading...</p>
-      </div>}> 
+      <Suspense fallback={<Loading/>}> 
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/all-products" element={<AllProducts/>} />
