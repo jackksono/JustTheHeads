@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://jackksono.github.io/",
+  "homepage": "https://jackksono.github.io/JustTheHeads/",
   "private": true,
   "main": "server.js",
   "dependencies": {
@@ -33,7 +33,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --base-href=/",
+    "deploy": "gh-pages -d build ",
     "start": "react-scripts start | node server.js",
     "server": "node server.js",
     "build": "react-scripts build",
