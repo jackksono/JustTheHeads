@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/JustTheHeads/static/css/main.b327b8ba.css",
-    "main.js": "/JustTheHeads/static/js/main.2358cc13.js",
-    "static/js/891.4032d2bb.chunk.js": "/JustTheHeads/static/js/891.4032d2bb.chunk.js",
+    "main.css": "/JustTheHeads/static/css/main.1d36d883.css",
+    "main.js": "/JustTheHeads/static/js/main.48ec024c.js",
+    "static/js/891.ccb6a23d.chunk.js": "/JustTheHeads/static/js/891.ccb6a23d.chunk.js",
     "static/js/387.9f8a78fa.chunk.js": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js",
     "static/js/582.da776bbd.chunk.js": "/JustTheHeads/static/js/582.da776bbd.chunk.js",
-    "static/js/780.3ba5af76.chunk.js": "/JustTheHeads/static/js/780.3ba5af76.chunk.js",
+    "static/js/780.454af7c2.chunk.js": "/JustTheHeads/static/js/780.454af7c2.chunk.js",
     "static/js/324.db112eed.chunk.js": "/JustTheHeads/static/js/324.db112eed.chunk.js",
     "static/js/112.fd675754.chunk.js": "/JustTheHeads/static/js/112.fd675754.chunk.js",
     "static/js/850.bfc6707d.chunk.js": "/JustTheHeads/static/js/850.bfc6707d.chunk.js",
@@ -33,16 +33,16 @@
     "static/media/NoGMO.png": "/JustTheHeads/static/media/NoGMO.1abfba04a237e33d23fd.png",
     "index.html": "/JustTheHeads/index.html",
     "static/media/LayeredPeak1.svg": "/JustTheHeads/static/media/LayeredPeak1.3e7d372d9a6f85f8c1ea.svg",
-    "static/media/Blob4.svg": "/JustTheHeads/static/media/Blob4.84e5f281c0ab4f1c24b7.svg",
-    "static/media/Blob2.svg": "/JustTheHeads/static/media/Blob2.06f7be4e17926a48e6ff.svg",
-    "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.dcfa30d5d7e81d25a311.svg",
-    "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.2f2702b699aebf99a219.svg",
-    "main.b327b8ba.css.map": "/JustTheHeads/static/css/main.b327b8ba.css.map",
-    "main.2358cc13.js.map": "/JustTheHeads/static/js/main.2358cc13.js.map",
-    "891.4032d2bb.chunk.js.map": "/JustTheHeads/static/js/891.4032d2bb.chunk.js.map",
+    "static/media/Blob4.svg": "/JustTheHeads/static/media/Blob4.f61d40bcf137562f48e5.svg",
+    "static/media/Blob2.svg": "/JustTheHeads/static/media/Blob2.6f2acc885da5b16f2cb8.svg",
+    "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.c2b4aea2295e0372d522.svg",
+    "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.bf858abe2d7eba24f15b.svg",
+    "main.1d36d883.css.map": "/JustTheHeads/static/css/main.1d36d883.css.map",
+    "main.48ec024c.js.map": "/JustTheHeads/static/js/main.48ec024c.js.map",
+    "891.ccb6a23d.chunk.js.map": "/JustTheHeads/static/js/891.ccb6a23d.chunk.js.map",
     "387.9f8a78fa.chunk.js.map": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js.map",
     "582.da776bbd.chunk.js.map": "/JustTheHeads/static/js/582.da776bbd.chunk.js.map",
-    "780.3ba5af76.chunk.js.map": "/JustTheHeads/static/js/780.3ba5af76.chunk.js.map",
+    "780.454af7c2.chunk.js.map": "/JustTheHeads/static/js/780.454af7c2.chunk.js.map",
     "324.db112eed.chunk.js.map": "/JustTheHeads/static/js/324.db112eed.chunk.js.map",
     "112.fd675754.chunk.js.map": "/JustTheHeads/static/js/112.fd675754.chunk.js.map",
     "850.bfc6707d.chunk.js.map": "/JustTheHeads/static/js/850.bfc6707d.chunk.js.map",
@@ -56,7 +56,7 @@
     "713.79e46ba1.chunk.js.map": "/JustTheHeads/static/js/713.79e46ba1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b327b8ba.css",
-    "static/js/main.2358cc13.js"
+    "static/css/main.1d36d883.css",
+    "static/js/main.48ec024c.js"
   ]
 }
