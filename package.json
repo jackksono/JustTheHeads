@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://jackksono.github.io/JustTheHeads",
+  "homepage": "https://jackksono.github.io/",
   "private": true,
   "main": "server.js",
   "dependencies": {

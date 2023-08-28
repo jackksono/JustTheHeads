@@ -53,7 +53,7 @@ const AllProducts = () => {
 
     return (
         <div className="pt-16 overflow-x-hidden bg-center bg-cover bg-color-background lg:pt-32 bg-allProducts bg-blend-lighten">
-            <div className="relative text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch " ref={zoom1Ref}>
+            <div className="relative flex flex-col items-center justify-center text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
                     <h1 className="md:text-8xl underline underline-offset-[20%] decoration-color-primary font-bold">All Products</h1>
                 </Bounce>  
