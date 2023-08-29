@@ -31,6 +31,7 @@ const Product = (props) => {
         localStorage.setItem("blobIndex", String(index));
       }, [index]);
    
+   
     const blobToggle = (e) => {
         console.log("Add to cart clicked")
         const element = e.target.parentElement.querySelector('.blob-toggle');
@@ -91,7 +92,7 @@ const Product = (props) => {
                     
                     {hovered && productQuantity < 1 ?  (
                         <button
-                            className={`z-0 sm:mt-20 sm:absolute text-xs sm:animate-blob font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-10 duration-100 `}
+                            className={`hideCart z-0 invisible sm:visible sm:mt-20 sm:absolute text-xs sm:animate-blob font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-10 duration-100 `}
                             onClick={(e) => {
                             cart.addOneToCart(id);
                             blobToggle(e);
@@ -122,7 +123,7 @@ const Product = (props) => {
                         </button>
                     </>
                     :
-                    <button className="sm:hidden z-0 text-[10px] font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100"
+                    <button className=" z-0 sm:hidden text-[10px] font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-2 duration-100"
                     onClick={(e) => {
                         cart.addOneToCart(id);
                         blobToggle(e)}}
