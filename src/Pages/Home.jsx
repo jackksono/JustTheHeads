@@ -74,13 +74,13 @@ const Home = () => {
 
     return (
         <div>
-            <div className="overflow-x-hidden bg-center bg-cover shadow-lg bg-color-background lg:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
+            <div className="overflow-x-hidden bg-center bg-cover shadow-lg bg-color-background sm:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
                 <div className="justify-center">
-                    <div className='w-[375px] h-[67vh] justify-center lg:w-screen shadow-2xl relative'>
+                    <div className='w-[375px] h-[200px] mt-32 sm:mt-0 sm:h-[67vh] justify-center sm:w-screen shadow-2xl relative'>
                         {slides.map((slide, slideIndex) => (
                             <div
                             key={slideIndex}
-                            className={`w-[375px] h-[67vh] lg:w-full bg-no-repeat bg-cover bg-top drop-shadow-2xl absolute transition-opacity duration-1000 ${
+                            className={`w-[375px] h-[200px] sm:h-[67vh] sm:w-full bg-no-repeat bg-contain sm:bg-cover bg-top drop-shadow-2xl absolute transition-opacity duration-1000 ${
                                 currentIndex === slideIndex ? 'opacity-100' : 'opacity-0'}`}
                             style={{
                                 backgroundImage: `url(${slide.url})`,
@@ -119,13 +119,13 @@ const Home = () => {
                 </div>
                 
                 <div className="relative">
-  <div className="w-[100px] h-[100px] absolute top-11/12 left-[100px] animate-slideInLeft" ref={zoom4Ref}>
+  <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute top-11/12 left-[100px] animate-slideInLeft" ref={zoom4Ref}>
     <Fade left when={zoom4InView} duration={5000}>
       <img src={Logo1} alt="TestLogo" loading="lazy" />
     </Fade>
   </div>
   
-  <div className="w-[100px] h-[100px] absolute top-11/12 right-[100px] animate-slideInRight" ref={zoom3Ref}>
+  <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute top-11/12 right-[100px] animate-slideInRight" ref={zoom3Ref}>
     <Fade right when={zoom3InView} duration={5000}>
       <img src={Logo1} alt="TestLogo" loading="lazy" />
     </Fade>

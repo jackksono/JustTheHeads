@@ -5,34 +5,42 @@ const featuredProducts = [
     {
         id: "price_1NJ3xQFWsvLoj5JW4dTvpdpp",
         webId: "1NJ3xQFWsvLoj5JW4dTvpdpp",
-        productName: "Lays (6)",
+        productName: "The Original Head",
         price: 40,
+        category: 'Chips',
         productImage: ComingSoon,
-        description: "Classic is boring, But it is classy"
+        description: "You hear the soft whoosh as waves are tossing themselves at the shore. Seagulls squawking overhead, the wind shifts and you get that wonderful ocean smell, salty, yet refreshing. Both distinct, yet oddly subtle, this mirrors our original Just The Heads Flavor! With an initial, salty crunch, followed by the sweet taste of freshly caught shrimp, this snack will give you the best of both worlds, and have you reaching for more.",
+        ingredients:"Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Dehydrated Garlic Slices, Dehydrated Onion, Less than 2% of Monosodium Glutamate, Brine (Sea salt, Less than 0.1% Sodium Nitrite), Sugar, Natural Flavors"
     },
     {
         id: "price_1NJ3xdFWsvLoj5JWbx09EPhW",
         webId: "1NJ3xdFWsvLoj5JWbx09EPhW",
-        productName: "Sweet Jalapeno (6)",
+        productName: "Spicy Spice",
         price: 20,
+        category: 'Chips',
         productImage: ComingSoon,
-        description: "This Sweet Jalapeno be so sooo sweet. Mhm mhm goodness"
+        description: "Muy Caliente! Using peppers originating in Thailand, we have packed a major PUNCH👊🏼 with this flavor! For those who love PAIN🥵, and pushing their limits💪🏼, this is the flavor for you!",
+        ingredients: "Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Dehydrated Garlic Slices, Dehydrated Onion, Thai Chili Pepper, Bird's Eye Chili Powder, Less than 2% of Monosodium Glutamate, Brine (Sea salt, Less than 0.1% Sodium Nitrite), Sugar, Natural Flavors",
     },
     {
         id: "price_1NJ3xsFWsvLoj5JWNkFx6rSm",
         webId: "1NJ3xsFWsvLoj5JWNkFx6rSm",
-        productName: "Forno (6)",
+        productName: "Soy Garlic",
         price: 50,
+        category: 'Chips',
         productImage: ComingSoon,
-        description: "What is a Forno? Not sure if I've ever tried or even heard of this in my life"
+        description: "",
+        ingredients:"Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Dehydrated Garlic Slices, Dehydrated Onion, Soy Powder, Less than 2% of Monosodium Glutamate, Brine (Sea salt, Less than 0.1% Sodium Nitrite), Sugar, Natural Flavors"
     },
     {
         id: "price_1NJ3y3FWsvLoj5JWJWq4W5p8",
         webId: "1NJ3y3FWsvLoj5JWJWq4W5p8",
-        productName: "BBQ (6)",
+        productName: "Crazy Cajun",
         price: 10,
+        category: 'Chips',
         productImage: ComingSoon,
-        description: "The tasty goodness of campfire smoke straight to the throat. Enjoy with NEW BBQ chips"
+        description: " Cowabunga! Get ready to take your taste buds on a wild ride through the streets of New Orleans! Our Cajun flavor has been tirelessly honed to find the perfect blend of spices. For those daring connoisseurs who love blasts of flavors, this ones for you!",
+        ingredients: "Shrimp Heads, Sea Salt, Pepper, Granulated Onion Powder, Granulated Garlic Powder, Paprika, Dehydrated Garlic Slices, Dehydrated Onion, Oregano, Thyme, Cayenne Pepper, Old Bay Seasoning, Less than 2% of Monosodium Glutamate, Brine (Sea salt, Less than 0.1% Sodium Nitrite), Sugar, Natural Flavors"
     }
 ]
 

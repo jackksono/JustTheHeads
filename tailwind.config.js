@@ -15,15 +15,15 @@ module.exports = {
         tablet: '960px'
       },
       animation: {
-        blob: "blob 0.5s ease-in-out",
+        blob: "blob 1s ease-in-out",
         slideInLeft: "slideInLeft 5s ease-in-out forwards",
         slideInRight: "slideInRight 5s ease-in-out forwards",
         'bounce': '3s infinite',
       },
       keyframes: {
         blob: {
-          '0%': { transform: 'translateY(-100%)' },
-          '100%': { transform: 'translateY(0)' },
+          '0%': { transform: 'translateY(-100%)', opacity:0 },
+          '100%': { transform: 'translateY(0)', opacity:1 },
         },
         slideInLeft: {
           '0%': { transform: 'translateX(-200%)', opacity:0 },

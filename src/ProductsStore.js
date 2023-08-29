@@ -54,7 +54,7 @@ const PRODUCTS = [
     {
         id: "price_1NJ3y3FWsvLoj5JWJWq4W5p4",
         webId: "1NJ3y3FWsvLoj5JWJWq4W5p4",
-        productName: "Just The Heads T-Shirt",
+        productName: "Just The Heads Official T-Shirt",
         price: 10,
         category: 'Merchandise',
         productImage: ComingSoon,

@@ -52,7 +52,7 @@ const AllProducts = () => {
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
     return (
-        <div className="pt-16 overflow-x-hidden bg-center bg-cover bg-color-background lg:pt-32 bg-allProducts bg-blend-lighten">
+        <div className="overflow-x-hidden bg-center bg-cover pt-28 bg-color-background sm:pt-32 bg-allProducts bg-blend-lighten">
             <div className="relative flex flex-col items-center justify-center text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
                     <h1 className="md:text-8xl underline underline-offset-[20%] decoration-color-primary font-bold">All Products</h1>
@@ -101,7 +101,7 @@ const AllProducts = () => {
             </div>
             
             <div className="">
-                <div className="grid justify-center grid-cols-2 gap-1 lg:gap-1 lg:grid-cols-3 place-items-center ">
+                <div className="grid justify-center grid-cols-2 sm:gap-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center ">
                     {selectedCategory
                         ? filteredData.map((product) => (
                             product.category.toLowerCase() === selectedCategory.toLowerCase() && (
