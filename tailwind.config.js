@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const { Opacity } = require('@mui/icons-material')
+
 const { fontFamily } = require("tailwindcss/defaultTheme")
 
 
