@@ -42,6 +42,7 @@ const AllProducts = () => {
     const toggleCategoryMenu = () => {
         const category =document.querySelector('.categoryMenu')
         category.classList.toggle('hidden')
+        // category.classList.toggle('invisible')
     }
 
     //Animation options
@@ -62,8 +63,8 @@ const AllProducts = () => {
                 </Bounce>
             </div>
 
-            <div className="relative py-10 lg:pl-28 w-max">
-                <div className="relative">
+            <div className="relative py-10 mx-5 lg:pl-28 w-max">
+                <div className="relative sm:hidden">
                     <input 
                         className="w-full px-2 pr-10 bg-white rounded-sm font-Kanit border-color-secondary focus:border-4 " 
                         placeholder="Search categories"
@@ -75,29 +76,34 @@ const AllProducts = () => {
                         <IoIosArrowDropdown onClick={toggleCategoryMenu} ></IoIosArrowDropdown>
                     </div>
                 </div>
-                <div className="hidden w-full mt-2 bg-white border-2 rounded-sm categoryMenu font-Kanit" >
+
+                <div className="sm:w-screen sm:items-center sm:flex sm:flex-row sm:pt-[5%] text-center sm:justify-center sm:space-x-[5%]">
+                    <h1 className="invisible sm:visible sm:w-max sm:flex sm:font-CabinSketch sm:font-bold">Filter Categories:</h1>
+                    <div className="hidden w-full mt-2 border-2 rounded-sm sm:visible categoryMenu sm:border-none sm:inline-flex font-Kanit sm:space-x-[10%]" >
                     <button 
-                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
+                        className="flex w-full px-2 py-1 bg-white sm:w-max sm:inline-flex hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold sm:text-center"
                         onClick={() =>{
                         handleCategorySelection('Chips');
                         toggleCategoryMenu()}}>
                         Chips
                     </button>
                     <button 
-                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
+                        className="flex w-full px-2 py-1 bg-white sm:w-max hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold "
                         onClick={() =>{
                         handleCategorySelection('Merchandise');
                         toggleCategoryMenu()}}>
                         Merchandise
                     </button>
                     <button
-                        className="flex w-full px-2 py-1 hover:bg-color-secondary "
+                        className="flex w-full px-2 py-1 bg-white sm:w-max hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold"
                         onClick={() =>{
                         handleCategorySelection('Merchandise');
                         toggleCategoryMenu()}}>
                         Seasonings
                     </button>
                 </div>
+                </div>
+                
             </div>
             
             <div className="">
