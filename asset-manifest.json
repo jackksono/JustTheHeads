@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/JustTheHeads/static/css/main.73fc682b.css",
-    "main.js": "/JustTheHeads/static/js/main.664df07e.js",
+    "main.css": "/JustTheHeads/static/css/main.89e33d09.css",
+    "main.js": "/JustTheHeads/static/js/main.f4306a76.js",
     "static/js/891.40d8d87f.chunk.js": "/JustTheHeads/static/js/891.40d8d87f.chunk.js",
     "static/js/387.9f8a78fa.chunk.js": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js",
     "static/js/582.da776bbd.chunk.js": "/JustTheHeads/static/js/582.da776bbd.chunk.js",
-    "static/js/780.e49513db.chunk.js": "/JustTheHeads/static/js/780.e49513db.chunk.js",
+    "static/js/780.1cdde400.chunk.js": "/JustTheHeads/static/js/780.1cdde400.chunk.js",
     "static/js/324.db112eed.chunk.js": "/JustTheHeads/static/js/324.db112eed.chunk.js",
     "static/js/112.fd675754.chunk.js": "/JustTheHeads/static/js/112.fd675754.chunk.js",
     "static/js/850.bfc6707d.chunk.js": "/JustTheHeads/static/js/850.bfc6707d.chunk.js",
@@ -37,12 +37,12 @@
     "static/media/Blob2.svg": "/JustTheHeads/static/media/Blob2.6f2acc885da5b16f2cb8.svg",
     "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.c2b4aea2295e0372d522.svg",
     "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.bf858abe2d7eba24f15b.svg",
-    "main.73fc682b.css.map": "/JustTheHeads/static/css/main.73fc682b.css.map",
-    "main.664df07e.js.map": "/JustTheHeads/static/js/main.664df07e.js.map",
+    "main.89e33d09.css.map": "/JustTheHeads/static/css/main.89e33d09.css.map",
+    "main.f4306a76.js.map": "/JustTheHeads/static/js/main.f4306a76.js.map",
     "891.40d8d87f.chunk.js.map": "/JustTheHeads/static/js/891.40d8d87f.chunk.js.map",
     "387.9f8a78fa.chunk.js.map": "/JustTheHeads/static/js/387.9f8a78fa.chunk.js.map",
     "582.da776bbd.chunk.js.map": "/JustTheHeads/static/js/582.da776bbd.chunk.js.map",
-    "780.e49513db.chunk.js.map": "/JustTheHeads/static/js/780.e49513db.chunk.js.map",
+    "780.1cdde400.chunk.js.map": "/JustTheHeads/static/js/780.1cdde400.chunk.js.map",
     "324.db112eed.chunk.js.map": "/JustTheHeads/static/js/324.db112eed.chunk.js.map",
     "112.fd675754.chunk.js.map": "/JustTheHeads/static/js/112.fd675754.chunk.js.map",
     "850.bfc6707d.chunk.js.map": "/JustTheHeads/static/js/850.bfc6707d.chunk.js.map",
@@ -56,7 +56,7 @@
     "713.79e46ba1.chunk.js.map": "/JustTheHeads/static/js/713.79e46ba1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.73fc682b.css",
-    "static/js/main.664df07e.js"
+    "static/css/main.89e33d09.css",
+    "static/js/main.f4306a76.js"
   ]
 }
