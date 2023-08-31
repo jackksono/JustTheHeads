@@ -33,21 +33,17 @@ const ContactUs = (props) => {
         setMessage(e.target.value)
     }
 
-    const twoCalls = (e) => {
-        onChangeValidEmail();
-        handleChange(e)
-    }
-
-    const onChangeValidEmail = () => {
-        let re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (re.test(data.email)) {setValidEmail(false)}
-        else setValidEmail(true)
-    }
-
     const handleChange = (e) => {
-        const name = e.target.name
-        const value = e.target.value
-        setData({...data, [name]:value}) 
+        const name = e.target.name;
+        const value = e.target.value;
+
+        // Handle email validation
+        if (name === 'email') {
+            let re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            setValidEmail(!re.test(value));
+        }
+
+        setData({ ...data, [name]: value });
     }
 
     const sendMail = (e) => { //EmailJS documentation
@@ -87,8 +83,8 @@ const ContactUs = (props) => {
             <div className="pl-6 text-lg italic text-color-text ">
                 <span className="pl-3 font-mono text-sm lg:text-xl ">Email (required)</span>
                 <input className="flex font-mono  justify-center w-11/12 p-1 m-1 lg:m-3 h-[25px] lg:h-auto border-2 border-color-secondary border-solid shadow-lg lg:text-lg focus:outline-none focus:border-color-secondary focus:border-4 rounded-xl" 
-                type='email' name='email' id="" onChange={twoCalls}  value={data.email} placeholder="example@gmail.com" required/>
-                <h2 className= "font-semibold text-center text-red-900 underline text-md ">{validEmail ? <EmailResponse/> : null }</h2>  {/*Hidden message has been sent*/}
+                type='email' name='email' id="" onInput={handleChange}  value={data.email} placeholder="example@gmail.com" required/>
+                <h2 className= "font-semibold text-center text-red-900 underline text-md ">{validEmail ? <EmailResponse/> : null }</h2>
             </div>
 
             <div className="pl-6 text-lg italic text-color-text ">

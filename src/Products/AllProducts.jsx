@@ -93,7 +93,7 @@ const AllProducts = () => {
                         <button 
                             className="flex w-full px-2 py-1 bg-white sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold sm:text-center"
                             onClick={(e) =>{
-                            handleCategorySelection('allProducts', e);
+                            handleCategorySelection('All Products', e);
                             toggleCategoryMenu(e)}}>
                             All Products
                         </button>
