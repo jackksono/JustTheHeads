@@ -90,21 +90,21 @@ const IndividualProduct = (props) => {
                 </div>
             </div>
 
-                <div className='flex flex-col space-y-2 sm:absolute sm:top-24 right-[7.5%]'>
+                <div className='flex flex-row sm:flex-col justify-center space-x-5 sm:space-x-0 sm:space-y-2 sm:absolute sm:top-24 sm:right-[7.5%]'>
                     <div className='flex flex-col items-center justify-center text-center'>
-                        <img src={noGMO} alt='NoGMO' className='scale-110 w-36 h-36' loading='lazy'></img>
+                        <img src={noGMO} alt='NoGMO' className='scale-110 w-28 h-28 sm:w-36 sm:h-36' loading='lazy'></img>
                         <p className='text-sm font-bold text-color-text font-CabinSketch'>Made with</p>
                         <p className='text-sm font-bold text-color-text font-CabinSketch'>Real Ingredients</p>
                     </div>
                     
                     <div className='flex flex-col items-center justify-center text-center'>
-                        <img src={ketoFriendly} alt='NoGMO' className='lg:w-28 lg:h-28' loading='lazy'></img>
+                        <img src={ketoFriendly} alt='NoGMO' className='w-20 h-20 sm:w-28 sm:h-28' loading='lazy'></img>
                         <p className='pt-3 text-sm font-bold text-color-text font-CabinSketch'>Low Carbs</p>
                         <p className='text-sm font-bold text-color-text font-CabinSketch'>No Fillers</p>
                     </div>
 
                     <div className='flex flex-col items-center justify-center text-center'>
-                        <img src={bakedNotFried} alt='NoGMO' className='w-28 h-28 grayscale' loading='lazy'></img>
+                        <img src={bakedNotFried} alt='NoGMO' className='w-20 h-20 sm:w-28 sm:h-28 grayscale' loading='lazy'></img>
                         <p className='pt-3 text-sm font-bold text-color-text font-CabinSketch'>Never</p>
                         <p className='text-sm font-bold text-color-text font-CabinSketch'>Deep Fried!</p>
                     </div>
