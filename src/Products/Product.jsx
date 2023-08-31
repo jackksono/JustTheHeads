@@ -70,7 +70,7 @@ const Product = (props) => {
     return (
         <>
             <div className="flex flex-col justify-center p-1 items-center w-[150px] sm:w-[300px] sm:h-[350px] sm:m-[100px] rounded-b-2xl" >
-                <div className="blob-toggle absolute z-{-1} bg-center mb-32 lg:h-[500px] lg:w-[500px] duration-1000 opacity-90 "></div>
+                <div className="blob-toggle absolute -z-0 bg-center mb-32 lg:h-[500px] lg:w-[500px] duration-1000 opacity-90 "></div>
                     <Zoom top when={zoom1InView} duration={1000}>
                         <img 
                             ref={zoom1Ref}
@@ -92,7 +92,7 @@ const Product = (props) => {
                     
                     {hovered && productQuantity < 1 ?  (
                         <button
-                            className={`hideCart z-0 invisible sm:visible sm:mt-20 sm:absolute text-xs sm:animate-blob font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-10 duration-100 `}
+                            className={`hideCart z-0 invisible sm:visible sm:mt-20 sm:absolute text-xs sm:animate-blob font-CabinSketch font-bold w-[100px] lg:text-sm text-center border-2 border-color-secondary bg-color-primary rounded-lg text-color-text hover:bg-black hover:text-color-secondary cursor-pointer lg:min-w-[100px] lg:px-2 lg:py-1 lg:mt-0 duration-100 `}
                             onClick={(e) => {
                             cart.addOneToCart(id);
                             blobToggle(e);

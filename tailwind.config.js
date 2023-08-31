@@ -69,6 +69,7 @@ module.exports = {
         'allProducts' : "url('../src/Images//BlendImages/BubblesBlend.jpg')",
         'navBarBackground' : "url('../src/Images//BlendImages/NavBarBackground.png')",
         'backgroundIsland':"url('../src/Images//BlendImages/BackgroundIsland.png')",
+        'filterBlob': "url('../src/Images//SVG/BehindFilterBlob.svg')"
       },
     },
   },

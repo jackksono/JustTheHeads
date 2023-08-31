@@ -86,33 +86,35 @@ const AllProducts = () => {
                     </div>
                 </div>
 
-                <div className="text-center sm:w-screen sm:items-center sm:flex sm:pt-[1%] sm:flex-row sm:justify-center">
-                    <div className="sm:flex sm:flex-row sm:justify-center sm:space-x-[5%] w-auto sm:w-screen ">
-                    <h1 className="invisible sm:relative sm:visible sm:min-w-max sm:flex sm:font-CabinSketch sm:font-bold sm:text-base sm:py-2 sm:ml-[5%]">Filter Categories:</h1>
-                    <div className="hidden z-10 w-auto sm:w-screen mt-2 border-2 rounded-sm sm:visible categoryMenu sm:border-none sm:inline-flex font-Kanit sm:space-x-[5%] text-center items-center" >
+                <div className="z-0 text-center sm:w-screen sm:items-center sm:flex sm:pb-[5%] sm:flex-row sm:justify-center">
+                    <div className="z-0 sm:flex sm:flex-row sm:justify-center sm:space-x-[5%] w-auto sm:w-screen ">
+                    <h1 className="invisible z-0 sm:relative sm:visible sm:min-w-max sm:flex sm:font-CabinSketch sm:font-bold sm:text-base sm:py-2 sm:ml-[5%]">Filter Categories:</h1>
+                    <div className="z-0 hidden w-auto sm:w-screen mt-2 border-2 rounded-sm sm:visible categoryMenu sm:border-none sm:inline-flex font-Kanit sm:space-x-[5%] text-center items-center" >
                         <button 
-                            className="flex w-full px-2 py-1 bg-white sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold sm:text-center"
+                            className="z-0 flex w-full px-2 py-1 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
                             onClick={(e) =>{
                             handleCategorySelection('All Products', e);
                             toggleCategoryMenu(e)}}>
                             All Products
                         </button>
+                        
                         <button 
-                            className="flex w-full px-2 py-1 bg-white sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold sm:text-center"
+                            className="z-0 flex w-full px-2 py-1 bg-white sm:px-5 sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
                             onClick={(e) =>{
-                            handleCategorySelection('Chips', e);
+                            handleCategorySelection('Just The Heads', e);
                             toggleCategoryMenu(e)}}>
-                            Chips
+                            Just The Heads
                         </button>
+                        
                         <button 
-                            className="flex w-full px-2 py-1 bg-white sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold sm:text-center"
+                            className="z-0 flex w-full px-2 py-1 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center focus:bg-color-primary"
                             onClick={(e) =>{
                             handleCategorySelection('Merchandise', e);
                             toggleCategoryMenu(e)}}>
                             Merchandise
                         </button>
                         <button
-                            className="flex w-full px-2 py-1 bg-white sm:w-max sm:text-xl hover:bg-color-secondary sm:bg-transparent sm:font-CabinSketch sm:font-bold"
+                            className="z-0 flex w-full px-2 py-1 bg-white sm:px-5 sm:w-max sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold focus:bg-color-primary"
                             onClick={(e) =>{
                             handleCategorySelection('Merchandise', e);
                             toggleCategoryMenu(e)}}>
@@ -127,8 +129,8 @@ const AllProducts = () => {
             
             <div className="mt-[-5%]">
                 <div className="grid justify-center grid-cols-2 sm:gap-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center ">
-                    {selectedCategory === "Chips" || selectedCategory === "Merchandise" || selectedCategory === "Seasonings"
-                        ? filteredData.map((product) => (
+                    {selectedCategory === "Just The Heads" || selectedCategory === "Merchandise" || selectedCategory === "Seasonings"
+                        ? PRODUCTS.map((product) => (
                             product.category.toLowerCase() === selectedCategory.toLowerCase() && (
                                 <Product data={product} key={product.webId} index={index} setIndex={setIndex} />
                             )
