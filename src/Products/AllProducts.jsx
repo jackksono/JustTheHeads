@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import {PRODUCTS} from '../ProductsStore'
 import Product from "./Product";
@@ -61,6 +61,11 @@ const AllProducts = () => {
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
 
+    const filterRef = useRef(null); 
+        useEffect(() => {
+            filterRef.current.focus(); 
+        }, []);
+
     return (
         <div className="overflow-x-hidden bg-center bg-cover pt-28 bg-color-background sm:pt-32 bg-allProducts bg-blend-lighten">
             <div className="relative flex flex-col items-center justify-center text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
@@ -86,12 +91,13 @@ const AllProducts = () => {
                     </div>
                 </div>
 
-                <div className="z-0 text-center sm:w-screen sm:items-center sm:flex sm:pb-[5%] sm:flex-row sm:justify-center">
+                <div className="z-0 text-center sm:w-screen sm:items-center sm:flex sm:py-[5%] sm:flex-row sm:justify-center">
                     <div className="z-0 sm:flex sm:flex-row sm:justify-center sm:space-x-[5%] w-auto sm:w-screen ">
                     <h1 className="invisible z-0 sm:relative sm:visible sm:min-w-max sm:flex sm:font-CabinSketch sm:font-bold sm:text-base sm:py-2 sm:ml-[5%]">Filter Categories:</h1>
                     <div className="z-0 hidden w-auto sm:w-screen mt-2 border-2 rounded-sm sm:visible categoryMenu sm:border-none sm:inline-flex font-Kanit sm:space-x-[5%] text-center items-center" >
                         <button 
-                            className="z-0 flex w-full px-2 py-1 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
+                            className="z-0 flex w-full px-2 py-1 duration-300 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
+                            ref={filterRef}
                             onClick={(e) =>{
                             handleCategorySelection('All Products', e);
                             toggleCategoryMenu(e)}}>
@@ -99,7 +105,7 @@ const AllProducts = () => {
                         </button>
                         
                         <button 
-                            className="z-0 flex w-full px-2 py-1 bg-white sm:px-5 sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
+                            className="z-0 flex w-full px-2 py-1 duration-300 bg-white sm:px-5 sm:py-2 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center"
                             onClick={(e) =>{
                             handleCategorySelection('Just The Heads', e);
                             toggleCategoryMenu(e)}}>
@@ -107,14 +113,14 @@ const AllProducts = () => {
                         </button>
                         
                         <button 
-                            className="z-0 flex w-full px-2 py-1 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center focus:bg-color-primary"
+                            className="z-0 flex w-full px-2 py-1 duration-300 bg-white sm:py-2 sm:px-5 sm:w-max sm:inline-flex sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold sm:text-center "
                             onClick={(e) =>{
                             handleCategorySelection('Merchandise', e);
                             toggleCategoryMenu(e)}}>
                             Merchandise
                         </button>
                         <button
-                            className="z-0 flex w-full px-2 py-1 bg-white sm:px-5 sm:w-max sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold focus:bg-color-primary"
+                            className="z-0 flex w-full px-2 py-1 duration-300 bg-white sm:px-5 sm:w-max sm:text-xl hover:bg-filterBlob focus:bg-filterBlob sm:bg-transparent hover:bg-cover hover:bg-center hover:bg-no-repeat focus:bg-cover focus:bg-center focus:bg-no-repeat sm:font-CabinSketch sm:font-bold "
                             onClick={(e) =>{
                             handleCategorySelection('Merchandise', e);
                             toggleCategoryMenu(e)}}>
@@ -127,7 +133,7 @@ const AllProducts = () => {
                 
             </div>
             
-            <div className="mt-[-5%]">
+            <div className="mt[-2%]">
                 <div className="grid justify-center grid-cols-2 sm:gap-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center ">
                     {selectedCategory === "Just The Heads" || selectedCategory === "Merchandise" || selectedCategory === "Seasonings"
                         ? PRODUCTS.map((product) => (
