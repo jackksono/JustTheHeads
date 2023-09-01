@@ -26,7 +26,7 @@ const IndividualProduct = () => {
     // const IndividualComponent = mobile ? MobileIndividualComponent : DesktopIndividualComponent;
 
   return (
-    <div className='relative w-screen pt-32 max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>
+    <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>
         <div className=''>
             <button className='flex pl-4 text-xs font-bold text-color-text lg:pl-8 lg:text-xl font-CabinSketch hover:underline hover:decoration-2 hover:underline-offset-4 hover:decoration-color-secondary hover:text-white'
                 onClick={() =>navigate('/all-products')}
