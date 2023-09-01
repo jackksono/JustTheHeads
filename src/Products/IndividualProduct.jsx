@@ -1,4 +1,4 @@
-import React, { useContext, lazy } from 'react'
+import React, { useContext, lazy, useState } from 'react'
 import { PRODUCTS } from '../ProductsStore'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import { ShopContext } from '../Context/ShopContext'
@@ -13,6 +13,8 @@ const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/Mobil
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
+
+    const [ successfullyCopied, setSuccessfullyCopied ] = useState(false)
     const { webId }  = useParams()
     const cart = useContext(ShopContext)
     const product = PRODUCTS.find((product) => product.webId === webId)
@@ -73,7 +75,7 @@ const IndividualProduct = () => {
                 </div>
             </div>
 
-            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-36 sm:bottom-32 sm:left-1/2'>
+            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2'>
                 <div className='flex items-center space-y-2'>
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
                     <div className='mt-2 space-x-8'>
@@ -92,9 +94,24 @@ const IndividualProduct = () => {
                         <RedditShareButton url={shareUrl}>
                             <RedditIcon size={40} round={true} className='hover:opacity-80'/>
                         </RedditShareButton>
+                        <button 
+                            onClick={() => {
+                                navigator.clipboard.writeText(shareUrl);
+                                setSuccessfullyCopied(true)}}>
+                            <img src='click me' alt='test'></img>
+                        </button>
+                        <div>
+                            {successfullyCopied ? (
+                            <div class="flex px-0 text-sm text-gray-800 rounded-lg bg-gray-50 text-center justify-center " role="alert">
+                            <span class="font-medium">Successfully Copied to Clipboard!</span> 
+                        </div>
+                    ) : null}
                     </div>
                 </div>
             </div>
+        </div>
+            
+            
             
             <div className='flex justify-center h-auto px-5 py-2'>
                 <div className='sm:w-3/4 sm:h-[100px] bg-color-secondary border rounded-lg border-black shadow-[0px_3px_15px_rgba(0,0,0,0.2)]'>

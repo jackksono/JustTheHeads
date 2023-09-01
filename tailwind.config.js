@@ -16,8 +16,8 @@ module.exports = {
       },
       animation: {
         blob: "blob 1s ease-in-out",
-        slideInLeft: "slideInLeft 5s ease-in-out forwards",
-        slideInRight: "slideInRight 5s ease-in-out forwards",
+        slideInLeft: "slideInLeft 10s ease-in-out forwards infinite ",
+        slideInRight: "slideInRight 10s ease-in-out forwards infinite ",
         'bounce': '3s infinite',
       },
       keyframes: {
@@ -26,12 +26,18 @@ module.exports = {
           '100%': { transform: 'translateY(0)', opacity:1 },
         },
         slideInLeft: {
-          '0%': { transform: 'translateX(-200%)', opacity:0 },
-          '100%' : {transform: 'translateX(0%)', opacity:1}
+          '0%': { transform: 'translateX(-400%)', opacity:0 },
+          '45%' : {transform: 'translateX(0%)', opacity:1},
+          '50%' : {transform: 'translateX(0%)', opacity:1},
+          '55%' : {transform: 'translateX(0%)', opacity:1},
+          '100%': { transform: 'translateX(-400%)', opacity:0 },
         },
         slideInRight: {
-          '0%': { transform: 'translateX(200%)', opacity:0 },
-          '100%' : {transform: 'translateX(0%)', opacity:1}
+          '0%': { transform: 'translateX(400%)', opacity:0 },
+          '45%' : {transform: 'translateX(0%)', opacity:1},
+          '50%' : {transform: 'translateX(0%)', opacity:1},
+          '55%' : {transform: 'translateX(0%)', opacity:1},
+          '100%': { transform: 'translateX(400%)', opacity:0 },
         }
       },
       colors: {

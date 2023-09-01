@@ -119,18 +119,18 @@ const Home = () => {
                 </div>
                 
                 <div className="relative">
-  <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute top-11/12 left-[100px] animate-slideInLeft" ref={zoom4Ref}>
-    <Fade left when={zoom4InView} duration={5000}>
-      <img src={Logo1} alt="TestLogo" loading="lazy" />
-    </Fade>
-  </div>
-  
-  <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute top-11/12 right-[100px] animate-slideInRight" ref={zoom3Ref}>
-    <Fade right when={zoom3InView} duration={5000}>
-      <img src={Logo1} alt="TestLogo" loading="lazy" />
-    </Fade>
-  </div>
-</div>
+                    <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute left-[75px] sm:left-[400px] animate-slideInLeft" ref={zoom4Ref}>
+                        <Fade left when={zoom4InView} duration={5000}>
+                        <img src={Logo1} alt="TestLogo" loading="lazy" />
+                        </Fade>
+                    </div>
+                    
+                    <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute right-[75px] sm:right-[400px] animate-slideInRight transform rotate-12" ref={zoom3Ref}>
+                        <Fade right when={zoom3InView} duration={5000}>
+                        <img src={Logo1} alt="TestLogo" loading="lazy" />
+                        </Fade>
+                    </div>
+                    </div>
 
                 <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-10 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>

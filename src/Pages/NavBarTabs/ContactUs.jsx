@@ -66,7 +66,7 @@ const ContactUs = (props) => {
     };
 
     return (props.trigger) ? (
-        <div className="fixed overflow-auto lg:inset-x-0 lg:mx-auto w-84 lg:w-1/2 lg:h-[720px] bg-color-primary bg-opacity-70 rounded-xl shadow-2xl duration-500" ref={clickAway} >
+        <div className="fixed overflow-auto lg:inset-x-0 lg:mx-auto w-84 lg:w-1/2 lg:h-[720px] bg-color-primary bg-opacity-80 rounded-xl shadow-2xl duration-500" ref={clickAway} >
             <form className="" method="post" onSubmit={sendMail}>
                 <div className='flex justify-end pr-5 font-mono text-2xl duration-100 text-color-text hover:text-white '>    
                     <button  onClick={() => props.setTrigger(false)}>X</button>
