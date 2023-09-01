@@ -55,9 +55,9 @@ const IndividualProduct = () => {
 
             <div className='flex flex-row sm:flex-col justify-center space-x-8 sm:space-x-0 sm:space-y-2 sm:absolute sm:top-[5%] pt-10 sm:right-[7.5%]'>
                 <div className='flex flex-col items-center justify-center text-center'>
-                    <img src={noGMO} alt='NoGMO' className='relative mb-12 w-28 h-28 sm:scale-110 sm:w-36 sm:h-36' loading='lazy'></img>
-                    <p className='absolute pt-20 text-sm font-bold sm:pt-24 text-color-text font-CabinSketch'>Made with</p>
-                    <p className='absolute text-sm font-bold pt-28 sm:pt-32 text-color-text font-CabinSketch'>Real Ingredients</p>
+                    <img src={noGMO} alt='NoGMO' className='w-20 h-20 sm:w-28 sm:h-28 grayscale' loading='lazy'></img>
+                    <p className='pt-3 text-sm font-bold text-color-text font-CabinSketch'>Made with</p>
+                    <p className='text-sm font-bold text-color-text font-CabinSketch'>Real Ingredients</p>
                 </div>
                 
                 <div className='flex flex-col items-center justify-center text-center'>
@@ -73,7 +73,7 @@ const IndividualProduct = () => {
                 </div>
             </div>
 
-            <div className='flex sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-36 sm:bottom-32 sm:left-1/2'>
+            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-36 sm:bottom-32 sm:left-1/2'>
                 <div className='flex items-center space-y-2'>
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
                     <div className='mt-2 space-x-8'>
