@@ -1,9 +1,18 @@
 import React, { useContext, lazy, useState } from 'react'
 import { PRODUCTS } from '../ProductsStore'
-import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { ImLink } from 'react-icons/im'
 import { ShopContext } from '../Context/ShopContext'
-import { FacebookShareButton, FacebookIcon, TwitterShareButton, TwitterIcon, FacebookMessengerShareButton, FacebookMessengerIcon, 
-    WhatsappShareButton, WhatsappIcon, RedditShareButton, RedditIcon } from 'react-share'
+import { FacebookShareButton, 
+        FacebookIcon, 
+        TwitterShareButton, 
+        TwitterIcon, 
+        FacebookMessengerShareButton, 
+        FacebookMessengerIcon, 
+        WhatsappShareButton, 
+        WhatsappIcon, 
+        RedditShareButton, 
+        RedditIcon } from 'react-share'
 
 import noGMO from '../Images/SiteImages/NoGMO.png'
 import ketoFriendly from '../Images/SiteImages/KetoFriendly.png'
@@ -77,8 +86,10 @@ const IndividualProduct = () => {
 
             <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2'>
                 <div className='flex items-center space-y-2'>
+                <p className='pt-5'>Link</p>
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
-                    <div className='mt-2 space-x-8'>
+                    
+                    <div className='items-center space-x-8 place-content-center'>
                         <FacebookShareButton url={shareUrl} quote={'Check out these Just The Heads Products!'} hashtag='#JustTheHeads'>
                             <FacebookIcon size={40} round={true} className='hover:opacity-80' />
                         </FacebookShareButton>
@@ -94,12 +105,14 @@ const IndividualProduct = () => {
                         <RedditShareButton url={shareUrl}>
                             <RedditIcon size={40} round={true} className='hover:opacity-80'/>
                         </RedditShareButton>
-                        <button 
-                            onClick={() => {
+                        
+                        <button onClick={() => { //how can I raise this button to line up with the others
                                 navigator.clipboard.writeText(shareUrl);
-                                setSuccessfullyCopied(true)}}>
-                            <img src='click me' alt='test'></img>
+                                setSuccessfullyCopied(true)}}
+                                className='w-10 h-10 text-xs bg-black border border-black rounded-full hover:opacity-80'>
+                            <ImLink className='ml-2 text-2xl text-white'/>
                         </button>
+                        
                         <div>
                             {successfullyCopied ? (
                             <div class="flex px-0 text-sm text-gray-800 rounded-lg bg-gray-50 text-center justify-center " role="alert">
