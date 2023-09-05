@@ -134,7 +134,7 @@ const AllProducts = () => {
             </div>
             
             <div className="mt[-2%]">
-                <div className="grid justify-center grid-cols-2 sm:gap-1 sm:grid-cols-2 md:grid-cols-3 place-items-center ">
+                <div className="grid justify-center grid-cols-2 sm:grid-cols-2 md:grid-cols-3 place-items-center ">
                     {selectedCategory === "Just The Heads" || selectedCategory === "Merchandise" || selectedCategory === "Seasonings"
                         ? PRODUCTS.map((product) => (
                             product.category.toLowerCase() === selectedCategory.toLowerCase() && (

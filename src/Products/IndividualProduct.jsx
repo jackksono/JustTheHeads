@@ -86,10 +86,10 @@ const IndividualProduct = () => {
 
             <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2'>
                 <div className='flex items-center space-y-2'>
-                <p className='pt-5'>Link</p>
+                
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
                     
-                    <div className='items-center space-x-8 place-content-center'>
+                    <div className='space-x-8 place-content-center'>
                         <FacebookShareButton url={shareUrl} quote={'Check out these Just The Heads Products!'} hashtag='#JustTheHeads'>
                             <FacebookIcon size={40} round={true} className='hover:opacity-80' />
                         </FacebookShareButton>
@@ -106,12 +106,14 @@ const IndividualProduct = () => {
                             <RedditIcon size={40} round={true} className='hover:opacity-80'/>
                         </RedditShareButton>
                         
+                    
                         <button onClick={() => { //how can I raise this button to line up with the others
                                 navigator.clipboard.writeText(shareUrl);
                                 setSuccessfullyCopied(true)}}
                                 className='w-10 h-10 text-xs bg-black border border-black rounded-full hover:opacity-80'>
-                            <ImLink className='ml-2 text-2xl text-white'/>
+                            <ImLink className='mb-4 ml-2 text-2xl text-white'/>
                         </button>
+                  
                         
                         <div>
                             {successfullyCopied ? (

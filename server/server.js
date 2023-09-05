@@ -1,5 +1,5 @@
 const express = require('express');
-var cors = require('cors');
+const cors = require('cors');
 require("dotenv").config() //requires install package of dotenv 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY) 
 
@@ -25,17 +25,17 @@ app.post("/cart-checkout", async (req, res) => {
 });
 
 
-    const session = await stripe.checkout.sessions.create({
-        line_items: lineItems,
-        mode: 'payment',
-        // discounts: [{
-        //     coupon: '{{coupon}}',
-        //   }],
-        success_url: 'https://jackksono.github.io/success',
-        cancel_url: 'https://jackksono.github.io/cancel',
+const session = await stripe.checkout.sessions.create({
+    line_items: lineItems,
+    mode: 'payment',
+    // discounts: [{
+    //     coupon: '{{coupon}}',
+    //   }],
+    success_url: 'https://jackksono.github.io/success',
+    cancel_url: 'https://jackksono.github.io/cancel',
     });
-    res.send(JSON.stringify({
-        url: session.url
+res.send(JSON.stringify({
+    url: session.url
     }));
 });
 
