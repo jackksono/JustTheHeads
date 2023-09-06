@@ -24,9 +24,16 @@ const options = {
         review: {type:String, required:true},
     })
 
-    const ratingSchema = new Schema({
-        rating: {type:Number, required:true},
-    })
+    const productSchema = new mongoose.Schema({
+        productName: String,
+        // Other product-related fields
+        ratings: [
+          {
+            userId: String, // Optional: If you want to track who rated
+            ratingValue: Number,
+          },
+        ],
+      });
 
     const sessionSchema = new Schema({
         cookieId: { type: String, required: true, unique: true },
@@ -36,13 +43,13 @@ const options = {
 
     const Users = mongoose.model('users', userSchema);
     const Reviews = mongoose.model('reviews', reviewSchema);
-    const Rating = mongoose.model('rating', ratingSchema)
+    const Products = mongoose.model('rating', productSchema)
     const Session = mongoose.model('session', sessionSchema)
 
 
     module.exports = {
         Users,
         Reviews,
-        Rating,
+        Products,
         Session
     }

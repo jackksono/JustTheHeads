@@ -22,6 +22,8 @@ const Success = lazy(() => import("./Cart/Success"));
 const Checkout = lazy(() => import("./Cart/Checkout"))
 const IndividualProduct = lazy(() => import("../Products/IndividualProduct"));
 const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
+const Register = lazy(() => import('../Pages/NavBarTabs/Register'))
+const Login = lazy(() => import('../Pages/NavBarTabs/Login'))
 
 
 
@@ -180,6 +182,8 @@ const NavBarComponent = () => {
             <Route path="/success" element={<Success/>} />
             <Route path="/cancel" element={<Cancel/>} />
             <Route path="/products/:webId" element={<IndividualProduct/>} />
+            <Route path="/signup" element={<Register/>} />
+            <Route path="/login" element={<Login/>} />
             {/* <Route path="/search" element={<SearchBar/>} /> */}
         </Routes>
     </Suspense>
