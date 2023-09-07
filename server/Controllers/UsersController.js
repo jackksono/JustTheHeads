@@ -49,6 +49,7 @@ const usersController = {
             })
           .catch((err) => {
             console.log(err)
+            return res.status(500).json("Could not find user")
           })
           } else {
             console.log("Invalid email/password");

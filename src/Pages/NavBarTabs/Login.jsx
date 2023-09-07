@@ -12,7 +12,7 @@ const Login = () => {
         e.preventDefault()
         const { email, password } = data;
         try {
-            const response = await axios.post ('http://localhost:4000/users/login', {email, password})
+            const response = await axios.post ('http://localhost:4000/users/verify', {email, password})
             if (response) {
                 navigate('/')
             }
