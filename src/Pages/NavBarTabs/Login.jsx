@@ -1,19 +1,25 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [ data, setData ] = useState({ email: '', password: ''});
     const [ error, setError ] = useState('')
 
+    const navigate = useNavigate()
+
     const handleLogin = async (e) => {
         e.preventDefault()
         const { email, password } = data;
         try {
-            await axios.post ('/login', {email, password})
+            const response = await axios.post ('http://localhost:4000/users/login', {email, password})
+            if (response) {
+                navigate('/')
+            }
         }
-        catch {
-
+        catch (err) {
+            console.log(err)
+            setError('Invalid Username or Password')
         }
     }
     return (
@@ -42,6 +48,7 @@ const Login = () => {
             />
             <button className='absolute mt-32 m-6 w-[100px] text-center justify-center hover:bg-cyan-400 bg-color-primary border border-black border-solid rounded-xl'>Login</button> 
           </form>
+          
           
           <div className='pt-12 text-stone-600'>
             Don't have an account? 

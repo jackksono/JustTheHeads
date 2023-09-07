@@ -6,17 +6,26 @@ const Register = () => {
     const navigate = useNavigate()
     const [ data, setData ] = useState({ name:'', email:'', password:''})
     const [ error, setError ] = useState('')
+    const [ success, setSuccess ] = useState('')
+    const [ successCreatedAccount, setSuccessCreatedAccount ] = useState(false)
 
     const createUser = async (e) => {
         e.preventDefault()
         const { name, email, password } = data
         try {
-            const response = await axios.post('http://localhost:4000/signup', { name, password, email })
+            const response = await axios.post('http://localhost:4000/users/signup', { name, password, email })
+            console.log('this is the response',response)
+            
+                
+            
             console.log("This is the button response", response.data)
+            setSuccess('Welcome to the Head Club!')
             navigate('/login')
-          } catch (err) {
+          }
+        catch (err) {
             console.log("Error inside the POST signup button", err)
             setError('***Unable to Create Account***')
+            
           }
     }
   return (
@@ -50,9 +59,13 @@ const Register = () => {
                 </input>
                 <button className='absolute mt-40 m-6 w-[100px] text-center justify-center hover:bg-cyan-400 bg-color-primary border border-black border-solid rounded-xl'>Sign Up</button>
             </form>
+            
+            
             <div className='flex justify-center text-red-700'>
                 <p>{error}</p>
-            </div> 
+            </div>
+
+            
             <div className='pt-16 text-stone-600 '>
             Have an account already? 
             <Link to="/login" className='p-4 underline text-stone-600 hover:text-stone-800 '>

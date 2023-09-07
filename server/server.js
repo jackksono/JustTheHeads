@@ -1,15 +1,18 @@
 const express = require('express');
 const cors = require('cors');
-require("dotenv").config() //requires install package of dotenv 
+require("dotenv").config(); //used for getting dotenv 
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY) 
 
-
+const path = require('path')
 const app = express();
 
-app.use(cors());
-app.use(express.static('public'));
-app.use(express.json());
+const userRouter = require('../server/Routes/UsersRoute')
 
+app.use(cors());
+
+app.use(express.json());
+app.use('/dist', express.static(path.join(__dirname, '../dist')));
+app.use('/users', userRouter)
 
 app.post("/cart-checkout", async (req, res) => {
 
@@ -24,6 +27,16 @@ app.post("/cart-checkout", async (req, res) => {
     )
 });
 
+app.use((err, req, res, next) => {
+    const defaultErr = {
+      log: 'Express error handler caught unknown middleware error',
+      status: 500,
+      message: { err: 'An error occurred' },
+    };
+    const errorObj = Object.assign({}, defaultErr, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
+  });
 
 const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
@@ -31,8 +44,8 @@ const session = await stripe.checkout.sessions.create({
     // discounts: [{
     //     coupon: '{{coupon}}',
     //   }],
-    success_url: 'https://jackksono.github.io/success',
-    cancel_url: 'https://jackksono.github.io/cancel',
+    success_url: 'https://localhost:3000/success',
+    cancel_url: 'https://localhost:3000/cancel',
     });
 res.send(JSON.stringify({
     url: session.url
