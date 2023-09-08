@@ -53,6 +53,7 @@ const usersController = {
           })
           } else {
             console.log("Invalid email/password");
+            res.sendStatus(500).json("Error in verifying user")
           }
         })
       },

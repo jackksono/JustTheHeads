@@ -15,6 +15,8 @@ const Login = () => {
             const response = await axios.post ('http://localhost:4000/users/verify', {email, password})
             if (response) {
                 navigate('/')
+            } else {
+                setError('Invalid Username or Password')
             }
         }
         catch (err) {
