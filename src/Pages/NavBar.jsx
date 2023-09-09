@@ -4,6 +4,7 @@ import Headroom from 'react-headroom';
 
 
 import { ShopContext } from "../Context/ShopContext";
+import { UserContext, UserContextProvider } from "../Context/UserContext";
 
 import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'react-icons/bs'
 
@@ -35,6 +36,7 @@ const NavBarComponent = () => {
   const [ searchBarButtonPopUp, searchBarSetButtonPopUp ] = useState(false)
 
   const cart = useContext(ShopContext);
+  const { newUser } = useContext(UserContext)
 
 
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
@@ -74,6 +76,7 @@ const NavBarComponent = () => {
   return (
     
       <>
+      <UserContextProvider>
       <Headroom>
         <nav class="w-screen p-2 top-0 lg:static fixed inset-x-0  bg-orange-500 h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten  bg-texture bg-center bg-cover  justify-content-end z-20"
         ref={clickAway}>
@@ -187,8 +190,9 @@ const NavBarComponent = () => {
             {/* <Route path="/search" element={<SearchBar/>} /> */}
         </Routes>
     </Suspense>
-    
+    </UserContextProvider>
   </>
+  
   
   )
 }

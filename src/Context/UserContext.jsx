@@ -1,9 +1,30 @@
-import React from 'react'
+import { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
-const UserContext = () => {
+export const UserContext = createContext({});
+
+export const UserContextProvider = ({ children }) => {
+  const [newUser, setNewUser] = useState(null);
+
+useEffect(() => {
+  if (!newUser) {
+    axios
+      .get('http://localhost:4000/users/profile')
+      .then((response) => {
+        console.log("Response from backend", response);
+        setNewUser(response.data.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+}, []);
+
+  
+
   return (
-    <div>UserContext</div>
-  )
-}
-
-export default UserContext
+    <UserContext.Provider value={{ newUser, setNewUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};

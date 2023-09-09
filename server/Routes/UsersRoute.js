@@ -23,4 +23,8 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
     res.status(200).json(res.locals.newUser)
   })
 
+  router.get('/profile', usersController.getProfile, (req, res) => {
+    res.status(200).json(res.locals.newUser)
+  })
+
 module.exports = router
