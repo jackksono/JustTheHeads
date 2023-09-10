@@ -40,6 +40,10 @@ const NavBarComponent = () => {
   const [ contactUsActive, setContactUsActive ] = useState(false);
   const [ aboutUsActive, setAboutUsActive ] = useState(false);
 
+  const [ userLoginActive, setUserLoginActive ] = useState(false);
+  const [ searchBarActive, setSearchBarActive ] = useState(false);
+  const [ cartActive, setCartActive ] = useState(false);
+
   const cart = useContext(ShopContext);
   const { newUser } = useContext(UserContext)
 
@@ -72,11 +76,11 @@ const NavBarComponent = () => {
     navLinks.classList.toggle('hidden')
   }
 
-  //Creates a focus on Home when initially visiting webpage
-  // const homeLinkRef = useRef(null); 
-  // useEffect(() => {
-  //   homeLinkRef.current.focus(); 
-  // }, []);
+  // Creates a focus on Home when initially visiting webpage
+  const homeLinkRef = useRef(null); 
+  useEffect(() => {
+    homeLinkRef.current.focus(); 
+  }, []);
 
   return (
     
@@ -93,20 +97,35 @@ const NavBarComponent = () => {
 
                   <div className="flex gap-5 pl-12 pr-5 mt-1 lg:gap-8 sm:gap-10 sm:pl-0 sm:items-center">
                     <Link to="/login">
-                        <button className="flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125 focus:text-color-primary focus:italic">
+                        <button className= {userLoginActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
+                        onClick={ () => {
+                          setUserLoginActive(true);
+                          setCartActive(false)
+                          setSearchBarActive(false);
+                          }}>
                             <BsFillPersonFill className="text-lg sm:w-[30px] sm:h-[30px]" />
                         </button>
                     </Link>    
                     <span>
                         <button 
-                          className="flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125 focus:text-color-primary focus:italic"
-                          onClick={() => searchBarSetButtonPopUp(true)}>
+                          className= {searchBarActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
+                          onClick={() => {
+                            searchBarSetButtonPopUp(true)
+                            setUserLoginActive(false);
+                            setCartActive(false)
+                            setSearchBarActive(true);
+                          }}>
                             <BsSearch className="text-md sm:w-[25px] sm:h-[25px]" />
                         </button>
                         <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
                     </span>
                     <Link to="/cart">
-                        <button className="flex text-right transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125 focus:text-color-primary focus:italic">
+                        <button className= {cartActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
+                        onClick={() => {
+                          setUserLoginActive(false);
+                          setCartActive(true)
+                          setSearchBarActive(false);
+                        }}>
                             <BsFillCartFill className="text-lg sm:w-[27.5px] sm:h-[27.5px]"/>
                               {productCount > 0 ?
                               <div className="relative w-[20px] h-[30px]">
@@ -139,7 +158,7 @@ const NavBarComponent = () => {
                   <div className="flex items-center sm:bg-transparent sm:gap-5 lg:gap-10 ">
                     <Link to="/" >
                       <button 
-                        // ref={homeLinkRef} 
+                        ref={homeLinkRef} 
                         className={homeActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` : `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit` }
                         onClick={() => {
                           toggleOff();
@@ -176,7 +195,7 @@ const NavBarComponent = () => {
                       <button className= { aboutUsActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` : `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit` }
                       onClick={() => { 
                         setAboutUsActive(true)
-                        setAboutUsActive(false);
+                        setContactUsActive(false);
                         setHomeActive(false);
                         setAllProductsActive(false);
                         toggleOff()

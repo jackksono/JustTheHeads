@@ -110,15 +110,15 @@ const Product = (props) => {
                     
                     {productQuantity> 0 ? 
                     <>
-                        <h1 className='z-10 text-sm font-bold text-center lg:m-2 lg:text-sm text-color-text font-CabinSketch'>In Cart: {productQuantity}</h1>
+                        <h1 className='z-0 text-sm font-bold text-center lg:m-2 lg:text-sm text-color-text font-CabinSketch'>In Cart: {productQuantity}</h1>
                         <div className="flex items-center justify-center lg:text-sm text-[xs]">
-                            <button className='z-10 pr-2 text-sm font-bold duration-100 cursor-pointer lg:text-xl text-color-text hover:text-white font-CabinSketch ' onClick={() => cart.deleteOneFromCart(id)}> - </button>
-                            <input className='text-center lg:text-sm text-sm w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-10 rounded-md text-color-text font-CabinSketch font-bold ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
-                            <button className='z-10 pl-2 text-sm font-bold duration-100 cursor-pointer lg:text-xl text-color-text hover:text-white font-CabinSketch ' onClick={() => cart.addOneToCart(id)}> + </button>
+                            <button className='z-0 pr-2 text-sm font-bold duration-100 cursor-pointer lg:text-xl text-color-text hover:text-white font-CabinSketch ' onClick={() => cart.deleteOneFromCart(id)}> - </button>
+                            <input className='text-center lg:text-sm text-sm w-[75px] h-[15px] lg:w-[100px] lg:h-[25px] z-0 rounded-md text-color-text font-CabinSketch font-bold ' value={productQuantity} onChange={(e) => cart.updateCartItemCount(Number(e.target.value), id)}></input>
+                            <button className='z-0 pl-2 text-sm font-bold duration-100 cursor-pointer lg:text-xl text-color-text hover:text-white font-CabinSketch ' onClick={() => cart.addOneToCart(id)}> + </button>
                         </div>
                         <button
                             onClick={() => navigate('/cart')}
-                            className="z-10 w-auto px-2 mt-0 text-xs font-bold duration-100 border-2 border-black text-color-text lg:w-auto bg-color-secondary hover:bg-red-400 lg:text-sm lg:my-2 lg:py-1 rounded-2xl lg:px-8 font-CabinSketch ">
+                            className="z-0 w-auto px-2 mt-0 text-xs font-bold duration-100 border-2 border-black text-color-text lg:w-auto bg-color-secondary hover:bg-red-400 lg:text-sm lg:my-2 lg:py-1 rounded-2xl lg:px-8 font-CabinSketch ">
                             Checkout
                         </button>
                     </>

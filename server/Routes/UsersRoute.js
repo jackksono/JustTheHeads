@@ -23,7 +23,7 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
     res.status(200).json(res.locals.newUser)
   })
 
-  router.get('/profile', usersController.getProfile, (req, res) => {
+  router.get('/profile', usersController.verifyUser, usersController.getProfile, (req, res) => {
     res.status(200).json(res.locals.newUser)
   })
 
