@@ -47,7 +47,7 @@ const NavBarComponent = () => {
   const cart = useContext(ShopContext);
   const { newUser } = useContext(UserContext)
 
-
+console.log(newUser)
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
   const clickAway = useClickAway(() => {
@@ -226,7 +226,6 @@ const NavBarComponent = () => {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/all-products" element={<AllProducts/>} />
-            {/* <Route path="/contact-us" element={<ContactUs/>} /> */}
             <Route path="/why-just-the-head" element={<AboutUs/>} />
             <Route path="/cart" element={<Cart/>} />
             <Route path="/checkout" element={<Checkout/>} />
@@ -235,7 +234,6 @@ const NavBarComponent = () => {
             <Route path="/products/:webId" element={<IndividualProduct/>} />
             <Route path="/signup" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
-            {/* <Route path="/search" element={<SearchBar/>} /> */}
         </Routes>
     </Suspense>
     </UserContextProvider>

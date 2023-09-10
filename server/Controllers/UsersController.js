@@ -44,15 +44,15 @@ const usersController = {
           next();
         } else {
           console.log("Invalid email/password");
-          res.status(401).json({ error: "Invalid email/password" });
+          return res.status(401).json({ error: "Invalid email/password" });
         }
       } else {
         console.log("Invalid email/password");
-        res.status(401).json({ error: "Invalid email/password" });
+        return res.status(401).json({ error: "Invalid email/password" });
       }
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: 'An error occurred while verifying user' });
+      return res.status(500).json({ error: 'An error occurred while verifying user' });
     }
   },
 
@@ -79,8 +79,8 @@ const usersController = {
       }
   
       // If the user is authenticated, you can access their information from res.locals.user
-      const userName = res.locals.newUser.name;
-  
+      const userName = res.locals.newUser;
+      console.log(userName)
       return res.status(200).json({ name: userName });
       
     } catch (err) {

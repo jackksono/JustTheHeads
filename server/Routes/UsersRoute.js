@@ -20,10 +20,14 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
   });
 
   router.post('/verify', usersController.verifyUser, (req, res) => {
-    res.status(200).json(res.locals.newUser)
+    if (res.locals.newUser) {
+      res.status(200).json(res.locals.newUser)
+    } else {
+      res.status(401).json({error: 'Authentication failed'})
+    }
   })
 
-  router.get('/profile', usersController.verifyUser, usersController.getProfile, (req, res) => {
+  router.get('/profile', usersController.getProfile, (req, res) => {
     res.status(200).json(res.locals.newUser)
   })
 

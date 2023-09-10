@@ -1,19 +1,24 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from "../../Context/UserContext";
 
 const Login = () => {
     const [ data, setData ] = useState({ email: '', password: ''});
     const [ error, setError ] = useState('')
 
+    const { login } = useContext(UserContext)
     const navigate = useNavigate()
 
     const handleLogin = async (e) => {
         e.preventDefault()
+        setError('')
         const { email, password } = data;
         try {
+          console.log('it tried to run')
             const response = await axios.post ('http://localhost:4000/users/verify', {email, password})
-            if (response) {
+            if (response.status === 200) {
+              login()
                 navigate('/')
             } else {
                 setError('Invalid Username or Password')
