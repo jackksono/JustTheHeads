@@ -35,6 +35,11 @@ const NavBarComponent = () => {
   const [ contactUsButtonPopUp, contactUsSetButtonPopUp ] = useState(false)
   const [ searchBarButtonPopUp, searchBarSetButtonPopUp ] = useState(false)
 
+  const [ homeActive, setHomeActive ] = useState(true);
+  const [ allProductsActive, setAllProductsActive ] = useState(false);
+  const [ contactUsActive, setContactUsActive ] = useState(false);
+  const [ aboutUsActive, setAboutUsActive ] = useState(false);
+
   const cart = useContext(ShopContext);
   const { newUser } = useContext(UserContext)
 
@@ -68,10 +73,10 @@ const NavBarComponent = () => {
   }
 
   //Creates a focus on Home when initially visiting webpage
-  const homeLinkRef = useRef(null); 
-  useEffect(() => {
-    homeLinkRef.current.focus(); 
-  }, []);
+  // const homeLinkRef = useRef(null); 
+  // useEffect(() => {
+  //   homeLinkRef.current.focus(); 
+  // }, []);
 
   return (
     
@@ -134,9 +139,15 @@ const NavBarComponent = () => {
                   <div className="flex items-center sm:bg-transparent sm:gap-5 lg:gap-10 ">
                     <Link to="/" >
                       <button 
-                        ref={homeLinkRef} 
-                        className="text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
-                        onClick={toggleOff}>
+                        // ref={homeLinkRef} 
+                        className={homeActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` : `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit` }
+                        onClick={() => {
+                          toggleOff();
+                          setHomeActive(true);
+                          setAllProductsActive(false);
+                          setContactUsActive(false);
+                          setAboutUsActive(false);
+                        }}>
                         Home
                       </button>
                     </Link>
@@ -144,25 +155,43 @@ const NavBarComponent = () => {
                 
                   <div className="left-0 flex flex-col sm:flex-row sm:bg-transparent sm:items-center sm:flex-non sm:gap-2 lg:gap-10">
                   
-                    <Link to="/all-products">
-                      <button className="text-[10px] sm:text-base md:text-xl sm:font-semibold sm:duration-200 md:bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit focus:sm:text-color-text focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                  <Link to="/all-products">
+                    <button
+                      className= {allProductsActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` :  `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit`}
                       data-collapse-toggle="navbar-dropdown"
-                      onClick={toggleOff}>
-                        All Products
-                      </button>
-                    </Link>
+                      onClick={() => {
+                        toggleOff();
+                        setAllProductsActive(true);
+                        setHomeActive(false)
+                        setAboutUsActive(false);
+                        setContactUsActive(false);
+                      }}
+                    >
+                      All Products
+                    </button>
+                  </Link>
                     
 
                     <Link to="/why-just-the-head">
-                      <button className="text-[10px] sm:text-base md:text-xl sm:font-semibold sm:duration-200 bg-primary-500 sm:text-color-text   hover:text-white font-Kanit focus:sm:text-color-text text-white focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
-                      onClick={(toggleOff)}>Why Just The Head?</button>
+                      <button className= { aboutUsActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` : `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit` }
+                      onClick={() => { 
+                        setAboutUsActive(true)
+                        setAboutUsActive(false);
+                        setHomeActive(false);
+                        setAllProductsActive(false);
+                        toggleOff()
+                        }}>Why Just The Head?</button>
                     </Link>
 
                     <span className="" >
-                        <button className="text-[10px] sm:text-base md:text-xl sm:font-semibold sm:duration-200 bg-primary-500 sm:text-color-text   hover:text-white font-Kanit focus:sm:text-color-text text-white focus:underline focus:decoration-color-primary focus:underline-offset-3 focus:italic focus:rounded-lg focus:transform focus:scale-[1.1]"
+                        <button className= { contactUsActive ? `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit underline decoration-color-primary underline-offset-3 italic rounded-lgtransform scale-[1.1]` : `text-[10px] sm:text-lg md:text-xl sm:font-semibold outline-none sm:duration-200 bg-primary-500 sm:text-color-text text-white  hover:text-white font-Kanit`}
                           value="click"
                           onClick={() => { 
                             contactUsSetButtonPopUp(true)
+                            setContactUsActive(true);
+                            setAboutUsActive(false);
+                            setHomeActive(false);
+                            setAllProductsActive(false);
                             toggleOff()
                             }}>Contact Us
                         </button>
