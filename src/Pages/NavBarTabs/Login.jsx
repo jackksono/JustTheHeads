@@ -15,11 +15,10 @@ const Login = () => {
         setError('')
         const { email, password } = data;
         try {
-          console.log('it tried to run')
             const response = await axios.post ('http://localhost:4000/users/verify', {email, password})
             if (response.status === 200) {
-              login()
-                navigate('/')
+              login(response.data)
+              navigate('/')
             } else {
                 setError('Invalid Username or Password')
             }

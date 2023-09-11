@@ -19,7 +19,11 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
     res.status(200).json(res.locals.deletedUser);
   });
 
-  router.post('/verify', usersController.verifyUser, (req, res) => {
+  router.get('/profile', usersController.getProfile, (req, res) => {
+    res.status(200).json(res.locals.newUser)
+  })
+
+  router.post('/verify', usersController.verifyUser, usersController.getProfile, (req, res) => {
     if (res.locals.newUser) {
       res.status(200).json(res.locals.newUser)
     } else {
@@ -27,8 +31,6 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
     }
   })
 
-  router.get('/profile', usersController.getProfile, (req, res) => {
-    res.status(200).json(res.locals.newUser)
-  })
+ 
 
 module.exports = router

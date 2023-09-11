@@ -4,7 +4,7 @@ import Headroom from 'react-headroom';
 
 
 import { ShopContext } from "../Context/ShopContext";
-import { UserContext, UserContextProvider } from "../Context/UserContext";
+import { UserContext } from "../Context/UserContext";
 
 import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'react-icons/bs'
 
@@ -26,10 +26,6 @@ const SearchBar = lazy(() => import("./NavBarTabs/SearchBar"));
 const Register = lazy(() => import('../Pages/NavBarTabs/Register'))
 const Login = lazy(() => import('../Pages/NavBarTabs/Login'))
 
-
-
-
-
 const NavBarComponent = () => {
 
   const [ contactUsButtonPopUp, contactUsSetButtonPopUp ] = useState(false)
@@ -45,9 +41,8 @@ const NavBarComponent = () => {
   const [ cartActive, setCartActive ] = useState(false);
 
   const cart = useContext(ShopContext);
-  const { newUser } = useContext(UserContext)
+  const { successfulLoginData, loggedIn } = useContext(UserContext)
 
-console.log(newUser)
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
   const clickAway = useClickAway(() => {
@@ -58,7 +53,7 @@ console.log(newUser)
     }
     tag.name = tag.name === "close" ? "menu" : "close"
     navLinks.classList.toggle('hidden')
-    console.log(navLinks.classList)
+    // console.log(navLinks.classList)
   })
 
   
@@ -85,7 +80,6 @@ console.log(newUser)
   return (
     
       <>
-      <UserContextProvider>
       <Headroom>
         <nav class="w-screen p-2 top-0 lg:static fixed inset-x-0  bg-orange-500 h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten  bg-texture bg-center bg-cover  justify-content-end z-20"
         ref={clickAway}>
@@ -96,16 +90,27 @@ console.log(newUser)
                   </span>             
 
                   <div className="flex gap-5 pl-12 pr-5 mt-1 lg:gap-8 sm:gap-10 sm:pl-0 sm:items-center">
-                    <Link to="/login">
-                        <button className= {userLoginActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
-                        onClick={ () => {
-                          setUserLoginActive(true);
-                          setCartActive(false)
-                          setSearchBarActive(false);
-                          }}>
-                            <BsFillPersonFill className="text-lg sm:w-[30px] sm:h-[30px]" />
-                        </button>
-                    </Link>    
+                    {loggedIn ? 
+                    <p className="text-xl italic text-color-text font-CabinSketch">
+                      Hello {successfulLoginData.name}
+                    </p>
+                    
+                    : <Link to="/login">
+                    <button className= {userLoginActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
+                    onClick={ () => {
+                      setUserLoginActive(true);
+                      setCartActive(false)
+                      setSearchBarActive(false);
+                      setHomeActive(false);
+                      setAllProductsActive(false);
+                      setContactUsActive(false);
+                      setAboutUsActive(false);
+                      
+                      }}>
+                        <BsFillPersonFill className="text-lg sm:w-[30px] sm:h-[30px]" />
+                    </button>
+                </Link>   }
+                     
                     <span>
                         <button 
                           className= {searchBarActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
@@ -114,17 +119,25 @@ console.log(newUser)
                             setUserLoginActive(false);
                             setCartActive(false)
                             setSearchBarActive(true);
+                            setHomeActive(false);
+                            setAllProductsActive(false);
+                            setContactUsActive(false);
+                            setAboutUsActive(false);
                           }}>
                             <BsSearch className="text-md sm:w-[25px] sm:h-[25px]" />
                         </button>
-                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp}></SearchBar>
+                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp} setStyleTrigger={setSearchBarActive}></SearchBar>
                     </span>
                     <Link to="/cart">
                         <button className= {cartActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
                         onClick={() => {
                           setUserLoginActive(false);
-                          setCartActive(true)
+                          setCartActive(true);
                           setSearchBarActive(false);
+                          setHomeActive(false);
+                          setAllProductsActive(false);
+                          setContactUsActive(false);
+                          setAboutUsActive(false);
                         }}>
                             <BsFillCartFill className="text-lg sm:w-[27.5px] sm:h-[27.5px]"/>
                               {productCount > 0 ?
@@ -166,6 +179,9 @@ console.log(newUser)
                           setAllProductsActive(false);
                           setContactUsActive(false);
                           setAboutUsActive(false);
+                          setUserLoginActive(false);
+                          setCartActive(false)
+                          setSearchBarActive(false);
                         }}>
                         Home
                       </button>
@@ -184,6 +200,9 @@ console.log(newUser)
                         setHomeActive(false)
                         setAboutUsActive(false);
                         setContactUsActive(false);
+                        setUserLoginActive(false);
+                        setCartActive(false)
+                        setSearchBarActive(false);
                       }}
                     >
                       All Products
@@ -198,6 +217,9 @@ console.log(newUser)
                         setContactUsActive(false);
                         setHomeActive(false);
                         setAllProductsActive(false);
+                        setUserLoginActive(false);
+                        setCartActive(false)
+                        setSearchBarActive(false);
                         toggleOff()
                         }}>Why Just The Head?</button>
                     </Link>
@@ -211,6 +233,9 @@ console.log(newUser)
                             setAboutUsActive(false);
                             setHomeActive(false);
                             setAllProductsActive(false);
+                            setUserLoginActive(false);
+                            setCartActive(false)
+                            setSearchBarActive(false);
                             toggleOff()
                             }}>Contact Us
                         </button>
@@ -236,7 +261,6 @@ console.log(newUser)
             <Route path="/login" element={<Login/>} />
         </Routes>
     </Suspense>
-    </UserContextProvider>
   </>
   
   

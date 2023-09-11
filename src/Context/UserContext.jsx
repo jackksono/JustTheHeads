@@ -1,38 +1,19 @@
-import { createContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import { createContext, useState } from 'react';
 
 export const UserContext = createContext({});
 
 export const UserContextProvider = ({ children }) => {
-  const [newUser, setNewUser] = useState(false);
+  const [ loggedIn, setLoggedIn ] = useState(false)
+  const [successfulLoginData, setSuccessfulLoginData] = useState(null);
 
-  const login = async () => {
-    await setNewUser(true)
-    console.log('this login function ran')
-  }
-
-  useEffect(() => {
-    console.log(newUser); // This will log the updated value when it changes.
-  }, [newUser]);
-
-useEffect(() => {
-  if (newUser) {
-    axios
-      .get('http://localhost:4000/users/profile')
-      .then((response) => {
-        console.log("Response from backend", response);
-        setNewUser(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-}, [newUser]);
-
-  
+  const login = (data) => {
+    setSuccessfulLoginData(data);
+    setLoggedIn(true)
+    // You can also set other user-related data if needed.
+  };
 
   return (
-    <UserContext.Provider value={{ newUser, setNewUser, login }}>
+    <UserContext.Provider value={{ successfulLoginData, loggedIn, login }}>
       {children}
     </UserContext.Provider>
   );

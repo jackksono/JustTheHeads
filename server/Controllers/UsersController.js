@@ -41,7 +41,7 @@ const usersController = {
         if (verified) {
           res.locals.newUser = newUser;
           console.log("Authenticated");
-          next();
+          return next();
         } else {
           console.log("Invalid email/password");
           return res.status(401).json({ error: "Invalid email/password" });
@@ -72,6 +72,7 @@ const usersController = {
     }
   },
   getProfile: async (req, res, next) => {
+    // console.log(res.locals.newUser)
     try {
       if (!res.locals.newUser) {
         // If the user is not authenticated, return a 401 Unauthorized status
@@ -80,8 +81,9 @@ const usersController = {
   
       // If the user is authenticated, you can access their information from res.locals.user
       const userName = res.locals.newUser;
-      console.log(userName)
-      return res.status(200).json({ name: userName });
+      // console.log(userName)
+      next()
+      
       
     } catch (err) {
       console.error(err);
