@@ -91,9 +91,7 @@ const NavBarComponent = () => {
 
                   <div className="flex gap-5 pl-12 pr-5 mt-1 lg:gap-8 sm:gap-10 sm:pl-0 sm:items-center">
                     {loggedIn ? 
-                    <p className="text-xl italic underline outline-none text-color-text font-CabinSketch text-shadow-md decoration-color-primary underline-offset-4 ">
-                      Welcome {successfulLoginData.name}
-                    </p>
+                    null
                     
                     : <Link to="/login">
                     <button className= {userLoginActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
@@ -112,7 +110,7 @@ const NavBarComponent = () => {
                 </Link>   }
 
                       {loggedIn ? (
-                        <button className="text-xs duration-300 text-color-text hover:text-white"
+                        <button className="text-lg duration-300 text-color-text hover:text-white"
                         onClick={() => setLoggedIn(false)}>
                           Sign out
                         </button>
@@ -194,6 +192,12 @@ const NavBarComponent = () => {
                         Home
                       </button>
                     </Link>
+
+                    {loggedIn ? (
+                      <p className="text-2xl italic underline outline-none text-color-text font-CabinSketch text-shadow-md decoration-color-primary underline-offset-4 ">
+                        Welcome {successfulLoginData.name}
+                      </p>
+                    ) : null}
                   </div>
                 
                   <div className="left-0 flex flex-col sm:flex-row sm:bg-transparent sm:items-center sm:flex-non sm:gap-2 lg:gap-10">

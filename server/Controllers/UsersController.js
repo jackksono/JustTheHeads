@@ -75,14 +75,10 @@ const usersController = {
     // console.log(res.locals.newUser)
     try {
       if (!res.locals.newUser) {
-        // If the user is not authenticated, return a 401 Unauthorized status
         return res.status(401).json({ error: 'Authentication required' });
       }
-  
-      // If the user is authenticated, you can access their information from res.locals.user
       const userName = res.locals.newUser;
-      // console.log(userName)
-      next()
+      return next()
       
       
     } catch (err) {

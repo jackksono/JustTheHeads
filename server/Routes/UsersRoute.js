@@ -1,5 +1,5 @@
 const express = require('express')
-const Cookies = require('js-cookie')
+
 
 const usersController = require('../Controllers/UsersController')
 
@@ -19,13 +19,9 @@ router.post('/signup', usersController.getBcrypt, usersController.createUser, (r
     res.status(200).json(res.locals.deletedUser);
   });
 
-  router.get('/profile', usersController.getProfile, (req, res) => {
-    res.status(200).json(res.locals.newUser)
-  })
-
   router.post('/verify', usersController.verifyUser, usersController.getProfile, (req, res) => {
     if (res.locals.newUser) {
-      res.status(200).json(res.locals.newUser)
+      res.status(200).json(res.locals.userName)
     } else {
       res.status(401).json({error: 'Authentication failed'})
     }
