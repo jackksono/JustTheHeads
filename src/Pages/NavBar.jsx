@@ -41,7 +41,7 @@ const NavBarComponent = () => {
   const [ cartActive, setCartActive ] = useState(false);
 
   const cart = useContext(ShopContext);
-  const { successfulLoginData, loggedIn } = useContext(UserContext)
+  const { successfulLoginData, loggedIn, setLoggedIn } = useContext(UserContext)
 
   const productCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
@@ -91,8 +91,8 @@ const NavBarComponent = () => {
 
                   <div className="flex gap-5 pl-12 pr-5 mt-1 lg:gap-8 sm:gap-10 sm:pl-0 sm:items-center">
                     {loggedIn ? 
-                    <p className="text-xl italic text-color-text font-CabinSketch">
-                      Hello {successfulLoginData.name}
+                    <p className="text-xl italic underline outline-none text-color-text font-CabinSketch text-shadow-md decoration-color-primary underline-offset-4 ">
+                      Welcome {successfulLoginData.name}
                     </p>
                     
                     : <Link to="/login">
@@ -110,6 +110,14 @@ const NavBarComponent = () => {
                         <BsFillPersonFill className="text-lg sm:w-[30px] sm:h-[30px]" />
                     </button>
                 </Link>   }
+
+                      {loggedIn ? (
+                        <button className="text-xs duration-300 text-color-text hover:text-white"
+                        onClick={() => setLoggedIn(false)}>
+                          Sign out
+                        </button>
+                      ) : null}
+                
                      
                     <span>
                         <button 
