@@ -1,5 +1,5 @@
 const express = require('express')
-
+const Cookies = require('js-cookie')
 
 const usersController = require('../Controllers/UsersController')
 
