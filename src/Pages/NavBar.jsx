@@ -110,7 +110,7 @@ const NavBarComponent = () => {
                 </Link>   }
 
                       {loggedIn ? (
-                        <button className="text-lg duration-300 text-color-text hover:text-white"
+                        <button className="text-lg duration-300 text-color-text hover:text-white font-Kanit"
                         onClick={() => setLoggedIn(false)}>
                           Sign out
                         </button>
