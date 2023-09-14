@@ -1,4 +1,5 @@
-import React, { useContext, lazy, useState } from 'react'
+import React, { useContext, lazy, useState, useEffect } from 'react'
+import axios from 'axios'
 import { PRODUCTS } from '../ProductsStore'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ImLink } from 'react-icons/im'
@@ -22,6 +23,8 @@ const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/Mobil
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
+    const [ reviews, setReviews ] = useState([])
+    const [ ratings, setRatings ] = useState(0)
 
     const [ successfullyCopied, setSuccessfullyCopied ] = useState(false)
     const { webId }  = useParams()
@@ -35,6 +38,18 @@ const IndividualProduct = () => {
     const shareUrl = "https://justtheheads.com/products/" + webId
     const isMobile = window.innerWidth <= 640
     // const IndividualComponent = mobile ? MobileIndividualComponent : DesktopIndividualComponent;
+
+    useEffect(() => {
+        // Make a GET request to fetch comments for the current product
+        axios.get(`/api/products/${webId}/comments`)
+          .then((response) => {
+            // Assuming the response contains an array of comments
+            setReviews(response.data);
+          })
+          .catch((error) => {
+            console.error('Error fetching comments:', error);
+          });
+      }, [webId])
 
   return (
     <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>

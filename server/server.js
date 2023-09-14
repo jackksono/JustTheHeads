@@ -7,12 +7,14 @@ const path = require('path')
 const app = express();
 
 const userRouter = require('../server/Routes/UsersRoute')
+const reviewRouter = require('../server/Routes/ReviewsRoute')
 
 app.use(cors());
 
 app.use(express.json());
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
 app.use('/users', userRouter)
+app.use('/comments', reviewRouter)
 
 app.post("/cart-checkout", async (req, res) => {
 

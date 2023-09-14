@@ -132,8 +132,6 @@ export const ShopContextProvider = (props) => {
         deleteOneFromCartforCartPage
     }
 
-    console.log(cartItems)
-
     return <ShopContext.Provider value={contextValue}>
                 {props.children}
             </ShopContext.Provider>

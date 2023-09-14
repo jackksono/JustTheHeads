@@ -9,7 +9,6 @@ export const UserContextProvider = ({ children }) => {
   const login = (data) => {
     setSuccessfulLoginData(data);
     setLoggedIn(true)
-    // You can also set other user-related data if needed.
   };
 
   return (
