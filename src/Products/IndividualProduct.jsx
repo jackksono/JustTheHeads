@@ -175,8 +175,10 @@ const IndividualProduct = () => {
                     <p className='p-2 font-medium text-color-text font-CabinSketch'>{ingredients}</p>
                 </div>
             </div>
-            <div className='p-5 font-CabinSketch'>
-                <h2 className='text-lg font-bold '>Customer Reviews:</h2>
+            <div className='p-5 font-CabinSketch min-w-max'>
+                <h2 className='text-lg font-bold '>
+                    Customer Reviews: {loggedIn ? null : '(Please sign in to leave a review)'}
+                </h2>
                 <ul className='w-1/4 bg-white border border-black rounded-md h-min'>
                     {Array.isArray(reviews) && reviews.length > 0 ? (
                         reviews.map((review) => (
@@ -221,7 +223,7 @@ const IndividualProduct = () => {
                 </form>
                 ): null}
                 </div>
-            ) : <p>Please sign in to add a review</p>}
+            ) : null}
             
             </div>
         </div>
