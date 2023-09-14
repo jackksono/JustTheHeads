@@ -5,12 +5,12 @@ const commentsController = {
     addComment : async (req, res, next) => {
         try {
             const { webId } = req.params;
-            const { userId, comment } = req.body
+            const { name, comment } = req.body
 
             console.log('Reviewed web ID', webId)
             const newComment = await models.Comment.create({
                 webId,
-                userId,
+                name,
                 comment
             })
 
@@ -26,7 +26,7 @@ const commentsController = {
     getAllComments: async (req, res, next) => {
         try {
             const { webId } = req.params;
-            const comment = await models.Comment.findOne({ webId });
+            const comment = await models.Comment.find({ webId });
     
             if (!comment) {
                 console.error('comment not found for webId:', webId);
@@ -41,7 +41,22 @@ const commentsController = {
             console.error(error, 'error getting comments');
             return res.status(500).json({ error: 'Internal server error' });
         }
-    }
+    },
+    deleteComment: async (req, res, next) => {
+        try {
+          const id = req.params.id;
+          const deletedComment = await models.Comment.findByIdAndDelete(id);
+    
+          if (!deletedComment) {
+            res.status(404).json({ message: 'User not found' });
+          } else {
+            res.status(200).json(deletedComment);
+          }
+        } catch (err) {
+          console.error(err);
+          res.status(500).json({ error: 'An error occurred while deleting the user' });
+        }
+      },
 }
 
 module.exports = commentsController

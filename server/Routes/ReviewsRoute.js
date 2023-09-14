@@ -16,5 +16,8 @@ router.post('/api/products/:webId/add-comment', commentsController.addComment, (
 // router.post('/delete-comment', commentsController.deleteComment, (req, res, next) => {
 //     res.status(200)
 // })
+router.post('/delete/:id', commentsController.deleteComment,  (req, res ) => { //deletes a user
+    res.status(200).json(res.locals.deletedComment);
+  });
 
 module.exports = router

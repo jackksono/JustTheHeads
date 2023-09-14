@@ -43,8 +43,9 @@ const productSchema = new mongoose.Schema({
   const commentSchema = new mongoose.Schema({
     webId: String,
     userId: String,
-    ratingValue: Number,
+    name: String,
     comment: String,
+    rating: Number,
     date: {
       type: Date,
       default: Date.now,

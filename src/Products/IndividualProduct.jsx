@@ -4,6 +4,7 @@ import { PRODUCTS } from '../ProductsStore'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ImLink } from 'react-icons/im'
 import { ShopContext } from '../Context/ShopContext'
+import { UserContext } from "../Context/UserContext";
 import { FacebookShareButton, 
         FacebookIcon, 
         TwitterShareButton, 
@@ -19,13 +20,14 @@ import noGMO from '../Images/SiteImages/NoGMO.png'
 import ketoFriendly from '../Images/SiteImages/KetoFriendly.png'
 import bakedNotFried from '../Images/SiteImages/BakedNotFried.png'
 
+
 const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/MobileIndividualProduct')))
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
     const [ reviews, setReviews ] = useState([])
     const [ ratings, setRatings ] = useState(0)
-
+    const [ addNewComment, setAddNewComment ] = useState(false)
     const [ successfullyCopied, setSuccessfullyCopied ] = useState(false)
     const { webId }  = useParams()
     const cart = useContext(ShopContext)
@@ -33,17 +35,41 @@ const IndividualProduct = () => {
     const { productImage, productName, id, description, ingredients } = product
     const productQuantity = cart.getProductQuantity(id)
 
+    const { loggedIn, successfulLoginData } = useContext(UserContext)
+
     const navigate = useNavigate()
 
     const shareUrl = "https://justtheheads.com/products/" + webId
     const isMobile = window.innerWidth <= 640
     // const IndividualComponent = mobile ? MobileIndividualComponent : DesktopIndividualComponent;
-
+    const submitComment = async (newComment) => {
+        try {
+          // Make a POST request to your server to add a new comment
+          await axios.post(`http://localhost:4000/comments/api/products/${webId}/add-comment`, {
+            comment: newComment, // Assuming you have an input field or state for the new comment
+            name: successfulLoginData.name
+          });
+      
+          // After successfully adding the comment, you can update your UI or trigger a refresh of the comments
+          // For example, you can re-fetch the comments as you did in the useEffect
+          axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
+            .then((response) => {
+              setReviews(response.data);
+            })
+            .catch((error) => {
+              console.error('Error fetching comments:', error);
+            });
+        } catch (error) {
+          console.error('Error adding comment:', error);
+        }
+      };
+      
     useEffect(() => {
         // Make a GET request to fetch comments for the current product
-        axios.get(`/api/products/${webId}/comments`)
+        axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
           .then((response) => {
             // Assuming the response contains an array of comments
+            console.log(response)
             setReviews(response.data);
           })
           .catch((error) => {
@@ -99,7 +125,7 @@ const IndividualProduct = () => {
                 </div>
             </div>
 
-            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2'>
+            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2 xl:bottom-60'>
                 <div className='flex items-center space-y-2'>
                 
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
@@ -148,6 +174,55 @@ const IndividualProduct = () => {
                     <h1 className='px-2 text-lg font-bold text-color-text font-CabinSketch'>Ingredients:</h1>
                     <p className='p-2 font-medium text-color-text font-CabinSketch'>{ingredients}</p>
                 </div>
+            </div>
+            <div className='p-5 font-CabinSketch'>
+                <h2 className='text-lg font-bold '>Customer Reviews:</h2>
+                <ul className='w-1/4 bg-white border border-black rounded-md h-min'>
+                    {Array.isArray(reviews) && reviews.length > 0 ? (
+                        reviews.map((review) => (
+                            <div className='flex flex-row border border-gray-200 '>
+                                <li className='flex w-full px-3 py-2 text-sm h-min' key={review._id}>
+                                    {review.comment}
+                                </li>
+                                <p className='px-3 py-2 ml-auto text-sm text-gray-500 border-none'>
+                                    <span className="mr-5">{review.name}</span>
+                                    <span>{new Date(review.date).toLocaleDateString('en-US')}</span> {/* Change 'en-US' to your desired locale */}
+                                </p>
+                            </div>
+                       
+                        ))
+            ) : (
+                <li>There are no reviews for this product.</li>
+            )}
+            
+            </ul>
+            {loggedIn ? (
+                <div>
+                <button 
+                className='cursor-pointer hover:text-white'
+                type="button" 
+                onClick={() => setAddNewComment(true)}>
+                    Add Product Review
+                </button>
+                {addNewComment ? (
+                    <form onSubmit={(e) => {
+                    e.preventDefault();
+                    // Assuming you have an input field for the new comment
+                    const newComment = e.target.comment.value;
+                    submitComment(newComment);
+                    // Clear the input field or perform any other necessary UI updates
+                    }}>
+                    <input
+                        type="text"
+                        name="comment"
+                        placeholder="Add a comment"
+                    />
+                    <button type="submit">Submit</button>
+                </form>
+                ): null}
+                </div>
+            ) : <p>Please sign in to add a review</p>}
+            
             </div>
         </div>
     </div>
