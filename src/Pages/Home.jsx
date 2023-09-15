@@ -132,25 +132,29 @@ const Home = () => {
                     </div>
                     </div>
 
-                <div className="w-full lg:aspect-[960/300] lg:h-[500px] h-[300px] grid grid-cols-2 lg:pt-10 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
+                <div className="w-full lg:aspect-[960/300] lg:h-[800px] h-[300px] grid grid-cols-2 lg:pt-10 pt-4 content-center items-center justify-center place-content-center  shadow-black px-4 shadow-md bg-layeredPeak1 bg-fixed bg-cover bg-no-repeat bg-center"
                 ref={zoom2Ref}>
                         <Fade right when={zoom2InView} duration={2000}>
-                            <p className='pt-2 pr-2 font-extrabold text-center md:pt-10 font-YsabeauSC text-color-text lg:text-5xl text-md'
-                                >ABOUT OUR HEAD! 
+                            <div >
+                                <p className='pt-2 pr-2 mb-10 font-extrabold text-center font-YsabeauSC text-color-text lg:text-5xl text-md'>ABOUT OUR HEAD!</p> 
+                                
+                                <div className="font-mono bg-white text-color-text bg-opacity-60 rounded-2xl">
+                                    <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 ">
+                                        Shhhhh! Don't tell anyone and I'll tell you all a secret. This is just between us... but all the goodness 
+                                        and richness and best flavor of shrimp is all in the head! Surprise!
+                                    </p>
+                                    <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 ">
+                                        That's right! Our delicious shrimp head snack uses 100% real shrimp heads and keeps everything natural while 
+                                        preserving every bit of the flavor. This is  98% more shrimp than leading shrimp snack brands. There is ZERO 
+                                        added carbs meaning no wheat flour, no corn starch, and no rice flour at all (I know right, it's a crime)! Our 
+                                        snack is air fried and NEVER deep fried! In the end, we are left with an adventurous, yet healthy and delicious 
+                                        snack that everyone can enjoy!
+                                    </p>
+                                </div>
+                                
+                            </div>
                             
-                            <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
-                                Shhhhh! Don't tell anyone and I'll tell you all a secret. This is just between us... but all the goodness 
-                                and richness and best flavor of shrimp is all in the head! Surprise!
-                            </p>
-                            <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 text-color-text font-mono ">
-                                That's right! Our delicious shrimp head snack uses 100% real shrimp heads and keeps everything natural while 
-                                preserving every bit of the flavor. This is  98% more shrimp than leading shrimp snack brands. There is ZERO 
-                                added carbs meaning no wheat flour, no corn starch, and no rice flour at all (I know right, it's a crime)! Our 
-                                snack is air fried and NEVER deep fried! In the end, we are left with an adventurous, yet healthy and delicious 
-                                snack that everyone can enjoy!
-                            </p>
-                            </p>
-                            <img src={Welcome} alt="bag" className="mb-10 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
+                            <img src={Welcome} alt="bag" className="mt-5 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>
                 </div>
                 

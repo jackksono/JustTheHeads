@@ -19,10 +19,10 @@ const FeaturedProducts = () => {
   return (
     <div className="h-auto overflow-auto overflow-x-hidden bg-color-background lg:pt-16 bg-allProducts bg-blend-lighten lg:py-5">
             <div 
-              className="relative text-4xl text-center text-colors-text lg:text-8xl"
+              className="relative text-4xl text-center text-colors-text lg:text-8xl "
               ref={zoom1Ref}>
               <Flip top when={zoom1InView} delay={500}>
-                <h1 className="underline text-center font-bold font-CabinSketch underline-offset-[20%] decoration-color-primary">Featured Products!</h1>
+                <h1 className="underline text-center font-bold font-CabinSketch underline-offset-[50%] decoration-color-primary ">Featured Products!</h1>
               </Flip>
             </div>
             <div className='flex items-end justify-end py-2 pr-8 text-right'>

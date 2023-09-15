@@ -25,10 +25,12 @@ const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/Mobil
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
-    const [ reviews, setReviews ] = useState([])
-    const [ ratings, setRatings ] = useState(0)
-    const [ addNewComment, setAddNewComment ] = useState(false)
-    const [ successfullyCopied, setSuccessfullyCopied ] = useState(false)
+    const [ reviews, setReviews ] = useState([]);
+    const [ ratings, setRatings ] = useState(0);
+    const [ addNewComment, setAddNewComment ] = useState(false);
+    const [ successfullyCopied, setSuccessfullyCopied ] = useState(false);
+    const [ newCommentOpen, setNewCommentOpen ] = useState(false);
+
     const { webId }  = useParams()
     const cart = useContext(ShopContext)
     const product = PRODUCTS.find((product) => product.webId === webId)
@@ -41,17 +43,12 @@ const IndividualProduct = () => {
 
     const shareUrl = "https://justtheheads.com/products/" + webId
     const isMobile = window.innerWidth <= 640
-    // const IndividualComponent = mobile ? MobileIndividualComponent : DesktopIndividualComponent;
     const submitComment = async (newComment) => {
         try {
-          // Make a POST request to your server to add a new comment
           await axios.post(`http://localhost:4000/comments/api/products/${webId}/add-comment`, {
-            comment: newComment, // Assuming you have an input field or state for the new comment
+            comment: newComment, 
             name: successfulLoginData.name
-          });
-      
-          // After successfully adding the comment, you can update your UI or trigger a refresh of the comments
-          // For example, you can re-fetch the comments as you did in the useEffect
+          })
           axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
             .then((response) => {
               setReviews(response.data);
@@ -68,7 +65,6 @@ const IndividualProduct = () => {
         // Make a GET request to fetch comments for the current product
         axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
           .then((response) => {
-            // Assuming the response contains an array of comments
             console.log(response)
             setReviews(response.data);
           })
@@ -85,7 +81,7 @@ const IndividualProduct = () => {
             >Back
             </button>
             <h1 className='pt-5 text-3xl font-extrabold text-center lg:pt-0 text-color-text lg:text-5xl font-CabinSketch'>{productName}</h1>
-            <div className='relative flex justify-center lg:px-28 lg:py-5 sm:justify-start'>
+            <div className='flex justify-center lg:px-28 lg:py-5 sm:justify-start'>
                 <img 
                     src={productImage}
                     alt='productImage'
@@ -125,7 +121,7 @@ const IndividualProduct = () => {
                 </div>
             </div>
 
-            <div className='flex pt-5 sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:bottom-32 sm:left-1/2 xl:bottom-60'>
+            <div className='flex sm:mt-[-5%] sm:flex-none sm:transform sm:-translate-x-1/2 sm:absolute sm:pr-28 sm:left-1/2'>
                 <div className='flex items-center space-y-2'>
                 
                     <h1 className='flex px-10 font-bold sm:p-5 sm:px-5 text-color-text font-CabinSketch'>Share Product:</h1>
@@ -177,9 +173,9 @@ const IndividualProduct = () => {
             </div>
             <div className='p-5 font-CabinSketch min-w-max'>
                 <h2 className='text-lg font-bold '>
-                    Customer Reviews: {loggedIn ? null : '(Please sign in to leave a review)'}
+                    Customer Reviews: {loggedIn ? null : <span>(Please <button className=' text-color-secondary hover:text-white' onClick={() => navigate('/login')}> sign in </button> to leave a review)</span>}
                 </h2>
-                <ul className='w-1/4 bg-white border border-black rounded-md h-min'>
+                <ul className='w-11/12 bg-white border border-black rounded-md h-min'>
                     {Array.isArray(reviews) && reviews.length > 0 ? (
                         reviews.map((review) => (
                             <div className='flex flex-row border border-gray-200 '>
@@ -188,7 +184,7 @@ const IndividualProduct = () => {
                                 </li>
                                 <p className='px-3 py-2 ml-auto text-sm text-gray-500 border-none'>
                                     <span className="mr-5">{review.name}</span>
-                                    <span>{new Date(review.date).toLocaleDateString('en-US')}</span> {/* Change 'en-US' to your desired locale */}
+                                    <span>{new Date(review.date).toLocaleDateString('en-US')}</span> 
                                 </p>
                             </div>
                        
@@ -200,26 +196,31 @@ const IndividualProduct = () => {
             </ul>
             {loggedIn ? (
                 <div>
-                <button 
-                className='cursor-pointer hover:text-white'
-                type="button" 
-                onClick={() => setAddNewComment(true)}>
-                    Add Product Review
-                </button>
+                    {newCommentOpen ? (
+                        null
+                    ) :
+                    <button 
+                        className='cursor-pointer hover:text-white'
+                        type="button" 
+                        onClick={() => {
+                            setAddNewComment(true);
+                            setNewCommentOpen(true)}}>
+                            Add Product Review
+                     </button>}
+                
                 {addNewComment ? (
                     <form onSubmit={(e) => {
-                    e.preventDefault();
-                    // Assuming you have an input field for the new comment
-                    const newComment = e.target.comment.value;
-                    submitComment(newComment);
-                    // Clear the input field or perform any other necessary UI updates
-                    }}>
-                    <input
+                        e.preventDefault();
+                        const newComment = e.target.comment.value;
+                        submitComment(newComment);
+                        }}>
+                    <textarea
+                        className='w-11/12 mt-2 rounded-lg h-1/6'
                         type="text"
                         name="comment"
                         placeholder="Add a comment"
                     />
-                    <button type="submit">Submit</button>
+                    <button className='flex hover:text-white' type="submit">Submit</button>
                 </form>
                 ): null}
                 </div>
