@@ -138,7 +138,7 @@ const Home = () => {
                             <div >
                                 <p className='pt-2 pr-2 mb-10 font-extrabold text-center font-YsabeauSC text-color-text lg:text-5xl text-md'>ABOUT OUR HEAD!</p> 
                                 
-                                <div className="font-mono bg-white text-color-text bg-opacity-60 rounded-2xl">
+                                <div className="font-mono bg-white text-color-text bg-opacity-40 rounded-2xl">
                                     <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 ">
                                         Shhhhh! Don't tell anyone and I'll tell you all a secret. This is just between us... but all the goodness 
                                         and richness and best flavor of shrimp is all in the head! Surprise!
@@ -154,7 +154,7 @@ const Home = () => {
                                 
                             </div>
                             
-                            <img src={Welcome} alt="bag" className="mt-5 lg:w-3/4 lg:h-[300px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
+                            <img src={Welcome} alt="bag" className="mt-10 lg:w-3/4 lg:h-[375px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>
                 </div>
                 
