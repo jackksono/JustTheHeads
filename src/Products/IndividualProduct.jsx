@@ -137,7 +137,7 @@ const IndividualProduct = () => {
                         <WhatsappShareButton url={shareUrl}>
                             <WhatsappIcon size={40} round={true} className='hover:opacity-80'/>
                         </WhatsappShareButton>
-                        <FacebookMessengerShareButton url={shareUrl}>
+                        <FacebookMessengerShareButton url={shareUrl} appId='657091659851318'>
                             <FacebookMessengerIcon size={40} round={true} className='hover:opacity-80'/>
                         </FacebookMessengerShareButton>
                         <RedditShareButton url={shareUrl}>
