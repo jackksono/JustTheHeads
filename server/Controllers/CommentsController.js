@@ -1,17 +1,15 @@
-const { model } = require('mongoose');
 const models = require('../Models/Model');
 
 const commentsController = {
     addComment : async (req, res, next) => {
         try {
             const { webId } = req.params;
-            const { name, comment } = req.body
-
-            console.log('Reviewed web ID', webId)
+            const { name, comment, rating } = req.body
             const newComment = await models.Comment.create({
                 webId,
                 name,
-                comment
+                comment,
+                rating
             })
 
             res.locals.newComment = newComment
@@ -33,7 +31,7 @@ const commentsController = {
                 return res.status(404).json({ error: 'comment not found' });
             }
     
-            const allComments = comment; // Assuming comments are stored in the comment's comments array
+            const allComments = comment;
             // console.log(allComments)
             res.locals.allComments = allComments;
             return res.status(200).json(allComments)

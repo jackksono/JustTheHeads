@@ -20,16 +20,22 @@ import noGMO from '../Images/SiteImages/NoGMO.png'
 import ketoFriendly from '../Images/SiteImages/KetoFriendly.png'
 import bakedNotFried from '../Images/SiteImages/BakedNotFried.png'
 
-import Ratings from '../Products/Ratings'
+import DisplayRating from '../Pages/Ratings/DisplayRating';
+import RatingInput from '../Pages/Ratings/RatingInput';
+
 const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/MobileIndividualProduct')))
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
     const [ reviews, setReviews ] = useState([]);
-    const [ ratings, setRatings ] = useState(0);
+    const [ addRating, setAddRating ] = useState(0);
+    const [ averageRating, setAverageRating ] = useState(null)
+    const [ newComment, setNewComment ] = useState('')
     const [ addNewComment, setAddNewComment ] = useState(false);
     const [ successfullyCopied, setSuccessfullyCopied ] = useState(false);
     const [ newCommentOpen, setNewCommentOpen ] = useState(false);
+    const [ selectedRatings, setSelectedRatings] = useState([false, false, false, false, false]); 
+
 
     const { webId }  = useParams()
     const cart = useContext(ShopContext)
@@ -43,12 +49,16 @@ const IndividualProduct = () => {
 
     const shareUrl = "https://justtheheads.com/products/" + webId
     const isMobile = window.innerWidth <= 640
-    const submitComment = async (newComment) => {
+
+    const submitComment = async (submitComment) => {
         try {
           await axios.post(`http://localhost:4000/comments/api/products/${webId}/add-comment`, {
             comment: newComment, 
-            name: successfulLoginData.name
+            name: successfulLoginData.name,
+            rating: addRating
           })
+          setAddNewComment(false);
+
           axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
             .then((response) => {
               setReviews(response.data);
@@ -62,16 +72,41 @@ const IndividualProduct = () => {
       };
       
     useEffect(() => {
-        // Make a GET request to fetch comments for the current product
         axios.get(`http://localhost:4000/comments/api/products/${webId}/comments`)
           .then((response) => {
             console.log(response)
+            const newSelectedRatings = response.data.map((review) => review.rating);
+            const totalRating = newSelectedRatings.reduce((acc, rating) => acc + rating, 0);
+            const averageRating = totalRating / newSelectedRatings.length;
+            setSelectedRatings(newSelectedRatings);
+            setAverageRating(averageRating);
             setReviews(response.data);
           })
           .catch((error) => {
             console.error('Error fetching comments:', error);
           });
       }, [webId])
+
+      const renderStarRating = (rating) => {
+        const stars = [];
+      
+        for (let i = 1; i <= 5; i++) {
+          if (i <= rating) {
+            stars.push(
+              <span
+                key={i}
+                style={{ color: 'yellow' }} 
+              >
+                &#9733;
+              </span>
+            );
+          } else {
+            stars.push(<span key={i}>&#9734;</span>);
+          }
+        }
+        return stars;
+      };
+      
 
   return (
     <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>
@@ -81,7 +116,7 @@ const IndividualProduct = () => {
             >Back
             </button>
             <h1 className='pt-5 text-3xl font-extrabold text-center lg:pt-0 text-color-text lg:text-5xl font-CabinSketch'>{productName} 
-                <span><Ratings rating={ratings} setRatings={setRatings}></Ratings></span>
+                <span><DisplayRating averageRating={averageRating}></DisplayRating></span>
             </h1>
             <div className='flex justify-center lg:px-28 lg:py-5 sm:justify-start'>
                 <img 
@@ -138,7 +173,7 @@ const IndividualProduct = () => {
                         <WhatsappShareButton url={shareUrl}>
                             <WhatsappIcon size={40} round={true} className='hover:opacity-80'/>
                         </WhatsappShareButton>
-                        <FacebookMessengerShareButton url={shareUrl} appId='657091659851318'>
+                        <FacebookMessengerShareButton url={shareUrl} appId='657091659851318'> {/*not testable using localhost*/}
                             <FacebookMessengerIcon size={40} round={true} className='hover:opacity-80'/>
                         </FacebookMessengerShareButton>
                         <RedditShareButton url={shareUrl}>
@@ -146,7 +181,7 @@ const IndividualProduct = () => {
                         </RedditShareButton>
                         
                     
-                        <button onClick={() => { //how can I raise this button to line up with the others
+                        <button onClick={() => { 
                                 navigator.clipboard.writeText(shareUrl);
                                 setSuccessfullyCopied(true)}}
                                 className='w-10 h-10 text-xs bg-black border border-black rounded-full hover:opacity-80'>
@@ -178,23 +213,24 @@ const IndividualProduct = () => {
                     Customer Reviews: {loggedIn ? null : <span>(Please <button className=' text-color-secondary hover:text-white' onClick={() => navigate('/login')}> sign in </button> to leave a review)</span>}
                 </h2>
                 <ul className='w-11/12 bg-white border border-black rounded-md h-min'>
-                    {Array.isArray(reviews) && reviews.length > 0 ? (
-                        reviews.map((review) => (
-                            <div className='flex flex-row border border-gray-200 '>
-                                <li className='flex w-full px-3 py-2 text-sm h-min' key={review._id}>
-                                    {review.comment}
-                                </li>
-                                <p className='px-3 py-2 ml-auto text-sm text-gray-500 border-none'>
-                                    <span className="mr-5">{review.name}</span>
-                                    <span>{new Date(review.date).toLocaleDateString('en-US')}</span> 
-                                </p>
+                {Array.isArray(reviews) && reviews.length > 0 ? (
+                    reviews.map((review) => (
+                        <div className="flex w-full border border-gray-200" key={review._id}>
+                        <div className="flex w-full px-3 py-2">
+                            <div>
+                            {review.comment}
                             </div>
-                       
-                        ))
-            ) : (
-                <li>There are no reviews for this product.</li>
-            )}
-            
+                            <div className="flex items-center ml-auto">
+                            {renderStarRating(review.rating)}
+                            <span className="ml-2 text-sm text-gray-500">{new Date(review.date).toLocaleDateString('en-US')}</span>
+                            <span className="ml-2 text-sm">{review.name}</span>
+                            </div>
+                        </div>
+                        </div>
+                    ))
+                    ) : (
+                    <li>There are no reviews for this product.</li>
+                    )}      
             </ul>
             {loggedIn ? (
                 <div>
@@ -213,15 +249,17 @@ const IndividualProduct = () => {
                 {addNewComment ? (
                     <form onSubmit={(e) => {
                         e.preventDefault();
-                        const newComment = e.target.comment.value;
+                        setNewComment(e.target.comment.value);
                         submitComment(newComment);
-                        }}>
+                        }}
+                        onChange={(e) => setNewComment(e.target.value)} >
                     <textarea
                         className='w-11/12 mt-2 rounded-lg h-1/6'
                         type="text"
                         name="comment"
                         placeholder="Add a comment"
                     />
+                    <RatingInput maxRating={5} setAddRating={setAddRating}></RatingInput>
                     <button className='flex hover:text-white' type="submit">Submit</button>
                 </form>
                 ): null}
