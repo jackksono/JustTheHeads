@@ -80,8 +80,9 @@ const IndividualProduct = () => {
                 onClick={() =>navigate('/all-products')}
             >Back
             </button>
-            <h1 className='pt-5 text-3xl font-extrabold text-center lg:pt-0 text-color-text lg:text-5xl font-CabinSketch'>{productName} <span><Ratings></Ratings></span></h1>
-            
+            <h1 className='pt-5 text-3xl font-extrabold text-center lg:pt-0 text-color-text lg:text-5xl font-CabinSketch'>{productName} 
+                <span><Ratings rating={ratings} setRatings={setRatings}></Ratings></span>
+            </h1>
             <div className='flex justify-center lg:px-28 lg:py-5 sm:justify-start'>
                 <img 
                     src={productImage}

@@ -60,12 +60,12 @@ const Home = () => {
 
   
     const zoomOptions = {
-        threshold: 0.5, // Adjust this threshold value to your desired visibility trigger point
-        triggerOnce: false, // Set to true so that the animation only happens once
+        threshold: 0.5, 
+        triggerOnce: false, 
     };
     const zoomOptions2 = {
-        threshold: 0.4, // Adjust this threshold value to your desired visibility trigger point
-        triggerOnce: false, // Set to true so that the animation only happens once
+        threshold: 0.4, 
+        triggerOnce: false, 
     };
     const { ref: zoom1Ref, inView: zoom1InView } = useInView(zoomOptions);
     const { ref: zoom2Ref, inView: zoom2InView } = useInView(zoomOptions2);
@@ -138,7 +138,7 @@ const Home = () => {
                             <div >
                                 <p className='pt-2 pr-2 mb-10 font-extrabold text-center font-YsabeauSC text-color-text lg:text-5xl text-md'>ABOUT OUR HEAD!</p> 
                                 
-                                <div className="font-mono bg-white text-color-text bg-opacity-40 rounded-2xl">
+                                <div className="font-mono bg-white text-color-text bg-opacity-20 rounded-2xl">
                                     <p className="flex pt-3 text-[7px] lg:pt-5 lg:text-lg lg:p-6 ">
                                         Shhhhh! Don't tell anyone and I'll tell you all a secret. This is just between us... but all the goodness 
                                         and richness and best flavor of shrimp is all in the head! Surprise!
@@ -154,7 +154,7 @@ const Home = () => {
                                 
                             </div>
                             
-                            <img src={Welcome} alt="bag" className="mt-10 lg:w-3/4 lg:h-[375px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
+                            <img src={Welcome} alt="bag" className="lg:mt-20 lg:w-3/4 lg:h-[375px] w-[150px]  h-auto mx-auto  shadow-lg rounded-lg shadow-black" loading="lazy"></img>
                         </Fade>
                 </div>
                 
