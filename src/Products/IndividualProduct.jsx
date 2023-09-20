@@ -107,6 +107,7 @@ const IndividualProduct = () => {
         return stars;
       };
       
+      
 
   return (
     <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>
