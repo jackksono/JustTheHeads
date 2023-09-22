@@ -27,6 +27,7 @@ const MobileIndividualComponent = lazy(()=>  (import('../Pages/MobileVsNon/Mobil
 const DesktopIndividualComponent = lazy(() => (import('../Pages/MobileVsNon/DesktopIndividualProduct')))
 
 const IndividualProduct = () => {
+    const [ stockAmount, setStockAmount ] = useState(null)
     const [ reviews, setReviews ] = useState([]);
     const [ addRating, setAddRating ] = useState(0);
     const [ averageRating, setAverageRating ] = useState(null)
