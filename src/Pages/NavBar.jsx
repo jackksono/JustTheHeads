@@ -82,6 +82,7 @@ const NavBarComponent = () => {
     
       <>
       <Headroom>
+        
         <nav class="w-screen p-2 top-0 lg:static fixed inset-x-0  bg-orange-500 h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten  bg-texture bg-center bg-cover  justify-content-end z-20"
         ref={clickAway}>
             <div className="flex px-5 sm:justify-between sm:px-20 lg:mt-1">

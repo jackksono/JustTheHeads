@@ -74,7 +74,7 @@ const Home = () => {
 
     return (
         <div>
-            <div className="overflow-x-hidden bg-center bg-cover shadow-lg bg-color-background sm:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn ">
+            <div className="overflow-x-hidden bg-center bg-cover shadow-lg bg-color-background sm:w-screen bg-drop-shadow-4xl bg-smoke bg-texture bg-blend-color-burn" >
                 <div className="justify-center">
                     <div className='w-[375px] h-[200px] mt-32 sm:mt-0 sm:h-[67vh] justify-center sm:w-screen shadow-2xl relative'>
                         {slides.map((slide, slideIndex) => (
