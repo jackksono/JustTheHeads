@@ -45,6 +45,7 @@ const productSchema = new mongoose.Schema({
     userId: String,
     name: String,
     comment: String,
+    inStock: Number,
     rating: Number,
     date: {
       type: Date,

@@ -11,15 +11,15 @@ import Zoom from 'react-reveal/Zoom'
 const Product = (props) => {
     const navigate = useNavigate()
 
-    const { id, productName, price, productImage, webId, inStock } = props.data
+    const { id, productName, price, productImage, webId } = props.data
     const cart = useContext(ShopContext)
     
     const { index, setIndex } = props;
     const productQuantity = cart.getProductQuantity(id)
 
     const [hovered, setHovered] = useState(false);
-    const [ stockAmount, setStockAmount ] = useState(inStock)
-    console.log(stockAmount)
+   
+ 
     const blobArray = ['blob1', 'blob2', 'blob3', 'blob4'];
 
     useEffect(() => {
@@ -106,9 +106,7 @@ const Product = (props) => {
                         </button>
                      ): ""}
 
-                     {stockAmount === 0 ? (
-                        <p className="px-4 bg-gray-300 font-CabinSketch">Out of Stock</p>
-                     ) : null}
+                     
                     <h1 className="z-0 font-bold text-center text-color-text lg:pt-3">
                         <p className="p-0 text-base font-bold font-CabinSketch lg:text-3xl">{productName}</p>
                     </h1>
