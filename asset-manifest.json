@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/JustTheHeads/static/css/main.31f5d3a1.css",
-    "main.js": "/JustTheHeads/static/js/main.ecae7dc2.js",
-    "static/js/891.328d6fbc.chunk.js": "/JustTheHeads/static/js/891.328d6fbc.chunk.js",
+    "main.css": "/JustTheHeads/static/css/main.b761a28b.css",
+    "main.js": "/JustTheHeads/static/js/main.506bf617.js",
+    "static/js/712.ea4727cf.chunk.js": "/JustTheHeads/static/js/712.ea4727cf.chunk.js",
     "static/js/387.5afaaeb7.chunk.js": "/JustTheHeads/static/js/387.5afaaeb7.chunk.js",
     "static/js/582.e20cf75f.chunk.js": "/JustTheHeads/static/js/582.e20cf75f.chunk.js",
-    "static/js/780.971ee589.chunk.js": "/JustTheHeads/static/js/780.971ee589.chunk.js",
+    "static/js/780.6909395e.chunk.js": "/JustTheHeads/static/js/780.6909395e.chunk.js",
     "static/js/324.db112eed.chunk.js": "/JustTheHeads/static/js/324.db112eed.chunk.js",
     "static/js/112.fd675754.chunk.js": "/JustTheHeads/static/js/112.fd675754.chunk.js",
     "static/js/850.bfc6707d.chunk.js": "/JustTheHeads/static/js/850.bfc6707d.chunk.js",
@@ -30,11 +30,12 @@
     "static/media/BubblesBlend.jpg": "/JustTheHeads/static/media/BubblesBlend.0b1d38817aa2ecd45cbb.jpg",
     "static/media/SlideImageTwo.jpg": "/JustTheHeads/static/media/SlideImageTwo.753e891736e069e07ceb.jpg",
     "static/media/Smoke1.png": "/JustTheHeads/static/media/Smoke1.5cf9bb1bacf608441c01.png",
-    "static/media/Logo1.png": "/JustTheHeads/static/media/Logo1.114b4ab5b9eb1cd2911a.png",
     "static/media/BlackPaper.jpg": "/JustTheHeads/static/media/BlackPaper.783ca499a950819bc938.jpg",
     "static/media/KetoFriendly.png": "/JustTheHeads/static/media/KetoFriendly.741e6e38b088fe69e987.png",
     "static/media/SlideImageOne.jpg": "/JustTheHeads/static/media/SlideImageOne.0239b02852ca72ce6468.jpg",
-    "static/media/JustTheHeadsLogo.png": "/JustTheHeads/static/media/JustTheHeadsLogo.6e37a491df3b7e3990fc.png",
+    "static/media/RedGradientConcept.png": "/JustTheHeads/static/media/RedGradientConcept.1b4bb9405e4a42db3aeb.png",
+    "static/media/Head2.png": "/JustTheHeads/static/media/Head2.78ed9ccff49eef5f3beb.png",
+    "static/media/Head1.png": "/JustTheHeads/static/media/Head1.8a91d9b39ee7d447031a.png",
     "static/media/ChristianD2.jpg": "/JustTheHeads/static/media/ChristianD2.09a4a5a864f5c94bdc09.jpg",
     "index.html": "/JustTheHeads/index.html",
     "static/media/LayeredPeak1.svg": "/JustTheHeads/static/media/LayeredPeak1.3e7d372d9a6f85f8c1ea.svg",
@@ -43,12 +44,12 @@
     "static/media/Blob1.svg": "/JustTheHeads/static/media/Blob1.c2b4aea2295e0372d522.svg",
     "static/media/Blob3.svg": "/JustTheHeads/static/media/Blob3.bf858abe2d7eba24f15b.svg",
     "static/media/BehindFilterBlob.svg": "/JustTheHeads/static/media/BehindFilterBlob.db29d3cbfa100851c38f.svg",
-    "main.31f5d3a1.css.map": "/JustTheHeads/static/css/main.31f5d3a1.css.map",
-    "main.ecae7dc2.js.map": "/JustTheHeads/static/js/main.ecae7dc2.js.map",
-    "891.328d6fbc.chunk.js.map": "/JustTheHeads/static/js/891.328d6fbc.chunk.js.map",
+    "main.b761a28b.css.map": "/JustTheHeads/static/css/main.b761a28b.css.map",
+    "main.506bf617.js.map": "/JustTheHeads/static/js/main.506bf617.js.map",
+    "712.ea4727cf.chunk.js.map": "/JustTheHeads/static/js/712.ea4727cf.chunk.js.map",
     "387.5afaaeb7.chunk.js.map": "/JustTheHeads/static/js/387.5afaaeb7.chunk.js.map",
     "582.e20cf75f.chunk.js.map": "/JustTheHeads/static/js/582.e20cf75f.chunk.js.map",
-    "780.971ee589.chunk.js.map": "/JustTheHeads/static/js/780.971ee589.chunk.js.map",
+    "780.6909395e.chunk.js.map": "/JustTheHeads/static/js/780.6909395e.chunk.js.map",
     "324.db112eed.chunk.js.map": "/JustTheHeads/static/js/324.db112eed.chunk.js.map",
     "112.fd675754.chunk.js.map": "/JustTheHeads/static/js/112.fd675754.chunk.js.map",
     "850.bfc6707d.chunk.js.map": "/JustTheHeads/static/js/850.bfc6707d.chunk.js.map",
@@ -67,7 +68,7 @@
     "877.9aecff77.chunk.js.map": "/JustTheHeads/static/js/877.9aecff77.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.31f5d3a1.css",
-    "static/js/main.ecae7dc2.js"
+    "static/css/main.b761a28b.css",
+    "static/js/main.506bf617.js"
   ]
 }
