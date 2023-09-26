@@ -1,6 +1,6 @@
 import React, { useState, useContext, lazy, Suspense, useRef, useEffect } from "react";
 import { Link, Route, Routes} from "react-router-dom";
-import Headroom from 'react-headroom';
+
 
 
 import { ShopContext } from "../Context/ShopContext";
@@ -12,6 +12,7 @@ import { useClickAway } from "@uidotdev/usehooks";
 
 import Loading from '../Pages/Fallback/Loading.jsx'
 import Logo from '../Images/SiteImages/RedGradientConcept.png'
+import Logo1 from '../Images/SiteImages/Orange Concept.png'
 
 
 const Home = lazy(() => import("./Home"));
@@ -81,9 +82,7 @@ const NavBarComponent = () => {
   return (
     
       <>
-      <Headroom>
-        
-        <nav class="w-screen p-2 top-0 lg:static fixed inset-x-0  bg-orange-500 h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten  bg-texture bg-center bg-cover  justify-content-end z-20"
+        <nav className="fixed left-0 right-0 p-2 top-0 bg-orange-500 h-[100px] drop-shadow-2xl bg-allProducts bg-blend-lighten bg-texture bg-center bg-cover justify-content-end transition-all duration-300 z-50"
         ref={clickAway}>
             <div className="flex px-5 sm:justify-between sm:px-20 lg:mt-1">
                   <span className="italic text-color-text lg:text-sm text-[12px] bg-primary-500">
@@ -159,11 +158,11 @@ const NavBarComponent = () => {
                 </div>
             </div>
           
-            <div className="">
+            <div className="z-20">
               <img 
-                src={Logo}
+                src={Logo1}
                 alt="logo"
-                className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20"
+                className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-12"
                 loading="lazy">
               </img>
             </div>
@@ -259,7 +258,7 @@ const NavBarComponent = () => {
             </div>
                   <ContactUs trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
         </nav>
-      </Headroom>
+
     
       <Suspense fallback={<Loading/>}> 
         <Routes>
