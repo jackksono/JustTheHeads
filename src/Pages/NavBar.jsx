@@ -11,8 +11,8 @@ import { BsSearch, BsTelephoneFill, BsFillPersonFill, BsFillCartFill } from 'rea
 import { useClickAway } from "@uidotdev/usehooks";
 
 import Loading from '../Pages/Fallback/Loading.jsx'
-import Logo1 from "../Images/SiteImages/Logo1.png"
-import Logo from '../Images/SiteImages/JustTheHeadsLogo.png'
+import Logo from '../Images/SiteImages/RedGradientConcept.png'
+
 
 const Home = lazy(() => import("./Home"));
 const ContactUs = lazy(() => import("./NavBarTabs/ContactUs"));
