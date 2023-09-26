@@ -17,7 +17,8 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {RxDotFilled} from 'react-icons/rx'
 
-import Logo1 from '../Images/SiteImages/Logo1.png'
+import Head1 from '../Images/SiteImages/Head1.png'
+import Head2 from '../Images/SiteImages/Head2.png'
 
 const slides = [
     {url:SlideImageOne},
@@ -121,13 +122,13 @@ const Home = () => {
                 <div className="relative">
                     <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute left-[75px] sm:left-[400px] animate-slideInLeft" ref={zoom4Ref}>
                         <Fade left when={zoom4InView} duration={5000}>
-                        <img src={Logo1} alt="TestLogo" loading="lazy" />
+                        <img src={Head1} alt="TestLogo" loading="lazy" />
                         </Fade>
                     </div>
                     
                     <div className="w-[50px] h-[50px] sm:w-[100px] sm:h-[100px] absolute right-[75px] sm:right-[400px] animate-slideInRight transform rotate-12" ref={zoom3Ref}>
                         <Fade right when={zoom3InView} duration={5000}>
-                        <img src={Logo1} alt="TestLogo" loading="lazy" />
+                        <img src={Head2} alt="TestLogo" loading="lazy" />
                         </Fade>
                     </div>
                     </div>

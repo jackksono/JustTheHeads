@@ -163,7 +163,7 @@ const NavBarComponent = () => {
               <img 
                 src={Logo}
                 alt="logo"
-                className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-12"
+                className="h-[100px] w-[100px] lg:h-[200px] lg:w-[225px] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-20"
                 loading="lazy">
               </img>
             </div>
