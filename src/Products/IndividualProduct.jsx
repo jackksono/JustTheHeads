@@ -81,6 +81,7 @@ const IndividualProduct = () => {
             const averageRating = totalRating / newSelectedRatings.length;
             setSelectedRatings(newSelectedRatings);
             setAverageRating(averageRating);
+            setStockAmount(response.data.inStock)
             setReviews(response.data);
           })
           .catch((error) => {
@@ -108,17 +109,17 @@ const IndividualProduct = () => {
         return stars;
       };
       
-      
+      console.log(stockAmount)
 
   return (
-    <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-20 bg-color-background bg-allProducts bg-blend-lighten'>
+    <div className='relative w-screen pt-32 bg-center bg-cover max-h-max sm:pt-44 bg-color-background bg-allProducts bg-blend-lighten'>
         <div className=''>
             <button className='flex pl-4 text-xs font-bold text-color-text lg:pl-8 lg:text-xl font-CabinSketch hover:underline hover:decoration-2 hover:underline-offset-4 hover:decoration-color-secondary hover:text-white'
                 onClick={() =>navigate('/all-products')}
             >Back
             </button>
             <h1 className='pt-5 text-3xl font-extrabold text-center lg:pt-0 text-color-text lg:text-5xl font-CabinSketch'>{productName} 
-                <span><DisplayRating averageRating={averageRating}></DisplayRating></span>
+                <span><DisplayRating averageRating={30}></DisplayRating></span>
             </h1>
             <div className='flex justify-center lg:px-28 lg:py-5 sm:justify-start'>
                 <img 
@@ -140,7 +141,7 @@ const IndividualProduct = () => {
                 ) : null }
             </div>
 
-            <div className='flex flex-row sm:flex-col justify-center space-x-8 sm:space-x-0 sm:space-y-2 sm:absolute sm:top-[5%] pt-10 sm:right-[7.5%]'>
+            <div className='flex flex-row sm:flex-col justify-center space-x-8 sm:space-x-0 sm:space-y-2 sm:absolute sm:top-[15%] pt-10 sm:right-[7.5%]'>
                 <div className='flex flex-col items-center justify-center text-center'>
                     <img src={noGMO} alt='NoGMO' className='w-20 h-20 sm:w-28 sm:h-28 grayscale' loading='lazy'></img>
                     <p className='pt-3 text-sm font-bold text-color-text font-CabinSketch'>Made with</p>
