@@ -66,17 +66,19 @@ const SearchBar = (props) => {
         onClick={() => {
             props.setTrigger(false);
             props.setStyleTrigger(false);
+            props.setSearchBarActive(false);
             }}>
         <div className='flex justify-end text-black duration-100 lg:pr-16 lg:pt-16 lg:text-5xl ' >    
             <button 
             className='cursor-pointer hover:text-white'
             onClick={() => {
             props.setTrigger(false);
-            props.setStyleTrigger(false)
+            props.setStyleTrigger(false);
+            props.setSearchBarActive(false);
             }}>X</button>
         </div>
        
-        <div className='flex sm:mt-[5%] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' onClick={handleInputClick} >
+        <div className='flex sm:mt-[10%] h-[50px] lg:h-auto mt-10 justify-center text-[18px]' onClick={handleInputClick} >
             <input 
                 type='text' 
                 onKeyDown={handleKeyDown}

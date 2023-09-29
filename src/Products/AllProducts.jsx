@@ -73,7 +73,7 @@ const AllProducts = () => {
         }, []);
 
     return (
-        <div className="overflow-x-hidden bg-center bg-cover pt-28 bg-color-background sm:pt-32 bg-allProducts bg-blend-lighten">
+        <div className="overflow-x-hidden bg-center bg-cover pt-28 bg-color-background sm:pt-48 bg-allProducts bg-blend-lighten">
             <div className="relative flex flex-col items-center justify-center text-4xl font-medium text-center text-black md:text-7xl font-CabinSketch" ref={zoom1Ref}>
                 <Bounce top when={zoom1InView}>
                     <h1 className="md:text-8xl underline underline-offset-[20%] decoration-color-primary font-bold">All Products</h1>

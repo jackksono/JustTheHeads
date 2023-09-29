@@ -12,8 +12,11 @@ const ContactUs = (props) => {
     const [ validEmail, setValidEmail ] = useState(false)
 
     const clickAway = useClickAway(() => {
-        const close = () => props.setTrigger(false);
+        const close = () => props.setTrigger(false)
+        const close2 = () => props.setContactUsActive(false);
+        close2()
         close()
+        
       });
     
 
@@ -69,7 +72,9 @@ const ContactUs = (props) => {
         <div className="fixed overflow-auto lg:inset-x-0 lg:mx-auto w-84 lg:w-1/2 lg:h-[720px] bg-color-primary bg-opacity-80 rounded-xl shadow-2xl duration-500" ref={clickAway} >
             <form className="" method="post" onSubmit={sendMail}>
                 <div className='flex justify-end pr-5 font-mono text-2xl duration-100 text-color-text hover:text-white '>    
-                    <button  onClick={() => props.setTrigger(false)}>X</button>
+                    <button  onClick={() => {
+                        props.setContactUsActive(false);
+                        props.setTrigger(false)}}>X</button>
                 </div>
                 <h1 className="flex justify-center pl-10 pr-10 font-mono text-2xl text-white lg:text-4xl">How's The <span className="justify-center font-mono italic underline duration-1000 text-color-text animate-bounce">Head?</span></h1>
                 

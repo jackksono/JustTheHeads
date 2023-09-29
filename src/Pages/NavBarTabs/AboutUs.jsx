@@ -27,7 +27,7 @@ const AboutUs = () => {
 
     return (
         <>
-            <div className="bg-center bg-cover bg-color-background pt-36 bg-allProducts bg-blend-lighten">
+            <div className="bg-center bg-cover bg-color-background pt-36 sm:pt-52 bg-allProducts bg-blend-lighten">
                 <div className="w-screen h-[400px]" ref={zoom4Ref}>
                     <Bounce top when={zoom4InView}>
                         <h1 className="text-4xl italic font-bold text-center text-black sm:text-8xl font-CabinSketch">Why Just The Heads?</h1>

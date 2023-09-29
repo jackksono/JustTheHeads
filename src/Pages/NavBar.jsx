@@ -133,7 +133,7 @@ const NavBarComponent = () => {
                           }}>
                             <BsSearch className="text-md sm:w-[25px] sm:h-[25px]" />
                         </button>
-                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp} setStyleTrigger={setSearchBarActive}></SearchBar>
+                        <SearchBar trigger={searchBarButtonPopUp} setTrigger={searchBarSetButtonPopUp} setSearchBarActive={setSearchBarActive} setStyleTrigger={setSearchBarActive}></SearchBar>
                     </span>
                     <Link to="/cart">
                         <button className= {cartActive ? "flex justify-end transition duration-150 ease-in-out bg-primary-500 hover:text-white hover:scale-125 text-color-primary italic" : "flex justify-end transition duration-150 ease-in-out text-color-text bg-primary-500 hover:text-white hover:scale-125"}
@@ -256,7 +256,7 @@ const NavBarComponent = () => {
                   </div>
               </ul>
             </div>
-                  <ContactUs trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp}></ContactUs>
+                  <ContactUs trigger={contactUsButtonPopUp} setTrigger={contactUsSetButtonPopUp} setContactUsActive={setContactUsActive}></ContactUs>
         </nav>
 
     
