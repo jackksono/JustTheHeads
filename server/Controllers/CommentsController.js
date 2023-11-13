@@ -4,12 +4,13 @@ const commentsController = {
     addComment : async (req, res, next) => {
         try {
             const { webId } = req.params;
-            const { name, comment, rating } = req.body
+            const { name, comment, rating, inStock } = req.body
             const newComment = await models.Comment.create({
                 webId,
                 name,
                 comment,
-                rating
+                rating,
+                inStock,
             })
 
             res.locals.newComment = newComment
